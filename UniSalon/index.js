@@ -5,9 +5,10 @@
 import {AppRegistry} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
-import { HomeView } from './src/views/home_view';
+import Routes from './IndexApp';
+import { SubService } from './src/views/subservice';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => SubService);
 
 
 //https://www.youtube.com/watch?v=AnjyzruZ36E
@@ -16,3 +17,6 @@ AppRegistry.registerComponent(appName, () => App);
 //https://www.youtube.com/watch?v=_hgsAlPTGXY
 
 //https://reactnavigation.org/docs/tab-view/
+
+//navigator
+//https://www.youtube.com/watch?v=TRmsdRjn2lw

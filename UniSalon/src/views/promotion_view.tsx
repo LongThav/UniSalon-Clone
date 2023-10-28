@@ -8,16 +8,19 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { Navigation } from 'react-native-navigation';
+import { detailPromotion } from "./detail_promotion_view";
+import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get('window')
-const Stack = createNativeStackNavigator();
 
 const Promotion = () => (
     <View style={{ width: 'auto', height: '94%', backgroundColor: '#f1f1f1' }}>
-        <TouchableOpacity style={{ width: 'auto', height: '94%' }} 
-        onPress={() => {
-            console.log("Start press!");
-        }}>
+        <TouchableOpacity style={{ width: 'auto', height: '94%' }}
+            onPress={() => {
+                console.log("Start press!");
+                // Navigation.push({{detia}})
+                // Navigation.push({detailPromotion});
+            }}>
             <View style={styles.CardPromotion}>
                 <View style={{
                     width: '40%',
@@ -79,6 +82,7 @@ export const PromotionView = () => {
         // { key: 'second', title: '|' },
         { key: 'third', title: 'Rewards' },
     ]);
+    const navigation = useNavigation()
     const renderTabBar = (props: any) => (
         <TabBar
             {...props}
