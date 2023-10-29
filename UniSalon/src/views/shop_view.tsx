@@ -2,32 +2,34 @@ import React from "react";
 import Feather from 'react-native-vector-icons/Feather';
 import { SafeAreaView, Text, View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import { useNavigation } from '@react-navigation/native';
 import { Image } from "react-native";
 
 export const ShopView = () => {
+    const navigation: any = useNavigation();
     return (
         <SafeAreaView>
-            <ScrollView>
-                <View style={styles.Appbar}>
-                    <Feather name="menu" size={24} style={{
-                        color: 'white',
-                        paddingRight: 125
-                    }} />
-                    <Text style={styles.TitleAppbar}>Shops</Text>
-                </View>
+            <View style={styles.Appbar}>
+                <Feather name="menu" size={24} style={{
+                    color: 'white',
+                    paddingRight: 125
+                }} />
+                <Text style={styles.TitleAppbar}>Shops</Text>
+            </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.SearchBar}>
                     <EvilIcons name="search" size={24} color="grey" />
                     <Text style={{ paddingHorizontal: 10 }}>Search Salons...</Text>
                 </View>
                 <Text style={{ fontSize: 18, color: '#16247d', paddingVertical: 15, marginHorizontal: 15 }}>Recommend Salons</Text>
-                <ScrollView horizontal={true}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
                     {/* <NavigationContainer>
                         <Stack.Navigator initialRouteName="Home">
                             <Stack.Screen name="Home" component={HomeScreen} />
                             <Stack.Screen name="Second" component={SecondScreen} />
                         </Stack.Navigator>
                     </NavigationContainer> */}
-                    <TouchableOpacity onPress={()=>{
+                    <TouchableOpacity onPress={() => {
                         console.log("Push new screen");
                     }}>
                         <View style={{ width: 'auto', height: 160, marginLeft: 15, }}>

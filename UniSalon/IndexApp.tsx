@@ -1,10 +1,10 @@
 import React from 'react';
 import Route from './src/navigation/Route';
 
-const Routes = ()=>{
+const MainApp = ()=>{
     return (
         <Route/>
     );
 }
 
-export default Routes;
+export default MainApp;

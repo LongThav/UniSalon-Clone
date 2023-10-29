@@ -5,10 +5,10 @@
 import {AppRegistry} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
-import Routes from './IndexApp';
+import MainApp from './IndexApp';
 import { SubService } from './src/views/subservice';
 
-AppRegistry.registerComponent(appName, () => SubService);
+AppRegistry.registerComponent(appName, () => MainApp);
 
 
 //https://www.youtube.com/watch?v=AnjyzruZ36E

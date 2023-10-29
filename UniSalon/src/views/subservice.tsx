@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView, ScrollView, StyleSheet, Image, useWindowDimensions, Dimensions } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, StyleSheet, Image, useWindowDimensions, Dimensions } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from "@react-navigation/native";
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
@@ -10,7 +10,8 @@ const { width } = Dimensions.get('window')
 
 const Men = () => {
     return (
-        <View><Text>Men</Text></View>
+        <View style={{ width: 200, height: 200, backgroundColor: 'red' }}>
+            <Text>Men</Text></View>
     );
 }
 
@@ -72,10 +73,19 @@ export const SubService = () => {
         ></TabBar>
     );
 
+
+    const naviation: any = useNavigation();
+
     return (
         <SafeAreaView>
             <View style={styles.AppBar}>
-                <AntDesign name='arrowleft' color={'white'} size={28}></AntDesign>
+                <TouchableOpacity activeOpacity={1} onPress={() => {
+                    naviation.goBack();
+
+                }}>
+                    <AntDesign name='arrowleft' color={'white'} size={28}></AntDesign>
+
+                </TouchableOpacity>
                 <Text style={styles.SubText}>Sub Service</Text>
                 <AntDesign name='hearto' size={25} color={'white'}></AntDesign>
             </View>
@@ -119,6 +129,7 @@ export const SubService = () => {
                     </View>
                 </View>
             </View>
+
             <View style={styles.TabBar}>
                 <TabView
                     navigationState={{ index, routes }}
@@ -156,7 +167,7 @@ const styles = StyleSheet.create({
     Body: {
         marginTop: '16%',
         width: 'auto',
-        height: '55%',
+        height: '24%',
         borderWidth: 1,
         borderColor: '#eef2fa',
         marginHorizontal: 15,
@@ -182,7 +193,7 @@ const styles = StyleSheet.create({
     },
     TabBar: {
         width: 'auto',
-        height: 60,
+        height: '100%',
         // backgroundColor: 'red'
     },
 });

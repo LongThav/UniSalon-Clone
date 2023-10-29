@@ -7,59 +7,60 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import { Navigation } from 'react-native-navigation';
-import { detailPromotion } from "./detail_promotion_view";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window')
 
-const Promotion = () => (
-    <View style={{ width: 'auto', height: '94%', backgroundColor: '#f1f1f1' }}>
-        <TouchableOpacity style={{ width: 'auto', height: '94%' }}
-            onPress={() => {
-                console.log("Start press!");
-                // Navigation.push({{detia}})
-                // Navigation.push({detailPromotion});
-            }}>
-            <View style={styles.CardPromotion}>
-                <View style={{
-                    width: '40%',
-                    height: '100%',
-                    backgroundColor: '#ebebec',
-                    borderRadius: 10,
+const Promotion = () => {
+    const navigation: any = useNavigation();
+    return (
+        <View style={{ width: 'auto', height: '94%', backgroundColor: '#f1f1f1' }}>
+            <TouchableOpacity activeOpacity={1} style={{ width: 'auto', height: '94%' }}
+                onPress={() => {
+                    console.log("Start press!");
+                    navigation.push('DetailPromotion');
+
                 }}>
-                    <Image style={{
-                        width: undefined, height: undefined, flex: 1, borderRadius: 8
-                    }} source={require('../../assets/imgs/img1.jpg')}></Image>
-                </View>
-                <View style={{ paddingLeft: 10, alignItems: 'flex-start' }}>
-                    <Text style={{
-                        fontSize: 18,
-                        color: 'black',
-                        // marginTop: 10
-                    }}>កាត់សក់បុរស</Text>
-                    <Text style={{
-                        color: '#16247d',
-                        fontSize: 15,
-                        fontWeight: 'bold'
-                    }}>មែន​ ស្តាយ</Text>
-                    <Text>⭐⭐⭐⭐⭐ (3)</Text>
-                    <Text>កាត់សក់បុរស free កក់សក់ជូន</Text>
-                    <View style={{ flexDirection: 'row', }}>
-                        <View style={{ flexDirection: 'row', paddingVertical: 15, paddingRight: 20 }}>
-                            <FontAwesome6 name="location-dot" style={{ paddingRight: 5, marginTop: 4 }} color={'#16247d'}></FontAwesome6>
-                            <Text style={{ color: '#16247d', fontWeight: 'bold' }}>None</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
-                            <FontAwesome6 name="clock" style={{ paddingRight: 5, marginTop: 4 }} color={'#16247d'}></FontAwesome6>
-                            <Text style={{ color: '#16247d', fontWeight: 'bold' }}>Opening</Text>
+                <View style={styles.CardPromotion}>
+                    <View style={{
+                        width: '40%',
+                        height: '100%',
+                        backgroundColor: '#ebebec',
+                        borderRadius: 10,
+                    }}>
+                        <Image style={{
+                            width: undefined, height: undefined, flex: 1, borderRadius: 8
+                        }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                    </View>
+                    <View style={{ paddingLeft: 10, alignItems: 'flex-start' }}>
+                        <Text style={{
+                            fontSize: 18,
+                            color: 'black',
+                            // marginTop: 10
+                        }}>កាត់សក់បុរស</Text>
+                        <Text style={{
+                            color: '#16247d',
+                            fontSize: 15,
+                            fontWeight: 'bold'
+                        }}>មែន​ ស្តាយ</Text>
+                        <Text>⭐⭐⭐⭐⭐ (3)</Text>
+                        <Text>កាត់សក់បុរស free កក់សក់ជូន</Text>
+                        <View style={{ flexDirection: 'row', }}>
+                            <View style={{ flexDirection: 'row', paddingVertical: 15, paddingRight: 20 }}>
+                                <FontAwesome6 name="location-dot" style={{ paddingRight: 5, marginTop: 4 }} color={'#16247d'}></FontAwesome6>
+                                <Text style={{ color: '#16247d', fontWeight: 'bold' }}>None</Text>
+                            </View>
+                            <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
+                                <FontAwesome6 name="clock" style={{ paddingRight: 5, marginTop: 4 }} color={'#16247d'}></FontAwesome6>
+                                <Text style={{ color: '#16247d', fontWeight: 'bold' }}>Opening</Text>
+                            </View>
                         </View>
                     </View>
                 </View>
-            </View>
-        </TouchableOpacity>
-    </View>
-);
+            </TouchableOpacity>
+        </View>
+    );
+}
 
 const Reward = () => (
     <View style={{ backgroundColor: '#f1f1f1', flex: 1, justifyContent: 'flex-start', alignContent: 'center', alignItems: 'center', paddingTop: '10%' }}>
