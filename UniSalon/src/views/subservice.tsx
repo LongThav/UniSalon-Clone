@@ -8,22 +8,168 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { SceneMap, TabBar, TabView } from 'react-native-tab-view';
 const { width } = Dimensions.get('window')
 
-const Men = () => {
+const MenData = [
+    {
+        'id': '1',
+        'title': 'កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...',
+        'price': '$10.00',
+        'booking': 'Booking',
+        'img': '../../assets/imgs/img1.jpg',
+    },
+    {
+        'id': '1',
+        'title': 'កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...',
+        'price': '$10.00',
+        'booking': 'Booking',
+        'img': '../../assets/imgs/img1.jpg',
+    },
+    {
+        'id': '1',
+        'title': 'កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...',
+        'price': '$10.00',
+        'booking': 'Booking',
+        'img': '../../assets/imgs/img1.jpg',
+    },
+];
+
+const Kid = () => {
     return (
-        <View style={{ width: 200, height: 200, backgroundColor: 'red' }}>
-            <Text>Men</Text></View>
+        <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: '#f1f1f1' }}>
+
+            <View style={styles.CardListMen}>
+                <View style={{ width: '30%', height: '100%' }}>
+                    <Image style={{ flex: 1, width: undefined, height: undefined }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{ paddingLeft: 15 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...</Text>
+                    <Text style={{ fontSize: 18, marginTop: 8 }}>ពិន្ទុ:0.5 ដង.ហ្វ្រីរកក់សក់.ធ្វើម៉ូតសក់</Text>
+                    <Text style={{ fontSize: 18, marginTop: 5 }}>ដោយឥតគិតថ្លៃ😍</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 10 }}>
+                        <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$6.00</Text>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                            <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.CardListMen}>
+                <View style={{ width: '30%', height: '100%' }}>
+                    <Image style={{ flex: 1, width: undefined, height: undefined }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{ paddingLeft: 15 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>Popular Hairstyles</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 25 }}>
+                        <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$5.0</Text>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                            <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+        </ScrollView>
     );
 }
 
 const Women = () => {
     return (
-        <View><Text>Women</Text></View>
+        <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: '#f1f1f1' }}>
+            <View style={styles.CardListMen}>
+                <View style={{ width: '30%', height: '100%' }}>
+                    <Image style={{ flex: 1, width: undefined, height: undefined }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{ paddingLeft: 15 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>កាត់ សក់​.ម៉ូត.លូរហ្វេត.ហាយហ្វេត.</Text>
+                    <Text style={{ fontSize: 18, marginTop: 8 }}>0.5</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 10 }}>
+                        <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$10.00</Text>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                            <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.CardListMen}>
+                <View style={{ width: '30%', height: '100%' }}>
+                    <Image style={{ flex: 1, width: undefined, height: undefined }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{ paddingLeft: 15 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>Popular Hairstyles</Text>
+                    <Text style={{ fontSize: 18, marginTop: 8 }}>Popular Hairstyles</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 10 }}>
+                        <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$10.00</Text>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                            <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.CardListMen}>
+                <View style={{ width: '30%', height: '100%' }}>
+                    <Image style={{ flex: 1, width: undefined, height: undefined }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{ paddingLeft: 15 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>Popular Hairstyles</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 25 }}>
+                        <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$10.00</Text>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                            <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+        </ScrollView>
     );
 }
 
-const Kid = () => {
+const Men = () => {
     return (
-        <View><Text>Kid</Text></View>
+        <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: '#f1f1f1' }}>
+            <View style={styles.CardListMen}>
+                <View style={{ width: '30%', height: '100%' }}>
+                    <Image style={{ flex: 1, width: undefined, height: undefined }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{ paddingLeft: 15 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>Hight Fan Hairstyles</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 25 }}>
+                        <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$10.00</Text>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                            <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.CardListMen}>
+                <View style={{ width: '30%', height: '100%' }}>
+                    <Image style={{ flex: 1, width: undefined, height: undefined }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{ paddingLeft: 15 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>Classic</Text>
+                    <Text style={{ fontSize: 15, marginTop: 8 }}>Classic Model លក្ខណះសុភាពរាបសារ</Text>
+                    <Text>សាកសមគ្រប់វិស័យ</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 10 }}>
+                        <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$10.00</Text>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                            <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.CardListMen}>
+                <View style={{ width: '30%', height: '100%' }}>
+                    <Image style={{ flex: 1, width: undefined, height: undefined }} source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{ paddingLeft: 15 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...</Text>
+                    <Text style={{ fontSize: 18, marginTop: 8 }}>Popular Hairstyles</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 10 }}>
+                        <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$10.00</Text>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                            <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+        </ScrollView>
     );
 }
 
@@ -119,14 +265,24 @@ export const SubService = () => {
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', marginTop: 30, marginLeft: '15%' }}>
-                    <View style={{ flexDirection: 'row', paddingHorizontal: 15, paddingVertical: 10, backgroundColor: '#edeff3', borderRadius: 20 }}>
-                        <FontAwesome name='image' size={23}></FontAwesome>
-                        <Text style={{ marginLeft: 10 }}>Gallery</Text>
-                    </View>
+                    <TouchableOpacity onPress={()=>{
+                        console.log("Click");
+                        naviation.push('GalleryView');
+                    }}>
+                        <View style={{ flexDirection: 'row', paddingHorizontal: 15, paddingVertical: 10, backgroundColor: '#edeff3', borderRadius: 20 }}>
+                            <FontAwesome name='image' size={23}></FontAwesome>
+                            <Text style={{ marginLeft: 10 }}>Gallery</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{
+                        console.log("Make a Booking");
+                        naviation.push('MakeBookingView');
+                    }}>
                     <View style={{ flexDirection: 'row', paddingHorizontal: 15, paddingVertical: 10, backgroundColor: '#edeff3', marginLeft: 18, borderRadius: 20 }}>
                         <AntDesign name='isv' size={23} color={'#16247d'}></AntDesign>
                         <Text style={{ marginLeft: 10, color: '#16247d', fontWeight: 'bold' }}>MAKE A BOOKING</Text>
                     </View>
+                    </TouchableOpacity>
                 </View>
             </View>
 
@@ -196,4 +352,22 @@ const styles = StyleSheet.create({
         height: '100%',
         // backgroundColor: 'red'
     },
+    CardListMen: {
+        marginHorizontal: 15,
+        padding: 10,
+        width: 'auto',
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        borderRadius: 10,
+        marginTop: 15
+    },
+    CardListWomen: {
+        width: 'auto',
+        backgroundColor: 'white',
+        marginHorizontal: 15,
+        padding: 10,
+        flexDirection: 'row',
+        borderRadius: 10,
+        marginTop: 15
+    }
 });

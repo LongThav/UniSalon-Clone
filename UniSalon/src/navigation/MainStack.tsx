@@ -9,6 +9,11 @@ import { ShopView } from '../views/shop_view';
 import { VideoView } from '../views/video_view';
 import { DetailPromotion } from '../views/detail_promotion_view';
 import { SubService } from '../views/subservice';
+import {GalleryView} from '../views/GalleryView';
+import {ViewImage} from '../views/ViewImage';
+import { MakeBookingView } from '../views/MakeBookingView';
+import {AssignProfessorView} from '../views/AssignProfessorView';
+
 
 import App from '../../App';
 
@@ -28,6 +33,10 @@ const MainStack = () => {
       <Stack.Screen component={VideoView} name="Video" />
       <Stack.Screen component={DetailPromotion} name="DetailPromotion" />
       <Stack.Screen component={SubService} name="SubService" />
+      <Stack.Screen component={GalleryView} name="GalleryView"/>
+      <Stack.Screen component={ViewImage} name="ViewImage"/>
+      <Stack.Screen component={MakeBookingView} name="MakeBookingView"/>
+      <Stack.Screen component={AssignProfessorView} name="AssignProfessorView"/>
     </Stack.Navigator>
   );
 };

@@ -83,7 +83,7 @@ export const PromotionView = () => {
         // { key: 'second', title: '|' },
         { key: 'third', title: 'Rewards' },
     ]);
-    const navigation = useNavigation()
+    const navigation: any = useNavigation();
     const renderTabBar = (props: any) => (
         <TabBar
             {...props}
@@ -111,10 +111,15 @@ export const PromotionView = () => {
     return (
         <SafeAreaView>
             <View style={styles.Appbar}>
+                <TouchableOpacity activeOpacity={1} onPress={()=>{
+                    console.log("Drawer start");
+                    navigation.openDrawer();
+                }}>
                 <Feather name="menu" size={24} style={{
                     color: 'white',
                     paddingRight: 125
                 }} />
+                </TouchableOpacity>
                 <Text style={styles.TitleAppbar}>Promotions</Text>
             </View>
             <View style={styles.RibonReward}>
