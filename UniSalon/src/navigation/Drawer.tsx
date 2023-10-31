@@ -1,20 +1,22 @@
-import * as React from 'react';
-import { Button, View, StyleSheet } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import DrawerView from '../views/DrawerView';
+import React from 'react';
+import TestView from '../views/TestView';
 
+import App from '../../App';
 
 const Drawer = createDrawerNavigator();
 
-const DrawerPhone = () => {
+const DrawerNavigate = () => {
     return (
-        <Drawer.Navigator useLegacyImplementation>
-            <Drawer.Screen name="Drawer" component={DrawerView} />
+        <Drawer.Navigator screenOptions={{
+            drawerType: 'slide',
+            headerTransparent: false,
+            headerShown: false,
+            drawerStyle: { width: '80%' },
+        }}>
+            <Drawer.Screen name="App" component={App} />
         </Drawer.Navigator>
-    )
+    );
 }
 
-export default DrawerPhone
-
-const styles = StyleSheet.create({})
+export default DrawerNavigate;

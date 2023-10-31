@@ -16,9 +16,11 @@ import {AssignProfessorView} from '../views/AssignProfessorView';
 import {ChooseServiceView} from '../views/ChooseServiceView';
 import { BookingDetailView } from '../views/BookingDetailView';
 import { EditBookingView } from '../views/EditBookingView';
+import DrawerNavigate from '../navigation/Drawer';
  
 
 import App from '../../App';
+import TestView from '../views/TestView';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -28,6 +30,8 @@ const MainStack = () => {
         headerShown: false,
         animation: 'fade_from_bottom',
       }}>
+      
+      <Stack.Screen component={DrawerNavigate} name="MainDrawer" />
       <Stack.Screen component={App} name="IndexView" />
       <Stack.Screen component={HomeView} name="Home" />
       <Stack.Screen component={PromotionView} name="Promotion" />
