@@ -60,7 +60,7 @@ const Kid = () => {
                     <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#16247d' }}>Popular Hairstyles</Text>
                     <View style={{ flexDirection: 'row', marginTop: 25 }}>
                         <Text style={{ marginRight: '32%', marginTop: 20, fontSize: 18, color: 'red', fontWeight: 'bold' }}>$5.0</Text>
-                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8 }}>
+                        <View style={{ paddingHorizontal: 12, paddingVertical: 10, borderWidth: 1, borderColor: '#16247d', borderRadius: 8, marginLeft: 12 }}>
                             <Text style={{ fontSize: 18, color: '#16247d', fontWeight: 'bold' }}>Booking</Text>
                         </View>
                     </View>
