@@ -13,7 +13,10 @@ import {GalleryView} from '../views/GalleryView';
 import {ViewImage} from '../views/ViewImage';
 import { MakeBookingView } from '../views/MakeBookingView';
 import {AssignProfessorView} from '../views/AssignProfessorView';
-
+import {ChooseServiceView} from '../views/ChooseServiceView';
+import { BookingDetailView } from '../views/BookingDetailView';
+import { EditBookingView } from '../views/EditBookingView';
+ 
 
 import App from '../../App';
 
@@ -37,6 +40,9 @@ const MainStack = () => {
       <Stack.Screen component={ViewImage} name="ViewImage"/>
       <Stack.Screen component={MakeBookingView} name="MakeBookingView"/>
       <Stack.Screen component={AssignProfessorView} name="AssignProfessorView"/>
+      <Stack.Screen component={ChooseServiceView} name="ChooseServiceView"/>
+      <Stack.Screen component={BookingDetailView} name="BookingDetailView"/>
+      <Stack.Screen component={EditBookingView} name="EditBookingView"/>
     </Stack.Navigator>
   );
 };

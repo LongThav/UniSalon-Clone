@@ -6,19 +6,19 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export const AssignProfessorView = () => {
     const navigation: any = useNavigation();
-    const [isStateTrue, setIsStateTrue] = useState(true);
+    const [isStateTrue, setIsStateTrue] = useState(false);
 
     const toggleState = () => {
         setIsStateTrue(!isStateTrue);
     };
 
-    console.log("isStateTrue : ", isStateTrue)
+    // console.log("isStateTrue : ", isStateTrue)
     return (
         <SafeAreaView style={{
             flex: 1,
         }}>
             <View style={styles.AppBar}>
-                <TouchableOpacity activeOpacity={1} onPress={() => {
+                <TouchableOpacity activeOpacity={0.5} onPress={() => {
                     console.log("Back");
                     navigation.goBack();
 
@@ -30,7 +30,7 @@ export const AssignProfessorView = () => {
             <View style={styles.BottomAppBar}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Select Professors</Text>
             </View>
-            <ScrollView>
+            <ScrollView style={{marginBottom: '10%'}}>
                 <TouchableOpacity activeOpacity={1} onPress={toggleState}> 
                 <View style={styles.Role1}>
                     <View style={{
@@ -184,7 +184,14 @@ export const AssignProfessorView = () => {
                     <View style={{ marginHorizontal: 10 }}></View>
                 </View>
             </ScrollView>
-            <TouchableOpacity activeOpacity={1} onPress={toggleState}>
+            <TouchableOpacity activeOpacity={1} onPress={()=>{
+                console.log("IsState: ",isStateTrue);
+                if(isStateTrue == true){
+                    console.log("Can't push new screen");
+                }else{
+                    navigation.push('ChooseServiceView');
+                }
+            }}>
                 <View style={styles.BtnButton}>
                     <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'white' }}>{isStateTrue ? 'Skip' : 'Next'}</Text>
                 </View>
@@ -199,7 +206,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 50,
         backgroundColor: '#16247d',
-        position: 'absolute',
+        // position: 'absolute',
         alignItems: 'flex-start',
         paddingTop: '3%',
         flexDirection: 'row',
@@ -216,9 +223,8 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 55,
         borderWidth: 1,
-        marginTop: '11.8%',
         borderColor: '#ebebec',
-        position: 'absolute',
+        // position: 'absolute',
         alignContent: 'center',
         verticalAlign: 'middle',
         paddingLeft: 15,
@@ -237,7 +243,7 @@ const styles = StyleSheet.create({
     },
     Role1: {
         flexDirection: 'row',
-        marginTop: '30%',
+        marginTop: '5%',
         alignItems: 'center',
         alignContent: 'space-around',
         marginHorizontal: 15

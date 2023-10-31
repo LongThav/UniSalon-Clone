@@ -20,7 +20,7 @@ export const MakeBookingView = () => {
                 <Text style={styles.SubText}>Make A BOOKING</Text>
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={{ marginTop: '13%' }}>
+                <View style={{ marginTop: '0%' }}>
                     <Text style={{ paddingHorizontal: 15, paddingVertical: 10, color: 'black', fontSize: 18, fontWeight: 'bold' }}>Shop Information</Text>
                 </View>
                 <View style={styles.Form1}>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 50,
         backgroundColor: '#16247d',
-        position: 'absolute',
+        // position: 'absolute',
         alignItems: 'flex-start',
         paddingTop: '3%',
         flexDirection: 'row',
