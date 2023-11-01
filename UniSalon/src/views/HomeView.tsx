@@ -22,6 +22,14 @@ export const HomeView = () => {
                     longitudeDelta: 0.0121,
                 }}>
             </MapView>
+            {/* <View style={{
+                backgroundColor: 'red',
+                width: 200,
+                height: 200,
+                position: 'absolute'
+            }}>
+
+            </View> */}
             <View style={styles.AppBar}>
                 <TouchableOpacity activeOpacity={1} onPress={()=>{
                     navigation.openDrawer();
@@ -40,7 +48,7 @@ export const HomeView = () => {
                     <MaterialIcons name="notifications-none" size={30}></MaterialIcons>
                 </View>
             </View>
-            <ScrollView  showsHorizontalScrollIndicator={false} horizontal={true}>
+            <ScrollView style={{position: 'absolute', marginTop: '20%'}}  showsHorizontalScrollIndicator={false} horizontal={true}>
                 <TouchableOpacity style={styles.FilterAll}>
                     <Text style={{fontWeight: 'bold'}}>All</Text>
                 </TouchableOpacity>
@@ -69,7 +77,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 8,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        position: 'absolute'
     },
     container: {
         // ...StyleSheet.absoluteFillObject,
@@ -82,6 +91,7 @@ const styles = StyleSheet.create({
         // ...StyleSheet.absoluteFillObject,
         height: '100%',
         width: '100%',
+        flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'center',
         position: 'absolute'
