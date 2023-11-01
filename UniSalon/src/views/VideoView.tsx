@@ -1,18 +1,24 @@
 import React from "react";
 import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import { SafeAreaView, Text, View, StyleSheet, Image } from "react-native";
+import { SafeAreaView, Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export const VideoView = () => {
+    const navigation: any = useNavigation();
     return (
         <SafeAreaView>
-            <View style={styles.Appbar}>
-                <Feather name="menu" size={24} style={{
-                    color: 'white',
-                    paddingRight: 125
-                }} />
-                <Text style={styles.TitleAppbar}>Videoe</Text>
-            </View>
+            <TouchableOpacity activeOpacity={1} onPress={() => {
+                navigation.openDrawer();
+            }}>
+                <View style={styles.Appbar}>
+                    <Feather name="menu" size={24} style={{
+                        color: 'white',
+                        paddingRight: 125
+                    }} />
+                    <Text style={styles.TitleAppbar}>Videoe</Text>
+                </View>
+            </TouchableOpacity>
             <View style={styles.SearchBar}>
                 <EvilIcons name="search" size={24} color="grey" />
                 <Text style={{ paddingHorizontal: 10 }}>Search Video...</Text>

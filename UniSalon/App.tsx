@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { HomeView } from './src/views/home_view';
-import { ShopView } from './src/views/shop_view';
-import { VideoView } from './src/views/video_view';
+import { HomeView } from './src/views/HomeView';
+import { ShopView } from './src/views/ShopView';
+import { VideoView } from './src/views/VideoView';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { ProfessorView } from './src/views/professors';
-import { PromotionView } from './src/views/promotion_view';
+import { ProfessorView } from './src/views/ProfessorsView';
+import { PromotionView } from './src/views/PromotionView';
 import { View, Text, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';

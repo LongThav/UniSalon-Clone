@@ -6,11 +6,11 @@ import { View, Text, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SplashScreen from 'react-native-splash-screen';
-import { HomeView } from './home_view';
-import { ShopView } from './shop_view';
-import { VideoView } from './video_view';
-import { ProfessorView } from './professors';
-import { PromotionView } from './promotion_view';
+import { HomeView } from './HomeView';
+import { ShopView } from './ShopView';
+import { VideoView } from './VideoView';
+import { ProfessorView } from './ProfessorsView';
+import { PromotionView } from './PromotionView';
 
 
 

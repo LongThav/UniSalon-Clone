@@ -5,17 +5,29 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { useNavigation } from '@react-navigation/native';
 import { Image } from "react-native";
 
+//navigation.openDrawer();
 export const ShopView = () => {
     const navigation: any = useNavigation();
     return (
         <SafeAreaView>
-            <View style={styles.Appbar}>
+           <TouchableOpacity activeOpacity={1} onPress={()=>{
+            navigation.openDrawer();
+             <View style={styles.Appbar}>
                 <Feather name="menu" size={24} style={{
                     color: 'white',
                     paddingRight: 125
                 }} />
                 <Text style={styles.TitleAppbar}>Shops</Text>
             </View>
+           }}>
+           <View style={styles.Appbar}>
+                <Feather name="menu" size={24} style={{
+                    color: 'white',
+                    paddingRight: 125
+                }} />
+                <Text style={styles.TitleAppbar}>Shops</Text>
+            </View>
+           </TouchableOpacity>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.SearchBar}>
                     <EvilIcons name="search" size={24} color="grey" />
