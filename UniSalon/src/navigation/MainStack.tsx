@@ -21,6 +21,9 @@ import DrawerNavigate from '../navigation/Drawer';
 
 import App from '../../App';
 import TestView from '../views/TestView';
+import LoginView from '../views/LoginView';
+import CreateAccountView from '../views/CreateAccountView';
+import CreatePasswordView from '../views/CreatePasswordView';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -47,6 +50,9 @@ const MainStack = () => {
       <Stack.Screen component={ChooseServiceView} name="ChooseServiceView"/>
       <Stack.Screen component={BookingDetailView} name="BookingDetailView"/>
       <Stack.Screen component={EditBookingView} name="EditBookingView"/>
+      <Stack.Screen component={LoginView} name="LoginView"/>
+      <Stack.Screen component={CreateAccountView} name="CreateAccountView"/>
+      <Stack.Screen component={CreatePasswordView} name="CreatePasswordView"/>
     </Stack.Navigator>
   );
 };

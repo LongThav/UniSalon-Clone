@@ -25,6 +25,7 @@ import CustomizeSideBar from '../component/CustomizeSideBar';
 
 import App from '../../App';
 import { Icon } from 'react-native-paper';
+import LoginView from '../views/LoginView';
 
 const Drawer = createDrawerNavigator();
 
@@ -129,7 +130,7 @@ const DrawerNavigate = () => {
                     ),
                 }}
             />
-            <Drawer.Screen name="Sign Out" component={SignOutView}
+            <Drawer.Screen name="Sign Out" component={LoginView}
                 options={{
                     title: 'Sign Out',
                     drawerIcon: ({ focused, size }) => (

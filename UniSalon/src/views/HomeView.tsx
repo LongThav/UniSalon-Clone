@@ -5,10 +5,12 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MapView from 'react-native-maps';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import { useNavigation } from "@react-navigation/native";
 
 
 
 export const HomeView = () => {
+    const navigation: any = useNavigation();
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <MapView
@@ -21,8 +23,13 @@ export const HomeView = () => {
                 }}>
             </MapView>
             <View style={styles.AppBar}>
+                <TouchableOpacity activeOpacity={1} onPress={()=>{
+                    navigation.openDrawer();
+                }}>
+                <Entypo name="menu" size={30}></Entypo>
+
+                </TouchableOpacity>
                 <View style={{ flexDirection: 'row' }}>
-                    <Entypo name="menu" size={30}></Entypo>
                     <Text style={{ fontSize: 20, marginLeft: 15 }}>Search Salons...</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
