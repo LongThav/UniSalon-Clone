@@ -1,22 +1,19 @@
-import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
+import React from 'react';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 
-const CreateAccountView = () => {
+const ForgotPasswordView = () => {
     const navigation: any = useNavigation();
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <AntDesign onPress={() => {
                 navigation.goBack();
             }} name='arrowleft' color={'grey'} size={28} style={{ paddingLeft: 15, paddingTop: 10 }}></AntDesign>
-            <View style={{
-                width: 100, height: 100, justifyContent: 'center',
-                marginLeft: '38%', marginTop: '17%'
-            }}>
-                <Image style={{ flex: 1, width: 100, height: 100, borderRadius: 12 }} source={require('../../assets/imgs/logo.jpg')}></Image>
-            </View>
-            <Text style={{ marginTop: '8%', textAlign: 'center', fontSize: 18, color: 'blue' }}>Enter Phone Number</Text>
+            <Text style={{ textAlign: 'center', marginTop: '10%', fontSize: 19, color: 'black' }}>
+                Forgot Password
+            </Text>
+            <Text style={{ textAlign: 'center', marginTop: '10%', fontSize: 17, color: 'grey' }}>Enter Phone Number</Text>
             <View style={{ flexDirection: 'row', }}>
                 <View style={styles.FormI}>
                     <Text style={{ fontWeight: 'bold', fontSize: 18, }}>+885</Text>
@@ -30,22 +27,14 @@ const CreateAccountView = () => {
             <View style={styles.FormII}>
                 <Text style={{ fontSize: 17, paddingLeft: 5 }}>Code</Text>
             </View>
-            <View style={{ flexDirection: 'row', marginTop: '12%', marginHorizontal: 15 }}>
-                <Text style={{ fontSize: 16, color: 'blue' }}>By sign up, you agree to our</Text>
-                <Text style={{ fontSize: 16, color: 'blue', textDecorationLine: 'underline' }}>Term and Conditions.</Text>
+            <View style={styles.BtnLogin}>
+                <Text style={styles.TxtLogin}>Next</Text>
             </View>
-            <TouchableOpacity activeOpacity={1} onPress={() => {
-                navigation.push('CreatePasswordView');
-            }}>
-                <View style={styles.BtnLogin}>
-                    <Text style={styles.TxtLogin}>Next</Text>
-                </View>
-            </TouchableOpacity>
         </SafeAreaView>
     );
 }
 
-export default CreateAccountView
+export default ForgotPasswordView
 
 const styles = StyleSheet.create({
     FormI: {
@@ -53,12 +42,12 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         marginLeft: 15,
         flexDirection: 'row',
-        marginTop: '13%',
+        marginTop: '14%',
         backgroundColor: 'white',
         paddingHorizontal: 10
     },
     Submit: {
-        marginTop: '12.7%',
+        marginTop: '13.7%',
         padding: 15,
         height: 55,
         width: 100,
@@ -67,11 +56,11 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     FormII: {
-        width: '92%',
+        width: '91.5%',
         paddingVertical: 15,
         marginHorizontal: 15,
         flexDirection: 'row',
-        marginTop: '10%',
+        marginTop: '7%',
         backgroundColor: 'white',
         paddingHorizontal: 10
     },

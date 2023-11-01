@@ -29,7 +29,11 @@ const LoginView = () => {
             <View style={styles.BtnLogin}>
                 <Text style={styles.TxtLogin}>Login</Text>
             </View>
+            <TouchableOpacity activeOpacity={1} onPress={()=>{
+                navigation.push('ForgotPasswordView');
+            }}>
             <Text style={{ textAlign: 'center', marginTop: '8%', color: 'blue', fontSize: 15, }}>Forgot Password</Text>
+            </TouchableOpacity>
             <View style={{ flexDirection: 'row', marginHorizontal: 15, justifyContent: 'space-between', marginTop: '7%' }}>
                 <View style={{ width: '47%', height: 1, backgroundColor: 'grey', marginTop: 10 }}></View>
                 <Text style={{}}>Or</Text>
