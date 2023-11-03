@@ -187,8 +187,9 @@ export const ShopView = () => {
           <View
             style={{
               paddingVertical: 15,
-              paddingHorizontal: 15,
               flexDirection: 'row',
+              marginHorizontal: 15,
+              justifyContent: 'space-between',
             }}>
             <View
               style={{
@@ -272,6 +273,7 @@ export const ShopView = () => {
             </View>
           </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => {
@@ -281,8 +283,10 @@ export const ShopView = () => {
           <View
             style={{
               paddingVertical: 15,
-              paddingHorizontal: 15,
+              marginHorizontal: 15,
               flexDirection: 'row',
+              // marginRight: 15,
+              justifyContent: 'space-between',
             }}>
             <View
               style={{
@@ -366,6 +370,7 @@ export const ShopView = () => {
             </View>
           </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => {
@@ -375,8 +380,9 @@ export const ShopView = () => {
           <View
             style={{
               paddingVertical: 15,
-              paddingHorizontal: 15,
+              marginHorizontal: 15,
               flexDirection: 'row',
+              justifyContent: 'space-between',
             }}>
             <View
               style={{
@@ -460,6 +466,7 @@ export const ShopView = () => {
             </View>
           </View>
         </TouchableOpacity>
+
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => {
@@ -471,6 +478,8 @@ export const ShopView = () => {
               paddingVertical: 15,
               paddingHorizontal: 15,
               flexDirection: 'row',
+              marginRight: 15,
+              justifyContent: 'space-between',
             }}>
             <View
               style={{
@@ -526,15 +535,29 @@ export const ShopView = () => {
                   លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
                 </Text>
                 <View style={{flexDirection: 'row'}}>
-                  <Text style={{paddingVertical: 10, color: 'grey'}}>None</Text>
-                  <Text
+                  <View
                     style={{
-                      paddingHorizontal: 20,
-                      paddingVertical: 10,
-                      color: 'grey',
+                      flexDirection: 'row',
+                      paddingVertical: 15,
+                      paddingRight: 20,
                     }}>
-                    Opening
-                  </Text>
+                    <FontAwesome6
+                      name="location-dot"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      None
+                    </Text>
+                  </View>
+                  <View style={{flexDirection: 'row', paddingVertical: 15}}>
+                    <FontAwesome6
+                      name="clock"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      Opening
+                    </Text>
+                  </View>
                 </View>
               </View>
             </View>

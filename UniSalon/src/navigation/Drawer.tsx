@@ -102,7 +102,7 @@ const DrawerNavigate = () => {
                 options={{
                     title: 'Payment',
                     drawerIcon: ({ focused, size }) => (
-                        <MaterialIcons name='payment' size={30}></MaterialIcons>
+                        <MaterialIcons name='payment' size={30} color={'grey'}></MaterialIcons>
                     ),
                 }}
             />
@@ -110,7 +110,7 @@ const DrawerNavigate = () => {
                 options={{
                     title: 'Settings',
                     drawerIcon: ({ focused, size }) => (
-                        <Fontisto name='player-settings' size={30}></Fontisto>
+                        <Fontisto name='player-settings' color={'grey'} size={30}></Fontisto>
                     ),
                 }}
             />

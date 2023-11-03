@@ -24,39 +24,39 @@ export const MakeBookingView = () => {
                     <Text style={{ paddingHorizontal: 15, paddingVertical: 10, color: 'black', fontSize: 18, fontWeight: 'bold' }}>Shop Information</Text>
                 </View>
                 <View style={styles.Form1}>
-                    <Ionicons name='business-outline' size={25}></Ionicons>
+                    <Ionicons name='business-outline' color={'grey'} size={25}></Ionicons>
                     <View style={{ width: 1, height: '100%', backgroundColor: 'grey', marginHorizontal: 15 }}></View>
-                    <Text style={{ fontSize: 18 }}>មែន ស្តាយ</Text>
+                    <Text style={{ fontSize: 18, color: 'grey' }}>មែន ស្តាយ</Text>
                 </View>
                 <View style={styles.Form1}>
-                    <Ionicons name='phone-portrait-outline' size={25}></Ionicons>
+                    <Ionicons name='phone-portrait-outline' color={'grey'} size={25}></Ionicons>
                     <View style={{ width: 1, height: '100%', backgroundColor: 'grey', marginHorizontal: 15 }}></View>
-                    <Text style={{ fontSize: 18 }}>715636246</Text>
+                    <Text style={{ fontSize: 18, color: 'grey'}}>715636246</Text>
                 </View>
                 <View style={styles.Form1}>
-                    <EvilIcons name='location' size={25} style={{ marginTop: 5 }}></EvilIcons>
+                    <EvilIcons name='location' color={'grey'} size={25} style={{ marginTop: 5 }}></EvilIcons>
                     <View style={{ width: 1, height: '100%', backgroundColor: 'grey', marginHorizontal: 15 }}></View>
-                    <Text style={{ fontSize: 18 }}>103 St 512, Phnom Penh, Cambodia</Text>
+                    <Text style={{ fontSize: 18, color: 'grey' }}>103 St 512, Phnom Penh, Cambodia</Text>
                 </View>
                 <View style={{ marginTop: '5%' }}>
                     <Text style={{ paddingHorizontal: 15, paddingVertical: 10, color: 'black', fontSize: 18, fontWeight: 'bold' }}>Booking Information</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.SelectDay}>
-                        <AntDesign name='clockcircleo' size={20}></AntDesign>
+                        <AntDesign name='clockcircleo' color={'grey'} size={20}></AntDesign>
                         <View style={{ width: 1, height: '100%', backgroundColor: 'grey', marginHorizontal: 15 }}></View>
-                        <Text style={{ fontSize: 15 }}>Mon,30 Oct 2023</Text>
+                        <Text style={{ fontSize: 15, color: 'grey' }}>Mon,30 Oct 2023</Text>
                     </View>
                     <View style={styles.SelectHour}>
-                        <AntDesign name='clockcircleo' size={20}></AntDesign>
+                        <AntDesign name='clockcircleo' color={'grey'} size={20}></AntDesign>
                         <View style={{ width: 1, height: '100%', backgroundColor: 'grey', marginHorizontal: 15 }}></View>
-                        <Text style={{ fontSize: 15 }}>11:17</Text>
+                        <Text style={{ fontSize: 15, color: 'grey' }}>11:17</Text>
                     </View>
                 </View>
                 <View style={styles.Form2}>
-                    <AntDesign name='infocirlceo' size={25}></AntDesign>
+                    <AntDesign name='infocirlceo' color={'grey'} size={25}></AntDesign>
                     <View style={{ width: 1, height: '40%', backgroundColor: 'grey', marginHorizontal: 15 }}></View>
-                    <Text style={{ fontSize: 18 }}>Booking Note...(Optional)</Text>
+                    <Text style={{ fontSize: 18, color:'grey' }}>Booking Note...(Optional)</Text>
                     {/* <TextInput></TextInput> */}
                 </View>
                 <TouchableOpacity onPress={() => {
@@ -143,5 +143,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingVertical: 15
+    },
+    TextStyle:{
+        color: 'grey'
     }
 });

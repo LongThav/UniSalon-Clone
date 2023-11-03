@@ -6,7 +6,7 @@ import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { SceneMap, TabBar, TabView } from 'react-native-tab-view';
-const { width } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 
 const MenData = [
     {
@@ -241,12 +241,12 @@ export const SubService = () => {
                         <Image style={{ flex: 1, width: undefined, height: undefined, borderRadius: 10 }} source={require('../../assets/imgs/img1.jpg')}></Image>
                     </View>
                     <View style={styles.FixText}>
-                        <View style={{ flexDirection: 'row', }}>
-                            <Text style={{ fontSize: 18, fontWeight: 'bold', paddingBottom: 8, paddingRight: '25%' }}>កាត់សក់បុរស</Text>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Text style={{ fontSize: 18, fontWeight: 'bold', paddingBottom: 8, paddingRight: 0}}>កាត់សក់បុរស</Text>
                             <Text style={{ fontSize: 18, fontWeight: 'bold', paddingBottom: 8, color: 'red' }}>$ 5.00</Text>
                         </View>
-                        <View style={{ flexDirection: 'row' }}>
-                            <Text style={{ color: '#16247d', fontSize: 16, paddingBottom: 10, fontWeight: 'bold', paddingRight: '42%' }}>មែន​ ស្តាយ</Text>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Text style={{ color: '#16247d', fontSize: 16, paddingBottom: 10, fontWeight: 'bold' }}>មែន​ ស្តាយ</Text>
                             <Text style={{ color: 'red', fontSize: 16, paddingBottom: 10, }}>Up</Text>
                         </View>
                         <Text style={{ fontSize: 16, paddingBottom: 10 }}>⭐⭐⭐⭐⭐ (3)</Text>
@@ -254,17 +254,17 @@ export const SubService = () => {
                         <Text style={{ fontSize: 16, color: 'grey' }}>អនាម័យ ជូនបងប្អូន</Text>
                     </View>
                 </View>
-                <View style={{ marginTop: 30, alignContent: 'center', alignItems: 'center', flexDirection: 'row', marginLeft: '38%' }}>
-                    <View style={{ flexDirection: 'row' }}>
+                <View style={{alignContent: 'center', flexDirection: 'row',  justifyContent: 'center', position: 'absolute', bottom: height * 0.35, right: width * 0.35 }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                         <FontAwesome6 name='location-dot' color={'#16247d'}></FontAwesome6>
                         <Text style={{ color: '#16247d', fontWeight: 'bold', paddingLeft: 5 }}>None</Text>
                     </View>
-                    <View style={{ flexDirection: 'row', marginLeft: 20 }}>
+                    <View style={{ flexDirection: 'row', marginLeft: 0 }}>
                         <EvilIcons name='clock' color={'#16247d'} size={22}></EvilIcons>
                         <Text style={{ color: '#16247d', fontWeight: 'bold', paddingLeft: 5 }}>None</Text>
                     </View>
                 </View>
-                <View style={{ flexDirection: 'row', marginTop: 30, marginLeft: '15%' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', position: 'absolute', alignItems: 'center', alignSelf: 'center', bottom: height * 0.25  }}>
                     <TouchableOpacity onPress={()=>{
                         console.log("Click");
                         naviation.push('GalleryView');
@@ -308,7 +308,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 50,
         backgroundColor: '#16247d',
-        position: 'absolute',
         alignItems: 'flex-start',
         paddingTop: '3%',
         flexDirection: 'row'
@@ -321,9 +320,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: '30%'
     },
     Body: {
-        marginTop: '16%',
+        marginTop: 15,
         width: 'auto',
-        height: '24%',
         borderWidth: 1,
         borderColor: '#eef2fa',
         marginHorizontal: 15,
@@ -336,8 +334,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     Image: {
-        width: '35%',
-        height: '100%',
+        width: width * 0.3,
+        height: height * 0.2,
         backgroundColor: 'grey',
     },
     FixText: {
@@ -351,6 +349,7 @@ const styles = StyleSheet.create({
         width: 'auto',
         height: '100%',
         // backgroundColor: 'red'
+        marginTop: -width * 0.3
     },
     CardListMen: {
         marginHorizontal: 15,
