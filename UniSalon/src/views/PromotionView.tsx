@@ -9,7 +9,7 @@ import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { useNavigation } from '@react-navigation/native';
 
-const { width } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 
 const Promotion = () => {
     const navigation: any = useNavigation();
@@ -23,8 +23,8 @@ const Promotion = () => {
                 }}>
                 <View style={styles.CardPromotion}>
                     <View style={{
-                        width: '40%',
-                        height: '100%',
+                        width: width * 0.3,
+                        height: height * 0.15,
                         backgroundColor: '#ebebec',
                         borderRadius: 10,
                     }}>
@@ -43,8 +43,8 @@ const Promotion = () => {
                             fontSize: 15,
                             fontWeight: 'bold'
                         }}>មែន​ ស្តាយ</Text>
-                        <Text>⭐⭐⭐⭐⭐ (3)</Text>
-                        <Text>កាត់សក់បុរស free កក់សក់ជូន</Text>
+                        <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
+                        <Text style={{color: 'grey'}}>កាត់សក់បុរស free កក់សក់ជូន</Text>
                         <View style={{ flexDirection: 'row', }}>
                             <View style={{ flexDirection: 'row', paddingVertical: 15, paddingRight: 20 }}>
                                 <FontAwesome6 name="location-dot" style={{ paddingRight: 5, marginTop: 4 }} color={'#16247d'}></FontAwesome6>
@@ -110,18 +110,39 @@ export const PromotionView = () => {
     );
     return (
         <SafeAreaView>
-            <View style={styles.Appbar}>
+            {/* <View style={styles.Appbar}>
                 <TouchableOpacity activeOpacity={1} onPress={()=>{
                     console.log("Drawer start");
                     navigation.openDrawer();
                 }}>
                 <Feather name="menu" size={24} style={{
                     color: 'white',
-                    paddingRight: 125
+                    paddingRight: 0,
+                    position: 'absolute',
+                    left: 0
                 }} />
                 </TouchableOpacity>
                 <Text style={styles.TitleAppbar}>Promotions</Text>
-            </View>
+            </View> */}
+            <TouchableOpacity activeOpacity={1} onPress={() => {
+                navigation.openDrawer();
+                <View style={styles.Appbar}>
+                    <Feather name="menu" size={24} style={{
+                        color: 'white',
+                        paddingRight: 125
+                    }} />
+                    <Text style={styles.TitleAppbar}>Shops</Text>
+                </View>
+            }}>
+                <View style={styles.Appbar}>
+                    <Feather name="menu" size={24} style={{
+                        color: 'white',
+                        position: 'absolute',
+                        left: 15,
+                    }} />
+                    <Text style={styles.TitleAppbar}>Promotions</Text>
+                </View>
+            </TouchableOpacity>
             <View style={styles.RibonReward}>
                 <Ionicons name="ribbon-outline" size={45} style={{
                     color: '#16247d',
@@ -189,7 +210,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         textAlign: 'center',
         alignItems: 'center',
-        paddingHorizontal: 16
+        paddingHorizontal: 16,
+        justifyContent: 'center'
     },
     TitleAppbar: {
         fontSize: 18,

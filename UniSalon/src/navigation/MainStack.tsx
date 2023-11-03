@@ -25,6 +25,7 @@ import LoginView from '../views/LoginView';
 import CreateAccountView from '../views/CreateAccountView';
 import CreatePasswordView from '../views/CreatePasswordView';
 import ForgotPasswordView from '../views/ForgotPasswordView';
+import ShopDetailView from '../views/ShopDetailView';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -55,6 +56,7 @@ const MainStack = () => {
       <Stack.Screen component={CreateAccountView} name="CreateAccountView"/>
       <Stack.Screen component={CreatePasswordView} name="CreatePasswordView"/>
       <Stack.Screen component={ForgotPasswordView} name="ForgotPasswordView"/>
+      <Stack.Screen component={ShopDetailView} name="ShopDetailView"/>
     </Stack.Navigator>
   );
 };

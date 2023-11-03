@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { View, Text, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import SplashScreen from 'react-native-splash-screen';
+// import SplashScreen from 'react-native-splash-screen';
 import { HomeView } from './HomeView';
 import { ShopView } from './ShopView';
 import { VideoView } from './VideoView';
@@ -17,7 +17,7 @@ import { PromotionView } from './PromotionView';
 const Tab = createBottomTabNavigator();
 export const IndexView = () => {
     useEffect(() => {
-        if (Platform.OS === 'android') SplashScreen.hide();
+        // if (Platform.OS === 'android') SplashScreen.hide();
     }, []);
     return (
         <NavigationContainer>

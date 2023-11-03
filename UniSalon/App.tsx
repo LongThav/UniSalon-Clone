@@ -10,14 +10,14 @@ import { PromotionView } from './src/views/PromotionView';
 import { View, Text, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import SplashScreen from 'react-native-splash-screen';
+// import SplashScreen from 'react-native-splash-screen';
 
 
 
 const Tab = createBottomTabNavigator();
 const App = () => {
   useEffect(() => {
-    if (Platform.OS === 'android') SplashScreen.hide();
+    // if (Platform.OS === 'android') SplashScreen.hide();
   }, []);
   return (
     <Tab.Navigator screenOptions={{

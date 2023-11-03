@@ -9,7 +9,6 @@ export const ProfessorView = () => {
             <View style={styles.Appbar}>
                 <Feather name="menu" size={24} style={{
                     color: 'white',
-                    paddingRight: 125
                 }} />
                 <Text style={styles.TitleAppbar}>All Professors</Text>
                 <AntDesign name="search1" size={24} style={{
@@ -29,11 +28,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         textAlign: 'center',
         alignItems: 'center',
-        paddingHorizontal: 16
+        paddingHorizontal: 16,
+        justifyContent: 'space-between'
     },
     TitleAppbar: {
         fontSize: 18,
         color: 'white',
-        paddingRight: 90
+        paddingRight: 0
     },
 });

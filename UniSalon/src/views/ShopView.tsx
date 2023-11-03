@@ -1,219 +1,575 @@
-import React from "react";
+import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import { SafeAreaView, Text, View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import {
+  SafeAreaView,
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+  Dimensions,
+} from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import { useNavigation } from '@react-navigation/native';
-import { Image } from "react-native";
+import {useNavigation} from '@react-navigation/native';
+import {Image} from 'react-native';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 
 //navigation.openDrawer();
+const {width, height} = Dimensions.get('window');
 export const ShopView = () => {
-    const navigation: any = useNavigation();
-    return (
-        <SafeAreaView>
-           <TouchableOpacity activeOpacity={1} onPress={()=>{
+  const navigation: any = useNavigation();
+  return (
+    <SafeAreaView>
+      <View style={styles.Appbar}>
+        <Feather
+          onPress={() => {
             navigation.openDrawer();
-             <View style={styles.Appbar}>
-                <Feather name="menu" size={24} style={{
-                    color: 'white',
-                    paddingRight: 125
-                }} />
-                <Text style={styles.TitleAppbar}>Shops</Text>
+          }}
+          name="menu"
+          size={24}
+          style={{
+            color: 'white',
+            position: 'absolute',
+            left: 15,
+          }}
+        />
+        <Text style={styles.TitleAppbar}>Shops</Text>
+      </View>
+      <View style={styles.SearchBar}>
+        <EvilIcons name="search" size={24} color="grey" />
+        {/* <Text style={{ paddingHorizontal: 10 }}>Search Salons...</Text> */}
+        <TextInput
+          placeholder="Search Salons..."
+          placeholderTextColor={'grey'}
+          style={{
+            fontSize: 20,
+            marginLeft: 0,
+            margin: 0,
+            padding: 0,
+          }}></TextInput>
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Text
+          style={{
+            fontSize: 18,
+            color: '#16247d',
+            paddingVertical: 15,
+            marginHorizontal: 15,
+          }}>
+          Recommend Salons
+        </Text>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => {
+              console.log('Push new screen');
+              //   navigation.push('ShopDetailView')
+            }}>
+            <View style={{width: 'auto', height: 160, marginHorizontal: 15}}>
+              <View
+                style={{
+                  width: 150,
+                  height: 60,
+                  backgroundColor: 'grey',
+                  marginBottom: 8,
+                }}>
+                <Image
+                  style={{flex: 1, width: undefined, height: undefined}}
+                  source={require('../../assets/imgs/img1.jpg')}></Image>
+              </View>
+              <Text style={{color: 'grey'}}>មែនស្តាយ</Text>
+              <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
+              <View
+                style={{
+                  width: 150,
+                  marginTop: 10,
+                  height: 40,
+                  justifyContent: 'center',
+                  borderWidth: 1,
+                  borderColor: '#16247d',
+                  alignContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 5,
+                }}>
+                <Text style={{color: 'grey'}}>Booking Now</Text>
+              </View>
             </View>
-           }}>
-           <View style={styles.Appbar}>
-                <Feather name="menu" size={24} style={{
-                    color: 'white',
-                    paddingRight: 125
-                }} />
-                <Text style={styles.TitleAppbar}>Shops</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => {
+              console.log('Push new screen');
+              navigation.push('ShopDetailView');
+            }}>
+            <View style={{width: 'auto', height: 160, marginHorizontal: 15}}>
+              <View
+                style={{
+                  width: 150,
+                  height: 60,
+                  backgroundColor: 'grey',
+                  marginBottom: 8,
+                }}>
+                <Image
+                  style={{flex: 1, width: undefined, height: undefined}}
+                  source={require('../../assets/imgs/img1.jpg')}></Image>
+              </View>
+              <Text style={{color: 'grey'}}>មែនស្តាយ</Text>
+              <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
+              <View
+                style={{
+                  width: 150,
+                  marginTop: 10,
+                  height: 40,
+                  justifyContent: 'center',
+                  borderWidth: 1,
+                  borderColor: '#16247d',
+                  alignContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 5,
+                }}>
+                <Text style={{color: 'grey'}}>Booking Now</Text>
+              </View>
             </View>
-           </TouchableOpacity>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.SearchBar}>
-                    <EvilIcons name="search" size={24} color="grey" />
-                    <Text style={{ paddingHorizontal: 10 }}>Search Salons...</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => {
+              console.log('Push new screen');
+              navigation.push('ShopDetailView');
+            }}>
+            <View style={{width: 'auto', height: 160, marginHorizontal: 15}}>
+              <View
+                style={{
+                  width: 150,
+                  height: 60,
+                  backgroundColor: 'grey',
+                  marginBottom: 8,
+                }}>
+                <Image
+                  style={{flex: 1, width: undefined, height: undefined}}
+                  source={require('../../assets/imgs/img1.jpg')}></Image>
+              </View>
+              <Text style={{color: 'grey'}}>មែនស្តាយ</Text>
+              <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
+              <View
+                style={{
+                  width: 150,
+                  marginTop: 10,
+                  height: 40,
+                  justifyContent: 'center',
+                  borderWidth: 1,
+                  borderColor: '#16247d',
+                  alignContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: 5,
+                }}>
+                <Text style={{color: 'grey'}}>Booking Now</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </ScrollView>
+        <Text
+          style={{
+            paddingLeft: 15,
+            paddingTop: 15,
+            fontSize: 18,
+            color: '#16247d',
+          }}>
+          More Salons
+        </Text>
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            console.log('Click ប៉ែន');
+            navigation.push('ShopDetailView');
+          }}>
+          <View
+            style={{
+              paddingVertical: 15,
+              paddingHorizontal: 15,
+              flexDirection: 'row',
+            }}>
+            <View
+              style={{
+                width: 120,
+                height: 120,
+                backgroundColor: '#ebebec',
+                borderRadius: 10,
+              }}>
+              <Image
+                style={{
+                  flex: 1,
+                  width: undefined,
+                  height: undefined,
+                  borderRadius: 10,
+                }}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  paddingLeft: 8,
+                }}>
+                <View>
+                  <Text style={{fontSize: 18, color: 'black'}}>ប៉ែន ស្តាយ</Text>
+                  <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
                 </View>
-                <Text style={{ fontSize: 18, color: '#16247d', paddingVertical: 15, marginHorizontal: 15 }}>Recommend Salons</Text>
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
-                    {/* <NavigationContainer>
-                        <Stack.Navigator initialRouteName="Home">
-                            <Stack.Screen name="Home" component={HomeScreen} />
-                            <Stack.Screen name="Second" component={SecondScreen} />
-                        </Stack.Navigator>
-                    </NavigationContainer> */}
-                    <TouchableOpacity onPress={() => {
-                        console.log("Push new screen");
-                    }}>
-                        <View style={{ width: 'auto', height: 160, marginLeft: 15, }}>
-                            <View style={{ width: 150, height: 60, backgroundColor: 'grey', marginBottom: 8 }}></View>
-                            <Text>មែនស្តាយ</Text>
-                            <Text>⭐⭐⭐⭐⭐ (3)</Text>
-                            <View style={{
-                                width: 150,
-                                marginTop: 10,
-                                height: 40,
-                                justifyContent: 'center',
-                                borderWidth: 1,
-                                borderColor: '#16247d',
-                                alignContent: 'center',
-                                alignItems: 'center',
-                                borderRadius: 5,
-                            }}><Text>Booking Now</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    <View style={{ width: 'auto', height: 160, marginLeft: 15, }}>
-                        <View style={{ width: 150, height: 60, backgroundColor: 'grey', marginBottom: 8 }}></View>
-                        <Text>មែនស្តាយ</Text>
-                        <Text>⭐⭐⭐⭐⭐ (3)</Text>
-                        <View style={{
-                            width: 150,
-                            marginTop: 10,
-                            height: 40,
-                            justifyContent: 'center',
-                            borderWidth: 1,
-                            borderColor: '#16247d',
-                            alignContent: 'center',
-                            alignItems: 'center',
-                            borderRadius: 5,
-                        }}><Text>Booking Now</Text>
-                        </View>
-                    </View>
-                    <View style={{ width: 'auto', height: 160, marginLeft: 15, }}>
-                        <View style={{ width: 150, height: 60, backgroundColor: 'grey', marginBottom: 8 }}></View>
-                        <Text>មែនស្តាយ</Text>
-                        <Text>⭐⭐⭐⭐⭐ (3)</Text>
-                        <View style={{
-                            width: 150,
-                            marginTop: 10,
-                            height: 40,
-                            justifyContent: 'center',
-                            borderWidth: 1,
-                            borderColor: '#16247d',
-                            alignContent: 'center',
-                            alignItems: 'center',
-                            borderRadius: 5,
-                        }}><Text>Booking Now</Text>
-                        </View>
-                    </View>
-                </ScrollView>
-                <Text style={{ paddingLeft: 15, paddingTop: 15, fontSize: 18, color: '#16247d' }}>More Salons</Text>
-                <View style={{ width: 'auto', height: 150, margin: 15, paddingLeft: 10, paddingTop: 5, flexDirection: 'row' }}>
-                    <View style={{
-                        width: 120,
-                        height: 120,
-                        backgroundColor: '#ebebec',
-                        borderRadius: 10,
-                    }}>
-                        <Image style={{ flex: 1, width: undefined, height: undefined, borderRadius: 10 }} source={require('../../assets/imgs/img1.jpg')}></Image>
-                    </View>
-                    <View>
-                        <View style={{ flexDirection: 'row', marginLeft: 10 }}>
-                            <View>
-                                <Text style={{ fontSize: 18, color: 'black' }}>ប៉ែន ស្តាយ</Text>
-                                <Text>⭐⭐⭐⭐⭐ (3)</Text>
-                            </View>
-                            <View style={{ width: 70, height: 30, borderWidth: 1, justifyContent: 'center', alignItems: 'center', borderRadius: 5, borderColor: '#16247d', marginLeft: 30 }}>
-                                <Text>Booking</Text>
-                            </View>
-                        </View>
-                        <View style={{ padding: 10 }}>
-                            <Text style={{ fontSize: 16, color: 'grey' }}>បម្រើសេវាកម្មជូនអស់លោក</Text>
-                            <Text style={{ fontSize: 16, color: 'grey' }}>លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព</Text>
-                            <View style={{ flexDirection: 'row', }}>
-                                <Text style={{ paddingVertical: 10 }}>None</Text>
-                                <Text style={{ paddingHorizontal: 20, paddingVertical: 10 }}>Opening</Text>
-                            </View>
-                        </View>
-                    </View>
+                <View
+                  style={{
+                    width: 70,
+                    height: 30,
+                    borderWidth: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 5,
+                    borderColor: '#16247d',
+                    marginLeft: 30,
+                  }}>
+                  <Text style={{color: 'grey'}}>Booking</Text>
                 </View>
-                <View style={{ width: 'auto', height: 150, margin: 15, paddingLeft: 10, paddingTop: 5, flexDirection: 'row' }}>
-                    <View style={{
-                        width: 120,
-                        height: 120,
-                        backgroundColor: '#ebebec',
-                        borderRadius: 10,
+              </View>
+              <View
+                style={{
+                  padding: 10,
+                  flexDirection: 'column',
+                  justifyContent: 'flex-start',
+                }}>
+                <Text style={{fontSize: 16, color: 'grey'}}>
+                  បម្រើសេវាកម្មជូនអស់លោក
+                </Text>
+                <Text style={{fontSize: 16, color: 'grey'}}>
+                  លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
+                </Text>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      paddingVertical: 15,
+                      paddingRight: 20,
                     }}>
-                        <Image style={{ flex: 1, width: undefined, height: undefined, borderRadius: 10 }} source={require('../../assets/imgs/img1.jpg')}></Image>
-                    </View>
-                    <View>
-                        <View style={{ flexDirection: 'row', marginLeft: 10 }}>
-                            <View>
-                                <Text style={{ fontSize: 18, color: 'black' }}>ប៉ែន ស្តាយ</Text>
-                                <Text>⭐⭐⭐⭐⭐ (3)</Text>
-                            </View>
-                            <View style={{ width: 70, height: 30, borderWidth: 1, justifyContent: 'center', alignItems: 'center', borderRadius: 5, borderColor: '#16247d', marginLeft: 30 }}>
-                                <Text>Booking</Text>
-                            </View>
-                        </View>
-                        <View style={{ padding: 10 }}>
-                            <Text style={{ fontSize: 16, color: 'grey' }}>បម្រើសេវាកម្មជូនអស់លោក</Text>
-                            <Text style={{ fontSize: 16, color: 'grey' }}>លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព</Text>
-                            <View style={{ flexDirection: 'row', }}>
-                                <Text style={{ paddingVertical: 10 }}>None</Text>
-                                <Text style={{ paddingHorizontal: 20, paddingVertical: 10 }}>Opening</Text>
-                            </View>
-                        </View>
-                    </View>
+                    <FontAwesome6
+                      name="location-dot"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      None
+                    </Text>
+                  </View>
+                  <View style={{flexDirection: 'row', paddingVertical: 15}}>
+                    <FontAwesome6
+                      name="clock"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      Opening
+                    </Text>
+                  </View>
                 </View>
-                <View style={{ width: 'auto', height: 150, margin: 15, paddingLeft: 10, paddingTop: 5, flexDirection: 'row' }}>
-                    <View style={{
-                        width: 120,
-                        height: 120,
-                        backgroundColor: '#ebebec',
-                        borderRadius: 10,
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            console.log('Click ប៉ែន');
+            navigation.push('ShopDetailView');
+          }}>
+          <View
+            style={{
+              paddingVertical: 15,
+              paddingHorizontal: 15,
+              flexDirection: 'row',
+            }}>
+            <View
+              style={{
+                width: 120,
+                height: 120,
+                backgroundColor: '#ebebec',
+                borderRadius: 10,
+              }}>
+              <Image
+                style={{
+                  flex: 1,
+                  width: undefined,
+                  height: undefined,
+                  borderRadius: 10,
+                }}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  paddingLeft: 8,
+                }}>
+                <View>
+                  <Text style={{fontSize: 18, color: 'black'}}>ប៉ែន ស្តាយ</Text>
+                  <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
+                </View>
+                <View
+                  style={{
+                    width: 70,
+                    height: 30,
+                    borderWidth: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 5,
+                    borderColor: '#16247d',
+                    marginLeft: 30,
+                  }}>
+                  <Text style={{color: 'grey'}}>Booking</Text>
+                </View>
+              </View>
+              <View
+                style={{
+                  padding: 10,
+                  flexDirection: 'column',
+                  justifyContent: 'flex-start',
+                }}>
+                <Text style={{fontSize: 16, color: 'grey'}}>
+                  បម្រើសេវាកម្មជូនអស់លោក
+                </Text>
+                <Text style={{fontSize: 16, color: 'grey'}}>
+                  លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
+                </Text>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      paddingVertical: 15,
+                      paddingRight: 20,
                     }}>
-                        <Image style={{ flex: 1, width: undefined, height: undefined, borderRadius: 10 }} source={require('../../assets/imgs/img1.jpg')}></Image>
-                    </View>
-                    <View>
-                        <View style={{ flexDirection: 'row', marginLeft: 10 }}>
-                            <View>
-                                <Text style={{ fontSize: 18, color: 'black' }}>ប៉ែន ស្តាយ</Text>
-                                <Text>⭐⭐⭐⭐⭐ (3)</Text>
-                            </View>
-                            <View style={{ width: 70, height: 30, borderWidth: 1, justifyContent: 'center', alignItems: 'center', borderRadius: 5, borderColor: '#16247d', marginLeft: 30 }}>
-                                <Text>Booking</Text>
-                            </View>
-                        </View>
-                        <View style={{ padding: 10 }}>
-                            <Text style={{ fontSize: 16, color: 'grey' }}>បម្រើសេវាកម្មជូនអស់លោក</Text>
-                            <Text style={{ fontSize: 16, color: 'grey' }}>លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព</Text>
-                            <View style={{ flexDirection: 'row', }}>
-                                <Text style={{ paddingVertical: 10 }}>None</Text>
-                                <Text style={{ paddingHorizontal: 20, paddingVertical: 10 }}>Opening</Text>
-                            </View>
-                        </View>
-                    </View>
+                    <FontAwesome6
+                      name="location-dot"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      None
+                    </Text>
+                  </View>
+                  <View style={{flexDirection: 'row', paddingVertical: 15}}>
+                    <FontAwesome6
+                      name="clock"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      Opening
+                    </Text>
+                  </View>
                 </View>
-            </ScrollView>
-        </SafeAreaView>
-    );
-}
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            console.log('Click ប៉ែន');
+            navigation.push('ShopDetailView');
+          }}>
+          <View
+            style={{
+              paddingVertical: 15,
+              paddingHorizontal: 15,
+              flexDirection: 'row',
+            }}>
+            <View
+              style={{
+                width: 120,
+                height: 120,
+                backgroundColor: '#ebebec',
+                borderRadius: 10,
+              }}>
+              <Image
+                style={{
+                  flex: 1,
+                  width: undefined,
+                  height: undefined,
+                  borderRadius: 10,
+                }}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  paddingLeft: 8,
+                }}>
+                <View>
+                  <Text style={{fontSize: 18, color: 'black'}}>ប៉ែន ស្តាយ</Text>
+                  <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
+                </View>
+                <View
+                  style={{
+                    width: 70,
+                    height: 30,
+                    borderWidth: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 5,
+                    borderColor: '#16247d',
+                    marginLeft: 30,
+                  }}>
+                  <Text style={{color: 'grey'}}>Booking</Text>
+                </View>
+              </View>
+              <View
+                style={{
+                  padding: 10,
+                  flexDirection: 'column',
+                  justifyContent: 'flex-start',
+                }}>
+                <Text style={{fontSize: 16, color: 'grey'}}>
+                  បម្រើសេវាកម្មជូនអស់លោក
+                </Text>
+                <Text style={{fontSize: 16, color: 'grey'}}>
+                  លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
+                </Text>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      paddingVertical: 15,
+                      paddingRight: 20,
+                    }}>
+                    <FontAwesome6
+                      name="location-dot"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      None
+                    </Text>
+                  </View>
+                  <View style={{flexDirection: 'row', paddingVertical: 15}}>
+                    <FontAwesome6
+                      name="clock"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      Opening
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            console.log('Click ប៉ែន');
+            navigation.push('ShopDetailView');
+          }}>
+          <View
+            style={{
+              paddingVertical: 15,
+              paddingHorizontal: 15,
+              flexDirection: 'row',
+            }}>
+            <View
+              style={{
+                width: 120,
+                height: 120,
+                backgroundColor: '#ebebec',
+                borderRadius: 10,
+              }}>
+              <Image
+                style={{
+                  flex: 1,
+                  width: undefined,
+                  height: undefined,
+                  borderRadius: 10,
+                }}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  paddingLeft: 8,
+                }}>
+                <View>
+                  <Text style={{fontSize: 18, color: 'black'}}>ប៉ែន ស្តាយ</Text>
+                  <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
+                </View>
+                <View
+                  style={{
+                    width: 70,
+                    height: 30,
+                    borderWidth: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 5,
+                    borderColor: '#16247d',
+                    marginLeft: 30,
+                  }}>
+                  <Text style={{color: 'grey'}}>Booking</Text>
+                </View>
+              </View>
+              <View
+                style={{
+                  padding: 10,
+                  flexDirection: 'column',
+                  justifyContent: 'flex-start',
+                }}>
+                <Text style={{fontSize: 16, color: 'grey'}}>
+                  បម្រើសេវាកម្មជូនអស់លោក
+                </Text>
+                <Text style={{fontSize: 16, color: 'grey'}}>
+                  លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
+                </Text>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={{paddingVertical: 10, color: 'grey'}}>None</Text>
+                  <Text
+                    style={{
+                      paddingHorizontal: 20,
+                      paddingVertical: 10,
+                      color: 'grey',
+                    }}>
+                    Opening
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
-    Appbar: {
-        width: "auto",
-        height: 60,
-        backgroundColor: '#16247d',
-        flexDirection: 'row',
-        textAlign: 'center',
-        alignItems: 'center',
-        paddingHorizontal: 16
-    },
-    TitleAppbar: {
-        fontSize: 18,
-        color: 'white',
-    },
-    SearchBar: {
-        width: 'auto',
-        margin: 15,
-        height: 45,
-        borderWidth: 0.5,
-        borderColor: 'grey',
-        borderRadius: 10,
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        paddingHorizontal: 10,
-        flexDirection: 'row'
-    },
+  Appbar: {
+    width: 'auto',
+    height: 60,
+    backgroundColor: '#16247d',
+    flexDirection: 'row',
+    textAlign: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    justifyContent: 'center',
+  },
+  TitleAppbar: {
+    fontSize: 18,
+    color: 'white',
+  },
+  SearchBar: {
+    width: 'auto',
+    margin: 15,
+    height: 45,
+    borderWidth: 0.5,
+    borderColor: 'grey',
+    borderRadius: 10,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    flexDirection: 'row',
+  },
 });

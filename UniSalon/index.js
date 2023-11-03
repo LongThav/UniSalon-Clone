@@ -10,6 +10,8 @@ import { SubService } from './src/views/SubService';
 
 AppRegistry.registerComponent(appName, () => MainApp);
 
+//select filter screen in react native
+//https://www.youtube.com/watch?v=QWZbifSLQsA
 
 //https://www.youtube.com/watch?v=AnjyzruZ36E
 
