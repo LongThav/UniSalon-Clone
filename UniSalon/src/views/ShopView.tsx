@@ -66,7 +66,7 @@ export const ShopView = () => {
               console.log('Push new screen');
                 navigation.push('ShopDetailView')
             }}>
-            <View style={{width: 'auto', height: 160, marginHorizontal: 15}}>
+            <View style={{width: 'auto', height: 180, marginHorizontal: 15}}>
               <View
                 style={{
                   width: 150,
@@ -77,6 +77,15 @@ export const ShopView = () => {
                 <Image
                   style={{flex: 1, width: undefined, height: undefined}}
                   source={require('../../assets/imgs/img1.jpg')}></Image>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+              <FontAwesome6
+                      name="location-dot"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      None
+                    </Text>
               </View>
               <Text style={{color: 'grey'}}>មែនស្តាយ</Text>
               <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
@@ -100,9 +109,9 @@ export const ShopView = () => {
             activeOpacity={1}
             onPress={() => {
               console.log('Push new screen');
-              navigation.push('ShopDetailView');
+                navigation.push('ShopDetailView')
             }}>
-            <View style={{width: 'auto', height: 160, marginHorizontal: 15}}>
+            <View style={{width: 'auto', height: 180, marginHorizontal: 15}}>
               <View
                 style={{
                   width: 150,
@@ -113,6 +122,15 @@ export const ShopView = () => {
                 <Image
                   style={{flex: 1, width: undefined, height: undefined}}
                   source={require('../../assets/imgs/img1.jpg')}></Image>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+              <FontAwesome6
+                      name="location-dot"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      None
+                    </Text>
               </View>
               <Text style={{color: 'grey'}}>មែនស្តាយ</Text>
               <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
@@ -136,9 +154,9 @@ export const ShopView = () => {
             activeOpacity={1}
             onPress={() => {
               console.log('Push new screen');
-              navigation.push('ShopDetailView');
+                navigation.push('ShopDetailView')
             }}>
-            <View style={{width: 'auto', height: 160, marginHorizontal: 15}}>
+            <View style={{width: 'auto', height: 180, marginHorizontal: 15}}>
               <View
                 style={{
                   width: 150,
@@ -149,6 +167,15 @@ export const ShopView = () => {
                 <Image
                   style={{flex: 1, width: undefined, height: undefined}}
                   source={require('../../assets/imgs/img1.jpg')}></Image>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+              <FontAwesome6
+                      name="location-dot"
+                      style={{paddingRight: 5, marginTop: 4}}
+                      color={'#16247d'}></FontAwesome6>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      None
+                    </Text>
               </View>
               <Text style={{color: 'grey'}}>មែនស្តាយ</Text>
               <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
@@ -168,6 +195,7 @@ export const ShopView = () => {
               </View>
             </View>
           </TouchableOpacity>
+    
         </ScrollView>
         <Text
           style={{

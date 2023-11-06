@@ -6,6 +6,7 @@ import {
   ScrollView,
   Image,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -25,6 +26,10 @@ const ListProfessor = [
     role: 'Professor',
     rate: '5',
     other: 'Professor of ...',
+    phone: '0889246027',
+    mail: 'systhan@gmail.com',
+    professional: 'Professor of Men Style',
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia'
   },
   {
     id: '2',
@@ -32,6 +37,10 @@ const ListProfessor = [
     role: 'ជាង',
     rate: '5',
     other: 'Professor of ...',
+    phone: '0889246027',
+    mail: 'kong49@gmail.com',
+    professional: 'Professor of Men Style',
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia'
   },
   {
     id: '1',
@@ -39,6 +48,10 @@ const ListProfessor = [
     role: 'Professor',
     rate: '5',
     other: 'Professor of ...',
+    phone: '0889246027',
+    mail: 'chheangthea@gmail.com',
+    professional: 'Professor of Men Style',
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia'
   },
 ];
 
@@ -132,6 +145,9 @@ const ShopDetailView = () => {
           }}>
           ⭐⭐⭐⭐⭐
         </Text>
+        <TouchableOpacity activeOpacity={1} onPress={()=>{
+          navigation.push('RateView');
+        }}>
         <Text
           style={{
             textAlign: 'center',
@@ -144,6 +160,7 @@ const ShopDetailView = () => {
           }}>
           3 Reviews
         </Text>
+        </TouchableOpacity>
         <View
           style={{width: 'auto', height: 0.5, backgroundColor: 'grey'}}></View>
         <Text
@@ -219,6 +236,9 @@ const ShopDetailView = () => {
           <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
             Address
           </Text>
+          <TouchableOpacity activeOpacity={1} onPress={()=>{
+            navigation.push('LocationShopView');
+          }}>
           <View style={{flexDirection: 'row'}}>
             <Text
               style={{
@@ -232,6 +252,7 @@ const ShopDetailView = () => {
             </Text>
             <Entypo name="location" color={'blue'} size={22}></Entypo>
           </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.FrmNameII}>
           <EvilIcons name="location" size={25} color={'black'}></EvilIcons>
@@ -343,42 +364,59 @@ const ShopDetailView = () => {
           Our Professional
         </Text>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {ListProfessor.map(e => {
+          {ListProfessor.map((e, index) => {
             return (
-              <View style={styles.Card}>
-                <View
-                  style={{
-                    width: 80,
-                    height: 80,
-                    backgroundColor: 'white',
-                    borderRadius: 80 / 2,
-                  }}>
-                  <Image
+              <TouchableOpacity
+              key={index}
+              onPress={()=>{
+                // console.log("Click", e.name);
+                navigation.push('ProfessionalDetailView', {
+                  name: e.name,
+                  role: e.role,
+                  rate: e.rate,
+                  other: e.other,
+                  id: e.id,
+                  phone: e.phone,
+                  mail: e.mail,
+                  location: e.location,
+                  professional: e.professional,
+                })
+              }}>
+                <View style={styles.Card}>
+                  <View
                     style={{
-                      flex: 1,
                       width: 80,
                       height: 80,
+                      backgroundColor: 'white',
                       borderRadius: 80 / 2,
-                    }}
-                    source={require('../../assets/imgs/img1.jpg')}></Image>
+                    }}>
+                    <Image
+                      style={{
+                        flex: 1,
+                        width: 80,
+                        height: 80,
+                        borderRadius: 80 / 2,
+                      }}
+                      source={require('../../assets/imgs/img1.jpg')}></Image>
+                  </View>
+                  <Text
+                    style={{paddingTop: 5, color: 'blue', fontWeight: 'bold'}}>
+                    {e.role}
+                  </Text>
+                  <Text
+                    style={{paddingTop: 5, color: 'blue', fontWeight: 'bold'}}>
+                    {e.name}
+                  </Text>
+                  <Text
+                    style={{paddingTop: 5, color: 'grey', fontWeight: 'bold'}}>
+                    ⭐⭐⭐⭐⭐({e.rate})
+                  </Text>
+                  <Text
+                    style={{paddingTop: 5, color: 'black', fontWeight: 'bold'}}>
+                    {e.other}
+                  </Text>
                 </View>
-                <Text
-                  style={{paddingTop: 5, color: 'blue', fontWeight: 'bold'}}>
-                  {e.role}
-                </Text>
-                <Text
-                  style={{paddingTop: 5, color: 'blue', fontWeight: 'bold'}}>
-                  {e.name}
-                </Text>
-                <Text
-                  style={{paddingTop: 5, color: 'grey', fontWeight: 'bold'}}>
-                  ⭐⭐⭐⭐⭐({e.rate})
-                </Text>
-                <Text
-                  style={{paddingTop: 5, color: 'black', fontWeight: 'bold'}}>
-                  {e.other}
-                </Text>
-              </View>
+              </TouchableOpacity>
             );
           })}
         </ScrollView>
@@ -400,7 +438,7 @@ const ShopDetailView = () => {
           Mobile Service
         </Text>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {MobileServieData.map(e => {
+          {MobileServieData.map((e, index) => {
             return (
               <View style={styles.CardII}>
                 <Text
@@ -448,6 +486,10 @@ const ShopDetailView = () => {
                   }}>
                   {e.price}
                 </Text>
+                <TouchableOpacity activeOpacity={1} onPress={()=>{
+                  console.log("Start Order...");
+                  navigation.push('OrderView');
+                }}>
                 <View
                   style={{
                     paddingVertical: 5,
@@ -461,6 +503,7 @@ const ShopDetailView = () => {
                     {e.order}
                   </Text>
                 </View>
+                </TouchableOpacity>
               </View>
             );
           })}
@@ -494,7 +537,7 @@ const ShopDetailView = () => {
                 borderRadius: 8,
                 flexDirection: 'row',
                 alignItems: 'center',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
               }}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Ionicons

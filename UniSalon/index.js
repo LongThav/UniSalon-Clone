@@ -22,3 +22,6 @@ AppRegistry.registerComponent(appName, () => MainApp);
 
 //navigator
 //https://www.youtube.com/watch?v=TRmsdRjn2lw
+
+
+//https://www.youtube.com/watch?v=efT8Tds7jOY

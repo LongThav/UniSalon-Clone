@@ -26,6 +26,10 @@ import CreateAccountView from '../views/CreateAccountView';
 import CreatePasswordView from '../views/CreatePasswordView';
 import ForgotPasswordView from '../views/ForgotPasswordView';
 import ShopDetailView from '../views/ShopDetailView';
+import {ProfessionalDetailView} from '../views/ProfessionalDetailView';
+import RateView from '../views/RateView';
+import LocationShopView from '../views/LocationShopView';
+import OrderView from '../views/OrderView';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -57,6 +61,10 @@ const MainStack = () => {
       <Stack.Screen component={CreatePasswordView} name="CreatePasswordView"/>
       <Stack.Screen component={ForgotPasswordView} name="ForgotPasswordView"/>
       <Stack.Screen component={ShopDetailView} name="ShopDetailView"/>
+      <Stack.Screen component={ProfessionalDetailView} name="ProfessionalDetailView"/>
+      <Stack.Screen component={RateView} name="RateView"/>
+      <Stack.Screen component={LocationShopView} name="LocationShopView"/>
+      <Stack.Screen component={OrderView} name="OrderView"/>
     </Stack.Navigator>
   );
 };

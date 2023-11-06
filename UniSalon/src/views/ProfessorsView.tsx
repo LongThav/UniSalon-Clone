@@ -3,6 +3,16 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { SafeAreaView, Text, View, StyleSheet } from "react-native";
 
+const SideBarFilter = [
+    {
+        icons: 'search1',
+        titile: 'All Professors'
+    },
+    {
+        icons: ''
+    }
+];
+
 export const ProfessorView = () => {
     return (
         <SafeAreaView>
