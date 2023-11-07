@@ -43,71 +43,71 @@ export const HomeView = () => {
             }}>
 
             </View> */}
-      <View style={styles.AppBar}>
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={() => {
-            navigation.openDrawer();
-          }}>
-          <Entypo name="menu" size={30} color={'grey'}></Entypo>
-        </TouchableOpacity>
-        <View style={{flexDirection: 'row'}}>
-          {/* <Text style={{ fontSize: 20, marginLeft: 15 }}>Search Salons...</Text> */}
-          <TextInput
-            placeholder="Search Salons..."
-            placeholderTextColor={'grey'}
-            style={{
-              fontSize: 20,
-              marginLeft: 0,
-              margin: 0,
-              padding: 0,
-            }}></TextInput>
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <AntDesign color={'grey'} name="search1" size={30}></AntDesign>
-          <View
-            style={{
-              width: 30,
-              height: 30,
-              borderRadius: 30 / 2,
-              backgroundColor: 'grey',
-              marginHorizontal: 15,
+        <View style={styles.AppBar}>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => {
+              navigation.openDrawer();
             }}>
-            <Image
-              style={{flex: 1, width: 30, height: 30, borderRadius: 30 / 2}}
-              source={require('../../assets/imgs/cam_flag.png')}></Image>
+            <Entypo name="menu" size={30} color={'grey'}></Entypo>
+          </TouchableOpacity>
+          <View style={{flexDirection: 'row'}}>
+            {/* <Text style={{ fontSize: 20, marginLeft: 15 }}>Search Salons...</Text> */}
+            <TextInput
+              placeholder="Search Salons..."
+              placeholderTextColor={'grey'}
+              style={{
+                fontSize: 20,
+                marginLeft: 0,
+                margin: 0,
+                padding: 0,
+              }}></TextInput>
           </View>
-          <MaterialIcons
-            name="notifications-none"
-            size={30}
-            color={'grey'}></MaterialIcons>
+          <View style={{flexDirection: 'row'}}>
+            <AntDesign color={'grey'} name="search1" size={30}></AntDesign>
+            <View
+              style={{
+                width: 30,
+                height: 30,
+                borderRadius: 30 / 2,
+                backgroundColor: 'grey',
+                marginHorizontal: 15,
+              }}>
+              <Image
+                style={{flex: 1, width: 30, height: 30, borderRadius: 30 / 2}}
+                source={require('../../assets/imgs/cam_flag.png')}></Image>
+            </View>
+            <MaterialIcons
+              name="notifications-none"
+              size={30}
+              color={'grey'}></MaterialIcons>
+          </View>
         </View>
-      </View>
-      <ScrollView
-        style={{position: 'absolute', marginTop: width * 0.2}}
-        showsHorizontalScrollIndicator={false}
-        horizontal={true}>
-        <TouchableOpacity activeOpacity={1} style={styles.FilterAll}>
-          <Text style={{fontWeight: 'bold', color: 'grey'}}>All</Text>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={1} style={styles.FilterII}>
-          <Text style={{fontWeight: 'bold', color: 'grey'}}>
-            Mobile Services
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={1} style={styles.FilterII}>
-          <Entypo name="shop" size={20} color={'grey'}></Entypo>
-          <Text style={{fontWeight: 'bold', color: 'grey', marginLeft: 15}}>
-            Mobile Services
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={1} style={styles.FilterII}>
-          <Fontisto name="scissors" size={20} color={'grey'}></Fontisto>
-          <Text style={{fontWeight: 'bold', color: 'grey', marginLeft: 15}}>
-            Professor
-          </Text>
-        </TouchableOpacity>
-      </ScrollView>
+        <ScrollView
+          style={{position: 'absolute', marginTop: height * 0.12}}
+          showsHorizontalScrollIndicator={false}
+          horizontal={true}>
+          <TouchableOpacity activeOpacity={1} style={styles.FilterAll}>
+            <Text style={{fontWeight: 'bold', color: 'grey'}}>All</Text>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={1} style={styles.FilterII}>
+            <Text style={{fontWeight: 'bold', color: 'grey'}}>
+              Mobile Services
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={1} style={styles.FilterII}>
+            <Entypo name="shop" size={20} color={'grey'}></Entypo>
+            <Text style={{fontWeight: 'bold', color: 'grey', marginLeft: 15}}>
+              Mobile Services
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={1} style={styles.FilterII}>
+            <Fontisto name="scissors" size={20} color={'grey'}></Fontisto>
+            <Text style={{fontWeight: 'bold', color: 'grey', marginLeft: 15}}>
+              Professor
+            </Text>
+          </TouchableOpacity>
+        </ScrollView>
       <MaterialCommunityIcons
         size={25}
         color={'blue'}
@@ -127,11 +127,12 @@ const styles = StyleSheet.create({
     width: '95%',
     paddingVertical: 15,
     paddingHorizontal: 10,
-    margin: 10,
     backgroundColor: 'white',
     borderRadius: 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginHorizontal: 10,
+    marginVertical: 10,
     position: 'absolute',
   },
   container: {
@@ -178,7 +179,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignContent: 'center',
     alignItems: 'center',
-    bottom: '50%',
+    bottom: height * 0.5,
     right: 0,
     marginRight: 15,
   },
@@ -191,7 +192,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignContent: 'center',
     alignItems: 'center',
-    bottom: '43%',
+    bottom: height * 0.43,
     right: 0,
     marginRight: 15,
   },

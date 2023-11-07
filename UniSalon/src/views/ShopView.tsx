@@ -107,7 +107,7 @@ export const ShopView = () => {
         }}></View>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{marginBottom: height * 0.08}}>
+        style={{marginBottom: height * 0.3}}>
         <Text
           style={{
             fontSize: 18,
@@ -162,7 +162,12 @@ export const ShopView = () => {
                       name="location-dot"
                       style={{paddingRight: 5, marginTop: 0}}
                       color={'#16247d'}></FontAwesome6>
-                    <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: 12}}>
+                    <Text
+                      style={{
+                        color: '#16247d',
+                        fontWeight: 'bold',
+                        fontSize: 12,
+                      }}>
                       None
                     </Text>
                   </View>
@@ -288,15 +293,16 @@ export const ShopView = () => {
                   </View>
                   <View
                     style={{
-                      paddingHorizontal: 17,
+                      paddingLeft: 17,
+                      paddingRight: 5,
                       paddingVertical: 10,
                       flexDirection: 'column',
-                      justifyContent: 'flex-start',
+                      // justifyContent: 'flex-start',
                     }}>
-                    <Text style={{fontSize: 14.5, color: 'grey'}}>
+                    <Text style={{fontSize: 14.5, color: 'grey', fontWeight: 'bold'}}>
                       បម្រើសេវាកម្មជូនអស់លោក
                     </Text>
-                    <Text style={{fontSize: 14.5, color: 'grey'}}>
+                    <Text style={{fontSize: 14.5, color: 'grey', fontWeight: "bold"}}>
                       លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
                     </Text>
                     <View style={{flexDirection: 'row'}}>
@@ -344,7 +350,8 @@ export const ShopView = () => {
                       borderColor: '#16247d',
                       position: 'absolute',
                       right: 0,
-                      marginTop: 17,
+                      top: 0,
+                      marginTop: 0,
                       marginRight: 15,
                     }}>
                     <Text style={{color: '#16247d', fontWeight: 'bold'}}>

@@ -269,10 +269,10 @@ export const BookingDetailView = () => {
               }}>
               ជាង​ សុផា
             </Text>
-            <Text style={{fontWeight: 'bold', paddingBottom: 8}}>
+            <Text style={{fontWeight: 'bold', paddingBottom: 8, color: 'grey'}}>
               Professor of Men Style
             </Text>
-            <Text style={{fontWeight: 'bold'}}>098987487</Text>
+            <Text style={{fontWeight: 'bold', color: 'grey'}}>098987487</Text>
           </View>
         </View>
         <View

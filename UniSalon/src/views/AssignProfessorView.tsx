@@ -228,6 +228,7 @@ export const AssignProfessorView = () => {
                     marginTop: 5,
                     fontSize: 15,
                     fontWeight: 'bold',
+                    color: 'grey'
                   }}>
                   Professor Sythan
                 </Text>
@@ -240,7 +241,7 @@ export const AssignProfessorView = () => {
                   }}>
                   ⭐⭐⭐⭐⭐
                 </Text>
-                <Text style={{marginTop: 8, marginLeft: 23}}>
+                <Text style={{marginTop: 8, marginLeft: 23, color:'grey'}}>
                   8 Credits / 2 Reviews
                 </Text>
               </View>
