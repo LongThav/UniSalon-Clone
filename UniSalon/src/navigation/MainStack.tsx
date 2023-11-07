@@ -17,7 +17,6 @@ import {ChooseServiceView} from '../views/ChooseServiceView';
 import { BookingDetailView } from '../views/BookingDetailView';
 import { EditBookingView } from '../views/EditBookingView';
 import DrawerNavigate from '../navigation/Drawer';
- 
 
 import App from '../../App';
 import TestView from '../views/TestView';
@@ -30,6 +29,10 @@ import {ProfessionalDetailView} from '../views/ProfessionalDetailView';
 import RateView from '../views/RateView';
 import LocationShopView from '../views/LocationShopView';
 import OrderView from '../views/OrderView';
+import ChooseMobileServiceView from '../views/ChooseMobileServiceView';
+import OrderDetailView from '../views/OrderDetailView';
+import FlowBookingView from '../views/FlowBookingView';
+import SelectProfessorView from '../views/SelectProfessorView';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -65,6 +68,10 @@ const MainStack = () => {
       <Stack.Screen component={RateView} name="RateView"/>
       <Stack.Screen component={LocationShopView} name="LocationShopView"/>
       <Stack.Screen component={OrderView} name="OrderView"/>
+      <Stack.Screen component={ChooseMobileServiceView} name="ChooseMobileServiceView"/>
+      <Stack.Screen component={OrderDetailView} name="OrderDetailView"/>
+      <Stack.Screen component={FlowBookingView} name="FlowBookingView"/>
+      <Stack.Screen component={SelectProfessorView} name="SelectProfessorView"/>
     </Stack.Navigator>
   );
 };

@@ -29,7 +29,7 @@ const ListProfessor = [
     phone: '0889246027',
     mail: 'systhan@gmail.com',
     professional: 'Professor of Men Style',
-    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia'
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia',
   },
   {
     id: '2',
@@ -40,7 +40,7 @@ const ListProfessor = [
     phone: '0889246027',
     mail: 'kong49@gmail.com',
     professional: 'Professor of Men Style',
-    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia'
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia',
   },
   {
     id: '1',
@@ -51,7 +51,7 @@ const ListProfessor = [
     phone: '0889246027',
     mail: 'chheangthea@gmail.com',
     professional: 'Professor of Men Style',
-    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia'
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia',
   },
 ];
 
@@ -145,21 +145,23 @@ const ShopDetailView = () => {
           }}>
           ⭐⭐⭐⭐⭐
         </Text>
-        <TouchableOpacity activeOpacity={1} onPress={()=>{
-          navigation.push('RateView');
-        }}>
-        <Text
-          style={{
-            textAlign: 'center',
-            marginTop: 5,
-            fontSize: 17,
-            fontWeight: 'bold',
-            textDecorationLine: 'underline',
-            marginBottom: 10,
-            color: 'grey',
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            navigation.push('RateView');
           }}>
-          3 Reviews
-        </Text>
+          <Text
+            style={{
+              textAlign: 'center',
+              marginTop: 5,
+              fontSize: 17,
+              fontWeight: 'bold',
+              textDecorationLine: 'underline',
+              marginBottom: 10,
+              color: 'grey',
+            }}>
+            3 Reviews
+          </Text>
         </TouchableOpacity>
         <View
           style={{width: 'auto', height: 0.5, backgroundColor: 'grey'}}></View>
@@ -236,22 +238,24 @@ const ShopDetailView = () => {
           <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
             Address
           </Text>
-          <TouchableOpacity activeOpacity={1} onPress={()=>{
-            navigation.push('LocationShopView');
-          }}>
-          <View style={{flexDirection: 'row'}}>
-            <Text
-              style={{
-                color: 'blue',
-                fontSize: 18,
-                fontWeight: 'bold',
-                textDecorationLine: 'underline',
-                paddingRight: 5,
-              }}>
-              Direction
-            </Text>
-            <Entypo name="location" color={'blue'} size={22}></Entypo>
-          </View>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => {
+              navigation.push('LocationShopView');
+            }}>
+            <View style={{flexDirection: 'row'}}>
+              <Text
+                style={{
+                  color: 'blue',
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  textDecorationLine: 'underline',
+                  paddingRight: 5,
+                }}>
+                Direction
+              </Text>
+              <Entypo name="location" color={'blue'} size={22}></Entypo>
+            </View>
           </TouchableOpacity>
         </View>
         <View style={styles.FrmNameII}>
@@ -367,21 +371,21 @@ const ShopDetailView = () => {
           {ListProfessor.map((e, index) => {
             return (
               <TouchableOpacity
-              key={index}
-              onPress={()=>{
-                // console.log("Click", e.name);
-                navigation.push('ProfessionalDetailView', {
-                  name: e.name,
-                  role: e.role,
-                  rate: e.rate,
-                  other: e.other,
-                  id: e.id,
-                  phone: e.phone,
-                  mail: e.mail,
-                  location: e.location,
-                  professional: e.professional,
-                })
-              }}>
+                key={index}
+                onPress={() => {
+                  // console.log("Click", e.name);
+                  navigation.push('ProfessionalDetailView', {
+                    name: e.name,
+                    role: e.role,
+                    rate: e.rate,
+                    other: e.other,
+                    id: e.id,
+                    phone: e.phone,
+                    mail: e.mail,
+                    location: e.location,
+                    professional: e.professional,
+                  });
+                }}>
                 <View style={styles.Card}>
                   <View
                     style={{
@@ -486,23 +490,26 @@ const ShopDetailView = () => {
                   }}>
                   {e.price}
                 </Text>
-                <TouchableOpacity activeOpacity={1} onPress={()=>{
-                  console.log("Start Order...");
-                  navigation.push('OrderView');
-                }}>
-                <View
-                  style={{
-                    paddingVertical: 5,
-                    paddingHorizontal: 10,
-                    borderWidth: 1,
-                    marginTop: 15,
-                    borderColor: 'blue',
-                    borderRadius: 8,
+                <TouchableOpacity
+                  activeOpacity={1}
+                  onPress={() => {
+                    console.log('Start Order...');
+                    // navigation.push('OrderView');
+                    navigation.push('ChooseMobileServiceView');
                   }}>
-                  <Text style={{fontWeight: 'bold', color: 'blue'}}>
-                    {e.order}
-                  </Text>
-                </View>
+                  <View
+                    style={{
+                      paddingVertical: 5,
+                      paddingHorizontal: 10,
+                      borderWidth: 1,
+                      marginTop: 15,
+                      borderColor: 'blue',
+                      borderRadius: 8,
+                    }}>
+                    <Text style={{fontWeight: 'bold', color: 'blue'}}>
+                      {e.order}
+                    </Text>
+                  </View>
                 </TouchableOpacity>
               </View>
             );
@@ -581,18 +588,20 @@ const ShopDetailView = () => {
           }}>
           <Ionicons name="call-outline" size={25} color={'white'}></Ionicons>
         </View>
-        <View
-          style={{
-            paddingHorizontal: 20,
-            paddingVertical: 10,
-            backgroundColor: '#16247d',
-            width: width * 0.6,
-            alignItems: 'center',
-          }}>
-          <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold'}}>
-            MAKE A BOOKING
-          </Text>
-        </View>
+        <TouchableOpacity activeOpacity={1} onPress={() => {}}>
+          <View
+            style={{
+              paddingHorizontal: 20,
+              paddingVertical: 10,
+              backgroundColor: '#16247d',
+              width: width * 0.6,
+              alignItems: 'center',
+            }}>
+            <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold'}}>
+              MAKE A BOOKING
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
