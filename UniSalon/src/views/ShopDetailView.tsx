@@ -588,7 +588,11 @@ const ShopDetailView = () => {
           }}>
           <Ionicons name="call-outline" size={25} color={'white'}></Ionicons>
         </View>
-        <TouchableOpacity activeOpacity={1} onPress={() => {}}>
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            navigation.push('FlowBookingView');
+          }}>
           <View
             style={{
               paddingHorizontal: 20,

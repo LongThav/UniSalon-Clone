@@ -103,14 +103,16 @@ export const ShopView = () => {
           height: 0.5,
           backgroundColor: 'grey',
           marginHorizontal: 15,
-          marginVertical: 5,
+          marginVertical: 0,
         }}></View>
-      <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: height * 0.08}}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{marginBottom: height * 0.08}}>
         <Text
           style={{
             fontSize: 18,
             color: '#16247d',
-            paddingVertical: 15,
+            paddingVertical: 10,
             marginHorizontal: 15,
             fontWeight: 'bold',
           }}>
@@ -134,14 +136,14 @@ export const ShopView = () => {
                     backgroundColor: 'white',
                     paddingBottom: 8,
                     borderWidth: 0.3,
-                    marginBottom: 0,
+                    marginBottom: 3,
                   }}>
                   <View
                     style={{
                       width: 'auto',
                       height: 80,
                       backgroundColor: 'grey',
-                      marginBottom: 8,
+                      marginBottom: 4,
                       borderTopLeftRadius: 8,
                       borderTopRightRadius: 8,
                     }}>
@@ -158,9 +160,9 @@ export const ShopView = () => {
                   <View style={{flexDirection: 'row', marginHorizontal: 5}}>
                     <FontAwesome6
                       name="location-dot"
-                      style={{paddingRight: 5, marginTop: 4}}
+                      style={{paddingRight: 5, marginTop: 0}}
                       color={'#16247d'}></FontAwesome6>
-                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                    <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: 12}}>
                       None
                     </Text>
                   </View>
@@ -168,8 +170,8 @@ export const ShopView = () => {
                     style={{
                       color: 'black',
                       marginHorizontal: 5,
-                      marginTop: 4,
-                      fontSize: 18,
+                      marginTop: 0,
+                      fontSize: 15,
                       fontWeight: 'bold',
                     }}>
                     មែនស្តាយ
@@ -196,26 +198,28 @@ export const ShopView = () => {
                     }}>
                     <Text style={{color: 'grey'}}>Booking Now</Text>
                   </View> */}
-                  <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                    console.log("Start");
-                    navigation.push('FlowBookingView')
-                  }}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      paddingHorizontal: 5,
-                      paddingVertical: 5,
-                      borderWidth: 0.8,
-                      borderColor: '#16247d',
-                      borderRadius: 3,
-                      marginHorizontal: 5,
-                      marginTop: 5,
-                      fontSize: 18,
-                      fontWeight: 'bold',
-                      color: '#16247d',
+                  <TouchableOpacity
+                    activeOpacity={0.8}
+                    onPress={() => {
+                      console.log('Start');
+                      navigation.push('FlowBookingView');
                     }}>
-                    Booking Now
-                  </Text>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        paddingHorizontal: 5,
+                        paddingVertical: 5,
+                        borderWidth: 0.8,
+                        borderColor: '#16247d',
+                        borderRadius: 3,
+                        marginHorizontal: 5,
+                        marginTop: 5,
+                        fontSize: 15,
+                        fontWeight: 'bold',
+                        color: '#16247d',
+                      }}>
+                      Booking Now
+                    </Text>
                   </TouchableOpacity>
                 </View>
               </TouchableOpacity>
@@ -245,12 +249,12 @@ export const ShopView = () => {
                   paddingTop: 15,
                   flexDirection: 'row',
                   marginHorizontal: 15,
-                  backgroundColor: "white",
+                  backgroundColor: 'white',
                   justifyContent: 'space-between',
                   marginTop: 10,
                   paddingHorizontal: 15,
                   borderRadius: 8,
-                  borderWidth: 0.3
+                  borderWidth: 0.3,
                 }}>
                 <View
                   style={{
@@ -322,24 +326,32 @@ export const ShopView = () => {
                     </View>
                   </View>
                 </View>
-                <View
-                  style={{
-                    // width: 70,
-                    // height: 30,
-                    paddingVertical: 5,
-                    paddingHorizontal: 10,
-                    borderWidth: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    borderRadius: 5,
-                    borderColor: '#16247d',
-                    position: 'absolute',
-                    right: 0,
-                    marginTop: 17,
-                    marginRight: 15,
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    navigation.push('FlowBookingView');
                   }}>
-                  <Text style={{color: '#16247d', fontWeight: 'bold'}}>Booking</Text>
-                </View>
+                  <View
+                    style={{
+                      // width: 70,
+                      // height: 30,
+                      paddingVertical: 5,
+                      paddingHorizontal: 10,
+                      borderWidth: 1,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 5,
+                      borderColor: '#16247d',
+                      position: 'absolute',
+                      right: 0,
+                      marginTop: 17,
+                      marginRight: 15,
+                    }}>
+                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                      Booking
+                    </Text>
+                  </View>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           );
