@@ -444,7 +444,7 @@ const ShopDetailView = () => {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           {MobileServieData.map((e, index) => {
             return (
-              <View style={styles.CardII}>
+              <View key={index} style={styles.CardII}>
                 <Text
                   style={{
                     color: 'grey',

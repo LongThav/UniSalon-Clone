@@ -76,7 +76,7 @@ export const VideoView = () => {
       <ScrollView>
         {data.map((e, index) => {
           return (
-            <View style={styles.CardList}>
+            <View key={index} style={styles.CardList}>
               <View
                 style={{
                   width: 90,

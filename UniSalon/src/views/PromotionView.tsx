@@ -218,22 +218,15 @@ export const PromotionView = () => {
             paddingRight: 15,
           }}
         />
-        <View style={{flexDirection: 'column'}}>
+        <View style={{flexDirection: 'column', flex: 1}}>
           <Text
             numberOfLines={2}
             style={{
               fontSize: 18,
               color: '#16247d',
-              paddingVertical: 7,
+              paddingVertical: 0,
             }}>
-            Your current points of all salon shops.
-          </Text>
-          <Text
-            style={{
-              fontSize: 18,
-              color: '#16247d',
-            }}>
-            0 Point
+            Your current points of all salon shops 0 Point.
           </Text>
         </View>
       </View>

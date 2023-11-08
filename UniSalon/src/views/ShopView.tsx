@@ -122,7 +122,7 @@ export const ShopView = () => {
           {RecommendList.map((e, index) => {
             return (
               <TouchableOpacity
-                key={e.id}
+                key={index}
                 activeOpacity={1}
                 onPress={() => {
                   console.log('Push new screen');
@@ -244,6 +244,7 @@ export const ShopView = () => {
         {MoreSaloneData.map((e, index) => {
           return (
             <TouchableOpacity
+              key={index}
               activeOpacity={1}
               onPress={() => {
                 console.log('Click ប៉ែន');
