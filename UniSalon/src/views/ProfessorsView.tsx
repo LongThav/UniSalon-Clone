@@ -2,6 +2,7 @@ import React from "react";
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { SafeAreaView, Text, View, StyleSheet, Dimensions } from "react-native";
+import {useNavigation} from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('window');
 
@@ -33,10 +34,13 @@ const SideBarFilter = [
 ];
 
 export const ProfessorView = () => {
+    const navigation:any = useNavigation();
     return (
         <SafeAreaView style={{flex: 1}}>
             <View style={styles.Appbar}>
-                <Feather name="menu" size={24} style={{
+                <Feather onPress={()=>{
+                    navigation.openDrawer();
+                }} name="menu" size={24} style={{
                     color: 'white',
                 }} />
                 <Text style={styles.TitleAppbar}>All Professors</Text>
@@ -49,7 +53,7 @@ export const ProfessorView = () => {
                 <View style={styles.LeftBar}>
                     {
                         SideBarFilter.map((e, index)=>{
-                            return <View>
+                            return <View key={index}>
                                 <View ></View>
                             </View>
                         })
