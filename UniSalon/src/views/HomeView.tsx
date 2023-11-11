@@ -19,6 +19,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import {useNavigation} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
+import BottomSheet from "react-native-bottomsheet-reanimated"; 
 
 const {width, height} = Dimensions.get('window');
 

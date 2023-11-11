@@ -33,13 +33,12 @@ export const VideoView = () => {
   const navigation: any = useNavigation();
   return (
     <SafeAreaView>
-      <TouchableOpacity
-        activeOpacity={1}
-        onPress={() => {
-          navigation.openDrawer();
-        }}>
         <View style={styles.Appbar}>
           <Feather
+            onPress={()=>{
+          navigation.openDrawer();
+
+            }}
             name="menu"
             size={24}
             style={{
@@ -50,7 +49,6 @@ export const VideoView = () => {
           />
           <Text style={styles.TitleAppbar}>Videoe</Text>
         </View>
-      </TouchableOpacity>
       <View style={styles.SearchBar}>
         <EvilIcons name="search" size={30} color="grey" />
         {/* <Text style={{ paddingHorizontal: 10 }}>Search Video...</Text> */}
@@ -76,32 +74,40 @@ export const VideoView = () => {
       <ScrollView>
         {data.map((e, index) => {
           return (
-            <View key={index} style={styles.CardList}>
-              <View
-                style={{
-                  width: 90,
-                  height: 90,
-                  backgroundColor: '#ebebec',
-                  borderRadius: 10,
-                }}>
-                <Image
+            <TouchableOpacity
+              key={index}
+              activeOpacity={0.8}
+              onPress={() => {
+                navigation.push('VideoPlayerView');
+                console.log("Presssh");
+              }}>
+              <View key={index} style={styles.CardList}>
+                <View
                   style={{
-                    flex: 1,
-                    width: undefined,
-                    height: undefined,
+                    width: 90,
+                    height: 90,
+                    backgroundColor: '#ebebec',
                     borderRadius: 10,
-                  }}
-                  source={require('../../assets/imgs/img1.jpg')}></Image>
+                  }}>
+                  <Image
+                    style={{
+                      flex: 1,
+                      width: undefined,
+                      height: undefined,
+                      borderRadius: 10,
+                    }}
+                    source={require('../../assets/imgs/img1.jpg')}></Image>
+                </View>
+                <View style={{paddingHorizontal: 10, flex: 1}}>
+                  <Text numberOfLines={3} style={styles.Text}>
+                    {e.title}
+                  </Text>
+                  <Text style={{paddingVertical: 22, color: 'grey'}}>
+                    17 Dec 2021 At 11:59 AM
+                  </Text>
+                </View>
               </View>
-              <View style={{paddingHorizontal: 10, flex: 1}}>
-                <Text numberOfLines={3} style={styles.Text}>
-                  {e.title}
-                </Text>
-                <Text style={{paddingVertical: 22, color: 'grey'}}>
-                  17 Dec 2021 At 11:59 AM
-                </Text>
-              </View>
-            </View>
+            </TouchableOpacity>
           );
         })}
       </ScrollView>

@@ -444,7 +444,7 @@ export const SubService = () => {
           <AntDesign name="arrowleft" color={'white'} size={28}></AntDesign>
         </TouchableOpacity>
         <Text style={styles.SubText}>Sub Service</Text>
-        <AntDesign name="hearto" size={25} color={'white'}></AntDesign>
+        <AntDesign name="hearto" size={25} color={'white'} style={{marginRight: 0}}></AntDesign>
       </View>
       {/* <View style={styles.Body}>
                 <View style={styles.RowBodyI}>
@@ -632,16 +632,17 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     backgroundColor: '#16247d',
-    alignItems: 'flex-start',
+    // alignItems: 'flex-start',
     paddingTop: '3%',
     flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   SubText: {
     fontSize: 18,
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingHorizontal: '30%',
+    // paddingHorizontal: '30%',
   },
   Body: {
     marginTop: 15,

@@ -192,7 +192,7 @@ const ShopDetailView = () => {
           </Text>
         </View>
         <View style={styles.BoxText}>
-          <AntDesign name="infocirlceo" size={25}></AntDesign>
+          <AntDesign name="infocirlceo" size={25} color={'grey'}></AntDesign>
           <View style={{paddingHorizontal: 15}}>
             <Text style={{fontSize: 18, color: 'black'}}>
               បម្រើសេវាកម្មជូនអស់លោក​ លោកស្រីឲកាន់តែ

@@ -264,8 +264,8 @@ export const ShopView = () => {
                 }}>
                 <View
                   style={{
-                    width: 120,
-                    height: 120,
+                    width: width * 0.3,
+                    height: height * 0.16,
                     backgroundColor: '#ebebec',
                     borderRadius: 10,
                   }}>
@@ -300,12 +300,15 @@ export const ShopView = () => {
                       flexDirection: 'column',
                       // justifyContent: 'flex-start',
                     }}>
+                    <View style={{width: width * 0.5, paddingVertical: 1, backgroundColor: 'white', marginRight: 20}}>
                     <Text style={{fontSize: 14.5, color: 'grey', fontWeight: 'bold'}}>
-                      បម្រើសេវាកម្មជូនអស់លោក
+                      {e.subtitle}
                     </Text>
-                    <Text style={{fontSize: 14.5, color: 'grey', fontWeight: "bold"}}>
+                    </View>
+                     {/* បម្រើសេវាកម្មជូនអស់លោក */}
+                    {/* <Text style={{fontSize: 14.5, color: 'grey', fontWeight: "bold"}}>
                       លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
-                    </Text>
+                    </Text> */}
                     <View style={{flexDirection: 'row'}}>
                       <View
                         style={{
@@ -350,10 +353,10 @@ export const ShopView = () => {
                       borderRadius: 5,
                       borderColor: '#16247d',
                       position: 'absolute',
-                      right: 0,
+                      right: 20,
                       top: 0,
                       marginTop: 0,
-                      marginRight: 15,
+                      // marginRight: 17,
                     }}>
                     <Text style={{color: '#16247d', fontWeight: 'bold'}}>
                       Booking

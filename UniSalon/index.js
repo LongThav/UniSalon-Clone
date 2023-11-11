@@ -25,3 +25,6 @@ AppRegistry.registerComponent(appName, () => MainApp);
 
 
 //https://www.youtube.com/watch?v=efT8Tds7jOY
+
+
+//https://www.youtube.com/watch?v=QWZbifSLQsA&t=175s

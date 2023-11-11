@@ -33,6 +33,8 @@ import ChooseMobileServiceView from '../views/ChooseMobileServiceView';
 import OrderDetailView from '../views/OrderDetailView';
 import FlowBookingView from '../views/FlowBookingView';
 import SelectProfessorView from '../views/SelectProfessorView';
+import ProfessorDetailView from '../views/ProfessorDetailView';
+import VideoPlayerView from '../views/VideoPlayView';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -72,6 +74,8 @@ const MainStack = () => {
       <Stack.Screen component={OrderDetailView} name="OrderDetailView"/>
       <Stack.Screen component={FlowBookingView} name="FlowBookingView"/>
       <Stack.Screen component={SelectProfessorView} name="SelectProfessorView"/>
+      <Stack.Screen component={ProfessorDetailView} name="ProfessorDetailView"/>
+      <Stack.Screen component={VideoPlayerView} name="VideoPlayerView"/>
     </Stack.Navigator>
   );
 };

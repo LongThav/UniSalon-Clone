@@ -9,6 +9,7 @@ import TodayBookingAndOrderView from '../views/TodayBookingAndOrderView';
 import BookingAndOrder from '../views/BookingAndOrder';
 import HistoryBookingAndOrderView from '../views/HistoryBookingAndOrderView';
 import PaymentView from '../views/PaymentView';
+import {useNavigation} from '@react-navigation/native';
 import SettingView from '../views/SettingView';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import PrivacyPolicyView from '../views/PrivacyPolicyView';
@@ -29,12 +30,14 @@ import {
   Image,
   StyleSheet,
   Text,
+  TouchableOpacity
 } from 'react-native';
 
 import App from '../../App';
 import {Icon} from 'react-native-paper';
 import LoginView from '../views/LoginView';
 import CustomizeDrawer from './CustomizeDrawer';
+
 
 const {width, height} = Dimensions.get('window');
 
@@ -56,8 +59,10 @@ const data = [
 ];
 
 const DrawerNavigate = () => {
+  const navigation: any = useNavigation();
   return (
     <Drawer.Navigator
+       
       initialRouteName="Home"
       drawerContent={props => {
         return (
@@ -94,18 +99,18 @@ const DrawerNavigate = () => {
                 <View style={styles.Row}>
                   <Octicons
                     name="feed-person"
-                    size={25}
+                    size={22}
                     color={'#16247d'}></Octicons>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Profile
                   </Text>
                 </View>
                 <View style={styles.Row}>
                   <Octicons
                     name="feed-heart"
-                    size={25}
+                    size={22}
                     color={'red'}></Octicons>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Favourite
                   </Text>
                 </View>
@@ -121,51 +126,51 @@ const DrawerNavigate = () => {
                 <View style={styles.Row}>
                   <MaterialCommunityIcons
                     name="email"
-                    size={25}
+                    size={22}
                     color={'blue'}></MaterialCommunityIcons>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Message
                   </Text>
                 </View>
                 <View style={styles.Row}>
                   <Octicons
                     name="feed-star"
-                    size={25}
+                    size={22}
                     color={'#ffa042'}></Octicons>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Membership
                   </Text>
                 </View>
                 <View style={styles.Row}>
-                  <Fontisto name="date" size={25} color={'brown'}></Fontisto>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Fontisto name="date" size={22} color={'brown'}></Fontisto>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Today Booking & Order
                   </Text>
                 </View>
                 <View style={styles.Row}>
                   <MaterialIcons
                     name="date-range"
-                    size={25}
+                    size={22}
                     color={'grey'}></MaterialIcons>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Booking & Order
                   </Text>
                 </View>
                 <View style={styles.Row}>
                   <FontAwesome6
                     name="clock-rotate-left"
-                    size={25}
+                    size={22}
                     color={'green'}></FontAwesome6>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     History Booking & Order
                   </Text>
                 </View>
                 <View style={styles.Row}>
                   <MaterialIcons
                     name="payment"
-                    size={25}
+                    size={22}
                     color={'grey'}></MaterialIcons>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Payment
                   </Text>
                 </View>
@@ -180,38 +185,42 @@ const DrawerNavigate = () => {
                   <Fontisto
                     name="player-settings"
                     color={'grey'}
-                    size={25}></Fontisto>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                    size={22}></Fontisto>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Settings
                   </Text>
                 </View>
                 <View style={styles.Row}>
                   <MaterialIcons
                     name="privacy-tip"
-                    size={25}
+                    size={22}
                     color={'green'}></MaterialIcons>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Privacy Policy
                   </Text>
                 </View>
                 <View style={styles.Row}>
                   <AntDesign
                     name="questioncircle"
-                    size={25}
+                    size={22}
                     color={'grey'}></AntDesign>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Help & Feedback
                   </Text>
                 </View>
-                <View style={styles.Row}>
+               <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                navigation.push('LoginView');
+               }}>
+               <View style={styles.Row}>
                   <Ionicons
                     name="log-out-outline"
-                    size={25}
+                    size={22}
                     color={'red'}></Ionicons>
-                  <Text style={{fontSize: 18, color: 'black', marginLeft: 20}}>
+                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Sign Out
                   </Text>
                 </View>
+               </TouchableOpacity>
               </View>
             </ScrollView>
           </SafeAreaView>
@@ -223,6 +232,7 @@ const DrawerNavigate = () => {
         headerShown: false,
         drawerStyle: {width: '70%'},
       }}>
+      {/* <Drawer.Screen name="LoginView" component={LoginView}/> */}
       <Drawer.Screen name="App" component={App} />
       <Drawer.Screen
         name="Profile"
