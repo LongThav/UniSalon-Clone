@@ -16,6 +16,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {useNavigation} from '@react-navigation/native';
+import { FontSize } from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -51,7 +52,7 @@ const Promotion = () => {
             style={{paddingLeft: 10, paddingTop: 10, alignItems: 'flex-start'}}>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: FontSize.font14,
                 color: 'black',
                 // marginTop: 10
               }}>
@@ -60,13 +61,13 @@ const Promotion = () => {
             <Text
               style={{
                 color: '#16247d',
-                fontSize: 15,
+                fontSize: FontSize.font12,
                 fontWeight: 'bold',
               }}>
               មែន​ ស្តាយ
             </Text>
-            <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
-            <Text style={{color: 'grey'}}>កាត់សក់បុរស free កក់សក់ជូន</Text>
+            <Text style={{color: 'grey', fontSize: 12}}>⭐⭐⭐⭐⭐ (3)</Text>
+            <Text style={{color: 'grey', fontSize: 12}}>កាត់សក់បុរស free កក់សក់ជូន</Text>
             <View style={{flexDirection: 'row'}}>
               <View
                 style={{
@@ -76,16 +77,18 @@ const Promotion = () => {
                 }}>
                 <FontAwesome6
                   name="location-dot"
+                  size={13}
                   style={{paddingRight: 5, marginTop: 4}}
                   color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold'}}>None</Text>
+                <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>None</Text>
               </View>
               <View style={{flexDirection: 'row', paddingVertical: 15}}>
                 <FontAwesome6
                   name="clock"
+                  size={13}
                   style={{paddingRight: 5, marginTop: 4}}
                   color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>
                   Opening
                 </Text>
               </View>
@@ -143,6 +146,7 @@ export const PromotionView = () => {
       style={{
         backgroundColor: '#f2f2f2',
       }}
+
       tabStyle={{
         width: width / 2,
         // backgroundColor: 'blue'
@@ -157,7 +161,7 @@ export const PromotionView = () => {
           style={{
             color: focused ? '#16247d' : 'black',
             margin: 8,
-            fontSize: 18,
+            fontSize: FontSize.font14,
             fontWeight: 'bold',
           }}>
           {route.title}
@@ -222,7 +226,7 @@ export const PromotionView = () => {
           <Text
             numberOfLines={2}
             style={{
-              fontSize: 18,
+              fontSize: 17.1,
               color: '#16247d',
               paddingVertical: 0,
             }}>
@@ -233,9 +237,9 @@ export const PromotionView = () => {
       <View
         style={{
           width: 'auto',
-          height: 5,
+          height: 3,
           backgroundColor: '#ebebec',
-          marginTop: '8%',
+          marginTop: '3%',
         }}></View>
       <View style={styles.TabBar}>
         <TabView
@@ -296,8 +300,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   TitleAppbar: {
-    fontSize: 18,
+    fontSize: FontSize.font16,
     color: 'white',
+    fontWeight: 'bold'
   },
   RibonReward: {
     width: 'auto',
@@ -325,7 +330,7 @@ const styles = StyleSheet.create({
   CardPromotion: {
     width: 'auto',
     height: '20%',
-    borderWidth: 0.5,
+    borderWidth: 1,
     borderColor: '#ebebec',
     margin: 15,
     backgroundColor: '#f1f1f1',

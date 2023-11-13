@@ -12,6 +12,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import {Image} from '@rneui/themed';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import { FontSize } from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -27,7 +28,7 @@ const OrderDetailView = () => {
           }}
           name="arrowleft"
           color={'white'}
-          size={28}
+          size={18}
           style={{position: 'absolute', left: 15, top: 15}}></AntDesign>
         <Text style={styles.TitleAppbar}>Order Detail</Text>
       </View>
@@ -36,20 +37,20 @@ const OrderDetailView = () => {
           style={{
             paddingHorizontal: 15,
             paddingVertical: 15,
-            fontSize: 18,
+            fontSize: FontSize.font14,
             fontWeight: 'bold',
             color: '#16247d',
           }}>
           Shop Information
         </Text>
         <View style={styles.frmShpInfor}>
-          <Text style={{color: 'black', fontWeight: 'bold', fontSize: 16}}>
+          <Text style={{color: 'black', fontWeight: 'bold', fontSize: FontSize.font12}}>
             Name: មែន ស្តាយ
           </Text>
-          <Text style={{color: 'black', fontWeight: 'bold', fontSize: 16}}>
+          <Text style={{color: 'black', fontWeight: 'bold', fontSize: FontSize.font12}}>
             Phone: 0889246027
           </Text>
-          <Text style={{color: 'black', fontWeight: 'bold', fontSize: 16}}>
+          <Text style={{color: 'black', fontWeight: 'bold', fontSize: FontSize.font12}}>
             Address: 103 St 512, Phnom Penh, Cambodia
           </Text>
         </View>
@@ -63,26 +64,26 @@ const OrderDetailView = () => {
         <Text
           style={{
             paddingHorizontal: 15,
-            paddingVertical: 15,
-            fontSize: 18,
+            paddingBottom: 15,
+            fontSize: FontSize.font14,
             fontWeight: 'bold',
             color: '#16247d',
           }}>
           Order Detail
         </Text>
         <View style={styles.frmShpInfor}>
-          <Text style={{color: 'black', fontWeight: 'bold', fontSize: 16}}>
+          <Text style={{color: 'black', fontWeight: 'bold', fontSize: FontSize.font14}}>
             Date: Monday, 6 November 2023
           </Text>
           <View style={{flexDirection: 'row', marginVertical: 5}}>
-            <Text style={{color: 'black', fontWeight: 'bold', fontSize: 16}}>
+            <Text style={{color: 'black', fontWeight: 'bold', fontSize: FontSize.font14}}>
               Status:{' '}
             </Text>
             <Text
               style={{
                 color: 'white',
                 fontWeight: 'bold',
-                fontSize: 16,
+                fontSize: FontSize.font12,
                 backgroundColor: 'green',
                 paddingHorizontal: 15,
                 paddingVertical: 2,
@@ -103,8 +104,8 @@ const OrderDetailView = () => {
           <Text
             style={{
               paddingHorizontal: 15,
-              paddingVertical: 15,
-              fontSize: 18,
+              paddingVertical: 10,
+              fontSize: FontSize.font14,
               fontWeight: 'bold',
               color: '#16247d',
             }}>
@@ -114,7 +115,7 @@ const OrderDetailView = () => {
             <Text
               style={{
                 paddingHorizontal: 15,
-                paddingVertical: 15,
+                paddingVertical: 10,
                 fontSize: 18,
                 fontWeight: 'bold',
                 color: '#16247d',
@@ -126,7 +127,7 @@ const OrderDetailView = () => {
               name="add"
               size={30}
               color={'#16247d'}
-              style={{marginTop: 10, marginRight: 15}}></Ionicons>
+              style={{marginTop: 8, marginRight: 15}}></Ionicons>
           </View>
         </View>
         <View
@@ -148,7 +149,7 @@ const OrderDetailView = () => {
                 source={require('../../assets/imgs/make_up.png')}></Image>
             </View>
             <View style={{marginLeft: 10}}>
-              <Text style={{fontSize: 18, color: 'blue', fontWeight: 'bold'}}>
+              <Text style={{fontSize: FontSize.font14, color: 'blue', fontWeight: 'bold'}}>
                 Nail
               </Text>
               <View
@@ -162,16 +163,17 @@ const OrderDetailView = () => {
                     color: 'grey',
                     fontWeight: 'bold',
                     marginRight: width * 0.3,
+                    fontSize: FontSize.font12
                   }}>
                   Point: 2pts
                 </Text>
-                <Text style={{color: 'black', fontWeight: 'bold'}}>
+                <Text style={{color: 'black', fontWeight: 'bold', fontSize: FontSize.font12}}>
                   $ 10.00(1)
                 </Text>
               </View>
             </View>
           </View>
-          <SimpleLineIcons name="options-vertical" size={20}></SimpleLineIcons>
+          <SimpleLineIcons name="options-vertical" size={18}></SimpleLineIcons>
         </View>
         <View
           style={{
@@ -179,13 +181,14 @@ const OrderDetailView = () => {
             height: 1,
             backgroundColor: 'grey',
             marginHorizontal: 15,
-            marginVertical: 30,
+            marginTop: 30,
+            marginBottom: 20,
           }}></View>
         <Text
           style={{
             paddingHorizontal: 15,
             paddingVertical: 0,
-            fontSize: 18,
+            fontSize: FontSize.font14,
             fontWeight: 'bold',
             color: '#16247d',
             marginBottom: 15,
@@ -193,23 +196,23 @@ const OrderDetailView = () => {
           Payment Summary
         </Text>
         <View style={styles.frmShpInfor}>
-          <Text style={{color: 'grey', fontWeight: 'bold', fontSize: 16}}>
+          <Text style={{color: 'grey', fontWeight: 'bold', fontSize: FontSize.font12}}>
             Total Payment: $ 10.00
           </Text>
           <Text
             style={{
               color: 'grey',
               fontWeight: 'bold',
-              fontSize: 16,
+              fontSize: 12,
               marginVertical: 5,
             }}>
             Discount: $ 0.00
           </Text>
           <View style={{flexDirection: 'row'}}>
-            <Text style={{color: 'grey', fontWeight: 'bold', fontSize: 16}}>
+            <Text style={{color: 'grey', fontWeight: 'bold', fontSize: 12}}>
               Grand Total:
             </Text>
-            <Text style={{color: 'red', fontWeight: 'bold', marginLeft: 5}}>
+            <Text style={{color: 'red', fontWeight: 'bold', marginLeft: 5, fontSize: 12}}>
               $ 10.00
             </Text>
           </View>
@@ -217,13 +220,13 @@ const OrderDetailView = () => {
             style={{
               color: 'grey',
               fontWeight: 'bold',
-              fontSize: 16,
+              fontSize: FontSize.font12,
               marginVertical: 5,
             }}>
             Total Point: 2 pts
           </Text>
           <View style={{flexDirection: 'row'}}>
-            <Text style={{color: 'grey', fontWeight: 'bold', fontSize: 16}}>
+            <Text style={{color: 'grey', fontWeight: 'bold', fontSize: FontSize.font12}}>
               Spend Point:
             </Text>
             <Text
@@ -240,7 +243,7 @@ const OrderDetailView = () => {
         </View>
       </ScrollView>
       <View style={{paddingVertical: 15, backgroundColor: '#6eaec7', alignContent: 'center', alignItems: 'center'}}>
-        <Text style={{color: 'white', fontWeight: 'bold', fontSize: 18}}>Submit Order</Text>
+        <Text style={{color: 'white', fontWeight: 'bold', fontSize: FontSize.font12}}>Submit Order</Text>
       </View>
     </SafeAreaView>
   );
@@ -251,7 +254,7 @@ export default OrderDetailView;
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    height: 60,
+    paddingVertical: 12,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',
@@ -260,7 +263,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   TitleAppbar: {
-    fontSize: 18,
+    fontSize: FontSize.font14,
     color: 'white',
   },
   frmShpInfor: {

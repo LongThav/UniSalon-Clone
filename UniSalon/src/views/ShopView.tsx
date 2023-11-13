@@ -14,6 +14,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {useNavigation} from '@react-navigation/native';
 import {Image} from 'react-native';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
+import { FontSize } from '../constant/FontSize';
 
 const RecommendList = [
   {
@@ -85,13 +86,13 @@ export const ShopView = () => {
         <Text style={styles.TitleAppbar}>Shops</Text>
       </View>
       <View style={styles.SearchBar}>
-        <EvilIcons name="search" size={30} color="grey" />
+        <EvilIcons name="search" size={20} color="grey" />
         {/* <Text style={{ paddingHorizontal: 10 }}>Search Salons...</Text> */}
         <TextInput
           placeholder="Search Salons..."
           placeholderTextColor={'grey'}
           style={{
-            fontSize: 20,
+            fontSize: FontSize.font14,
             marginLeft: 0,
             margin: 0,
             padding: 0,
@@ -107,10 +108,10 @@ export const ShopView = () => {
         }}></View>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{marginBottom: height * 0.3}}>
+        style={{marginBottom: height * 0.28}}>
         <Text
           style={{
-            fontSize: 18,
+            fontSize: FontSize.font15,
             color: '#16247d',
             paddingVertical: 10,
             marginHorizontal: 15,
@@ -131,7 +132,7 @@ export const ShopView = () => {
                 <View
                   style={{
                     width: width * 0.45,
-                    marginHorizontal: 15,
+                    marginLeft: 10,
                     borderRadius: 8,
                     backgroundColor: 'white',
                     paddingBottom: 8,
@@ -161,12 +162,12 @@ export const ShopView = () => {
                     <FontAwesome6
                       name="location-dot"
                       style={{paddingRight: 5, marginTop: 0}}
-                      color={'#16247d'}></FontAwesome6>
+                      color={'#16247d'} size={12}></FontAwesome6>
                     <Text
                       style={{
                         color: '#16247d',
                         fontWeight: 'bold',
-                        fontSize: 12,
+                        fontSize: 10,
                       }}>
                       None
                     </Text>
@@ -176,7 +177,7 @@ export const ShopView = () => {
                       color: 'black',
                       marginHorizontal: 5,
                       marginTop: 0,
-                      fontSize: 15,
+                      fontSize: FontSize.font12,
                       fontWeight: 'bold',
                     }}>
                     មែនស្តាយ
@@ -186,6 +187,7 @@ export const ShopView = () => {
                       color: 'grey',
                       marginHorizontal: 4,
                       marginBottom: 3,
+                      fontSize: FontSize.font10
                     }}>
                     ⭐⭐⭐⭐⭐ (3)
                   </Text>
@@ -219,7 +221,7 @@ export const ShopView = () => {
                         borderRadius: 3,
                         marginHorizontal: 5,
                         marginTop: 5,
-                        fontSize: 15,
+                        fontSize: FontSize.font12,
                         fontWeight: 'bold',
                         color: '#16247d',
                       }}>
@@ -235,7 +237,7 @@ export const ShopView = () => {
           style={{
             paddingLeft: 15,
             paddingTop: 15,
-            fontSize: 18,
+            fontSize: FontSize.font15,
             color: '#16247d',
             fontWeight: 'bold',
           }}>
@@ -252,7 +254,7 @@ export const ShopView = () => {
               }}>
               <View
                 style={{
-                  paddingTop: 15,
+                  paddingTop: 10,
                   flexDirection: 'row',
                   marginHorizontal: 15,
                   backgroundColor: 'white',
@@ -286,10 +288,10 @@ export const ShopView = () => {
                       paddingLeft: 15,
                     }}>
                     <View>
-                      <Text style={{fontSize: 18, color: 'black'}}>
+                      <Text style={{fontSize: FontSize.font14, color: 'black'}}>
                         {e.title}
                       </Text>
-                      <Text style={{color: 'grey'}}>⭐⭐⭐⭐⭐ (3)</Text>
+                      <Text style={{color: 'grey', fontSize: FontSize.font12}}>⭐⭐⭐⭐⭐ (3)</Text>
                     </View>
                   </View>
                   <View
@@ -301,7 +303,7 @@ export const ShopView = () => {
                       // justifyContent: 'flex-start',
                     }}>
                     <View style={{width: width * 0.5, paddingVertical: 1, backgroundColor: 'white', marginRight: 20}}>
-                    <Text style={{fontSize: 14.5, color: 'grey', fontWeight: 'bold'}}>
+                    <Text style={{fontSize: FontSize.font12, color: 'grey', fontWeight: 'bold'}}>
                       {e.subtitle}
                     </Text>
                     </View>
@@ -317,19 +319,21 @@ export const ShopView = () => {
                           paddingRight: 20,
                         }}>
                         <FontAwesome6
+                        size={12}
                           name="location-dot"
                           style={{paddingRight: 5, marginTop: 4}}
                           color={'#16247d'}></FontAwesome6>
-                        <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                        <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>
                           None
                         </Text>
                       </View>
                       <View style={{flexDirection: 'row', paddingVertical: 15}}>
                         <FontAwesome6
+                          size={12}
                           name="clock"
                           style={{paddingRight: 5, marginTop: 4}}
                           color={'#16247d'}></FontAwesome6>
-                        <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                        <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>
                           Opening
                         </Text>
                       </View>
@@ -358,7 +362,7 @@ export const ShopView = () => {
                       marginTop: 0,
                       // marginRight: 17,
                     }}>
-                    <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                    <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font10}}>
                       Booking
                     </Text>
                   </View>
@@ -398,6 +402,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: 'row',
     backgroundColor: 'white',
-    paddingVertical: 15,
+    paddingVertical: 10,
   },
 });

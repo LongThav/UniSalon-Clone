@@ -15,6 +15,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import { FontSize } from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -31,7 +32,7 @@ export const BookingDetailView = () => {
     ]);
   return (
     <SafeAreaView style={{flex: 1}}>
-      <View style={styles.AppBar}>
+      {/* <View style={styles.AppBar}>
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => {
@@ -48,13 +49,25 @@ export const BookingDetailView = () => {
           }}>
           Booking Detail
         </Text>
+      </View> */}
+      <View style={styles.Appbar}>
+        <AntDesign
+          onPress={() => {
+            console.log('Back');
+            navigation.goBack();
+          }}
+          name="arrowleft"
+          color={'white'}
+          size={18}
+          style={{position: 'absolute', left: 15, top: 15}}></AntDesign>
+        <Text style={styles.TitleAppbar}>Booking Detail</Text>
       </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{marginTop: '14%', paddingHorizontal: 15, marginBottom: '15%'}}>
+        style={{paddingHorizontal: 15, marginBottom: '15%'}}>
         <Text
           style={{
-            fontSize: 18,
+            fontSize: FontSize.font14,
             color: '#16247d',
             fontWeight: 'bold',
             marginTop: 10,
@@ -65,7 +78,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '10%', marginTop: '5%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -74,7 +87,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -85,7 +98,7 @@ export const BookingDetailView = () => {
         <View style={{flexDirection: 'row', paddingLeft: '9%', marginTop: 10}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -94,7 +107,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -106,7 +119,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '5.5%', marginTop: 10}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -115,7 +128,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 16.5,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -134,7 +147,7 @@ export const BookingDetailView = () => {
           <Text
             style={{
               paddingVertical: 20,
-              fontSize: 18,
+              fontSize: FontSize.font14,
               color: '#16247d',
               fontWeight: 'bold',
             }}>
@@ -150,7 +163,7 @@ export const BookingDetailView = () => {
             <View style={{paddingVertical: 20, flexDirection: 'row'}}>
               <Text
                 style={{
-                  fontSize: 18,
+                  fontSize: FontSize.font14,
                   color: '#16247d',
                   fontWeight: 'bold',
                   textDecorationLine: 'underline',
@@ -159,7 +172,7 @@ export const BookingDetailView = () => {
               </Text>
               <MaterialIcons
                 name="edit"
-                size={25}
+                size={18}
                 color={'#16247d'}></MaterialIcons>
             </View>
           </TouchableOpacity>
@@ -168,7 +181,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '13%', marginTop: '0%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -177,7 +190,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -189,7 +202,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '12%', marginTop: '0%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -198,7 +211,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -210,7 +223,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '9.5%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -226,7 +239,7 @@ export const BookingDetailView = () => {
               alignItems: 'center',
               borderRadius: 25,
             }}>
-            <Text style={{fontSize: 17, fontWeight: 'bold', color: 'white'}}>
+            <Text style={{fontSize: FontSize.font12, fontWeight: 'bold', color: 'white'}}>
               Booking
             </Text>
           </View>
@@ -241,7 +254,7 @@ export const BookingDetailView = () => {
         <Text
           style={{
             paddingVertical: 20,
-            fontSize: 18,
+            fontSize: FontSize.font14,
             fontWeight: 'bold',
             color: '#16247d',
           }}>
@@ -262,17 +275,17 @@ export const BookingDetailView = () => {
           <View style={{paddingLeft: 15}}>
             <Text
               style={{
-                fontSize: 18,
+                fontSize: FontSize.font14,
                 color: '#16247d',
                 fontWeight: 'bold',
                 paddingBottom: 10,
               }}>
               ជាង​ សុផា
             </Text>
-            <Text style={{fontWeight: 'bold', paddingBottom: 8, color: 'grey'}}>
+            <Text style={{fontWeight: 'bold', paddingBottom: 8, color: 'grey', fontSize: FontSize.font12}}>
               Professor of Men Style
             </Text>
-            <Text style={{fontWeight: 'bold', color: 'grey'}}>098987487</Text>
+            <Text style={{fontWeight: 'bold', color: 'grey', fontSize: FontSize.font12}}>098987487</Text>
           </View>
         </View>
         <View
@@ -286,7 +299,7 @@ export const BookingDetailView = () => {
           <Text
             style={{
               paddingVertical: 20,
-              fontSize: 18,
+              fontSize: FontSize.font14,
               color: '#16247d',
               fontWeight: 'bold',
             }}>
@@ -301,14 +314,14 @@ export const BookingDetailView = () => {
             <View style={{paddingVertical: 20, flexDirection: 'row'}}>
               <Text
                 style={{
-                  fontSize: 18,
+                  fontSize: FontSize.font14,
                   color: '#16247d',
                   fontWeight: 'bold',
                   textDecorationLine: 'underline',
                 }}>
                 Add Services
               </Text>
-              <Ionicons name="add" size={25} color={'#16247d'}></Ionicons>
+              <Ionicons name="add" size={18} color={'#16247d'}></Ionicons>
             </View>
           </TouchableOpacity>
         </View>
@@ -322,7 +335,7 @@ export const BookingDetailView = () => {
           }}></View>
         <Text
           style={{
-            fontSize: 18,
+            fontSize: FontSize.font14,
             color: '#16247d',
             fontWeight: 'bold',
             paddingVertical: 20,
@@ -333,7 +346,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '18%', marginTop: '0%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -342,7 +355,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -351,10 +364,10 @@ export const BookingDetailView = () => {
           </Text>
         </View>
         <View
-          style={{flexDirection: 'row', paddingLeft: '27%', marginTop: '2%'}}>
+          style={{flexDirection: 'row', paddingLeft: '25%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -363,7 +376,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -375,7 +388,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '21.6%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -384,7 +397,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'red',
               paddingRight: 15,
@@ -396,7 +409,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '20.7%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -405,7 +418,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -417,7 +430,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '21.5%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -426,7 +439,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'blue',
               paddingRight: 15,
@@ -436,10 +449,10 @@ export const BookingDetailView = () => {
           </Text>
         </View>
         <View
-          style={{flexDirection: 'row', paddingLeft: '32%', marginTop: '2%'}}>
+          style={{flexDirection: 'row', paddingLeft: '29%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -448,7 +461,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -460,7 +473,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '16.5%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -469,7 +482,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: 17,
+              fontSize: FontSize.font12,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -487,7 +500,7 @@ export const BookingDetailView = () => {
       </ScrollView>
       <TouchableOpacity activeOpacity={1} onPress={createButtonAlert}>
         <View style={styles.BottomNavigationBar}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: 'white'}}>
             Submit Booking
           </Text>
         </View>
@@ -513,5 +526,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#509cdb',
     position: 'absolute',
+  },
+  Appbar: {
+    width: 'auto',
+    paddingVertical: 15,
+    backgroundColor: '#16247d',
+    flexDirection: 'row',
+    textAlign: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    justifyContent: 'center',
+  },
+  TitleAppbar: {
+    fontSize: FontSize.font14,
+    color: 'white',
+    fontWeight: 'bold',
   },
 });

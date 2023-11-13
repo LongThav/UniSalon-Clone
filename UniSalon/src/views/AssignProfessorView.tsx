@@ -12,6 +12,7 @@ import {
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { FontSize } from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -70,19 +71,31 @@ export const AssignProfessorView = () => {
       style={{
         flex: 1,
       }}>
-      <View style={styles.AppBar}>
+      {/* <View style={styles.AppBar}>
         <TouchableOpacity
           activeOpacity={0.5}
           onPress={() => {
             console.log('Back');
             navigation.goBack();
           }}>
-          <AntDesign name="arrowleft" color={'white'} size={28}></AntDesign>
+          <AntDesign name="arrowleft" color={'white'} size={18} style={{position: 'absolute'}}></AntDesign>
         </TouchableOpacity>
         <Text style={styles.SubText}>Assign Professors (Optional)</Text>
+      </View> */}
+      <View style={styles.Appbar}>
+        <AntDesign
+          onPress={() => {
+            console.log('Back');
+            navigation.goBack();
+          }}
+          name="arrowleft"
+          color={'white'}
+          size={18}
+          style={{position: 'absolute', left: 15, top: 15}}></AntDesign>
+        <Text style={styles.TitleAppbar}>Assign Professors (Optional)</Text>
       </View>
       <View style={styles.BottomAppBar}>
-        <Text style={{fontSize: 18, fontWeight: 'bold', color: 'black'}}>
+        <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: 'black'}}>
           Select Professors
         </Text>
       </View>
@@ -196,26 +209,26 @@ export const AssignProfessorView = () => {
                   }}>
                   <View
                     style={{
-                      width: 65,
-                      height: 65,
+                      width: 50,
+                      height: 50,
                       backgroundColor: 'yellow',
-                      borderRadius: 65 / 2,
+                      borderRadius: 50 / 2,
                       marginTop: 15,
                     }}>
                     <Image
                       style={{
-                        width: 65,
-                        height: 65,
+                        width: 50,
+                        height: 50,
                         flex: 1,
-                        borderRadius: 65 / 2,
+                        borderRadius: 50 / 2,
                       }}
                       source={require('../../assets/imgs/img1.jpg')}></Image>
                   </View>
                   <View
                     style={{
-                      width: 30,
-                      height: 30,
-                      borderRadius: 30 / 2,
+                      width: 20,
+                      height: 20,
+                      borderRadius: 20 / 2,
                       borderWidth: 2,
                       borderColor: 'grey',
                       marginLeft: 20,
@@ -226,7 +239,7 @@ export const AssignProfessorView = () => {
                   style={{
                     marginLeft: 28,
                     marginTop: 5,
-                    fontSize: 15,
+                    fontSize: FontSize.font14,
                     fontWeight: 'bold',
                     color: 'grey'
                   }}>
@@ -236,12 +249,12 @@ export const AssignProfessorView = () => {
                   style={{
                     marginLeft: 40,
                     marginTop: 5,
-                    fontSize: 15,
+                    fontSize: FontSize.font12,
                     fontWeight: 'bold',
                   }}>
                   ⭐⭐⭐⭐⭐
                 </Text>
-                <Text style={{marginTop: 8, marginLeft: 23, color:'grey'}}>
+                <Text style={{marginTop: 8, marginLeft: 23, color:'grey', fontSize: FontSize.font12}}>
                   8 Credits / 2 Reviews
                 </Text>
               </View>
@@ -259,7 +272,7 @@ export const AssignProfessorView = () => {
           }
         }}>
         <View style={styles.BtnButton}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: 'white'}}>
             {Index ? 'Next' : 'Skip'}
           </Text>
         </View>
@@ -272,20 +285,19 @@ const styles = StyleSheet.create({
   AppBar: {
     paddingHorizontal: 10,
     width: 'auto',
-    height: 50,
+    paddingVertical: 15,
     backgroundColor: '#16247d',
     // position: 'absolute',
-    alignItems: 'flex-start',
+    justifyContent: 'space-between',
     paddingTop: '3%',
     flexDirection: 'row',
     verticalAlign: 'middle',
   },
   SubText: {
-    fontSize: 18,
+    fontSize: FontSize.font14,
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingHorizontal: '10%',
   },
   BottomAppBar: {
     width: 'auto',
@@ -323,5 +335,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'space-around',
     marginHorizontal: 15,
+  },
+   Appbar: {
+    width: 'auto',
+    paddingVertical: 15,
+    backgroundColor: '#16247d',
+    flexDirection: 'row',
+    textAlign: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    justifyContent: 'center',
+  },
+  TitleAppbar: {
+    fontSize: FontSize.font14,
+    color: 'white',
+    fontWeight: 'bold',
   },
 });

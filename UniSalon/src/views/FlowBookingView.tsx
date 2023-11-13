@@ -11,6 +11,7 @@ import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import { FontSize } from '../constant/FontSize';
 
 const FlowBookingView = () => {
   const navigation: any = useNavigation();
@@ -24,14 +25,14 @@ const FlowBookingView = () => {
           }}
           name="arrowleft"
           color={'white'}
-          size={28}
+          size={18}
           style={{position: 'absolute', left: 15, top: 15}}></AntDesign>
         <Text style={styles.TitleAppbar}>MAKE A BOOKING</Text>
       </View>
       <ScrollView>
         <Text
           style={{
-            fontSize: 18,
+            fontSize: FontSize.font14,
             paddingHorizontal: 15,
             paddingVertical: 15,
             fontWeight: 'bold',
@@ -41,7 +42,7 @@ const FlowBookingView = () => {
         </Text>
 
         <View style={styles.Form1}>
-          <Ionicons name="business-outline" color={'grey'} size={25}></Ionicons>
+          <Ionicons name="business-outline" color={'grey'} size={18}></Ionicons>
           <View
             style={{
               width: 1,
@@ -49,13 +50,13 @@ const FlowBookingView = () => {
               backgroundColor: 'black',
               marginHorizontal: 15,
             }}></View>
-          <Text style={{fontSize: 18, color: 'grey'}}>មែន ស្តាយ</Text>
+          <Text style={{fontSize: FontSize.font14, color: 'grey'}}>មែន ស្តាយ</Text>
         </View>
         <View style={styles.Form1}>
           <Ionicons
             name="phone-portrait-outline"
             color={'grey'}
-            size={25}></Ionicons>
+            size={18}></Ionicons>
           <View
             style={{
               width: 1,
@@ -63,13 +64,13 @@ const FlowBookingView = () => {
               backgroundColor: 'black',
               marginHorizontal: 15,
             }}></View>
-          <Text style={{fontSize: 18, color: 'grey'}}>715636246</Text>
+          <Text style={{fontSize: FontSize.font14, color: 'grey'}}>715636246</Text>
         </View>
         <View style={styles.Form1}>
           <EvilIcons
             name="location"
             color={'grey'}
-            size={25}
+            size={18}
             style={{marginTop: 5}}></EvilIcons>
           <View
             style={{
@@ -78,23 +79,23 @@ const FlowBookingView = () => {
               backgroundColor: 'black',
               marginHorizontal: 15,
             }}></View>
-          <Text style={{fontSize: 16, color: 'grey'}}>
+          <Text style={{fontSize: FontSize.font14, color: 'grey'}}>
             103 St 512, Phnom Penh, Cambodia
           </Text>
         </View>
         <Text
           style={{
             paddingHorizontal: 15,
-            paddingVertical: 10,
+            paddingVertical: 15,
             color: 'black',
-            fontSize: 18,
+            fontSize: FontSize.font14,
             fontWeight: 'bold',
           }}>
           Booking Information
         </Text>
         <View style={{flexDirection: 'row'}}>
           <View style={styles.SelectDay}>
-            <AntDesign name="clockcircleo" color={'grey'} size={20}></AntDesign>
+            <AntDesign name="clockcircleo" color={'grey'} size={18}></AntDesign>
             <View
               style={{
                 width: 1,
@@ -102,10 +103,10 @@ const FlowBookingView = () => {
                 backgroundColor: 'black',
                 marginHorizontal: 15,
               }}></View>
-            <Text style={{fontSize: 15, color: 'black'}}>Mon,30 Oct 2023</Text>
+            <Text style={{fontSize: FontSize.font14, color: 'black'}}>Mon,30 Oct 2023</Text>
           </View>
           <View style={styles.SelectHour}>
-            <AntDesign name="clockcircleo" color={'grey'} size={20}></AntDesign>
+            <AntDesign name="clockcircleo" color={'grey'} size={18}></AntDesign>
             <View
               style={{
                 width: 1,
@@ -113,11 +114,11 @@ const FlowBookingView = () => {
                 backgroundColor: 'grey',
                 marginHorizontal: 15,
               }}></View>
-            <Text style={{fontSize: 15, color: 'black'}}>11:17</Text>
+            <Text style={{fontSize: FontSize.font14, color: 'black'}}>11:17</Text>
           </View>
         </View>
         <View style={styles.Form2}>
-          <AntDesign name="infocirlceo" color={'black'} size={25}></AntDesign>
+          <AntDesign name="infocirlceo" color={'black'} size={18}></AntDesign>
           <View
             style={{
               width: 1,
@@ -125,7 +126,7 @@ const FlowBookingView = () => {
               backgroundColor: 'black',
               marginHorizontal: 15,
             }}></View>
-          <Text style={{fontSize: 18, color: 'grey'}}>
+          <Text style={{fontSize: FontSize.font14, color: 'grey'}}>
             Booking Note...(Optional)
           </Text>
           {/* <TextInput></TextInput> */}
@@ -152,7 +153,7 @@ export default FlowBookingView;
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    height: 60,
+    paddingVertical: 15,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',
@@ -161,7 +162,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   TitleAppbar: {
-    fontSize: 18,
+    fontSize: FontSize.font14,
     color: 'white',
     fontWeight: 'bold',
   },

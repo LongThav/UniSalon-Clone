@@ -9,9 +9,13 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
+  Dimensions
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {ScrollView} from 'react-native-gesture-handler';
+import { FontSize } from '../constant/FontSize';
+
+const {width, height} = Dimensions.get('window');
 
 const data = [
   {
@@ -50,13 +54,13 @@ export const VideoView = () => {
           <Text style={styles.TitleAppbar}>Videoe</Text>
         </View>
       <View style={styles.SearchBar}>
-        <EvilIcons name="search" size={30} color="grey" />
+        <EvilIcons name="search" size={20} color="grey" />
         {/* <Text style={{ paddingHorizontal: 10 }}>Search Video...</Text> */}
         <TextInput
           placeholder="Search Video..."
           placeholderTextColor={'grey'}
           style={{
-            fontSize: 20,
+            fontSize: FontSize.font13,
             marginLeft: 8,
             margin: 0,
             padding: 0,
@@ -71,7 +75,7 @@ export const VideoView = () => {
           backgroundColor: '#ebebec',
           marginBottom: 4,
         }}></View>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         {data.map((e, index) => {
           return (
             <TouchableOpacity
@@ -84,8 +88,8 @@ export const VideoView = () => {
               <View key={index} style={styles.CardList}>
                 <View
                   style={{
-                    width: 90,
-                    height: 90,
+                    width: width * 0.27,
+                    height: 75,
                     backgroundColor: '#ebebec',
                     borderRadius: 10,
                   }}>
@@ -102,7 +106,7 @@ export const VideoView = () => {
                   <Text numberOfLines={3} style={styles.Text}>
                     {e.title}
                   </Text>
-                  <Text style={{paddingVertical: 22, color: 'grey'}}>
+                  <Text style={{marginTop: 14, color: 'grey', fontSize: FontSize.font12}}>
                     17 Dec 2021 At 11:59 AM
                   </Text>
                 </View>
@@ -127,8 +131,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   TitleAppbar: {
-    fontSize: 18,
+    fontSize: FontSize.font15,
     color: 'white',
+    fontWeight: 'bold'
   },
   SearchBar: {
     width: 'auto',
@@ -140,7 +145,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: 'row',
     backgroundColor: 'white',
-    paddingVertical: 15,
+    paddingVertical: 8,
     marginVertical: 15,
     marginHorizontal: 15,
   },
@@ -154,12 +159,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingTop: 10,
     borderRadius: 8,
+    paddingBottom: 10,
     justifyContent: 'space-between',
   },
   Text: {
     color: 'black',
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: FontSize.font14,
     flex: 1,
   },
 });

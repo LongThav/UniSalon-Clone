@@ -13,6 +13,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
+import { FontSize } from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -49,7 +50,7 @@ const RateView = () => {
           }}
           name="arrowleft"
           color={'white'}
-          size={28}
+          size={18}
           style={{position: 'absolute', left: 15, top: 15}}></AntDesign>
         <Text style={styles.TxtTitleAppBar}>មែន ស្តាយ's Reviews</Text>
       </View>
@@ -320,14 +321,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   TxtTitleAppBar: {
-    fontSize: 18,
+    fontSize: FontSize.font14,
     color: 'white',
     fontWeight: 'bold',
   },
   txtAverage: {
     paddingLeft: 15,
     paddingTop: 15,
-    fontSize: 18,
+    fontSize: FontSize.font14,
     color: 'blue',
     fontWeight: 'bold',
   },

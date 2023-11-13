@@ -16,6 +16,7 @@ import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {SceneMap, TabBar, TabView} from 'react-native-tab-view';
+import { FontSize } from '../constant/FontSize';
 const {width, height} = Dimensions.get('window');
 
 const MenData = [
@@ -54,19 +55,19 @@ const Kid = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: '#16247d'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
             កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
           </Text>
-          <Text style={{fontSize: 18, marginTop: 8}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
             ពិន្ទុ:0.5 ដង.ហ្វ្រីរកក់សក់.ធ្វើម៉ូតសក់
           </Text>
-          <Text style={{fontSize: 18, marginTop: 5}}>ដោយឥតគិតថ្លៃ😍</Text>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 5}}>ដោយឥតគិតថ្លៃ😍</Text>
+          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
             <Text
               style={{
                 marginRight: '32%',
                 marginTop: 20,
-                fontSize: 18,
+                fontSize: FontSize.font12,
                 color: 'red',
                 fontWeight: 'bold',
               }}>
@@ -81,7 +82,7 @@ const Kid = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: 18, color: '#16247d', fontWeight: 'bold'}}>
+                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
                 Booking
               </Text>
             </View>
@@ -95,15 +96,15 @@ const Kid = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: '#16247d'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
             Popular Hairstyles
           </Text>
-          <View style={{flexDirection: 'row', marginTop: 25}}>
+          <View style={{flexDirection: 'row', marginTop: 25, justifyContent: 'space-between'}}>
             <Text
               style={{
                 marginRight: '32%',
                 marginTop: 20,
-                fontSize: 18,
+                fontSize: FontSize.font12,
                 color: 'red',
                 fontWeight: 'bold',
               }}>
@@ -119,7 +120,7 @@ const Kid = () => {
                 marginLeft: 12,
               }}>
               <Text
-                style={{fontSize: 18, color: '#16247d', fontWeight: 'bold'}}>
+                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
                 Booking
               </Text>
             </View>
@@ -142,16 +143,16 @@ const Women = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: '#16247d'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
             កាត់ សក់​.ម៉ូត.លូរហ្វេត.ហាយហ្វេត.
           </Text>
-          <Text style={{fontSize: 18, marginTop: 8}}>0.5</Text>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>0.5</Text>
+          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
             <Text
               style={{
                 marginRight: '32%',
                 marginTop: 20,
-                fontSize: 18,
+                fontSize: FontSize.font12,
                 color: 'red',
                 fontWeight: 'bold',
               }}>
@@ -166,7 +167,7 @@ const Women = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: 18, color: '#16247d', fontWeight: 'bold'}}>
+                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
                 Booking
               </Text>
             </View>
@@ -180,16 +181,16 @@ const Women = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: '#16247d'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
             Popular Hairstyles
           </Text>
-          <Text style={{fontSize: 18, marginTop: 8}}>Popular Hairstyles</Text>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>Popular Hairstyles</Text>
+          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
             <Text
               style={{
                 marginRight: '32%',
                 marginTop: 20,
-                fontSize: 18,
+                fontSize: FontSize.font12,
                 color: 'red',
                 fontWeight: 'bold',
               }}>
@@ -204,7 +205,7 @@ const Women = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: 18, color: '#16247d', fontWeight: 'bold'}}>
+                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
                 Booking
               </Text>
             </View>
@@ -218,15 +219,15 @@ const Women = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: '#16247d'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
             Popular Hairstyles
           </Text>
-          <View style={{flexDirection: 'row', marginTop: 25}}>
+          <View style={{flexDirection: 'row', marginTop: 25, justifyContent: 'space-between'}}>
             <Text
               style={{
                 marginRight: '32%',
                 marginTop: 20,
-                fontSize: 18,
+                fontSize: FontSize.font12,
                 color: 'red',
                 fontWeight: 'bold',
               }}>
@@ -241,7 +242,7 @@ const Women = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: 18, color: '#16247d', fontWeight: 'bold'}}>
+                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
                 Booking
               </Text>
             </View>
@@ -264,15 +265,15 @@ const Men = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: '#16247d'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
             Hight Fan Hairstyles
           </Text>
-          <View style={{flexDirection: 'row', marginTop: 25}}>
+          <View style={{flexDirection: 'row', marginTop: 25, justifyContent: 'space-between'}}>
             <Text
               style={{
                 marginRight: '32%',
                 marginTop: 20,
-                fontSize: 18,
+                fontSize: FontSize.font12,
                 color: 'red',
                 fontWeight: 'bold',
               }}>
@@ -287,7 +288,7 @@ const Men = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: 18, color: '#16247d', fontWeight: 'bold'}}>
+                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
                 Booking
               </Text>
             </View>
@@ -301,19 +302,19 @@ const Men = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: '#16247d'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
             Classic
           </Text>
-          <Text style={{fontSize: 15, marginTop: 8}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
             Classic Model លក្ខណះសុភាពរាបសារ
           </Text>
           <Text>សាកសមគ្រប់វិស័យ</Text>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
+          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
             <Text
               style={{
                 marginRight: '32%',
                 marginTop: 20,
-                fontSize: 18,
+                fontSize: FontSize.font12,
                 color: 'red',
                 fontWeight: 'bold',
               }}>
@@ -328,7 +329,7 @@ const Men = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: 18, color: '#16247d', fontWeight: 'bold'}}>
+                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
                 Booking
               </Text>
             </View>
@@ -342,16 +343,16 @@ const Men = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: '#16247d'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
             កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
           </Text>
-          <Text style={{fontSize: 18, marginTop: 8}}>Popular Hairstyles</Text>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>Popular Hairstyles</Text>
+          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
             <Text
               style={{
                 marginRight: '32%',
                 marginTop: 20,
-                fontSize: 18,
+                fontSize: FontSize.font12,
                 color: 'red',
                 fontWeight: 'bold',
               }}>
@@ -366,7 +367,7 @@ const Men = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: 18, color: '#16247d', fontWeight: 'bold'}}>
+                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
                 Booking
               </Text>
             </View>
@@ -423,7 +424,7 @@ export const SubService = () => {
           style={{
             color: focused ? '#16247d' : 'black',
             margin: 8,
-            fontSize: 18,
+            fontSize: FontSize.font14,
             fontWeight: 'bold',
           }}>
           {route.title}
@@ -516,14 +517,14 @@ export const SubService = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingHorizontal: 5, width: '60%', paddingLeft: 10}}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: 'black'}}>
+          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: 'black'}}>
             កាត់សក់បុរស
           </Text>
-          <Text style={{color: 'blue', fontWeight: 'bold'}}>មែន ស្តាយ</Text>
-          <Text style={{color: 'grey', paddingVertical: 5}}>
+          <Text style={{color: 'blue', fontWeight: 'bold', fontSize: FontSize.font12}}>មែន ស្តាយ</Text>
+          <Text style={{color: 'grey', paddingVertical: 5, fontSize: FontSize.font12}}>
             ⭐⭐⭐⭐⭐​ (3)
           </Text>
-          <Text style={{color: 'grey', fontWeight: 'bold', fontSize: 16}}>
+          <Text style={{color: 'grey', fontWeight: 'bold', fontSize: FontSize.font12}}>
             ហាងយើងខ្ញុំផ្ដល់ជូននៅទាំងគុណភាពនិងអនាម័យជូនបងប្អូន
           </Text>
         </View>
@@ -535,7 +536,7 @@ export const SubService = () => {
             marginRight: 15,
             marginTop: 0,
           }}>
-          <Text style={{color: 'red', fontWeight: 'bold', paddingTop: 10}}>
+          <Text style={{color: 'red', fontWeight: 'bold', paddingTop: 10, fontSize: FontSize.font12}}>
             $ 5.00
           </Text>
           <Text
@@ -544,6 +545,7 @@ export const SubService = () => {
               color: 'red',
               textAlign: 'right',
               marginRight: 0,
+              fontSize: FontSize.font12
             }}>
             Up
           </Text>
@@ -551,14 +553,14 @@ export const SubService = () => {
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'center'}}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <FontAwesome6 name="location-dot" color={'#16247d'}></FontAwesome6>
-          <Text style={{color: '#16247d', fontWeight: 'bold', paddingLeft: 5}}>
+          <FontAwesome6 size={12} name="location-dot" color={'#16247d'}></FontAwesome6>
+          <Text style={{color: '#16247d', fontWeight: 'bold', paddingLeft: 5, fontSize: FontSize.font11}}>
             None
           </Text>
         </View>
         <View style={{flexDirection: 'row', marginLeft: 15}}>
-          <EvilIcons name="clock" color={'#16247d'} size={22}></EvilIcons>
-          <Text style={{color: '#16247d', fontWeight: 'bold', paddingLeft: 5}}>
+          <EvilIcons  name="clock" color={'#16247d'} size={17}></EvilIcons>
+          <Text style={{color: '#16247d', fontWeight: 'bold', paddingLeft: 5, fontSize: FontSize.font12}}>
             None
           </Text>
         </View>
@@ -584,8 +586,8 @@ export const SubService = () => {
               backgroundColor: '#edeff3',
               borderRadius: 20,
             }}>
-            <FontAwesome name="image" size={23} color={'grey'}></FontAwesome>
-            <Text style={{marginLeft: 10, color: 'grey'}}>Gallery</Text>
+            <FontAwesome name="image" size={18} color={'grey'}></FontAwesome>
+            <Text style={{marginLeft: 10, color: 'grey', fontSize: FontSize.font14}}>Gallery</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -602,8 +604,8 @@ export const SubService = () => {
               marginLeft: 18,
               borderRadius: 20,
             }}>
-            <AntDesign name="isv" size={23} color={'#16247d'}></AntDesign>
-            <Text style={{marginLeft: 10, color: '#16247d', fontWeight: 'bold'}}>
+            <AntDesign name="isv" size={18} color={'#16247d'}></AntDesign>
+            <Text style={{marginLeft: 10, color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font14}}>
               MAKE A BOOKING
             </Text>
           </View>

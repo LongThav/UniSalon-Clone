@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
+import { FontSize } from '../constant/FontSize';
 const {width} = Dimensions.get('window');
 
 export const DetailPromotion = () => {
@@ -66,11 +67,11 @@ export const DetailPromotion = () => {
               }}>
               <Text
                 style={{
-                  marginTop: 8,
+                  marginTop: 13,
                   marginBottom: 4,
                   fontWeight: 'bold',
                   color: 'black',
-                  fontSize: 18,
+                  fontSize: FontSize.font14,
                 }}>
                 កាត់សក់បុរស
               </Text>
@@ -86,20 +87,21 @@ export const DetailPromotion = () => {
                   fontWeight: 'bold',
                   color: '#16247d',
                   paddingBottom: 4,
+                  fontSize: FontSize.font12
                 }}>
                 មែន ស្តាយ
               </Text>
               {/* <Text style={{ color: 'red', fontWeight: 'bold', paddingTop: 10,  }}>$ 5.00</Text> */}
               {/* <Text style={{ fontWeight: 'bold', color: 'red', textAlign: 'right', marginRight: 0 }}>Up</Text> */}
             </View>
-            <Text>⭐⭐⭐⭐⭐(3)</Text>
+            <Text style={{color: 'grey', fontSize: FontSize.font12}}>⭐⭐⭐⭐⭐(3)</Text>
             <View style={{flex: 0}}>
               <Text
                 numberOfLines={2}
                 style={{
                   paddingVertical: 4,
                   color: 'grey',
-                  fontSize: 16,
+                  fontSize: FontSize.font12,
                 }}>
                 ហាងយើងខ្ញុំផ្ដល់ជូននៅទាំងគុណភាណ និងអនាម័យ
               </Text>
@@ -115,7 +117,7 @@ export const DetailPromotion = () => {
                   name="location-dot"
                   style={{paddingRight: 5, marginTop: 4}}
                   color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold'}}>None</Text>
+                <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>None</Text>
               </View>
               <View
                 style={{
@@ -127,7 +129,7 @@ export const DetailPromotion = () => {
                   name="clock"
                   style={{paddingRight: 5, marginTop: 4}}
                   color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold'}}>
+                <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>
                   Opening
                 </Text>
                 <TouchableOpacity
@@ -165,7 +167,7 @@ export const DetailPromotion = () => {
               right: 0,
               bottom: 0,
               marginRight: 15,
-              marginBottom: 22,
+              marginBottom: 13,
             }}
             size={20}
             color={'pink'}></AntDesign>
@@ -239,7 +241,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 8,
     borderColor: '#f1f1f1',
-    padding: 10,
+    paddingVertical: 0,
+    paddingHorizontal: 10,
     flexDirection: 'row',
     alignItems: 'center',
     // justifyContent: 'space-between',

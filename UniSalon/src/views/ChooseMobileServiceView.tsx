@@ -12,6 +12,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import {Image} from '@rneui/base';
 import {TouchableOpacity} from 'react-native';
+import { FontSize } from '../constant/FontSize';
 
 const data = [
   {
@@ -62,8 +63,8 @@ const ChooseMobileServiceView = () => {
           }}
           name="arrowleft"
           color={'white'}
-          size={28}
-          style={{position: 'absolute', left: 15, top: 15}}></AntDesign>
+          size={18}
+          style={{position: 'absolute', left: 15, top: 17}}></AntDesign>
         <Text style={styles.TitleAppbar}>Choose Mobile Service</Text>
       </View>
       <Text style={styles.txtService}>Select Service</Text>
@@ -106,7 +107,7 @@ const ChooseMobileServiceView = () => {
                     style={{
                       position: 'absolute',
                       left: 0,
-                      fontSize: 12,
+                      fontSize: 10,
                       color: 'white',
                       padding: 5,
                       backgroundColor: 'blue',
@@ -124,12 +125,13 @@ const ChooseMobileServiceView = () => {
                       padding: 2,
                       color: 'white',
                       borderBottomRightRadius: 5,
+                      fontSize: 10
                     }}>
                     {item.point}
                   </Text>
                 </View>
                 <Text
-                  style={{color: 'blue', fontWeight: 'bold', paddingLeft: 15}}>
+                  style={{color: 'blue', fontWeight: 'bold', paddingLeft: 15, fontSize: FontSize.font14}}>
                   {item.title}
                 </Text>
               </View>
@@ -143,7 +145,7 @@ const ChooseMobileServiceView = () => {
             navigation.push('OrderDetailView');
           }}>
           <View style={styles.btnNext}>
-            <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold'}}>
+            <Text style={{fontSize: FontSize.font14, color: 'white', fontWeight: 'bold'}}>
               Next
             </Text>
           </View>
@@ -158,20 +160,20 @@ export default ChooseMobileServiceView;
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    height: 60,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',
     alignItems: 'center',
     paddingHorizontal: 16,
     justifyContent: 'center',
+    paddingVertical: 15
   },
   TitleAppbar: {
-    fontSize: 18,
+    fontSize: FontSize.font15,
     color: 'white',
   },
   txtService: {
-    fontSize: 18,
+    fontSize: FontSize.font14,
     paddingHorizontal: 15,
     paddingTop: 15,
     color: 'black',
@@ -192,7 +194,7 @@ const styles = StyleSheet.create({
     paddingTop: 25,
   },
   btnNext: {
-    paddingVertical: 10,
+    paddingVertical: 13,
     backgroundColor: '#16247d',
     margin: 15,
     borderRadius: 5,

@@ -71,7 +71,7 @@ const DrawerNavigate = () => {
               <View
                 style={{
                   width: 'auto',
-                  height: height * 0.3,
+                  height: height * 0.25,
                   backgroundColor: '#16247d',
                 }}>
                 {/* <Image
