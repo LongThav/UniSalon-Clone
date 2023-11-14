@@ -16,7 +16,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {useNavigation} from '@react-navigation/native';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -67,7 +67,9 @@ const Promotion = () => {
               មែន​ ស្តាយ
             </Text>
             <Text style={{color: 'grey', fontSize: 12}}>⭐⭐⭐⭐⭐ (3)</Text>
-            <Text style={{color: 'grey', fontSize: 12}}>កាត់សក់បុរស free កក់សក់ជូន</Text>
+            <Text style={{color: 'grey', fontSize: 12}}>
+              កាត់សក់បុរស free កក់សក់ជូន
+            </Text>
             <View style={{flexDirection: 'row'}}>
               <View
                 style={{
@@ -80,7 +82,14 @@ const Promotion = () => {
                   size={13}
                   style={{paddingRight: 5, marginTop: 4}}
                   color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>None</Text>
+                <Text
+                  style={{
+                    color: '#16247d',
+                    fontWeight: 'bold',
+                    fontSize: FontSize.font12,
+                  }}>
+                  None
+                </Text>
               </View>
               <View style={{flexDirection: 'row', paddingVertical: 15}}>
                 <FontAwesome6
@@ -88,7 +97,12 @@ const Promotion = () => {
                   size={13}
                   style={{paddingRight: 5, marginTop: 4}}
                   color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                <Text
+                  style={{
+                    color: '#16247d',
+                    fontWeight: 'bold',
+                    fontSize: FontSize.font12,
+                  }}>
                   Opening
                 </Text>
               </View>
@@ -146,7 +160,6 @@ export const PromotionView = () => {
       style={{
         backgroundColor: '#f2f2f2',
       }}
-
       tabStyle={{
         width: width / 2,
         // backgroundColor: 'blue'
@@ -302,7 +315,7 @@ const styles = StyleSheet.create({
   TitleAppbar: {
     fontSize: FontSize.font16,
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   RibonReward: {
     width: 'auto',

@@ -15,6 +15,7 @@ import {Divider} from '@rneui/base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import { FontSize } from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -31,12 +32,12 @@ const ProfessorDetailView = (props: any) => {
           onPress={() => {
             navigation.goBack();
           }}>
-          <AntDesign name="arrowleft" color={'white'} size={28}></AntDesign>
+          <AntDesign name="arrowleft" color={'white'} size={20}></AntDesign>
         </TouchableOpacity>
         <Text style={styles.SubText}>Professor Information</Text>
         <AntDesign
           name="hearto"
-          size={25}
+          size={18}
           color={'white'}
           style={{marginRight: 0}}></AntDesign>
       </View>
@@ -71,7 +72,7 @@ const ProfessorDetailView = (props: any) => {
           }}></View>
         <Text
           style={{
-            fontSize: 18,
+            fontSize: FontSize.font14,
             color: 'black',
             fontWeight: 'bold',
             paddingLeft: 15,
@@ -82,26 +83,26 @@ const ProfessorDetailView = (props: any) => {
         <View style={styles.FrmName}>
           <Ionicons
             name="business-outline"
-            size={25}
+            size={18}
             color={'black'}></Ionicons>
-          <Text style={{fontSize: 18, color: 'black', paddingLeft: 10}}>
+          <Text style={{fontSize: FontSize.font12, color: 'black', paddingLeft: 10}}>
             មែន ស្តាយ
           </Text>
         </View>
         <View style={styles.FrmName}>
-          <Ionicons name="mail-outline" size={25} color={'black'}></Ionicons>
-          <Text style={{fontSize: 18, color: 'black', paddingLeft: 10}}>
+          <Ionicons name="mail-outline" size={18} color={'black'}></Ionicons>
+          <Text style={{fontSize: FontSize.font12, color: 'black', paddingLeft: 10}}>
             longthavsipav@gmail.com
           </Text>
         </View>
         <View style={styles.BoxText}>
-          <AntDesign name="infocirlceo" size={25} color={'grey'}></AntDesign>
+          <AntDesign name="infocirlceo" size={18} color={'grey'}></AntDesign>
         </View>
         <View style={styles.FrmName}>
-          <Ionicons name="call-outline" size={25} color={'black'}></Ionicons>
+          <Ionicons name="call-outline" size={18} color={'black'}></Ionicons>
         </View>
         <View style={styles.TxtLocation}>
-          <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
+          <Text style={{color: 'black', fontSize: FontSize.font12, fontWeight: 'bold'}}>
             Address
           </Text>
           <TouchableOpacity
@@ -113,46 +114,46 @@ const ProfessorDetailView = (props: any) => {
               <Text
                 style={{
                   color: 'blue',
-                  fontSize: 18,
+                  fontSize: FontSize.font12,
                   fontWeight: 'bold',
                   textDecorationLine: 'underline',
                   paddingRight: 5,
                 }}>
                 Direction
               </Text>
-              <Entypo name="location" color={'blue'} size={22}></Entypo>
+              <Entypo name="location" color={'blue'} size={18}></Entypo>
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.FrmName}>
-          <EvilIcons name="location" size={25} color={'black'}></EvilIcons>
+          <EvilIcons name="location" size={18} color={'black'}></EvilIcons>
         </View>
       </ScrollView>
       <View style={styles.BottomBar}>
         <View
           style={{
-            width: 40,
-            height: 40,
-            borderRadius: 40 / 2,
+            width: 30,
+            height: 30,
+            borderRadius: 30 / 2,
             backgroundColor: '#1da1f2',
             alignItems: 'center',
             alignSelf: 'center',
             justifyContent: 'center',
           }}>
-          <Ionicons name="mail-outline" size={25} color={'white'}></Ionicons>
+          <Ionicons name="mail-outline" size={18} color={'white'}></Ionicons>
         </View>
         <View
           style={{
-            width: 40,
-            height: 40,
-            borderRadius: 40 / 2,
+            width: 30,
+            height: 30,
+            borderRadius: 30 / 2,
             backgroundColor: '#ff743a',
             alignItems: 'center',
             alignSelf: 'center',
             justifyContent: 'center',
             marginHorizontal: 15,
           }}>
-          <Ionicons name="call-outline" size={25} color={'white'}></Ionicons>
+          <Ionicons name="call-outline" size={18} color={'white'}></Ionicons>
         </View>
         <TouchableOpacity
           activeOpacity={1}
@@ -167,7 +168,7 @@ const ProfessorDetailView = (props: any) => {
               width: width * 0.6,
               alignItems: 'center',
             }}>
-            <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold'}}>
+            <Text style={{fontSize: FontSize.font14, color: 'white', fontWeight: 'bold'}}>
               MAKE A BOOKING
             </Text>
           </View>
@@ -191,7 +192,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   SubText: {
-    fontSize: 18,
+    fontSize: FontSize.font14,
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',

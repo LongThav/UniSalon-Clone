@@ -58,6 +58,7 @@ const Explore = () => {
   return (
     <View style={styles.Container}>
       <FlatList
+        scrollEnabled={false}
         numColumns={4}
         columnWrapperStyle={{justifyContent: 'space-between'}}
         data={ExploreItem}

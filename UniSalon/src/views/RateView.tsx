@@ -249,7 +249,7 @@ const RateView = () => {
           }}></View>
         {CmtList.map((e, index) => {
           return (
-            <View>
+            <View key={index}>
               <View style={{flexDirection: 'row'}}>
                 <Image
                   source={e.img}

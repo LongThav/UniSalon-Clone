@@ -119,7 +119,7 @@ export const ShopView = () => {
           }}>
           Recommend Salons
         </Text>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{marginLeft: 5}}>
           {RecommendList.map((e, index) => {
             return (
               <TouchableOpacity

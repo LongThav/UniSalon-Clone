@@ -534,9 +534,10 @@ const ShopDetailView = () => {
           }}>
           Member Types
         </Text>
-        {MemeberShipData.map(e => {
+        {MemeberShipData.map((e, index) => {
           return (
             <View
+              key={index}
               style={{
                 marginHorizontal: 20,
                 paddingVertical: 10,

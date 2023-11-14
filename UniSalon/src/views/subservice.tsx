@@ -16,7 +16,7 @@ import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {SceneMap, TabBar, TabView} from 'react-native-tab-view';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 const {width, height} = Dimensions.get('window');
 
 const MenData = [
@@ -45,9 +45,7 @@ const MenData = [
 
 const Kid = () => {
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      style={{backgroundColor: '#f1f1f1'}}>
+    <View style={{backgroundColor: '#f1f1f1'}}>
       <View style={styles.CardListMen}>
         <View style={{width: '30%', height: '100%'}}>
           <Image
@@ -55,14 +53,26 @@ const Kid = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
             កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
           </Text>
           <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
             ពិន្ទុ:0.5 ដង.ហ្វ្រីរកក់សក់.ធ្វើម៉ូតសក់
           </Text>
-          <Text style={{fontSize: FontSize.font12, marginTop: 5}}>ដោយឥតគិតថ្លៃ😍</Text>
-          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 5}}>
+            ដោយឥតគិតថ្លៃ😍
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 10,
+              justifyContent: 'space-between',
+            }}>
             <Text
               style={{
                 marginRight: '32%',
@@ -82,7 +92,11 @@ const Kid = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
                 Booking
               </Text>
             </View>
@@ -96,10 +110,20 @@ const Kid = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
             Popular Hairstyles
           </Text>
-          <View style={{flexDirection: 'row', marginTop: 25, justifyContent: 'space-between'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 25,
+              justifyContent: 'space-between',
+            }}>
             <Text
               style={{
                 marginRight: '32%',
@@ -120,22 +144,24 @@ const Kid = () => {
                 marginLeft: 12,
               }}>
               <Text
-                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
                 Booking
               </Text>
             </View>
           </View>
         </View>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
 const Women = () => {
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      style={{backgroundColor: '#f1f1f1'}}>
+    <View style={{backgroundColor: '#f1f1f1'}}>
       <View style={styles.CardListMen}>
         <View style={{width: '30%', height: '100%'}}>
           <Image
@@ -143,11 +169,21 @@ const Women = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
             កាត់ សក់​.ម៉ូត.លូរហ្វេត.ហាយហ្វេត.
           </Text>
           <Text style={{fontSize: FontSize.font12, marginTop: 8}}>0.5</Text>
-          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 10,
+              justifyContent: 'space-between',
+            }}>
             <Text
               style={{
                 marginRight: '32%',
@@ -167,7 +203,11 @@ const Women = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
                 Booking
               </Text>
             </View>
@@ -181,11 +221,23 @@ const Women = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
             Popular Hairstyles
           </Text>
-          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>Popular Hairstyles</Text>
-          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
+            Popular Hairstyles
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 10,
+              justifyContent: 'space-between',
+            }}>
             <Text
               style={{
                 marginRight: '32%',
@@ -205,7 +257,11 @@ const Women = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
                 Booking
               </Text>
             </View>
@@ -219,10 +275,20 @@ const Women = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
             Popular Hairstyles
           </Text>
-          <View style={{flexDirection: 'row', marginTop: 25, justifyContent: 'space-between'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 25,
+              justifyContent: 'space-between',
+            }}>
             <Text
               style={{
                 marginRight: '32%',
@@ -242,14 +308,18 @@ const Women = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
                 Booking
               </Text>
             </View>
           </View>
         </View>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -257,7 +327,7 @@ const Men = () => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: '#f1f1f1', }}>
+      style={{backgroundColor: '#f1f1f1', flex: 1}}>
       <View style={styles.CardListMen}>
         <View style={{width: '30%', height: '100%'}}>
           <Image
@@ -265,10 +335,20 @@ const Men = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
             Hight Fan Hairstyles
           </Text>
-          <View style={{flexDirection: 'row', marginTop: 25, justifyContent: 'space-between'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 25,
+              justifyContent: 'space-between',
+            }}>
             <Text
               style={{
                 marginRight: '32%',
@@ -288,7 +368,11 @@ const Men = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
                 Booking
               </Text>
             </View>
@@ -302,14 +386,24 @@ const Men = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
             Classic
           </Text>
           <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
             Classic Model លក្ខណះសុភាពរាបសារ
           </Text>
           <Text>សាកសមគ្រប់វិស័យ</Text>
-          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 10,
+              justifyContent: 'space-between',
+            }}>
             <Text
               style={{
                 marginRight: '32%',
@@ -329,7 +423,11 @@ const Men = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
                 Booking
               </Text>
             </View>
@@ -343,11 +441,23 @@ const Men = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingLeft: 15}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
             កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
           </Text>
-          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>Popular Hairstyles</Text>
-          <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'space-between'}}>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
+            Popular Hairstyles
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 10,
+              justifyContent: 'space-between',
+            }}>
             <Text
               style={{
                 marginRight: '32%',
@@ -367,7 +477,119 @@ const Men = () => {
                 borderRadius: 8,
               }}>
               <Text
-                style={{fontSize: FontSize.font12, color: '#16247d', fontWeight: 'bold'}}>
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
+                Booking
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View style={styles.CardListMen}>
+        <View style={{width: '30%', height: '100%'}}>
+          <Image
+            style={{flex: 1, width: undefined, height: undefined}}
+            source={require('../../assets/imgs/img1.jpg')}></Image>
+        </View>
+        <View style={{paddingLeft: 15}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
+            កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
+          </Text>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
+            Popular Hairstyles
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 10,
+              justifyContent: 'space-between',
+            }}>
+            <Text
+              style={{
+                marginRight: '32%',
+                marginTop: 20,
+                fontSize: FontSize.font12,
+                color: 'red',
+                fontWeight: 'bold',
+              }}>
+              $10.00
+            </Text>
+            <View
+              style={{
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                borderWidth: 1,
+                borderColor: '#16247d',
+                borderRadius: 8,
+              }}>
+              <Text
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
+                Booking
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View style={styles.CardListMen}>
+        <View style={{width: '30%', height: '100%'}}>
+          <Image
+            style={{flex: 1, width: undefined, height: undefined}}
+            source={require('../../assets/imgs/img1.jpg')}></Image>
+        </View>
+        <View style={{paddingLeft: 15}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: '#16247d',
+            }}>
+            កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
+          </Text>
+          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
+            Popular Hairstyles
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 10,
+              justifyContent: 'space-between',
+            }}>
+            <Text
+              style={{
+                marginRight: '32%',
+                marginTop: 20,
+                fontSize: FontSize.font12,
+                color: 'red',
+                fontWeight: 'bold',
+              }}>
+              $10.00
+            </Text>
+            <View
+              style={{
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                borderWidth: 1,
+                borderColor: '#16247d',
+                borderRadius: 8,
+              }}>
+              <Text
+                style={{
+                  fontSize: FontSize.font12,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                }}>
                 Booking
               </Text>
             </View>
@@ -405,7 +627,7 @@ export const SubService = () => {
   const renderTabBar = (props: any) => (
     <TabBar
       {...props}
-      scrollEnabled
+      scrollEnabled={true}
       indicatorStyle={styles.indicator}
       style={{
         backgroundColor: 'white',
@@ -445,7 +667,11 @@ export const SubService = () => {
           <AntDesign name="arrowleft" color={'white'} size={28}></AntDesign>
         </TouchableOpacity>
         <Text style={styles.SubText}>Sub Service</Text>
-        <AntDesign name="hearto" size={25} color={'white'} style={{marginRight: 0}}></AntDesign>
+        <AntDesign
+          name="hearto"
+          size={25}
+          color={'white'}
+          style={{marginRight: 0}}></AntDesign>
       </View>
       {/* <View style={styles.Body}>
                 <View style={styles.RowBodyI}>
@@ -517,14 +743,36 @@ export const SubService = () => {
             source={require('../../assets/imgs/img1.jpg')}></Image>
         </View>
         <View style={{paddingHorizontal: 5, width: '60%', paddingLeft: 10}}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: 'black'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: 'black',
+            }}>
             កាត់សក់បុរស
           </Text>
-          <Text style={{color: 'blue', fontWeight: 'bold', fontSize: FontSize.font12}}>មែន ស្តាយ</Text>
-          <Text style={{color: 'grey', paddingVertical: 5, fontSize: FontSize.font12}}>
+          <Text
+            style={{
+              color: 'blue',
+              fontWeight: 'bold',
+              fontSize: FontSize.font12,
+            }}>
+            មែន ស្តាយ
+          </Text>
+          <Text
+            style={{
+              color: 'grey',
+              paddingVertical: 5,
+              fontSize: FontSize.font12,
+            }}>
             ⭐⭐⭐⭐⭐​ (3)
           </Text>
-          <Text style={{color: 'grey', fontWeight: 'bold', fontSize: FontSize.font12}}>
+          <Text
+            style={{
+              color: 'grey',
+              fontWeight: 'bold',
+              fontSize: FontSize.font12,
+            }}>
             ហាងយើងខ្ញុំផ្ដល់ជូននៅទាំងគុណភាពនិងអនាម័យជូនបងប្អូន
           </Text>
         </View>
@@ -536,7 +784,13 @@ export const SubService = () => {
             marginRight: 15,
             marginTop: 0,
           }}>
-          <Text style={{color: 'red', fontWeight: 'bold', paddingTop: 10, fontSize: FontSize.font12}}>
+          <Text
+            style={{
+              color: 'red',
+              fontWeight: 'bold',
+              paddingTop: 10,
+              fontSize: FontSize.font12,
+            }}>
             $ 5.00
           </Text>
           <Text
@@ -545,7 +799,7 @@ export const SubService = () => {
               color: 'red',
               textAlign: 'right',
               marginRight: 0,
-              fontSize: FontSize.font12
+              fontSize: FontSize.font12,
             }}>
             Up
           </Text>
@@ -553,14 +807,29 @@ export const SubService = () => {
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'center'}}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <FontAwesome6 size={12} name="location-dot" color={'#16247d'}></FontAwesome6>
-          <Text style={{color: '#16247d', fontWeight: 'bold', paddingLeft: 5, fontSize: FontSize.font11}}>
+          <FontAwesome6
+            size={12}
+            name="location-dot"
+            color={'#16247d'}></FontAwesome6>
+          <Text
+            style={{
+              color: '#16247d',
+              fontWeight: 'bold',
+              paddingLeft: 5,
+              fontSize: FontSize.font11,
+            }}>
             None
           </Text>
         </View>
         <View style={{flexDirection: 'row', marginLeft: 15}}>
-          <EvilIcons  name="clock" color={'#16247d'} size={17}></EvilIcons>
-          <Text style={{color: '#16247d', fontWeight: 'bold', paddingLeft: 5, fontSize: FontSize.font12}}>
+          <EvilIcons name="clock" color={'#16247d'} size={17}></EvilIcons>
+          <Text
+            style={{
+              color: '#16247d',
+              fontWeight: 'bold',
+              paddingLeft: 5,
+              fontSize: FontSize.font12,
+            }}>
             None
           </Text>
         </View>
@@ -587,7 +856,14 @@ export const SubService = () => {
               borderRadius: 20,
             }}>
             <FontAwesome name="image" size={18} color={'grey'}></FontAwesome>
-            <Text style={{marginLeft: 10, color: 'grey', fontSize: FontSize.font14}}>Gallery</Text>
+            <Text
+              style={{
+                marginLeft: 10,
+                color: 'grey',
+                fontSize: FontSize.font14,
+              }}>
+              Gallery
+            </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -605,7 +881,13 @@ export const SubService = () => {
               borderRadius: 20,
             }}>
             <AntDesign name="isv" size={18} color={'#16247d'}></AntDesign>
-            <Text style={{marginLeft: 10, color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font14}}>
+            <Text
+              style={{
+                marginLeft: 10,
+                color: '#16247d',
+                fontWeight: 'bold',
+                fontSize: FontSize.font14,
+              }}>
               MAKE A BOOKING
             </Text>
           </View>
@@ -618,7 +900,9 @@ export const SubService = () => {
           navigationState={{index, routes}}
           renderScene={renderScene}
           onIndexChange={setIndex}
-          initialLayout={{width: layout.width}}
+          initialLayout={{
+            width: layout.width,
+          }}
           style={{
             backgroundColor: 'white',
           }}
@@ -637,7 +921,7 @@ const styles = StyleSheet.create({
     // alignItems: 'flex-start',
     paddingTop: '3%',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   SubText: {
     fontSize: 18,

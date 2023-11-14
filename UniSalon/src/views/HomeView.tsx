@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   ScrollView,
   TextInput,
+  FlatList,
   Dimensions,
 } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -29,32 +30,39 @@ const {width, height} = Dimensions.get('window');
 
 const PopularSalonsData = [
   {
-    id: 1,
+    id: '1',
     title: 'មែន ស្តាយ',
     numCustomer: '27',
     des: 'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីឲកាន់តែមានប្រសិទ្ធភា...',
     img: require('../../assets/imgs/cover.jpg'),
   },
   {
-    id: 2,
+    id: '2',
     title: '007 haircut',
     numCustomer: '1',
     des: '',
     img: require('../../assets/imgs/cover.jpg'),
   },
   {
-    id: 3,
+    id: '3',
     title: 'មែន ស្តាយ',
     numCustomer: '27',
     des: 'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីឲកាន់តែមានប្រសិទ្ធភា...',
     img: require('../../assets/imgs/cover.jpg'),
   },
   {
-    id: 4,
+    id: '4',
     title: 'មែន ស្តាយ',
     numCustomer: '27',
     des: 'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីឲកាន់តែមានប្រសិទ្ធភា...',
     img: require('../../assets/imgs/cover.jpg'),
+  },
+];
+
+const ScamData = [
+  {
+    id: '1',
+    item: '',
   },
 ];
 
@@ -163,16 +171,20 @@ export const HomeView = () => {
               fontWeight: 'bold',
               color: 'grey',
               fontSize: FontSize.font11,
-              paddingVertical: 8,
-              paddingHorizontal: 15,
+              paddingVertical: 5,
+              paddingHorizontal: 18,
               backgroundColor: 'white',
               marginLeft: 15,
-              borderRadius: 5,
+              borderRadius: 20,
             }}>
             All
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={1}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.push('MobileServiceView');
+          }}
+          activeOpacity={1}>
           {/* <Text style={{fontWeight: 'bold', color: 'grey'}}>
             Mobile Services
           </Text> */}
@@ -181,11 +193,11 @@ export const HomeView = () => {
               fontWeight: 'bold',
               color: 'grey',
               fontSize: FontSize.font11,
-              paddingVertical: 8,
-              paddingHorizontal: 15,
+              paddingVertical: 5,
+              paddingHorizontal: 18,
               backgroundColor: 'white',
               marginLeft: 15,
-              borderRadius: 5,
+              borderRadius: 20,
             }}>
             Mobile Services
           </Text>
@@ -194,11 +206,11 @@ export const HomeView = () => {
           <View
             style={{
               flexDirection: 'row',
-              paddingHorizontal: 15,
-              paddingVertical: 8,
+              paddingHorizontal: 18,
+              paddingVertical: 5,
               backgroundColor: 'white',
               marginLeft: 15,
-              borderRadius: 4,
+              borderRadius: 20,
             }}>
             <Entypo name="shop" size={15} color={'grey'}></Entypo>
             <Text
@@ -222,11 +234,11 @@ export const HomeView = () => {
           <View
             style={{
               flexDirection: 'row',
-              paddingHorizontal: 15,
-              paddingVertical: 8,
+              paddingHorizontal: 18,
+              paddingVertical: 5,
               backgroundColor: 'white',
               marginLeft: 15,
-              borderRadius: 4,
+              borderRadius: 20,
             }}>
             <Fontisto name="scissors" size={15} color={'grey'}></Fontisto>
             <Text
@@ -242,12 +254,12 @@ export const HomeView = () => {
         </TouchableOpacity>
       </ScrollView>
       <MaterialCommunityIcons
-        size={15}
+        size={12}
         color={'blue'}
         style={styles.IconStyle}
         name="refresh"></MaterialCommunityIcons>
       <FontAwesome6
-        size={15}
+        size={12}
         color={'black'}
         style={styles.IconStyleII}
         name="location-crosshairs"></FontAwesome6>
@@ -256,7 +268,27 @@ export const HomeView = () => {
         index={1}
         snapPoints={snapPoints}
         onChange={handleSheetChanges}>
-        <View style={styles.contentContainer}>
+        {/* <View style={{flex: 1, backgroundColor: 'red', }}> */}
+        {/* <FlatList
+            showsVerticalScrollIndicator = {false}
+            data={ScamData}
+            style={{
+              // height: 100
+            }}
+            renderItem={({item, index}) => {
+              return (
+                // <></>
+               
+              );
+            }}
+          /> */}
+        {/* <FlatList
+          data={[1,]}
+          renderItem={() => (
+           
+          )}
+          /> */}
+        <View style={[styles.contentContainer, {backgroundColor: 'white'}]}>
           <Text
             style={{
               fontSize: FontSize.font14,
@@ -278,18 +310,18 @@ export const HomeView = () => {
             }}>
             Popular Salons
           </Text>
-          <ScrollView
-            horizontal={true}
+          <FlatList
+            style={{height: height * 0.5}}
+            data={PopularSalonsData}
             showsHorizontalScrollIndicator={false}
-            style={styles.ScrollPopularSalon}>
-            {PopularSalonsData.map((e, index) => {
+            horizontal={true}
+            keyExtractor={item => item.id}
+            renderItem={({item, index}) => {
               return (
-                <View
-                  key={index}
-                  style={[styles.PopularSalonCard, styles.shadowProp]}>
+                <View style={styles.PopularCard}>
                   <View
                     style={{
-                      height: '30%',
+                      height: '38%',
                       backgroundColor: 'red',
                       borderTopLeftRadius: 7,
                       borderTopRightRadius: 7,
@@ -302,7 +334,7 @@ export const HomeView = () => {
                         borderTopLeftRadius: 7,
                         borderTopRightRadius: 7,
                       }}
-                      source={e.img}></Image>
+                      source={item.img}></Image>
                   </View>
                   <View
                     style={{
@@ -343,7 +375,7 @@ export const HomeView = () => {
                           fontWeight: 'bold',
                           color: 'grey',
                         }}>
-                        {e.numCustomer}
+                        {item.numCustomer}
                       </Text>
                       <Text
                         style={{
@@ -364,7 +396,7 @@ export const HomeView = () => {
                       color: 'grey',
                       fontWeight: 'bold',
                     }}>
-                    {e.title}
+                    {item.title}
                   </Text>
                   <Text
                     style={{
@@ -381,25 +413,15 @@ export const HomeView = () => {
                       color: 'grey',
                       fontWeight: 'bold',
                     }}>
-                    {e.des}
+                    {item.des}
                   </Text>
                   <Text style={styles.Booking}>Booking Now</Text>
                 </View>
               );
-            })}
-          </ScrollView>
-          <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: '#16247d',
-              textAlign: 'left',
-              marginLeft: 17,
-              marginTop: 1
-            }}>
-            Specail Promotion
-          </Text>
+            }}
+          />
         </View>
+        {/* </View> */}
       </BottomSheet>
     </SafeAreaView>
   );
@@ -493,12 +515,14 @@ const styles = StyleSheet.create({
   PopularSalonCard: {
     flex: 1,
     marginTop: 15,
+    height: height * 0.2,
     marginLeft: 15,
     width: width * 0.52,
     backgroundColor: 'white',
     borderRadius: 7,
     borderBottomWidth: 0.5,
     borderColor: 'grey',
+    // padding: 10,
   },
   ScrollPopularSalon: {
     marginTop: 10,
@@ -519,12 +543,26 @@ const styles = StyleSheet.create({
     borderWidth: 0.8,
     // marginTop: 7,
     marginHorizontal: 10,
-    paddingVertical: 8,
+    paddingVertical: 5,
     position: 'absolute',
     width: '90%',
     bottom: 0,
     marginBottom: 5,
     borderColor: '#16247d',
     borderRadius: 4,
+  },
+  PopularCard: {
+    width: width * 0.5,
+    height: height * 0.285,
+    backgroundColor: 'white',
+    marginLeft: 15,
+    marginTop: 15,
+    borderRadius: 8,
+    borderBottomWidth: 0.3,
+    borderRightWidth: 0.1,
+    shadowColor: '#171717',
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
 });
