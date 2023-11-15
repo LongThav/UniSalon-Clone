@@ -30,14 +30,13 @@ import {
   Image,
   StyleSheet,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import App from '../../App';
 import {Icon} from 'react-native-paper';
 import LoginView from '../views/LoginView';
 import CustomizeDrawer from './CustomizeDrawer';
-
 
 const {width, height} = Dimensions.get('window');
 
@@ -62,12 +61,13 @@ const DrawerNavigate = () => {
   const navigation: any = useNavigation();
   return (
     <Drawer.Navigator
-       
       initialRouteName="Home"
       drawerContent={props => {
         return (
           <SafeAreaView>
-            <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 15}}>
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              style={{marginBottom: 15}}>
               <View
                 style={{
                   width: 'auto',
@@ -96,15 +96,22 @@ const DrawerNavigate = () => {
                 </Text>
               </View>
               <View style={styles.Container}>
-                <View style={styles.Row}>
-                  <Octicons
-                    name="feed-person"
-                    size={22}
-                    color={'#16247d'}></Octicons>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Profile
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  onPress={() => {
+                    console.log('Pressed');
+                    navigation.push('ProfileView');
+                  }}>
+                  <View style={styles.Row}>
+                    <Octicons
+                      name="feed-person"
+                      size={22}
+                      color={'#16247d'}></Octicons>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Profile
+                    </Text>
+                  </View>
+                </TouchableOpacity>
                 <View style={styles.Row}>
                   <Octicons
                     name="feed-heart"
@@ -208,19 +215,22 @@ const DrawerNavigate = () => {
                     Help & Feedback
                   </Text>
                 </View>
-               <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                navigation.push('LoginView');
-               }}>
-               <View style={styles.Row}>
-                  <Ionicons
-                    name="log-out-outline"
-                    size={22}
-                    color={'red'}></Ionicons>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Sign Out
-                  </Text>
-                </View>
-               </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    navigation.push('LoginView');
+                  }}>
+                  <View style={styles.Row}>
+                    <Ionicons
+                      name="log-out-outline"
+                      size={22}
+                      color={'red'}></Ionicons>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Sign Out
+                    </Text>
+                  </View>
+                </TouchableOpacity>
               </View>
             </ScrollView>
           </SafeAreaView>

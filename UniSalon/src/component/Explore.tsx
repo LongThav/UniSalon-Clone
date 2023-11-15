@@ -102,11 +102,11 @@ export default Explore;
 const styles = StyleSheet.create({
   Container: {
     // width: 'auto',
-    marginHorizontal: 15,
+    // marginHorizontal: 15,
     paddingVertical: 15,
     paddingHorizontal: 15,
     backgroundColor: '#eef1f6',
-    marginVertical: 15,
+    marginBottom: 15,
     borderRadius: 7,
   },
   Circle: {

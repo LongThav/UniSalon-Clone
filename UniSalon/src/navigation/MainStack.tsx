@@ -36,6 +36,8 @@ import SelectProfessorView from '../views/SelectProfessorView';
 import ProfessorDetailView from '../views/ProfessorDetailView';
 import VideoPlayerView from '../views/VideoPlayView';
 import MobileServiceView from '../views/MobileServiceView';
+import ProfileView from '../views/ProfileView';
+
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -78,6 +80,7 @@ const MainStack = () => {
       <Stack.Screen component={ProfessorDetailView} name="ProfessorDetailView"/>
       <Stack.Screen component={VideoPlayerView} name="VideoPlayerView"/>
       <Stack.Screen component={MobileServiceView} name="MobileServiceView"/>
+      <Stack.Screen component={ProfileView} name="ProfileView"/>
     </Stack.Navigator>
   );
 };

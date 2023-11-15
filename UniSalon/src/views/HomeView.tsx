@@ -20,11 +20,10 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import {useNavigation} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
-import BottomSheet from '@gorhom/bottom-sheet';
+import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 import {FontSize} from '../constant/FontSize';
 import Explore from '../component/Explore';
 import {fonts} from '@rneui/base';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const {width, height} = Dimensions.get('window');
 
@@ -66,6 +65,77 @@ const ScamData = [
   },
 ];
 
+const TopRatingProfessorData = [
+  {
+    id: '1',
+    name: 'Prash Fukumotoman',
+    img: require('../../assets/imgs/img1.jpg'),
+  },
+  {
+    id: '2',
+    name: '',
+    img: require('../../assets/imgs/img1.jpg'),
+  },
+  {
+    id: '3',
+    name: '',
+    img: require('../../assets/imgs/img1.jpg'),
+  },
+  {
+    id: '4',
+    name: 'PHAN SAMPHORS',
+    img: require('../../assets/imgs/img1.jpg'),
+  },
+  {
+    id: '5',
+    name: 'Kop',
+    img: require('../../assets/imgs/img1.jpg'),
+  },
+  {
+    id: '6',
+    name: '',
+    img: require('../../assets/imgs/img1.jpg'),
+  },
+  {
+    id: '7',
+    name: 'Kop',
+    img: require('../../assets/imgs/img1.jpg'),
+  },
+  {
+    id: '8',
+    name: '',
+    img: require('../../assets/imgs/img1.jpg'),
+  },
+];
+
+const NewSalonData = [
+  {
+    id: '1',
+    title: 'Teng Barer',
+    numCustomer: '0',
+    img: require('../../assets/imgs/cover.jpg'),
+  },
+  {
+    id: '2',
+    title: 'Vicci Beauty Bar',
+    numCustomer: '0',
+    des: '',
+    img: require('../../assets/imgs/cover.jpg'),
+  },
+  {
+    id: '3',
+    title: 'មែន ស្តាយ',
+    numCustomer: '27',
+    img: require('../../assets/imgs/cover.jpg'),
+  },
+  {
+    id: '4',
+    title: 'មែន ស្តាយ',
+    numCustomer: '27',
+    img: require('../../assets/imgs/cover.jpg'),
+  },
+];
+
 const PopularSalon = () => {
   return (
     <ScrollView horizontal={true}>
@@ -86,12 +156,452 @@ export const HomeView = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['90%', '12%', '30%'], []);
+  const snapPoints = useMemo(() => ['12%', '12%', '12%', '80%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
     console.log('handleSheetChanges', index);
   }, []);
+
+  const renderInner = () => {
+    return (
+      <View style={{padding: 15, marginBottom: height * 0.1}}>
+        <Text style={styles.txtExplore}>Explore</Text>
+        <Explore />
+        <Text style={styles.txtPopular}>Popular Salons</Text>
+        <FlatList
+          data={PopularSalonsData}
+          style={{width: width}}
+          showsHorizontalScrollIndicator={false}
+          horizontal={true}
+          keyExtractor={item => item.id}
+          renderItem={({item, index}) => {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  console.log('Press');
+                  navigation.push('ShopDetailView');
+                }}>
+                <View style={styles.PopularCard}>
+                  <View
+                    style={{
+                      height: 80,
+                      borderTopLeftRadius: 7,
+                      borderTopRightRadius: 7,
+                    }}>
+                    <Image
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderTopLeftRadius: 7,
+                        borderTopRightRadius: 7,
+                      }}
+                      source={item.img}></Image>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      marginRight: 10,
+                    }}>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        marginLeft: 5,
+                        marginTop: 10,
+                      }}>
+                      <Entypo
+                        style={{}}
+                        name="location-pin"
+                        size={FontSize.font14}
+                        color={'#16247d'}
+                      />
+                      <Text
+                        style={{
+                          fontSize: FontSize.font11,
+                          fontWeight: 'bold',
+                          color: '#16247d',
+                        }}>
+                        None
+                      </Text>
+                    </View>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        marginLeft: 10,
+                        marginTop: 10,
+                      }}>
+                      <Text
+                        style={{
+                          fontSize: FontSize.font11,
+                          fontWeight: 'bold',
+                          color: 'grey',
+                        }}>
+                        {item.numCustomer}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: FontSize.font11,
+                          fontWeight: 'bold',
+                          color: 'grey',
+                          paddingLeft: 5,
+                        }}>
+                        Customers
+                      </Text>
+                    </View>
+                  </View>
+                  <Text
+                    style={{
+                      marginLeft: 10,
+                      marginTop: 5,
+                      fontSize: FontSize.font12,
+                      color: 'grey',
+                      fontWeight: 'bold',
+                    }}>
+                    {item.title}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: FontSize.font10,
+                      marginLeft: 10,
+                      color: 'grey',
+                    }}>
+                    ⭐⭐⭐⭐⭐ (4)
+                  </Text>
+                  <Text
+                    style={{
+                      marginHorizontal: 10,
+                      fontSize: FontSize.font11,
+                      color: 'grey',
+                      fontWeight: 'bold',
+                    }}>
+                    {item.des}
+                  </Text>
+                  {/* <Text style={styles.Booking}>Booking Now</Text> */}
+                  <TouchableOpacity
+                    style={styles.Booking}
+                    onPress={() => {
+                      console.log('on pressed');
+                      navigation.push('MakeBookingView');
+                    }}>
+                    <Text style={styles.txtBooking}>Booking Now</Text>
+                  </TouchableOpacity>
+                </View>
+              </TouchableOpacity>
+            );
+          }}
+        />
+        <Text style={styles.txtSpecial}>Special Promotions</Text>
+        <View style={styles.SpecialBox}>
+          <Image
+            style={styles.boxImg}
+            source={require('../../assets/imgs/img1.jpg')}
+          />
+        </View>
+        <Text style={styles.txtTopRatingSalon}>Top Rating Salons</Text>
+        <FlatList
+          data={PopularSalonsData}
+          style={{width: width}}
+          showsHorizontalScrollIndicator={false}
+          horizontal={true}
+          keyExtractor={item => item.id}
+          renderItem={({item, index}) => {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push('ShopDetailView');
+                }}>
+                <View style={styles.PopularCard}>
+                  <View
+                    style={{
+                      height: 80,
+                      borderTopLeftRadius: 7,
+                      borderTopRightRadius: 7,
+                    }}>
+                    <Image
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderTopLeftRadius: 7,
+                        borderTopRightRadius: 7,
+                      }}
+                      source={require('../../assets/imgs/cover2.jpg')}></Image>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      marginRight: 10,
+                    }}>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        marginLeft: 5,
+                        marginTop: 10,
+                      }}>
+                      <Entypo
+                        style={{}}
+                        name="location-pin"
+                        size={FontSize.font14}
+                        color={'#16247d'}
+                      />
+                      <Text
+                        style={{
+                          fontSize: FontSize.font11,
+                          fontWeight: 'bold',
+                          color: '#16247d',
+                        }}>
+                        None
+                      </Text>
+                    </View>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        marginLeft: 10,
+                        marginTop: 10,
+                      }}>
+                      <Text
+                        style={{
+                          fontSize: FontSize.font11,
+                          fontWeight: 'bold',
+                          color: 'grey',
+                        }}>
+                        {item.numCustomer}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: FontSize.font11,
+                          fontWeight: 'bold',
+                          color: 'grey',
+                          paddingLeft: 5,
+                        }}>
+                        Customers
+                      </Text>
+                    </View>
+                  </View>
+                  <Text
+                    style={{
+                      marginLeft: 10,
+                      marginTop: 5,
+                      fontSize: FontSize.font12,
+                      color: 'grey',
+                      fontWeight: 'bold',
+                    }}>
+                    {item.title}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: FontSize.font10,
+                      marginLeft: 10,
+                      color: 'grey',
+                    }}>
+                    ⭐⭐⭐⭐⭐ (4)
+                  </Text>
+                  <Text
+                    style={{
+                      marginHorizontal: 10,
+                      fontSize: FontSize.font11,
+                      color: 'grey',
+                      fontWeight: 'bold',
+                    }}>
+                    {item.des}
+                  </Text>
+                  {/* <Text style={styles.Booking}>Booking Now</Text> */}
+                  <TouchableOpacity
+                    style={styles.Booking}
+                    onPress={() => {
+                      console.log('on pressed');
+                      navigation.push('MakeBookingView');
+                    }}>
+                    <Text style={styles.txtBooking}>Booking Now</Text>
+                  </TouchableOpacity>
+                </View>
+              </TouchableOpacity>
+            );
+          }}
+        />
+        <Text style={styles.txtSpecial}>Top Rating Professor</Text>
+        <FlatList
+          scrollEnabled={false}
+          numColumns={2}
+          columnWrapperStyle={{justifyContent: 'space-between'}}
+          data={TopRatingProfessorData}
+          renderItem={({item, index}) => {
+            return (
+              <View style={styles.CardTopRating}>
+                <View style={styles.imgCircleTopRating}>
+                  <Image
+                    style={{
+                      flex: 1,
+                      height: 60,
+                      width: 60,
+                      borderRadius: 60 / 2,
+                    }}
+                    source={item.img}
+                  />
+                </View>
+                <Text style={styles.txtNameTopRating}>{item.name}</Text>
+                <View style={{flexDirection: 'row', marginTop: 5}}>
+                  <AntDesign
+                    size={FontSize.font14}
+                    color={'yellow'}
+                    name="staro"
+                  />
+                  <AntDesign
+                    size={FontSize.font14}
+                    color={'yellow'}
+                    name="staro"
+                  />
+                  <AntDesign
+                    size={FontSize.font14}
+                    color={'yellow'}
+                    name="staro"
+                  />
+                  <AntDesign
+                    size={FontSize.font14}
+                    color={'yellow'}
+                    name="staro"
+                  />
+                  <AntDesign
+                    size={FontSize.font14}
+                    color={'yellow'}
+                    name="staro"
+                  />
+                </View>
+                <Text style={{paddingTop: 5, color: 'grey'}}>
+                  0 Credit / 0 Review
+                </Text>
+                <View style={{flexDirection: 'row', marginTop: 5}}>
+                  <Entypo size={14} color={'blue'} name="location-pin" />
+                  <Text style={{fontSize: FontSize.font12, color: 'blue'}}>
+                    None
+                  </Text>
+                </View>
+              </View>
+            );
+          }}
+          keyExtractor={e => e.id}
+        />
+        <View style={{marginTop: 10}}></View>
+        <Text style={styles.txtNameTopRating}>New Salons</Text>
+        <FlatList
+          data={NewSalonData}
+          style={{width: width}}
+          showsHorizontalScrollIndicator={false}
+          horizontal={true}
+          keyExtractor={item => item.id}
+          renderItem={({item, index}) => {
+            return (
+              <View style={styles.PopularCard}>
+                <View
+                  style={{
+                    height: 80,
+                    borderTopLeftRadius: 7,
+                    borderTopRightRadius: 7,
+                  }}>
+                  <Image
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      borderTopLeftRadius: 7,
+                      borderTopRightRadius: 7,
+                    }}
+                    source={item.img}></Image>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginRight: 10,
+                  }}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      marginLeft: 5,
+                      marginTop: 10,
+                    }}>
+                    <Entypo
+                      style={{}}
+                      name="location-pin"
+                      size={FontSize.font14}
+                      color={'#16247d'}
+                    />
+                    <Text
+                      style={{
+                        fontSize: FontSize.font11,
+                        fontWeight: 'bold',
+                        color: '#16247d',
+                      }}>
+                      None
+                    </Text>
+                  </View>
+                  {/* <View
+                    style={{
+                      flexDirection: 'row',
+                      marginLeft: 10,
+                      marginTop: 10,
+                    }}>
+                    <Text
+                      style={{
+                        fontSize: FontSize.font11,
+                        fontWeight: 'bold',
+                        color: 'grey',
+                      }}>
+                      {item.numCustomer}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: FontSize.font11,
+                        fontWeight: 'bold',
+                        color: 'grey',
+                        paddingLeft: 5,
+                      }}>
+                      Customers
+                    </Text>
+                  </View> */}
+                </View>
+                <Text
+                  style={{
+                    marginLeft: 10,
+                    marginTop: 5,
+                    fontSize: FontSize.font12,
+                    color: 'black',
+                    fontWeight: 'bold',
+                  }}>
+                  {item.title}
+                </Text>
+                <Text
+                  style={{
+                    fontSize: FontSize.font10,
+                    marginLeft: 10,
+                    color: 'grey',
+                  }}>
+                  ⭐⭐⭐⭐⭐ ({item.numCustomer})
+                </Text>
+                {/* <Text
+                  style={{
+                    marginHorizontal: 10,
+                    fontSize: FontSize.font11,
+                    color: 'grey',
+                    fontWeight: 'bold',
+                  }}>
+                  {item.des}
+                </Text> */}
+                <TouchableOpacity
+                  style={styles.Booking}
+                  onPress={() => {
+                    console.log('on pressed');
+                    navigation.push('MakeBookingView');
+                  }}>
+                  <Text style={styles.txtBooking}>Booking Now</Text>
+                </TouchableOpacity>
+              </View>
+            );
+          }}
+        />
+      </View>
+    );
+  };
 
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -268,160 +778,11 @@ export const HomeView = () => {
         index={1}
         snapPoints={snapPoints}
         onChange={handleSheetChanges}>
-        {/* <View style={{flex: 1, backgroundColor: 'red', }}> */}
-        {/* <FlatList
-            showsVerticalScrollIndicator = {false}
-            data={ScamData}
-            style={{
-              // height: 100
-            }}
-            renderItem={({item, index}) => {
-              return (
-                // <></>
-               
-              );
-            }}
-          /> */}
-        {/* <FlatList
-          data={[1,]}
-          renderItem={() => (
-           
-          )}
-          /> */}
-        <View style={[styles.contentContainer, {backgroundColor: 'white'}]}>
-          <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: '#16247d',
-              textAlign: 'center',
-            }}>
-            Explore
-          </Text>
-          <Explore />
-          <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: '#16247d',
-              textAlign: 'left',
-              paddingLeft: 15,
-              paddingTop: 10,
-            }}>
-            Popular Salons
-          </Text>
-          <FlatList
-            style={{height: height * 0.5}}
-            data={PopularSalonsData}
-            showsHorizontalScrollIndicator={false}
-            horizontal={true}
-            keyExtractor={item => item.id}
-            renderItem={({item, index}) => {
-              return (
-                <View style={styles.PopularCard}>
-                  <View
-                    style={{
-                      height: '38%',
-                      backgroundColor: 'red',
-                      borderTopLeftRadius: 7,
-                      borderTopRightRadius: 7,
-                    }}>
-                    <Image
-                      style={{
-                        flex: 1,
-                        width: undefined,
-                        height: undefined,
-                        borderTopLeftRadius: 7,
-                        borderTopRightRadius: 7,
-                      }}
-                      source={item.img}></Image>
-                  </View>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginRight: 10,
-                    }}>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        marginLeft: 5,
-                        marginTop: 10,
-                      }}>
-                      <Entypo
-                        style={{}}
-                        name="location-pin"
-                        size={FontSize.font14}
-                        color={'#16247d'}
-                      />
-                      <Text
-                        style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: '#16247d',
-                        }}>
-                        None
-                      </Text>
-                    </View>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        marginLeft: 10,
-                        marginTop: 10,
-                      }}>
-                      <Text
-                        style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: 'grey',
-                        }}>
-                        {item.numCustomer}
-                      </Text>
-                      <Text
-                        style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: 'grey',
-                          paddingLeft: 5,
-                        }}>
-                        Customers
-                      </Text>
-                    </View>
-                  </View>
-                  <Text
-                    style={{
-                      marginLeft: 10,
-                      marginTop: 5,
-                      fontSize: FontSize.font12,
-                      color: 'grey',
-                      fontWeight: 'bold',
-                    }}>
-                    {item.title}
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: FontSize.font10,
-                      marginLeft: 10,
-                      color: 'grey',
-                    }}>
-                    ⭐⭐⭐⭐⭐ (4)
-                  </Text>
-                  <Text
-                    style={{
-                      marginHorizontal: 10,
-                      fontSize: FontSize.font11,
-                      color: 'grey',
-                      fontWeight: 'bold',
-                    }}>
-                    {item.des}
-                  </Text>
-                  <Text style={styles.Booking}>Booking Now</Text>
-                </View>
-              );
-            }}
-          />
-        </View>
-        {/* </View> */}
+        <BottomSheetScrollView
+          showsVerticalScrollIndicator={false}
+          children={renderInner()}
+          contentContainerStyle={{}}
+        />
       </BottomSheet>
     </SafeAreaView>
   );
@@ -535,11 +896,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
   },
-  Booking: {
+  txtBooking: {
     fontSize: 12,
     fontWeight: 'bold',
     color: '#16247d',
     textAlign: 'center',
+  },
+  Booking: {
     borderWidth: 0.8,
     // marginTop: 7,
     marginHorizontal: 10,
@@ -553,9 +916,9 @@ const styles = StyleSheet.create({
   },
   PopularCard: {
     width: width * 0.5,
-    height: height * 0.285,
+    height: height * 0.276,
+    marginRight: 10,
     backgroundColor: 'white',
-    marginLeft: 15,
     marginTop: 15,
     borderRadius: 8,
     borderBottomWidth: 0.3,
@@ -564,5 +927,65 @@ const styles = StyleSheet.create({
     shadowOffset: {width: -2, height: 4},
     shadowOpacity: 0.2,
     shadowRadius: 3,
+    // paddingBottom:10
+  },
+  txtExplore: {
+    color: '#16247d',
+    fontSize: FontSize.font14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    paddingBottom: 15,
+  },
+  txtSpecial: {
+    paddingTop: 17,
+    paddingLeft: 1,
+    fontWeight: 'bold',
+    color: '#16247d',
+  },
+  txtPopular: {
+    color: '#16247d',
+    fontSize: FontSize.font14,
+    fontWeight: 'bold',
+  },
+  SpecialBox: {
+    height: width * 0.37,
+    width: width * 0.4,
+    backgroundColor: '#eef1f6',
+    marginVertical: 15,
+    borderRadius: 8,
+  },
+  boxImg: {
+    height: width * 0.37,
+    width: width * 0.4,
+    borderRadius: 8,
+  },
+  txtTopRatingSalon: {
+    color: '#16247d',
+    fontSize: FontSize.font14,
+    fontWeight: 'bold',
+  },
+  CardTopRating: {
+    width: width * 0.455,
+    height: height * 0.24,
+    borderWidth: 1,
+    marginTop: 15,
+    borderRadius: 8,
+    borderColor: '#f2f2f2',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    // alignContent: 'center'
+    alignItems: 'center',
+  },
+  imgCircleTopRating: {
+    width: 60,
+    height: 60,
+    borderRadius: 60 / 2,
+    backgroundColor: '#f2f2f2',
+  },
+  txtNameTopRating: {
+    color: '#16247d',
+    fontSize: FontSize.font14,
+    fontWeight: 'bold',
+    paddingTop: 5,
   },
 });
