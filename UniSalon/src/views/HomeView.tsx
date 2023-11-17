@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useRef} from 'react';
+import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {
   SafeAreaView,
   View,
@@ -151,6 +151,10 @@ const PopularSalon = () => {
 };
 
 export const HomeView = () => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+  console.log("Check: ", isEnabled);
   const navigation: any = useNavigation();
   const snapPoint = useMemo(() => ['25%', '50%', '70%'], []);
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -180,7 +184,7 @@ export const HomeView = () => {
           }}
         /> */}
         <FlatList
-          scrollEnabled = {true}
+          scrollEnabled={true}
           horizontal
           showsHorizontalScrollIndicator={false}
           data={PopularSalonsData}
@@ -672,18 +676,24 @@ export const HomeView = () => {
             name="search1"
             size={FontSize.font15}
             style={{marginTop: 3}}></AntDesign>
-          <View
-            style={{
-              width: 20,
-              height: 20,
-              borderRadius: 20 / 2,
-              backgroundColor: 'grey',
-              marginHorizontal: 15,
-            }}>
-            <Image
-              style={{flex: 1, width: 20, height: 20, borderRadius: 20 / 2}}
-              source={require('../../assets/imgs/cam_flag.png')}></Image>
-          </View>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={toggleSwitch}>
+            <View
+              style={{
+                width: 20,
+                height: 20,
+                borderRadius: 20 / 2,
+                backgroundColor: 'grey',
+                marginHorizontal: 15,
+              }}>
+              { isEnabled ?<Image
+                style={{flex: 1, width: 20, height: 20, borderRadius: 20 / 2}}
+                source={require('../../assets/imgs/cam_flag.png')}/> : <Image
+                style={{flex: 1, width: 20, height: 20, borderRadius: 20 / 2}}
+                source={require('../../assets/imgs/flag_english.jpg')}/> }
+            </View>
+          </TouchableOpacity>
           <MaterialIcons
             name="notifications-none"
             size={15}
@@ -701,8 +711,8 @@ export const HomeView = () => {
               fontWeight: 'bold',
               color: 'grey',
               fontSize: FontSize.font11,
-              paddingVertical: 5,
-              paddingHorizontal: 18,
+              paddingVertical: 8,
+              paddingHorizontal: 20,
               backgroundColor: '#eef1f6',
               marginLeft: 15,
               borderRadius: 20,
@@ -723,8 +733,8 @@ export const HomeView = () => {
               fontWeight: 'bold',
               color: 'grey',
               fontSize: FontSize.font11,
-              paddingVertical: 5,
-              paddingHorizontal: 18,
+              paddingVertical: 8,
+              paddingHorizontal: 20,
               backgroundColor: 'white',
               marginLeft: 15,
               borderRadius: 20,
@@ -736,8 +746,8 @@ export const HomeView = () => {
           <View
             style={{
               flexDirection: 'row',
-              paddingHorizontal: 18,
-              paddingVertical: 5,
+              paddingHorizontal: 20,
+              paddingVertical: 8,
               backgroundColor: 'white',
               marginLeft: 15,
               borderRadius: 20,
@@ -764,8 +774,8 @@ export const HomeView = () => {
           <View
             style={{
               flexDirection: 'row',
-              paddingHorizontal: 18,
-              paddingVertical: 5,
+              paddingHorizontal: 20,
+              paddingVertical: 8,
               backgroundColor: 'white',
               marginLeft: 15,
               borderRadius: 20,

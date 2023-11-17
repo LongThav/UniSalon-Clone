@@ -35,6 +35,30 @@ const RecommendList = [
     rate: 3,
     customer: '27 Customers',
   },
+  {
+    id: 4,
+    title: 'Model Singapore',
+    rate: 0,
+    customer: null,
+  },
+  {
+    id: 5,
+    title: 'មែន​ស្តាយ',
+    rate: 3,
+    customer: '27 Customers',
+  },
+  {
+    id: 6,
+    title: 'Model Singapore',
+    rate: 0,
+    customer: null,
+  },
+  {
+    id: 7,
+    title: 'មែន​ស្តាយ',
+    rate: 3,
+    customer: '27 Customers',
+  },
 ];
 
 const MoreSaloneData = [
@@ -114,7 +138,7 @@ export const ShopView = () => {
         }}></View>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{marginBottom: height * 0.28}}>
+        style={{marginBottom: height * 0.25}}>
         <Text
           style={{
             fontSize: FontSize.font15,

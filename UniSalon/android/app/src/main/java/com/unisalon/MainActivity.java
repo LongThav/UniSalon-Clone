@@ -2,6 +2,7 @@ package com.unisalon;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
+import com.zoontek.rnbootsplash.RNBootSplash;
 // import org.devio.rn.splashscreen.SplashScreen; 
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
@@ -12,6 +13,7 @@ public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // SplashScreen.show(this); // here
+    RNBootSplash.init(this, R.style.BootTheme);
     super.onCreate(savedInstanceState);
   }
 

@@ -1,5 +1,5 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import React from 'react';
+import React, {useEffect} from 'react';
 import TestView from '../views/TestView';
 import ProfileView from './../views/ProfileView';
 import FavouriteView from './../views/FavouriteView';
@@ -22,6 +22,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CustomizeSideBar from '../component/CustomizeSideBar';
+
 import {
   View,
   SafeAreaView,
@@ -58,6 +59,17 @@ const data = [
 ];
 
 const DrawerNavigate = () => {
+  // useEffect(() => {
+  //   const init = async () => {
+  //     // …do multiple sync or async tasks
+  //   };
+
+  //   init().finally(async () => {
+  //     await BootSplash.hide({fade: true});
+  //     console.log('BootSplash has been hidden successfully');
+  //   });
+  // }, []);
+
   const navigation: any = useNavigation();
   return (
     <Drawer.Navigator
@@ -112,19 +124,22 @@ const DrawerNavigate = () => {
                     </Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                  console.log("Press");
-                  navigation.push('FavouriteView')
-                }}>
-                <View style={styles.Row}>
-                  <Octicons
-                    name="feed-heart"
-                    size={22}
-                    color={'red'}></Octicons>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Favourite
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    console.log('Press');
+                    navigation.push('FavouriteView');
+                  }}>
+                  <View style={styles.Row}>
+                    <Octicons
+                      name="feed-heart"
+                      size={22}
+                      color={'red'}></Octicons>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Favourite
+                    </Text>
+                  </View>
                 </TouchableOpacity>
               </View>
               <View
@@ -134,84 +149,100 @@ const DrawerNavigate = () => {
                   backgroundColor: 'grey',
                   marginTop: 20,
                 }}></View>
-              
+
               <View style={styles.Container}>
-              <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                console.log("Press");
-                navigation.push('MessageView');
-              }}>
-                <View style={styles.Row}>
-                  <MaterialCommunityIcons
-                    name="email"
-                    size={22}
-                    color={'blue'}></MaterialCommunityIcons>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Message
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    console.log('Press');
+                    navigation.push('MessageView');
+                  }}>
+                  <View style={styles.Row}>
+                    <MaterialCommunityIcons
+                      name="email"
+                      size={22}
+                      color={'blue'}></MaterialCommunityIcons>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Message
+                    </Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                  console.log("Pressh")
-                  navigation.push('MemberShipView')
-                }}>
-                <View style={styles.Row}>
-                  <Octicons
-                    name="feed-star"
-                    size={22}
-                    color={'#ffa042'}></Octicons>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Membership
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    console.log('Pressh');
+                    navigation.push('MemberShipView');
+                  }}>
+                  <View style={styles.Row}>
+                    <Octicons
+                      name="feed-star"
+                      size={22}
+                      color={'#ffa042'}></Octicons>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Membership
+                    </Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                  navigation.push('TodayBookingAndOrderView')
-                }}>
-                <View style={styles.Row}>
-                  <Fontisto name="date" size={22} color={'brown'}></Fontisto>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Today Booking & Order
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    navigation.push('TodayBookingAndOrderView');
+                  }}>
+                  <View style={styles.Row}>
+                    <Fontisto name="date" size={22} color={'brown'}></Fontisto>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Today Booking & Order
+                    </Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>[
-                  navigation.push('BookingAndOrder')
-                ]}>
-                <View style={styles.Row}>
-                  <MaterialIcons
-                    name="date-range"
-                    size={22}
-                    color={'grey'}></MaterialIcons>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Booking & Order
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => [navigation.push('BookingAndOrder')]}>
+                  <View style={styles.Row}>
+                    <MaterialIcons
+                      name="date-range"
+                      size={22}
+                      color={'grey'}></MaterialIcons>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Booking & Order
+                    </Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                  navigation.push('HistoryBookingAndOrderView')
-                }}>
-                <View style={styles.Row}>
-                  <FontAwesome6
-                    name="clock-rotate-left"
-                    size={22}
-                    color={'green'}></FontAwesome6>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    History Booking & Order
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    navigation.push('HistoryBookingAndOrderView');
+                  }}>
+                  <View style={styles.Row}>
+                    <FontAwesome6
+                      name="clock-rotate-left"
+                      size={22}
+                      color={'green'}></FontAwesome6>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      History Booking & Order
+                    </Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                  navigation.push('Payment')
-                }}> 
-                <View style={styles.Row}>
-                  <MaterialIcons
-                    name="payment"
-                    size={22}
-                    color={'grey'}></MaterialIcons>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Payment
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    navigation.push('Payment');
+                  }}>
+                  <View style={styles.Row}>
+                    <MaterialIcons
+                      name="payment"
+                      size={22}
+                      color={'grey'}></MaterialIcons>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Payment
+                    </Text>
+                  </View>
                 </TouchableOpacity>
                 <View
                   style={{
@@ -220,47 +251,56 @@ const DrawerNavigate = () => {
                     backgroundColor: 'grey',
                     marginTop: 20,
                   }}></View>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                  console.log("Hi");
-                  navigation.push('SettingView')
-                }}>
-                <View style={styles.Row}>
-                  <Fontisto
-                    name="player-settings"
-                    color={'grey'}
-                    size={22}></Fontisto>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Settings
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    console.log('Hi');
+                    navigation.push('SettingView');
+                  }}>
+                  <View style={styles.Row}>
+                    <Fontisto
+                      name="player-settings"
+                      color={'grey'}
+                      size={22}></Fontisto>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Settings
+                    </Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                  console.log("Start");
-                  navigation.push('PrivacyPolicyView')
-                }}>
-                <View style={styles.Row}>
-                  <MaterialIcons
-                    name="privacy-tip"
-                    size={22}
-                    color={'green'}></MaterialIcons>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Privacy Policy
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    console.log('Start');
+                    navigation.push('PrivacyPolicyView');
+                  }}>
+                  <View style={styles.Row}>
+                    <MaterialIcons
+                      name="privacy-tip"
+                      size={22}
+                      color={'green'}></MaterialIcons>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Privacy Policy
+                    </Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                  console.log("Pressed");
-                  navigation.push('HelpAndFeedBack')
-                }}>
-                <View style={styles.Row}>
-                  <AntDesign
-                    name="questioncircle"
-                    size={22}
-                    color={'grey'}></AntDesign>
-                  <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
-                    Help & Feedback
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    console.log('Pressed');
+                    navigation.push('HelpAndFeedBack');
+                  }}>
+                  <View style={styles.Row}>
+                    <AntDesign
+                      name="questioncircle"
+                      size={22}
+                      color={'grey'}></AntDesign>
+                    <Text
+                      style={{fontSize: 15, color: 'black', marginLeft: 20}}>
+                      Help & Feedback
+                    </Text>
+                  </View>
                 </TouchableOpacity>
                 <TouchableOpacity
                   activeOpacity={0.8}
