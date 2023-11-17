@@ -9,7 +9,6 @@ import {
   TouchableOpacity,
   ScrollView,
   TextInput,
-  FlatList,
   Dimensions,
 } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -24,6 +23,7 @@ import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 import {FontSize} from '../constant/FontSize';
 import Explore from '../component/Explore';
 import {fonts} from '@rneui/base';
+import {FlatList} from 'react-native-gesture-handler';
 
 const {width, height} = Dimensions.get('window');
 
@@ -156,7 +156,7 @@ export const HomeView = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['12%', '12%', '12%', '80%'], []);
+  const snapPoints = useMemo(() => ['12%', '12%', '12%', '90%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
@@ -169,18 +169,27 @@ export const HomeView = () => {
         <Text style={styles.txtExplore}>Explore</Text>
         <Explore />
         <Text style={styles.txtPopular}>Popular Salons</Text>
-        <FlatList
+        {/* <FlatList
           data={PopularSalonsData}
           style={{width: width}}
-          showsHorizontalScrollIndicator={false}
+          D={false}
           horizontal={true}
           keyExtractor={item => item.id}
+          renderItem={({item, index}) => {
+           
+          }}
+        /> */}
+        <FlatList
+          scrollEnabled = {true}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={PopularSalonsData}
           renderItem={({item, index}) => {
             return (
               <TouchableOpacity
                 onPress={() => {
                   console.log('Press');
-                  navigation.push('ShopDetailView');
+                  // navigation.push('ShopDetailView');
                 }}>
                 <View style={styles.PopularCard}>
                   <View
@@ -277,7 +286,6 @@ export const HomeView = () => {
                     }}>
                     {item.des}
                   </Text>
-                  {/* <Text style={styles.Booking}>Booking Now</Text> */}
                   <TouchableOpacity
                     style={styles.Booking}
                     onPress={() => {
@@ -291,6 +299,10 @@ export const HomeView = () => {
             );
           }}
         />
+        {/* <ScrollView horizontal = {true} showsHorizontalScrollIndicator = {false}>
+         
+        </ScrollView> */}
+
         <Text style={styles.txtSpecial}>Special Promotions</Text>
         <View style={styles.SpecialBox}>
           <Image
@@ -635,15 +647,23 @@ export const HomeView = () => {
             style={{
               width: width * 0.58,
             }}>
-            <TextInput
-              placeholder="Search Salons..."
-              placeholderTextColor={'grey'}
-              style={{
-                fontSize: FontSize.font13,
-                marginLeft: 0,
-                margin: 0,
-                padding: 0,
-              }}></TextInput>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                navigation.push('SearchBarView');
+                console.log('Presh');
+              }}>
+              <TextInput
+                editable={false}
+                placeholder="Search Salons..."
+                placeholderTextColor={'grey'}
+                style={{
+                  fontSize: FontSize.font13,
+                  marginLeft: 0,
+                  margin: 0,
+                  padding: 0,
+                }}></TextInput>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={{flexDirection: 'row', marginTop: 5}}>
@@ -683,7 +703,7 @@ export const HomeView = () => {
               fontSize: FontSize.font11,
               paddingVertical: 5,
               paddingHorizontal: 18,
-              backgroundColor: 'white',
+              backgroundColor: '#eef1f6',
               marginLeft: 15,
               borderRadius: 20,
             }}>

@@ -6,8 +6,9 @@ import {
   FlatList,
   Image,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {FontSize} from '../constant/FontSize';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const {width, height} = Dimensions.get('window');
 
@@ -49,12 +50,22 @@ const ExploreItem = [
   },
   {
     id: 8,
-    icon: require('../../assets/imgs/bleaching.png'),
+    icon: require('../../assets/imgs/more_option.png'),
     title: 'More',
   },
 ];
 
 const Explore = () => {
+  const [indexs, setIndex] = useState<any>(null);
+  // const toggleSwitch = () => {
+  //   setColor(previousState => !previousState);
+  //   console.log(colors);
+  // };
+
+  // const ChangeBg = (value:any)=>{
+
+  // }
+  console.log(indexs);
   return (
     <View style={styles.Container}>
       <FlatList
@@ -65,18 +76,30 @@ const Explore = () => {
         renderItem={({item, index}) => {
           return (
             <View style={{paddingTop: 0}}>
-              <View style={styles.Circle}>
-                <Image
-                  style={{
-                    width: 25,
-                    height: 25,
-                    alignContent: 'center',
-                    alignSelf: 'center',
-                    marginTop: 6,
-                  }}
-                  source={item.icon}
-                />
-              </View>
+              <TouchableOpacity
+                activeOpacity={0.8}
+                onPress={() => {
+                  setIndex(index);
+                }}>
+                <View style={{
+                   width: 45,
+                   height: 45,
+                   borderRadius: 45 / 2,
+                   backgroundColor: indexs === index ? 'blue' : 'grey',
+                   marginHorizontal: 8,
+                }}>
+                  <Image
+                    style={{
+                      width: 20,
+                      height: 20,
+                      alignContent: 'center',
+                      alignSelf: 'center',
+                      marginTop: 10,
+                    }}
+                    source={item.icon}
+                  />
+                </View>
+              </TouchableOpacity>
               <Text
                 numberOfLines={2}
                 style={{

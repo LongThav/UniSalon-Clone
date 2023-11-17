@@ -14,7 +14,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {useNavigation} from '@react-navigation/native';
 import {Image} from 'react-native';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 
 const RecommendList = [
   {
@@ -87,16 +87,22 @@ export const ShopView = () => {
       </View>
       <View style={styles.SearchBar}>
         <EvilIcons name="search" size={20} color="grey" />
-        {/* <Text style={{ paddingHorizontal: 10 }}>Search Salons...</Text> */}
-        <TextInput
-          placeholder="Search Salons..."
-          placeholderTextColor={'grey'}
-          style={{
-            fontSize: FontSize.font14,
-            marginLeft: 0,
-            margin: 0,
-            padding: 0,
-          }}></TextInput>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            navigation.push('SearchBarView');
+          }}>
+          <TextInput
+            editable={false}
+            placeholder="Search Salons..."
+            placeholderTextColor={'grey'}
+            style={{
+              fontSize: FontSize.font14,
+              marginLeft: 0,
+              margin: 0,
+              padding: 0,
+            }}></TextInput>
+        </TouchableOpacity>
       </View>
       <View
         style={{
@@ -119,7 +125,10 @@ export const ShopView = () => {
           }}>
           Recommend Salons
         </Text>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{marginLeft: 5}}>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={{marginLeft: 5}}>
           {RecommendList.map((e, index) => {
             return (
               <TouchableOpacity
@@ -162,7 +171,8 @@ export const ShopView = () => {
                     <FontAwesome6
                       name="location-dot"
                       style={{paddingRight: 5, marginTop: 0}}
-                      color={'#16247d'} size={12}></FontAwesome6>
+                      color={'#16247d'}
+                      size={12}></FontAwesome6>
                     <Text
                       style={{
                         color: '#16247d',
@@ -187,7 +197,7 @@ export const ShopView = () => {
                       color: 'grey',
                       marginHorizontal: 4,
                       marginBottom: 3,
-                      fontSize: FontSize.font10
+                      fontSize: FontSize.font10,
                     }}>
                     ⭐⭐⭐⭐⭐ (3)
                   </Text>
@@ -291,7 +301,9 @@ export const ShopView = () => {
                       <Text style={{fontSize: FontSize.font14, color: 'black'}}>
                         {e.title}
                       </Text>
-                      <Text style={{color: 'grey', fontSize: FontSize.font12}}>⭐⭐⭐⭐⭐ (3)</Text>
+                      <Text style={{color: 'grey', fontSize: FontSize.font12}}>
+                        ⭐⭐⭐⭐⭐ (3)
+                      </Text>
                     </View>
                   </View>
                   <View
@@ -302,12 +314,23 @@ export const ShopView = () => {
                       flexDirection: 'column',
                       // justifyContent: 'flex-start',
                     }}>
-                    <View style={{width: width * 0.5, paddingVertical: 1, backgroundColor: 'white', marginRight: 20}}>
-                    <Text style={{fontSize: FontSize.font12, color: 'grey', fontWeight: 'bold'}}>
-                      {e.subtitle}
-                    </Text>
+                    <View
+                      style={{
+                        width: width * 0.5,
+                        paddingVertical: 1,
+                        backgroundColor: 'white',
+                        marginRight: 20,
+                      }}>
+                      <Text
+                        style={{
+                          fontSize: FontSize.font12,
+                          color: 'grey',
+                          fontWeight: 'bold',
+                        }}>
+                        {e.subtitle}
+                      </Text>
                     </View>
-                     {/* បម្រើសេវាកម្មជូនអស់លោក */}
+                    {/* បម្រើសេវាកម្មជូនអស់លោក */}
                     {/* <Text style={{fontSize: 14.5, color: 'grey', fontWeight: "bold"}}>
                       លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
                     </Text> */}
@@ -319,11 +342,16 @@ export const ShopView = () => {
                           paddingRight: 20,
                         }}>
                         <FontAwesome6
-                        size={12}
+                          size={12}
                           name="location-dot"
                           style={{paddingRight: 5, marginTop: 4}}
                           color={'#16247d'}></FontAwesome6>
-                        <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                        <Text
+                          style={{
+                            color: '#16247d',
+                            fontWeight: 'bold',
+                            fontSize: FontSize.font12,
+                          }}>
                           None
                         </Text>
                       </View>
@@ -333,7 +361,12 @@ export const ShopView = () => {
                           name="clock"
                           style={{paddingRight: 5, marginTop: 4}}
                           color={'#16247d'}></FontAwesome6>
-                        <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                        <Text
+                          style={{
+                            color: '#16247d',
+                            fontWeight: 'bold',
+                            fontSize: FontSize.font12,
+                          }}>
                           Opening
                         </Text>
                       </View>
@@ -362,7 +395,12 @@ export const ShopView = () => {
                       marginTop: 0,
                       // marginRight: 17,
                     }}>
-                    <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font10}}>
+                    <Text
+                      style={{
+                        color: '#16247d',
+                        fontWeight: 'bold',
+                        fontSize: FontSize.font10,
+                      }}>
                       Booking
                     </Text>
                   </View>

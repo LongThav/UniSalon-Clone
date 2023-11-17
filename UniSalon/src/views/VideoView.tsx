@@ -55,7 +55,6 @@ export const VideoView = () => {
         </View>
       <View style={styles.SearchBar}>
         <EvilIcons name="search" size={20} color="grey" />
-        {/* <Text style={{ paddingHorizontal: 10 }}>Search Video...</Text> */}
         <TextInput
           placeholder="Search Video..."
           placeholderTextColor={'grey'}

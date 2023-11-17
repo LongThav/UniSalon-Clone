@@ -37,6 +37,17 @@ import ProfessorDetailView from '../views/ProfessorDetailView';
 import VideoPlayerView from '../views/VideoPlayView';
 import MobileServiceView from '../views/MobileServiceView';
 import ProfileView from '../views/ProfileView';
+import FavouriteView from '../views/FavouriteView';
+import MessageView from '../views/MessageView';
+import TodayBookingAndOrderView from '../views/TodayBookingAndOrderView';
+import BookingAndOrder from '../views/BookingAndOrder';
+import HistoryBookingAndOrderView from '../views/HistoryBookingAndOrderView';
+import PaymentView from '../views/PaymentView';
+import MemberShipView from '../views/MemberShipView';
+import SearchBarView from '../component/SearchBar';
+import SettingView from '../views/SettingView';
+import HelpAndFeedBack from '../views/HelpAndFeedBack';
+import PrivacyPolicyView from '../views/PrivacyPolicyView';
 
 
 const MainStack = () => {
@@ -81,6 +92,17 @@ const MainStack = () => {
       <Stack.Screen component={VideoPlayerView} name="VideoPlayerView"/>
       <Stack.Screen component={MobileServiceView} name="MobileServiceView"/>
       <Stack.Screen component={ProfileView} name="ProfileView"/>
+      <Stack.Screen component={FavouriteView} name="FavouriteView"/>
+      <Stack.Screen component={MessageView} name="MessageView"/>
+      <Stack.Screen component={TodayBookingAndOrderView} name="TodayBookingAndOrderView"/>
+      <Stack.Screen component={BookingAndOrder} name="BookingAndOrder"/>
+      <Stack.Screen component={HistoryBookingAndOrderView} name="HistoryBookingAndOrderView"/>
+      <Stack.Screen component={PaymentView} name="Payment"/>
+      <Stack.Screen component={MemberShipView} name='MemberShipView'/>
+      <Stack.Screen component={SearchBarView} name='SearchBarView'/>
+      <Stack.Screen component={SettingView} name='SettingView'/>
+      <Stack.Screen component={HelpAndFeedBack} name='HelpAndFeedBack'/>
+      <Stack.Screen component={PrivacyPolicyView} name='PrivacyPolicyView'/>
     </Stack.Navigator>
   );
 };

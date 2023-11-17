@@ -112,6 +112,10 @@ const DrawerNavigate = () => {
                     </Text>
                   </View>
                 </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                  console.log("Press");
+                  navigation.push('FavouriteView')
+                }}>
                 <View style={styles.Row}>
                   <Octicons
                     name="feed-heart"
@@ -121,6 +125,7 @@ const DrawerNavigate = () => {
                     Favourite
                   </Text>
                 </View>
+                </TouchableOpacity>
               </View>
               <View
                 style={{
@@ -129,7 +134,12 @@ const DrawerNavigate = () => {
                   backgroundColor: 'grey',
                   marginTop: 20,
                 }}></View>
+              
               <View style={styles.Container}>
+              <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                console.log("Press");
+                navigation.push('MessageView');
+              }}>
                 <View style={styles.Row}>
                   <MaterialCommunityIcons
                     name="email"
@@ -139,6 +149,11 @@ const DrawerNavigate = () => {
                     Message
                   </Text>
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                  console.log("Pressh")
+                  navigation.push('MemberShipView')
+                }}>
                 <View style={styles.Row}>
                   <Octicons
                     name="feed-star"
@@ -148,12 +163,20 @@ const DrawerNavigate = () => {
                     Membership
                   </Text>
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                  navigation.push('TodayBookingAndOrderView')
+                }}>
                 <View style={styles.Row}>
                   <Fontisto name="date" size={22} color={'brown'}></Fontisto>
                   <Text style={{fontSize: 15, color: 'black', marginLeft: 20}}>
                     Today Booking & Order
                   </Text>
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>[
+                  navigation.push('BookingAndOrder')
+                ]}>
                 <View style={styles.Row}>
                   <MaterialIcons
                     name="date-range"
@@ -163,6 +186,10 @@ const DrawerNavigate = () => {
                     Booking & Order
                   </Text>
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                  navigation.push('HistoryBookingAndOrderView')
+                }}>
                 <View style={styles.Row}>
                   <FontAwesome6
                     name="clock-rotate-left"
@@ -172,6 +199,10 @@ const DrawerNavigate = () => {
                     History Booking & Order
                   </Text>
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                  navigation.push('Payment')
+                }}> 
                 <View style={styles.Row}>
                   <MaterialIcons
                     name="payment"
@@ -181,6 +212,7 @@ const DrawerNavigate = () => {
                     Payment
                   </Text>
                 </View>
+                </TouchableOpacity>
                 <View
                   style={{
                     width: 'auto',
@@ -188,6 +220,10 @@ const DrawerNavigate = () => {
                     backgroundColor: 'grey',
                     marginTop: 20,
                   }}></View>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                  console.log("Hi");
+                  navigation.push('SettingView')
+                }}>
                 <View style={styles.Row}>
                   <Fontisto
                     name="player-settings"
@@ -197,6 +233,11 @@ const DrawerNavigate = () => {
                     Settings
                   </Text>
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                  console.log("Start");
+                  navigation.push('PrivacyPolicyView')
+                }}>
                 <View style={styles.Row}>
                   <MaterialIcons
                     name="privacy-tip"
@@ -206,6 +247,11 @@ const DrawerNavigate = () => {
                     Privacy Policy
                   </Text>
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                  console.log("Pressed");
+                  navigation.push('HelpAndFeedBack')
+                }}>
                 <View style={styles.Row}>
                   <AntDesign
                     name="questioncircle"
@@ -215,6 +261,7 @@ const DrawerNavigate = () => {
                     Help & Feedback
                   </Text>
                 </View>
+                </TouchableOpacity>
                 <TouchableOpacity
                   activeOpacity={0.8}
                   onPress={() => {

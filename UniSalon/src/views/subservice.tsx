@@ -625,33 +625,34 @@ export const SubService = () => {
   ]);
 
   const renderTabBar = (props: any) => (
-    <TabBar
-      {...props}
-      scrollEnabled={true}
-      indicatorStyle={styles.indicator}
-      style={{
-        backgroundColor: 'white',
-      }}
-      tabStyle={{
-        width: width / 3,
-        // backgroundColor: 'blue'
-      }}
-      // renderLabel={({props, }) => (
-      //     <Text style={{ color: 'grey', margin: 8 }}>
-      //       {props.route.title}
-      //     </Text>
-      //   )}
-      renderLabel={({route, focused, color}) => (
-        <Text
-          style={{
-            color: focused ? '#16247d' : 'black',
-            margin: 8,
-            fontSize: FontSize.font14,
-            fontWeight: 'bold',
-          }}>
-          {route.title}
-        </Text>
-      )}></TabBar>
+      <TabBar
+        {...props}
+        // scrollEnabled={true}
+        indicatorStyle={styles.indicator}
+        style={{
+          backgroundColor: 'white',
+        }}
+        tabStyle={{
+          width: width / 3,
+          // backgroundColor: 'blue'
+        }}
+        // renderLabel={({props, }) => (
+        //     <Text style={{ color: 'grey', margin: 8 }}>
+        //       {props.route.title}
+        //     </Text>
+        //   )}
+        renderLabel={({route, focused, color}) => (
+          <Text
+            style={{
+              color: focused ? '#16247d' : 'black',
+              margin: 8,
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+            }}>
+            {route.title}
+          </Text>
+        )}></TabBar>
+
   );
 
   const naviation: any = useNavigation();

@@ -13,12 +13,12 @@ const CreatePasswordView = () => {
             </View>
             <Text style={{ marginTop: '8%', textAlign: 'center', fontSize: 18, color: 'grey' }}>Enter Your Password</Text>
             <View style={styles.FormII}>
-                <Text style={{ fontSize: 16 }}>Password</Text>
-                <Foundation name='eye' size={25}></Foundation>
+                <Text style={{ fontSize: 16, color: 'grey' }}>Password</Text>
+                <Foundation name='eye' size={25} color={'grey'}></Foundation>
             </View>
             <View style={styles.FormII}>
-                <Text style={{ fontSize: 16 }}>Confirm Password</Text>
-                <Foundation name='eye' size={25}></Foundation>
+                <Text style={{ fontSize: 16, color: 'grey' }}>Confirm Password</Text>
+                <Foundation name='eye' size={25} color={'grey'}></Foundation>
             </View>
             <View style={styles.BtnLogin}>
                 <Text style={styles.TxtLogin}>Create Account</Text>

@@ -1,29 +1,29 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, TextInput} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 
-const PaymentView = () => {
+const SearchBarView = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <View style={styles.AppBar}>
+      <View style={styles.search}>
+        <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
           style={styles.icon}
           activeOpacity={1}
           onPress={() => {
             navigation.goBack();
           }}>
-          <AntDesign name="arrowleft" color={'white'} size={20}></AntDesign>
+          <AntDesign name="arrowleft" color={'grey'} size={25}></AntDesign>
         </TouchableOpacity>
-        <Text style={styles.SubText}>Payment</Text>
+        <TextInput placeholder='Search Salons...'></TextInput>
+        </View>
+        <FontAwesome style={{
+          top: 10
+        }} size={20} color={'grey'} name='search' />
       </View>
       <View
         style={{
@@ -49,35 +49,24 @@ const PaymentView = () => {
   );
 };
 
-export default PaymentView;
+export default SearchBarView;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  AppBar: {
-    paddingHorizontal: 10,
-    width: '100%',
-    // height: 50,
-    paddingBottom: 10,
-    backgroundColor: '#16247d',
-    // position: 'absolute',
-    paddingTop: '3%',
-    flexDirection: 'row',
-    verticalAlign: 'middle',
-    justifyContent: 'center',
-  },
-  SubText: {
-    fontSize: 14,
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    paddingHorizontal: '25%',
-  },
   icon: {
-    position: 'absolute',
-    left: 0,
+    // position: 'absolute',
+    alignContent: 'center',
     top: 10,
-    marginLeft: 15,
+    right: 5,
+    marginLeft: 10
   },
+  search:{
+    paddingHorizontal: 10,
+    paddingVertical: 0,
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
 });

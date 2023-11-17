@@ -313,6 +313,9 @@ export const ProfessorView = () => {
         />
         <Text style={styles.TitleAppbar}>All Professors</Text>
         <AntDesign
+          onPress={()=>{
+            navigation.push('SearchBarView')
+          }}
           name="search1"
           size={24}
           style={{
