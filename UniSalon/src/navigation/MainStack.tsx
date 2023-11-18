@@ -48,6 +48,7 @@ import SearchBarView from '../component/SearchBar';
 import SettingView from '../views/SettingView';
 import HelpAndFeedBack from '../views/HelpAndFeedBack';
 import PrivacyPolicyView from '../views/PrivacyPolicyView';
+import DetailExploreView from '../views/DetailExploreView';
 
 
 const MainStack = () => {
@@ -103,6 +104,7 @@ const MainStack = () => {
       <Stack.Screen component={SettingView} name='SettingView'/>
       <Stack.Screen component={HelpAndFeedBack} name='HelpAndFeedBack'/>
       <Stack.Screen component={PrivacyPolicyView} name='PrivacyPolicyView'/>
+      <Stack.Screen component={DetailExploreView} name='DetailExploreView'/>
     </Stack.Navigator>
   );
 };

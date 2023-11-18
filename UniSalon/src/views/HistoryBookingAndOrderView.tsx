@@ -139,7 +139,7 @@ const HistoryBookingAndOrderView = () => {
           style={{
             color: focused ? '#16247d' : 'black',
             margin: 8,
-            fontSize: FontSize.font12,
+            fontSize: FontSize.font10,
             fontWeight: 'bold',
           }}>
           {route.title}

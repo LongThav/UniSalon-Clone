@@ -154,7 +154,7 @@ export const HomeView = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
-  console.log("Check: ", isEnabled);
+  console.log('Check: ', isEnabled);
   const navigation: any = useNavigation();
   const snapPoint = useMemo(() => ['25%', '50%', '70%'], []);
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -294,7 +294,7 @@ export const HomeView = () => {
                     style={styles.Booking}
                     onPress={() => {
                       console.log('on pressed');
-                      navigation.push('MakeBookingView');
+                      navigation.push('FlowBookingView');
                     }}>
                     <Text style={styles.txtBooking}>Booking Now</Text>
                   </TouchableOpacity>
@@ -427,7 +427,7 @@ export const HomeView = () => {
                     style={styles.Booking}
                     onPress={() => {
                       console.log('on pressed');
-                      navigation.push('MakeBookingView');
+                      navigation.push('FlowBookingView');
                     }}>
                     <Text style={styles.txtBooking}>Booking Now</Text>
                   </TouchableOpacity>
@@ -607,7 +607,7 @@ export const HomeView = () => {
                   style={styles.Booking}
                   onPress={() => {
                     console.log('on pressed');
-                    navigation.push('MakeBookingView');
+                    navigation.push('FlowBookingView');
                   }}>
                   <Text style={styles.txtBooking}>Booking Now</Text>
                 </TouchableOpacity>
@@ -676,9 +676,7 @@ export const HomeView = () => {
             name="search1"
             size={FontSize.font15}
             style={{marginTop: 3}}></AntDesign>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={toggleSwitch}>
+          <TouchableOpacity activeOpacity={0.8} onPress={toggleSwitch}>
             <View
               style={{
                 width: 20,
@@ -687,11 +685,17 @@ export const HomeView = () => {
                 backgroundColor: 'grey',
                 marginHorizontal: 15,
               }}>
-              { isEnabled ?<Image
-                style={{flex: 1, width: 20, height: 20, borderRadius: 20 / 2}}
-                source={require('../../assets/imgs/cam_flag.png')}/> : <Image
-                style={{flex: 1, width: 20, height: 20, borderRadius: 20 / 2}}
-                source={require('../../assets/imgs/flag_english.jpg')}/> }
+              {isEnabled ? (
+                <Image
+                  style={{flex: 1, width: 20, height: 20, borderRadius: 20 / 2}}
+                  source={require('../../assets/imgs/cam_flag.png')}
+                />
+              ) : (
+                <Image
+                  style={{flex: 1, width: 20, height: 20, borderRadius: 20 / 2}}
+                  source={require('../../assets/imgs/flag_english.jpg')}
+                />
+              )}
             </View>
           </TouchableOpacity>
           <MaterialIcons

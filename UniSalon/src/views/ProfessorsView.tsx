@@ -36,7 +36,7 @@ const SideBarFilter = [
   },
   {
     id: 4,
-    icon: require('../../assets/imgs/bleaching.png'),
+    icon: require('../../assets/imgs/makeupface.png'),
     title: 'Cocktail Party MakeUp',
   },
   {
@@ -46,12 +46,12 @@ const SideBarFilter = [
   },
   {
     id: 6,
-    icon: require('../../assets/imgs/eye.png'),
+    icon: require('../../assets/imgs/eyebrow.png'),
     title: 'Eyebrow Wax and Tint',
   },
   {
     id: 7,
-    icon: require('../../assets/imgs/bleaching.png'),
+    icon: require('../../assets/imgs/eyebrowii.png'),
     title: 'Edge Up',
   },
   {
@@ -167,6 +167,26 @@ const PersonData = [
 export const ProfessorView = () => {
   const navigation: any = useNavigation();
   const [selectColor, setSelectColor] = useState<any>(0);
+  const [bg, setBg] = useState(0);
+  const BackgroundItem = () => {
+    if (selectColor === 0) {
+      return '#b0e0e6';
+    } else if (selectColor === 1) {
+      return '#cd853f';
+    } else if (selectColor === 2) {
+      return '#98fb98';
+    } else if (selectColor === 3) {
+      return '#663399';
+    } else if (selectColor === 4) {
+      return '#6a5acd';
+    } else if (selectColor === 5) {
+      return '#87ceeb';
+    } else if (selectColor === 6) {
+      return '#40e0d0';
+    } else {
+      return '#40e0d0';
+    }
+  };
 
   const SelectItem = (item: any) => {
     console.log('Data: ', item);
@@ -353,6 +373,7 @@ export const ProfessorView = () => {
                         // backgroundColor: ItemSelecter(selectColor === index)
                         backgroundColor:
                           selectColor === index ? '#16247d' : 'grey',
+                        // backgroundColor: BackgroundItem()
                       }}>
                       <Image
                         style={{width: 40, height: 40}}

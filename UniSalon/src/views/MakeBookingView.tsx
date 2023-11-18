@@ -42,11 +42,15 @@ export const MakeBookingView = () => {
                     <Text style={{ paddingHorizontal: 15, paddingVertical: 10, color: 'black', fontSize: 18, fontWeight: 'bold' }}>Booking Information</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                        console.log("Presshh");
+                    }}>
                     <View style={styles.SelectDay}>
                         <AntDesign name='clockcircleo' color={'grey'} size={20}></AntDesign>
                         <View style={{ width: 1, height: '100%', backgroundColor: 'grey', marginHorizontal: 15 }}></View>
                         <Text style={{ fontSize: 15, color: 'grey' }}>Mon,30 Oct 2023</Text>
                     </View>
+                    </TouchableOpacity>
                     <View style={styles.SelectHour}>
                         <AntDesign name='clockcircleo' color={'grey'} size={20}></AntDesign>
                         <View style={{ width: 1, height: '100%', backgroundColor: 'grey', marginHorizontal: 15 }}></View>

@@ -5,16 +5,36 @@ import {
   ScrollView,
   SafeAreaView,
   TouchableOpacity,
+  Modal
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { FontSize } from '../constant/FontSize';
+import { TimePickerModal } from 'react-native-paper-dates';
+import Calendar from 'react-native-calendars/src/calendar';
+
+
 
 const FlowBookingView = () => {
   const navigation: any = useNavigation();
+  const [showModul, setModel] = useState(false);
+  const [visible, setVisible] = React.useState(false);
+  const onDismiss = React.useCallback(() => {
+    setVisible(false)
+  }, [setVisible]);
+
+  const onConfirm = React.useCallback(
+    ({  }) => {
+      setVisible(false);
+      console.log({ });
+    },
+    [setVisible]
+  );
+
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <View style={styles.Appbar}>
@@ -94,6 +114,11 @@ const FlowBookingView = () => {
           Booking Information
         </Text>
         <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+            setModel(true);
+            console.log(showModul);
+            
+          }}>
           <View style={styles.SelectDay}>
             <AntDesign name="clockcircleo" color={'grey'} size={18}></AntDesign>
             <View
@@ -105,6 +130,14 @@ const FlowBookingView = () => {
               }}></View>
             <Text style={{fontSize: FontSize.font14, color: 'black'}}>Mon,30 Oct 2023</Text>
           </View>
+          <Modal visible={showModul} animationType='fade'>
+            <Calendar style={{borderRadius: 10, elevation: 4, margin: 10}}/>
+          </Modal>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+            console.log("hi")
+            setVisible(true)
+          }}>
           <View style={styles.SelectHour}>
             <AntDesign name="clockcircleo" color={'grey'} size={18}></AntDesign>
             <View
@@ -116,6 +149,13 @@ const FlowBookingView = () => {
               }}></View>
             <Text style={{fontSize: FontSize.font14, color: 'black'}}>11:17</Text>
           </View>
+          <TimePickerModal
+              visible={visible}
+              onDismiss={onDismiss}
+              onConfirm={onConfirm}
+              hours={12}
+              />
+          </TouchableOpacity>
         </View>
         <View style={styles.Form2}>
           <AntDesign name="infocirlceo" color={'black'} size={18}></AntDesign>
@@ -178,7 +218,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   SelectDay: {
-    width: '50%',
+    // width: '50%',
     paddingVertical: 15,
     paddingHorizontal: 15,
     flexDirection: 'row',
@@ -188,7 +228,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   SelectHour: {
-    width: '40%',
+    // width: '40%',
     paddingVertical: 15,
     flexDirection: 'row',
     verticalAlign: 'middle',
@@ -196,6 +236,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 20
   },
   Form2: {
     marginTop: '3.5%',

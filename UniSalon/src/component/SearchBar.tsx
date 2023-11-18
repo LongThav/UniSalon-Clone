@@ -19,7 +19,7 @@ const SearchBarView = () => {
           }}>
           <AntDesign name="arrowleft" color={'grey'} size={25}></AntDesign>
         </TouchableOpacity>
-        <TextInput placeholder='Search Salons...'></TextInput>
+        <TextInput placeholderTextColor={'grey'} placeholder='Search Salons...'></TextInput>
         </View>
         <FontAwesome style={{
           top: 10

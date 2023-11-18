@@ -5,10 +5,11 @@ import {
   Dimensions,
   FlatList,
   Image,
+  TouchableOpacity
 } from 'react-native';
 import React, {useState} from 'react';
 import {FontSize} from '../constant/FontSize';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('window');
 
@@ -35,18 +36,18 @@ const ExploreItem = [
   },
   {
     id: 5,
-    icon: require('../../assets/imgs/eye.png'),
+    icon: require('../../assets/imgs/eyebrow.png'),
     title: 'Eyebrow Wax and Tint',
   },
   {
     id: 6,
-    icon: require('../../assets/imgs/bleaching.png'),
-    title: 'Edge Up',
+    icon: require('../../assets/imgs/eyebrowii.png'),
+    title: 'Eyebrow Wax and Tint',
   },
   {
     id: 7,
     icon: require('../../assets/imgs/bleaching.png'),
-    title: 'Eyebrow Wax and Tint',
+    title: 'Face Message',
   },
   {
     id: 8,
@@ -57,6 +58,27 @@ const ExploreItem = [
 
 const Explore = () => {
   const [indexs, setIndex] = useState<any>(null);
+  const navigation = useNavigation();
+  const [bg, setBg] = useState(0);
+  const BackgroundItem = (item: any) => {
+    if (item === 0) {
+      return '#b0e0e6';
+    } else if (item === 1) {
+      return '#cd853f';
+    } else if (item === 2) {
+      return '#98fb98';
+    } else if (item === 3) {
+      return '#663399';
+    } else if (item === 4) {
+      return '#6a5acd';
+    } else if (item === 5) {
+      return '#87ceeb';
+    } else if (item === 6) {
+      return '#40e0d0';
+    } else {
+      return 'white';
+    }
+  };
   // const toggleSwitch = () => {
   //   setColor(previousState => !previousState);
   //   console.log(colors);
@@ -79,15 +101,19 @@ const Explore = () => {
               <TouchableOpacity
                 activeOpacity={0.8}
                 onPress={() => {
+                  navigation.push('DetailExploreView', {
+                    title: item.title
+                  });
                   setIndex(index);
                 }}>
-                <View style={{
-                   width: 45,
-                   height: 45,
-                   borderRadius: 45 / 2,
-                   backgroundColor: indexs === index ? 'blue' : 'grey',
-                   marginHorizontal: 8,
-                }}>
+                <View
+                  style={{
+                    width: 45,
+                    height: 45,
+                    borderRadius: 45 / 2,
+                    backgroundColor: BackgroundItem(index),
+                    marginHorizontal: 8,
+                  }}>
                   <Image
                     style={{
                       width: 20,

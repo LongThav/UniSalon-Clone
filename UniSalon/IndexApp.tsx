@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import Route from './src/navigation/Route';
 import "react-native-gesture-handler";
 import BootSplash from 'react-native-bootsplash';
+import { enGB, registerTranslation } from 'react-native-paper-dates'
+registerTranslation('en-GB', enGB)
 
 const MainApp = ()=>{
     console.log("Hi App");
