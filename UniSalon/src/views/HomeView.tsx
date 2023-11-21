@@ -161,7 +161,7 @@ export const HomeView = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['12%', '12%', '12%', '90%'], []);
+  const snapPoints = useMemo(() => ['12%', '12%', '30%', '90%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
@@ -312,10 +312,15 @@ export const HomeView = () => {
 
           <Text style={styles.txtSpecial}>Special Promotions</Text>
           <View style={styles.SpecialBox}>
-            <Image
-              style={styles.boxImg}
-              source={require('../../assets/imgs/img1.jpg')}
-            />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.push('DetailPromotion');
+              }}>
+              <Image
+                style={styles.boxImg}
+                source={require('../../assets/imgs/img1.jpg')}
+              />
+            </TouchableOpacity>
           </View>
           <Text style={styles.txtTopRatingSalon}>Top Rating Salons</Text>
           <FlatList
@@ -447,7 +452,14 @@ export const HomeView = () => {
             data={TopRatingProfessorData}
             renderItem={({item, index}) => {
               return (
-                <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    navigation.push('ProfessorDetailView', {
+                      name: item.name,
+                      img: item.img,
+                    });
+                  }}>
                   <View style={styles.CardTopRating}>
                     <View style={styles.imgCircleTopRating}>
                       <Image

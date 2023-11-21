@@ -49,6 +49,7 @@ import SettingView from '../views/SettingView';
 import HelpAndFeedBack from '../views/HelpAndFeedBack';
 import PrivacyPolicyView from '../views/PrivacyPolicyView';
 import DetailExploreView from '../views/DetailExploreView';
+import LoadingView from '../views/LoadingView';
 
 
 const MainStack = () => {
@@ -59,7 +60,7 @@ const MainStack = () => {
         headerShown: false,
         animation: 'fade_from_bottom',
       }}>
-      
+      <Stack.Screen component={LoadingView} name='LoadingView'/>
       <Stack.Screen component={DrawerNavigate} name="MainDrawer" />
       <Stack.Screen component={App} name="IndexView" />
       <Stack.Screen component={HomeView} name="Home" />

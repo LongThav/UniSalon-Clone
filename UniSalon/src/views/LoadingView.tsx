@@ -1,0 +1,35 @@
+import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
+import React, {useEffect} from 'react';
+import {useNavigation} from '@react-navigation/native';
+
+const LoadingView = () => {
+  const navigation = useNavigation();
+  useEffect(() => {
+    // console.log("Start push screen")
+    setTimeout(() => {
+      console.log('Hello, World!');
+      navigation.push('MainDrawer');
+    }, 1000);
+  });
+  return (
+    <View style={styles.container}>
+      <ActivityIndicator size="large" color="#00ff00" />
+      <Text style={styles.txtStyle}>Loading..</Text>
+    </View>
+  );
+};
+
+export default LoadingView;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#16247d',
+  },
+  txtStyle: {
+    fontSize: 18,
+    color: 'white',
+  },
+});

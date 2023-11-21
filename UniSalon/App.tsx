@@ -13,6 +13,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 const App = () => {
+  console.log("Start tabbar");
   // useEffect(() => {
   //   if (Platform.OS === 'android') SplashScreen.hide();
   // }, []);

@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
@@ -65,6 +65,10 @@ const DetailExploreView = (props: any) => {
       <ScrollView>
         {data.map((data, index) => {
           return (
+            <TouchableOpacity onPress={()=>{
+              navigation.push('SubService');
+              // setIndex(index);
+            }}>
             <View key={index} style={styles.cards}>
               <View style={styles.imgtitle}>
                 <Image style={styles.img} source={data.img} />
@@ -126,6 +130,7 @@ const DetailExploreView = (props: any) => {
                 name="hearto"
               />
             </View>
+            </TouchableOpacity>
           );
         })}
       </ScrollView>
