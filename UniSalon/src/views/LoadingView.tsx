@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 import React, {useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import {Grid} from 'react-native-animated-spinkit';
 
 const LoadingView = () => {
   const navigation = useNavigation();
@@ -13,8 +14,9 @@ const LoadingView = () => {
   });
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="large" color="#00ff00" />
-      <Text style={styles.txtStyle}>Loading..</Text>
+      <Grid color="white" size={60} />
+      <View style={{height: 30}}></View>
+      <Text style={styles.txtStyle}>Loading...</Text>
     </View>
   );
 };
@@ -31,5 +33,6 @@ const styles = StyleSheet.create({
   txtStyle: {
     fontSize: 18,
     color: 'white',
+    fontWeight: 'bold',
   },
 });

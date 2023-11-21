@@ -13,7 +13,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 const App = () => {
-  console.log("Start tabbar");
+  console.log('Start tabbar');
   // useEffect(() => {
   //   if (Platform.OS === 'android') SplashScreen.hide();
   // }, []);
@@ -42,7 +42,7 @@ const App = () => {
               <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 <Entypo
                   name="location"
-                  size={24}
+                  size={20}
                   color={focused ? '#16247d' : 'grey'}
                 />
                 <Text
@@ -67,7 +67,7 @@ const App = () => {
               <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 <Entypo
                   name="shop"
-                  size={24}
+                  size={20}
                   color={focused ? '#16247d' : 'grey'}
                 />
                 <Text
@@ -88,7 +88,7 @@ const App = () => {
               <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 <FontAwesome
                   name="video-camera"
-                  size={24}
+                  size={20}
                   color={focused ? '#16247d' : 'grey'}
                 />
                 <Text
@@ -109,7 +109,7 @@ const App = () => {
               <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 <Ionicons
                   name="person"
-                  size={24}
+                  size={20}
                   color={focused ? '#16247d' : 'grey'}
                 />
                 <Text
@@ -134,7 +134,7 @@ const App = () => {
                 }}>
                 <Ionicons
                   name="gift"
-                  size={24}
+                  size={20}
                   color={focused ? '#16247d' : 'grey'}
                 />
                 <Text
