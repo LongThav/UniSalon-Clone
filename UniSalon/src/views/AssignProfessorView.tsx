@@ -22,7 +22,7 @@ const data = [
     title: 'Professor Sythan',
   },
   {
-    id: 2,
+    id: 2, 
     title: 'Professor Sythan',
   },
   {

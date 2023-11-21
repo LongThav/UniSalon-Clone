@@ -10,11 +10,11 @@ import {
   TouchableOpacity,
   TextInput,
   Dimensions,
-  StatusBar 
+  StatusBar,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {ScrollView} from 'react-native-gesture-handler';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -38,23 +38,22 @@ export const VideoView = () => {
   const navigation: any = useNavigation();
   return (
     <SafeAreaView>
-    <StatusBar backgroundColor={'#16247d'}></StatusBar>
-        <View style={styles.Appbar}>
-          <Feather
-            onPress={()=>{
-          navigation.openDrawer();
-
-            }}
-            name="menu"
-            size={24}
-            style={{
-              color: 'white',
-              position: 'absolute',
-              left: 15,
-            }}
-          />
-          <Text style={styles.TitleAppbar}>Videoe</Text>
-        </View>
+      <StatusBar backgroundColor={'#16247d'}></StatusBar>
+      <View style={styles.Appbar}>
+        <Feather
+          onPress={() => {
+            navigation.openDrawer();
+          }}
+          name="menu"
+          size={24}
+          style={{
+            color: 'white',
+            position: 'absolute',
+            left: 15,
+          }}
+        />
+        <Text style={styles.TitleAppbar}>Videoe</Text>
+      </View>
       <View style={styles.SearchBar}>
         <EvilIcons name="search" size={20} color="grey" />
         <TextInput
@@ -84,7 +83,7 @@ export const VideoView = () => {
               activeOpacity={0.8}
               onPress={() => {
                 navigation.push('VideoPlayerView');
-                console.log("Presssh");
+                console.log('Presssh');
               }}>
               <View key={index} style={styles.CardList}>
                 <View
@@ -107,7 +106,12 @@ export const VideoView = () => {
                   <Text numberOfLines={3} style={styles.Text}>
                     {e.title}
                   </Text>
-                  <Text style={{marginTop: 14, color: 'grey', fontSize: FontSize.font12}}>
+                  <Text
+                    style={{
+                      marginTop: 14,
+                      color: 'grey',
+                      fontSize: FontSize.font12,
+                    }}>
                     17 Dec 2021 At 11:59 AM
                   </Text>
                 </View>
@@ -134,7 +138,7 @@ const styles = StyleSheet.create({
   TitleAppbar: {
     fontSize: FontSize.font15,
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   SearchBar: {
     width: 'auto',

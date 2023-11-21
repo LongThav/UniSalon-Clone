@@ -10,7 +10,7 @@ const LoadingView = () => {
     setTimeout(() => {
       console.log('Hello, World!');
       navigation.push('MainDrawer');
-    }, 1000);
+    }, 400);
   });
   return (
     <View style={styles.container}>

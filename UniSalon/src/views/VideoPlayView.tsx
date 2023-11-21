@@ -88,6 +88,8 @@ const VideoPlayerView = () => {
               fontSize: 15,
               color: 'black',
               fontWeight: 'bold',
+              width: '100%',
+              // backgroundColor: 'red'
             }}>
             តោះស្វែងយល់ពីរបៀបចុះឈ្មោះក្នុងការ
           </Text>
