@@ -260,6 +260,8 @@ export const PromotionView = () => {
           renderScene={renderScene}
           onIndexChange={setIndex}
           initialLayout={{width: layout.width}}
+          pageMargin={1}
+        
           style={{
             backgroundColor: 'white',
           }}

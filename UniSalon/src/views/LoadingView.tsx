@@ -6,7 +6,7 @@ import {Grid} from 'react-native-animated-spinkit';
 const LoadingView = () => {
   const navigation = useNavigation();
   useEffect(() => {
-    // console.log("Start push screen")
+    console.log("Start push screen")
     setTimeout(() => {
       console.log('Hello, World!');
       navigation.push('MainDrawer');

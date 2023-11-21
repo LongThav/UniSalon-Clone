@@ -723,6 +723,9 @@ export const HomeView = () => {
             </View>
           </TouchableOpacity>
           <MaterialIcons
+            onPress={()=>{
+              navigation.push('NotificationView');
+            }}
             name="notifications-none"
             size={15}
             color={'black'}

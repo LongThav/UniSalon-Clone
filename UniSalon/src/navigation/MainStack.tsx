@@ -50,6 +50,7 @@ import HelpAndFeedBack from '../views/HelpAndFeedBack';
 import PrivacyPolicyView from '../views/PrivacyPolicyView';
 import DetailExploreView from '../views/DetailExploreView';
 import LoadingView from '../views/LoadingView';
+import NotificationView from '../views/NotificationView';
 
 
 const MainStack = () => {
@@ -106,6 +107,7 @@ const MainStack = () => {
       <Stack.Screen component={HelpAndFeedBack} name='HelpAndFeedBack'/>
       <Stack.Screen component={PrivacyPolicyView} name='PrivacyPolicyView'/>
       <Stack.Screen component={DetailExploreView} name='DetailExploreView'/>
+      <Stack.Screen component={NotificationView} name='NotificationView'/>
     </Stack.Navigator>
   );
 };

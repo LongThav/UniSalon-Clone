@@ -331,15 +331,15 @@ const Men = () => {
     <FlatList
       style={{flex: 1, marginBottom: height * 0.1}}
       showsVerticalScrollIndicator={false}
-      data={[1,2,3]}
+      data={[1, 2, 3]}
       renderItem={() => (
         <View
           // showsVerticalScrollIndicator={false}
           style={{backgroundColor: '#f1f1f1'}}>
           <View style={styles.CardListMen}>
-            <View style={{width: '30%', height: '100%'}}>
+            <View style={{width: 100, height: 100}}>
               <Image
-                style={{width: undefined, height: undefined}}
+                style={{flex: 1, width: undefined, height: undefined}}
                 source={require('../../assets/imgs/img1.jpg')}></Image>
             </View>
             <View style={{paddingLeft: 15}}>
