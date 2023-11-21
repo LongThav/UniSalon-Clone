@@ -119,7 +119,12 @@ const DetailExploreView = (props: any) => {
                   <Text style={styles.txtUp}>{data.up}</Text>
                 )}
               </View>
-              <AntDesign style= {styles.icon} size={18} color={'#ff8b8b'} name='hearto'/>
+              <AntDesign
+                style={styles.icon}
+                size={18}
+                color={'#ff8b8b'}
+                name="hearto"
+              />
             </View>
           );
         })}
@@ -198,10 +203,10 @@ const styles = StyleSheet.create({
     color: 'grey',
     fontWeight: '400',
   },
-  icon:{
+  icon: {
     position: 'absolute',
     right: 0,
     bottom: 25,
-    marginRight: 10
-  }
+    marginRight: 10,
+  },
 });

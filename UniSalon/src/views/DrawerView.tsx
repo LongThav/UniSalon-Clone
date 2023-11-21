@@ -10,8 +10,3 @@ const DrawerView = () => {
 }
 
 export default DrawerView
-
-//List<dynamic> pageList = [Promotion(), Shop(), Video()];
-// int index = 0;
-//body: pageList[index]
-//bottomNavigationBar(item: [])

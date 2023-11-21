@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,8 @@ import {
   Image,
   useWindowDimensions,
   Dimensions,
+  Platform,
+  FlatList,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
@@ -17,6 +19,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {SceneMap, TabBar, TabView} from 'react-native-tab-view';
 import {FontSize} from '../constant/FontSize';
+import DateTimePicker from '@react-native-community/datetimepicker';
 const {width, height} = Dimensions.get('window');
 
 const MenData = [
@@ -325,278 +328,285 @@ const Women = () => {
 
 const Men = () => {
   return (
-    <ScrollView
+    <FlatList
+      style={{flex: 1, marginBottom: height * 0.1}}
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: '#f1f1f1', flex: 1}}>
-      <View style={styles.CardListMen}>
-        <View style={{width: '30%', height: '100%'}}>
-          <Image
-            style={{flex: 1, width: undefined, height: undefined}}
-            source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
-        <View style={{paddingLeft: 15}}>
-          <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: '#16247d',
-            }}>
-            Hight Fan Hairstyles
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 25,
-              justifyContent: 'space-between',
-            }}>
-            <Text
-              style={{
-                marginRight: '32%',
-                marginTop: 20,
-                fontSize: FontSize.font12,
-                color: 'red',
-                fontWeight: 'bold',
-              }}>
-              $10.00
-            </Text>
-            <View
-              style={{
-                paddingHorizontal: 12,
-                paddingVertical: 10,
-                borderWidth: 1,
-                borderColor: '#16247d',
-                borderRadius: 8,
-              }}>
+      data={[1,2,3]}
+      renderItem={() => (
+        <View
+          // showsVerticalScrollIndicator={false}
+          style={{backgroundColor: '#f1f1f1'}}>
+          <View style={styles.CardListMen}>
+            <View style={{width: '30%', height: '100%'}}>
+              <Image
+                style={{width: undefined, height: undefined}}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View style={{paddingLeft: 15}}>
               <Text
                 style={{
-                  fontSize: FontSize.font12,
-                  color: '#16247d',
+                  fontSize: FontSize.font14,
                   fontWeight: 'bold',
+                  color: '#16247d',
                 }}>
-                Booking
+                Hight Fan Hairstyles
               </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: 25,
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{
+                    marginRight: '32%',
+                    marginTop: 20,
+                    fontSize: FontSize.font12,
+                    color: 'red',
+                    fontWeight: 'bold',
+                  }}>
+                  $10.00
+                </Text>
+                <View
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 10,
+                    borderWidth: 1,
+                    borderColor: '#16247d',
+                    borderRadius: 8,
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: FontSize.font12,
+                      color: '#16247d',
+                      fontWeight: 'bold',
+                    }}>
+                    Booking
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View style={styles.CardListMen}>
+            <View style={{width: '30%', height: '100%'}}>
+              <Image
+                style={{width: undefined, height: undefined}}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View style={{paddingLeft: 15}}>
+              <Text
+                style={{
+                  fontSize: FontSize.font14,
+                  fontWeight: 'bold',
+                  color: '#16247d',
+                }}>
+                Classic
+              </Text>
+              <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
+                Classic Model លក្ខណះសុភាពរាបសារ
+              </Text>
+              <Text>សាកសមគ្រប់វិស័យ</Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: 10,
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{
+                    marginRight: '32%',
+                    marginTop: 20,
+                    fontSize: FontSize.font12,
+                    color: 'red',
+                    fontWeight: 'bold',
+                  }}>
+                  $10.00
+                </Text>
+                <View
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 10,
+                    borderWidth: 1,
+                    borderColor: '#16247d',
+                    borderRadius: 8,
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: FontSize.font12,
+                      color: '#16247d',
+                      fontWeight: 'bold',
+                    }}>
+                    Booking
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View style={styles.CardListMen}>
+            <View style={{width: '30%', height: '100%'}}>
+              <Image
+                style={{width: undefined, height: undefined}}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View style={{paddingLeft: 15}}>
+              <Text
+                style={{
+                  fontSize: FontSize.font14,
+                  fontWeight: 'bold',
+                  color: '#16247d',
+                }}>
+                កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
+              </Text>
+              <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
+                Popular Hairstyles
+              </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: 10,
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{
+                    marginRight: '32%',
+                    marginTop: 20,
+                    fontSize: FontSize.font12,
+                    color: 'red',
+                    fontWeight: 'bold',
+                  }}>
+                  $10.00
+                </Text>
+                <View
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 10,
+                    borderWidth: 1,
+                    borderColor: '#16247d',
+                    borderRadius: 8,
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: FontSize.font12,
+                      color: '#16247d',
+                      fontWeight: 'bold',
+                    }}>
+                    Booking
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View style={styles.CardListMen}>
+            <View style={{width: '30%', height: '100%'}}>
+              <Image
+                style={{width: undefined, height: undefined}}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View style={{paddingLeft: 15}}>
+              <Text
+                style={{
+                  fontSize: FontSize.font14,
+                  fontWeight: 'bold',
+                  color: '#16247d',
+                }}>
+                កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
+              </Text>
+              <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
+                Popular Hairstyles
+              </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: 10,
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{
+                    marginRight: '32%',
+                    marginTop: 20,
+                    fontSize: FontSize.font12,
+                    color: 'red',
+                    fontWeight: 'bold',
+                  }}>
+                  $10.00
+                </Text>
+                <View
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 10,
+                    borderWidth: 1,
+                    borderColor: '#16247d',
+                    borderRadius: 8,
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: FontSize.font12,
+                      color: '#16247d',
+                      fontWeight: 'bold',
+                    }}>
+                    Booking
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View style={styles.CardListMen}>
+            <View style={{width: '30%', height: '100%'}}>
+              <Image
+                style={{width: undefined, height: undefined}}
+                source={require('../../assets/imgs/img1.jpg')}></Image>
+            </View>
+            <View style={{paddingLeft: 15}}>
+              <Text
+                style={{
+                  fontSize: FontSize.font14,
+                  fontWeight: 'bold',
+                  color: '#16247d',
+                }}>
+                កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
+              </Text>
+              <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
+                Popular Hairstyles
+              </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: 10,
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{
+                    marginRight: '32%',
+                    marginTop: 20,
+                    fontSize: FontSize.font12,
+                    color: 'red',
+                    fontWeight: 'bold',
+                  }}>
+                  $10.00
+                </Text>
+                <View
+                  style={{
+                    paddingHorizontal: 12,
+                    paddingVertical: 10,
+                    borderWidth: 1,
+                    borderColor: '#16247d',
+                    borderRadius: 8,
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: FontSize.font12,
+                      color: '#16247d',
+                      fontWeight: 'bold',
+                    }}>
+                    Booking
+                  </Text>
+                </View>
+              </View>
             </View>
           </View>
         </View>
-      </View>
-      <View style={styles.CardListMen}>
-        <View style={{width: '30%', height: '100%'}}>
-          <Image
-            style={{flex: 1, width: undefined, height: undefined}}
-            source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
-        <View style={{paddingLeft: 15}}>
-          <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: '#16247d',
-            }}>
-            Classic
-          </Text>
-          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
-            Classic Model លក្ខណះសុភាពរាបសារ
-          </Text>
-          <Text>សាកសមគ្រប់វិស័យ</Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 10,
-              justifyContent: 'space-between',
-            }}>
-            <Text
-              style={{
-                marginRight: '32%',
-                marginTop: 20,
-                fontSize: FontSize.font12,
-                color: 'red',
-                fontWeight: 'bold',
-              }}>
-              $10.00
-            </Text>
-            <View
-              style={{
-                paddingHorizontal: 12,
-                paddingVertical: 10,
-                borderWidth: 1,
-                borderColor: '#16247d',
-                borderRadius: 8,
-              }}>
-              <Text
-                style={{
-                  fontSize: FontSize.font12,
-                  color: '#16247d',
-                  fontWeight: 'bold',
-                }}>
-                Booking
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-      <View style={styles.CardListMen}>
-        <View style={{width: '30%', height: '100%'}}>
-          <Image
-            style={{flex: 1, width: undefined, height: undefined}}
-            source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
-        <View style={{paddingLeft: 15}}>
-          <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: '#16247d',
-            }}>
-            កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
-          </Text>
-          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
-            Popular Hairstyles
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 10,
-              justifyContent: 'space-between',
-            }}>
-            <Text
-              style={{
-                marginRight: '32%',
-                marginTop: 20,
-                fontSize: FontSize.font12,
-                color: 'red',
-                fontWeight: 'bold',
-              }}>
-              $10.00
-            </Text>
-            <View
-              style={{
-                paddingHorizontal: 12,
-                paddingVertical: 10,
-                borderWidth: 1,
-                borderColor: '#16247d',
-                borderRadius: 8,
-              }}>
-              <Text
-                style={{
-                  fontSize: FontSize.font12,
-                  color: '#16247d',
-                  fontWeight: 'bold',
-                }}>
-                Booking
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-      <View style={styles.CardListMen}>
-        <View style={{width: '30%', height: '100%'}}>
-          <Image
-            style={{flex: 1, width: undefined, height: undefined}}
-            source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
-        <View style={{paddingLeft: 15}}>
-          <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: '#16247d',
-            }}>
-            កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
-          </Text>
-          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
-            Popular Hairstyles
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 10,
-              justifyContent: 'space-between',
-            }}>
-            <Text
-              style={{
-                marginRight: '32%',
-                marginTop: 20,
-                fontSize: FontSize.font12,
-                color: 'red',
-                fontWeight: 'bold',
-              }}>
-              $10.00
-            </Text>
-            <View
-              style={{
-                paddingHorizontal: 12,
-                paddingVertical: 10,
-                borderWidth: 1,
-                borderColor: '#16247d',
-                borderRadius: 8,
-              }}>
-              <Text
-                style={{
-                  fontSize: FontSize.font12,
-                  color: '#16247d',
-                  fontWeight: 'bold',
-                }}>
-                Booking
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-      <View style={styles.CardListMen}>
-        <View style={{width: '30%', height: '100%'}}>
-          <Image
-            style={{flex: 1, width: undefined, height: undefined}}
-            source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
-        <View style={{paddingLeft: 15}}>
-          <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: '#16247d',
-            }}>
-            កាត់សក់​ ម៉ូតទាន់សម័.ធ្វើម៉ូតសក់...
-          </Text>
-          <Text style={{fontSize: FontSize.font12, marginTop: 8}}>
-            Popular Hairstyles
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 10,
-              justifyContent: 'space-between',
-            }}>
-            <Text
-              style={{
-                marginRight: '32%',
-                marginTop: 20,
-                fontSize: FontSize.font12,
-                color: 'red',
-                fontWeight: 'bold',
-              }}>
-              $10.00
-            </Text>
-            <View
-              style={{
-                paddingHorizontal: 12,
-                paddingVertical: 10,
-                borderWidth: 1,
-                borderColor: '#16247d',
-                borderRadius: 8,
-              }}>
-              <Text
-                style={{
-                  fontSize: FontSize.font12,
-                  color: '#16247d',
-                  fontWeight: 'bold',
-                }}>
-                Booking
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </ScrollView>
+      )}
+    />
   );
 };
 
@@ -625,40 +635,39 @@ export const SubService = () => {
   ]);
 
   const renderTabBar = (props: any) => (
-      <TabBar
-        {...props}
-        // scrollEnabled={true}
-        indicatorStyle={styles.indicator}
-        style={{
-          backgroundColor: 'white',
-        }}
-        tabStyle={{
-          width: width / 3,
-          // backgroundColor: 'blue'
-        }}
-        // renderLabel={({props, }) => (
-        //     <Text style={{ color: 'grey', margin: 8 }}>
-        //       {props.route.title}
-        //     </Text>
-        //   )}
-        renderLabel={({route, focused, color}) => (
-          <Text
-            style={{
-              color: focused ? '#16247d' : 'black',
-              margin: 8,
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-            }}>
-            {route.title}
-          </Text>
-        )}></TabBar>
-
+    <TabBar
+      {...props}
+      // scrollEnabled={true}
+      indicatorStyle={styles.indicator}
+      style={{
+        backgroundColor: 'white',
+      }}
+      tabStyle={{
+        width: width / 3,
+        // backgroundColor: 'blue'
+      }}
+      // renderLabel={({props, }) => (
+      //     <Text style={{ color: 'grey', margin: 8 }}>
+      //       {props.route.title}
+      //     </Text>
+      //   )}
+      renderLabel={({route, focused, color}) => (
+        <Text
+          style={{
+            color: focused ? '#16247d' : 'black',
+            margin: 8,
+            fontSize: FontSize.font14,
+            fontWeight: 'bold',
+          }}>
+          {route.title}
+        </Text>
+      )}></TabBar>
   );
 
   const naviation: any = useNavigation();
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <SafeAreaView style={{backgroundColor: 'white'}}>
       <View style={styles.AppBar}>
         <TouchableOpacity
           activeOpacity={1}

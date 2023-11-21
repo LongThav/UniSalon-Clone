@@ -13,7 +13,7 @@ import {
 import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -137,24 +137,6 @@ export const ChooseServiceView = () => {
   const [Index, SetIndex] = useState<any>(null);
   return (
     <SafeAreaView style={{flex: 1}}>
-      {/* <View style={styles.AppBar}>
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={() => {
-            navigation.goBack();
-          }}>
-          <AntDesign name="arrowleft" color={'white'} size={18}></AntDesign>
-        </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: FontSize.font14,
-            color: 'white',
-            fontWeight: 'bold',
-            paddingHorizontal: '25%',
-          }}>
-          Choose Services
-        </Text>
-      </View> */}
       <View style={styles.Appbar}>
         <AntDesign
           onPress={() => {
@@ -168,7 +150,12 @@ export const ChooseServiceView = () => {
         <Text style={styles.TitleAppbar}>Choose Services</Text>
       </View>
       <View style={styles.BottomAppBar}>
-        <Text style={{fontSize: FontSize.font14, color: 'black', fontWeight: 'bold'}}>
+        <Text
+          style={{
+            fontSize: FontSize.font14,
+            color: 'black',
+            fontWeight: 'bold',
+          }}>
           Select Service
         </Text>
       </View>
@@ -179,13 +166,15 @@ export const ChooseServiceView = () => {
         numColumns={3}
         renderItem={({item, index}) => {
           return (
-            <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                if(Index === null){
-                    SetIndex(index);
-                }else{
-                    SetIndex(0);
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                if (Index === null) {
+                  SetIndex(index);
+                } else {
+                  SetIndex(0);
                 }
-            }}>
+              }}>
               <View style={styles.Card}>
                 <View
                   style={{
@@ -205,11 +194,19 @@ export const ChooseServiceView = () => {
                     source={require('../../assets/imgs/img1.jpg')}></Image>
                 </View>
                 <Text
-                  style={{paddingVertical: 5, fontSize: FontSize.font12, color: '#16247d'}}>
+                  style={{
+                    paddingVertical: 5,
+                    fontSize: FontSize.font12,
+                    color: '#16247d',
+                  }}>
                   {item.num}
                 </Text>
                 <Text
-                  style={{fontSize: FontSize.font14, fontWeight: 'bold', color: '#16247d'}}>
+                  style={{
+                    fontSize: FontSize.font14,
+                    fontWeight: 'bold',
+                    color: '#16247d',
+                  }}>
                   {item.title}
                 </Text>
                 <Text style={styles.txtPrice}>{item.price}</Text>
@@ -227,7 +224,7 @@ export const ChooseServiceView = () => {
                     right: 0,
                     marginRight: 5,
                     marginTop: 5,
-                    backgroundColor: Index === index? 'grey': '',
+                    backgroundColor: Index === index ? 'grey' : '',
                   }}></View>
               </View>
             </TouchableOpacity>
@@ -279,7 +276,7 @@ const styles = StyleSheet.create({
   Card: {
     width: width * 0.3,
     marginLeft: 10,
-    paddingBottom: 15
+    paddingBottom: 15,
   },
   Card2: {
     width: 130,
@@ -294,7 +291,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#509cdb',
     borderTopLeftRadius: 8,
     color: 'white',
-    fontSize: FontSize.font10
+    fontSize: FontSize.font10,
   },
   txtPoint: {
     position: 'absolute',
@@ -304,7 +301,7 @@ const styles = StyleSheet.create({
     top: 28,
     color: 'white',
     borderTopRightRadius: 8,
-    fontSize: FontSize.font10
+    fontSize: FontSize.font10,
   },
   Appbar: {
     width: 'auto',

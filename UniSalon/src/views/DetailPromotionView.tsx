@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 const {width} = Dimensions.get('window');
 
 export const DetailPromotion = () => {
@@ -87,14 +87,16 @@ export const DetailPromotion = () => {
                   fontWeight: 'bold',
                   color: '#16247d',
                   paddingBottom: 4,
-                  fontSize: FontSize.font12
+                  fontSize: FontSize.font12,
                 }}>
                 មែន ស្តាយ
               </Text>
               {/* <Text style={{ color: 'red', fontWeight: 'bold', paddingTop: 10,  }}>$ 5.00</Text> */}
               {/* <Text style={{ fontWeight: 'bold', color: 'red', textAlign: 'right', marginRight: 0 }}>Up</Text> */}
             </View>
-            <Text style={{color: 'grey', fontSize: FontSize.font12}}>⭐⭐⭐⭐⭐(3)</Text>
+            <Text style={{color: 'grey', fontSize: FontSize.font12}}>
+              ⭐⭐⭐⭐⭐(3)
+            </Text>
             <View style={{flex: 0}}>
               <Text
                 numberOfLines={2}
@@ -117,7 +119,14 @@ export const DetailPromotion = () => {
                   name="location-dot"
                   style={{paddingRight: 5, marginTop: 4}}
                   color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>None</Text>
+                <Text
+                  style={{
+                    color: '#16247d',
+                    fontWeight: 'bold',
+                    fontSize: FontSize.font12,
+                  }}>
+                  None
+                </Text>
               </View>
               <View
                 style={{
@@ -129,7 +138,12 @@ export const DetailPromotion = () => {
                   name="clock"
                   style={{paddingRight: 5, marginTop: 4}}
                   color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                <Text
+                  style={{
+                    color: '#16247d',
+                    fontWeight: 'bold',
+                    fontSize: FontSize.font12,
+                  }}>
                   Opening
                 </Text>
                 <TouchableOpacity
@@ -245,7 +259,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'space-between',
   },
   Image: {
     width: 140,
@@ -264,4 +277,4 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     fontSize: 15,
   },
-});
+}); 

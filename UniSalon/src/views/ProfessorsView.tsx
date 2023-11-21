@@ -36,7 +36,7 @@ const SideBarFilter = [
   },
   {
     id: 4,
-    icon: require('../../assets/imgs/makeupface.png'),
+    icon: require('../../assets/imgs/bleaching.png'),
     title: 'Cocktail Party MakeUp',
   },
   {
@@ -52,12 +52,12 @@ const SideBarFilter = [
   {
     id: 7,
     icon: require('../../assets/imgs/eyebrowii.png'),
-    title: 'Edge Up',
+    title: 'Eyebrow Wax and Tint',
   },
   {
     id: 8,
     icon: require('../../assets/imgs/bleaching.png'),
-    title: 'Eyebrow Wax and Tint',
+    title: 'Face Message',
   },
 ];
 
@@ -333,8 +333,8 @@ export const ProfessorView = () => {
         />
         <Text style={styles.TitleAppbar}>All Professors</Text>
         <AntDesign
-          onPress={()=>{
-            navigation.push('SearchBarView')
+          onPress={() => {
+            navigation.push('SearchBarView');
           }}
           name="search1"
           size={24}

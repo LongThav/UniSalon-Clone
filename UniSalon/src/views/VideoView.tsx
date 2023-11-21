@@ -9,7 +9,8 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
-  Dimensions
+  Dimensions,
+  StatusBar 
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -37,6 +38,7 @@ export const VideoView = () => {
   const navigation: any = useNavigation();
   return (
     <SafeAreaView>
+    <StatusBar backgroundColor={'#16247d'}></StatusBar>
         <View style={styles.Appbar}>
           <Feather
             onPress={()=>{

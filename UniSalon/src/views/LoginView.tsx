@@ -30,7 +30,7 @@ const LoginView = () => {
             width: 100,
             height: 100,
             alignSelf: 'center',
-            marginTop: height * 0.08,
+            marginTop: height * 0.04,
           }}>
           <Image
             style={{flex: 1, width: 100, height: 100, borderRadius: 12}}
@@ -73,7 +73,7 @@ const LoginView = () => {
           <Text
             style={{
               textAlign: 'center',
-              marginTop: height * 0.05,
+              marginTop: height * 0.03,
               color: 'blue',
               fontSize: 15,
             }}>
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     marginHorizontal: 15,
     flexDirection: 'row',
-    marginTop: height * 0.1,
+    marginTop: height * 0.06,
     backgroundColor: 'white',
     paddingHorizontal: 10,
   },
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#16247d',
     paddingVertical: 15,
     marginHorizontal: 15,
-    marginTop: height * 0.05,
+    marginTop: height * 0.04,
     alignContent: 'center',
     alignItems: 'center',
   },

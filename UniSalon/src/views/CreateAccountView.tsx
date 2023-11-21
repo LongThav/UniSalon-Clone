@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, Dimensio
 import React from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native';
+import { FontSize } from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -50,9 +51,9 @@ const CreateAccountView = () => {
                 {/* <Text style={{ fontSize: 17, paddingLeft: 5 }}>Code</Text> */}
                 <TextInput placeholder='Code' placeholderTextColor={'black'} style={{padding: 0, color: 'grey'}}></TextInput>
             </View>
-            <View style={{ flexDirection: 'row', marginTop: height * 0.05, marginHorizontal: 15 }}>
-                <Text style={{ fontSize: 16, color: 'blue' }}>By sign up, you agree to our</Text>
-                <Text style={{ fontSize: 16, color: 'blue', textDecorationLine: 'underline' }}>Term and Conditions.</Text>
+            <View style={{ flexDirection: 'row', marginTop: height * 0.05, marginHorizontal: 15, width: width * 0.8,  }}>
+                <Text style={{ fontSize: FontSize.font15, color: 'blue' }}>By sign up, you agree to our</Text>
+                <Text style={{ fontSize: FontSize.font15, color: 'blue', textDecorationLine: 'underline' }}>Term and Conditions.</Text>
             </View>
             <TouchableOpacity activeOpacity={1} onPress={() => {
                 navigation.push('CreatePasswordView');

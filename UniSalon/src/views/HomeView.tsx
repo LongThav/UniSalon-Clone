@@ -10,6 +10,7 @@ import {
   ScrollView,
   TextInput,
   Dimensions,
+  ToastAndroid,
 } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -169,11 +170,13 @@ export const HomeView = () => {
 
   const renderInner = () => {
     return (
-      <View style={{padding: 15, marginBottom: height * 0.1}}>
-        <Text style={styles.txtExplore}>Explore</Text>
-        <Explore />
-        <Text style={styles.txtPopular}>Popular Salons</Text>
-        {/* <FlatList
+      <View>
+        {/* <View style={styles.inditorBottomSheet}></View> */}
+        <View style={{padding: 15, marginBottom: height * 0.1}}>
+          <Text style={styles.txtExplore}>Explore</Text>
+          <Explore />
+          <Text style={styles.txtPopular}>Popular Salons</Text>
+          {/* <FlatList
           data={PopularSalonsData}
           style={{width: width}}
           D={false}
@@ -183,375 +186,382 @@ export const HomeView = () => {
            
           }}
         /> */}
-        <FlatList
-          scrollEnabled={true}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          data={PopularSalonsData}
-          renderItem={({item, index}) => {
-            return (
-              <TouchableOpacity
-                onPress={() => {
-                  console.log('Press');
-                  // navigation.push('ShopDetailView');
-                }}>
-                <View style={styles.PopularCard}>
-                  <View
-                    style={{
-                      height: 80,
-                      borderTopLeftRadius: 7,
-                      borderTopRightRadius: 7,
-                    }}>
-                    <Image
+          <FlatList
+            scrollEnabled={true}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={PopularSalonsData}
+            renderItem={({item, index}) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    console.log('Press');
+                    navigation.push('ShopDetailView');
+                  }}>
+                  <View style={styles.PopularCard}>
+                    <View
                       style={{
-                        width: '100%',
-                        height: '100%',
+                        height: 80,
                         borderTopLeftRadius: 7,
                         borderTopRightRadius: 7,
-                      }}
-                      source={item.img}></Image>
-                  </View>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginRight: 10,
-                    }}>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        marginLeft: 5,
-                        marginTop: 10,
                       }}>
-                      <Entypo
-                        style={{}}
-                        name="location-pin"
-                        size={FontSize.font14}
-                        color={'#16247d'}
-                      />
-                      <Text
+                      <Image
                         style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: '#16247d',
-                        }}>
-                        None
-                      </Text>
+                          width: '100%',
+                          height: '100%',
+                          borderTopLeftRadius: 7,
+                          borderTopRightRadius: 7,
+                        }}
+                        source={item.img}></Image>
                     </View>
                     <View
                       style={{
                         flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        marginRight: 10,
+                      }}>
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          marginLeft: 5,
+                          marginTop: 10,
+                        }}>
+                        <Entypo
+                          style={{}}
+                          name="location-pin"
+                          size={FontSize.font14}
+                          color={'#16247d'}
+                        />
+                        <Text
+                          style={{
+                            fontSize: FontSize.font11,
+                            fontWeight: 'bold',
+                            color: '#16247d',
+                          }}>
+                          None
+                        </Text>
+                      </View>
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          marginLeft: 10,
+                          marginTop: 10,
+                        }}>
+                        <Text
+                          style={{
+                            fontSize: FontSize.font11,
+                            fontWeight: 'bold',
+                            color: 'grey',
+                          }}>
+                          {item.numCustomer}
+                        </Text>
+                        <Text
+                          style={{
+                            fontSize: FontSize.font11,
+                            fontWeight: 'bold',
+                            color: 'grey',
+                            paddingLeft: 5,
+                          }}>
+                          Customers
+                        </Text>
+                      </View>
+                    </View>
+                    <Text
+                      style={{
                         marginLeft: 10,
-                        marginTop: 10,
+                        marginTop: 5,
+                        fontSize: FontSize.font12,
+                        color: 'grey',
+                        fontWeight: 'bold',
                       }}>
-                      <Text
-                        style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: 'grey',
-                        }}>
-                        {item.numCustomer}
-                      </Text>
-                      <Text
-                        style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: 'grey',
-                          paddingLeft: 5,
-                        }}>
-                        Customers
-                      </Text>
-                    </View>
+                      {item.title}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: FontSize.font10,
+                        marginLeft: 10,
+                        color: 'grey',
+                      }}>
+                      ⭐⭐⭐⭐⭐ (4)
+                    </Text>
+                    <Text
+                      style={{
+                        marginHorizontal: 10,
+                        fontSize: FontSize.font11,
+                        color: 'grey',
+                        fontWeight: 'bold',
+                      }}>
+                      {item.des}
+                    </Text>
+                    <TouchableOpacity
+                      style={styles.Booking}
+                      onPress={() => {
+                        console.log('on pressed');
+                        navigation.push('FlowBookingView');
+                      }}>
+                      <Text style={styles.txtBooking}>Booking Now</Text>
+                    </TouchableOpacity>
                   </View>
-                  <Text
-                    style={{
-                      marginLeft: 10,
-                      marginTop: 5,
-                      fontSize: FontSize.font12,
-                      color: 'grey',
-                      fontWeight: 'bold',
-                    }}>
-                    {item.title}
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: FontSize.font10,
-                      marginLeft: 10,
-                      color: 'grey',
-                    }}>
-                    ⭐⭐⭐⭐⭐ (4)
-                  </Text>
-                  <Text
-                    style={{
-                      marginHorizontal: 10,
-                      fontSize: FontSize.font11,
-                      color: 'grey',
-                      fontWeight: 'bold',
-                    }}>
-                    {item.des}
-                  </Text>
-                  <TouchableOpacity
-                    style={styles.Booking}
-                    onPress={() => {
-                      console.log('on pressed');
-                      navigation.push('FlowBookingView');
-                    }}>
-                    <Text style={styles.txtBooking}>Booking Now</Text>
-                  </TouchableOpacity>
-                </View>
-              </TouchableOpacity>
-            );
-          }}
-        />
-        {/* <ScrollView horizontal = {true} showsHorizontalScrollIndicator = {false}>
+                </TouchableOpacity>
+              );
+            }}
+          />
+          {/* <ScrollView horizontal = {true} showsHorizontalScrollIndicator = {false}>
          
         </ScrollView> */}
 
-        <Text style={styles.txtSpecial}>Special Promotions</Text>
-        <View style={styles.SpecialBox}>
-          <Image
-            style={styles.boxImg}
-            source={require('../../assets/imgs/img1.jpg')}
-          />
-        </View>
-        <Text style={styles.txtTopRatingSalon}>Top Rating Salons</Text>
-        <FlatList
-          data={PopularSalonsData}
-          style={{width: width}}
-          showsHorizontalScrollIndicator={false}
-          horizontal={true}
-          keyExtractor={item => item.id}
-          renderItem={({item, index}) => {
-            return (
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.push('ShopDetailView');
-                }}>
-                <View style={styles.PopularCard}>
-                  <View
-                    style={{
-                      height: 80,
-                      borderTopLeftRadius: 7,
-                      borderTopRightRadius: 7,
-                    }}>
-                    <Image
+          <Text style={styles.txtSpecial}>Special Promotions</Text>
+          <View style={styles.SpecialBox}>
+            <Image
+              style={styles.boxImg}
+              source={require('../../assets/imgs/img1.jpg')}
+            />
+          </View>
+          <Text style={styles.txtTopRatingSalon}>Top Rating Salons</Text>
+          <FlatList
+            data={PopularSalonsData}
+            style={{width: width}}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            keyExtractor={item => item.id}
+            renderItem={({item, index}) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.push('ShopDetailView');
+                  }}>
+                  <View style={styles.PopularCard}>
+                    <View
                       style={{
-                        width: '100%',
-                        height: '100%',
+                        height: 80,
                         borderTopLeftRadius: 7,
                         borderTopRightRadius: 7,
-                      }}
-                      source={require('../../assets/imgs/cover2.jpg')}></Image>
-                  </View>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginRight: 10,
-                    }}>
+                      }}>
+                      <Image
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          borderTopLeftRadius: 7,
+                          borderTopRightRadius: 7,
+                        }}
+                        source={require('../../assets/imgs/cover2.jpg')}></Image>
+                    </View>
                     <View
                       style={{
                         flexDirection: 'row',
-                        marginLeft: 5,
-                        marginTop: 10,
+                        justifyContent: 'space-between',
+                        marginRight: 10,
                       }}>
-                      <Entypo
-                        style={{}}
-                        name="location-pin"
-                        size={FontSize.font14}
-                        color={'#16247d'}
-                      />
-                      <Text
+                      <View
                         style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: '#16247d',
+                          flexDirection: 'row',
+                          marginLeft: 5,
+                          marginTop: 10,
                         }}>
+                        <Entypo
+                          style={{}}
+                          name="location-pin"
+                          size={FontSize.font14}
+                          color={'#16247d'}
+                        />
+                        <Text
+                          style={{
+                            fontSize: FontSize.font11,
+                            fontWeight: 'bold',
+                            color: '#16247d',
+                          }}>
+                          None
+                        </Text>
+                      </View>
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          marginLeft: 10,
+                          marginTop: 10,
+                        }}>
+                        <Text
+                          style={{
+                            fontSize: FontSize.font11,
+                            fontWeight: 'bold',
+                            color: 'grey',
+                          }}>
+                          {item.numCustomer}
+                        </Text>
+                        <Text
+                          style={{
+                            fontSize: FontSize.font11,
+                            fontWeight: 'bold',
+                            color: 'grey',
+                            paddingLeft: 5,
+                          }}>
+                          Customers
+                        </Text>
+                      </View>
+                    </View>
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        marginTop: 5,
+                        fontSize: FontSize.font12,
+                        color: 'grey',
+                        fontWeight: 'bold',
+                      }}>
+                      {item.title}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: FontSize.font10,
+                        marginLeft: 10,
+                        color: 'grey',
+                      }}>
+                      ⭐⭐⭐⭐⭐ (4)
+                    </Text>
+                    <Text
+                      style={{
+                        marginHorizontal: 10,
+                        fontSize: FontSize.font11,
+                        color: 'grey',
+                        fontWeight: 'bold',
+                      }}>
+                      {item.des}
+                    </Text>
+                    {/* <Text style={styles.Booking}>Booking Now</Text> */}
+                    <TouchableOpacity
+                      style={styles.Booking}
+                      onPress={() => {
+                        console.log('on pressed');
+                        navigation.push('FlowBookingView');
+                      }}>
+                      <Text style={styles.txtBooking}>Booking Now</Text>
+                    </TouchableOpacity>
+                  </View>
+                </TouchableOpacity>
+              );
+            }}
+          />
+          <Text style={styles.txtSpecial}>Top Rating Professor</Text>
+          <FlatList
+            scrollEnabled={false}
+            numColumns={2}
+            columnWrapperStyle={{justifyContent: 'space-between'}}
+            data={TopRatingProfessorData}
+            renderItem={({item, index}) => {
+              return (
+                <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
+                  <View style={styles.CardTopRating}>
+                    <View style={styles.imgCircleTopRating}>
+                      <Image
+                        style={{
+                          flex: 1,
+                          height: 60,
+                          width: 60,
+                          borderRadius: 60 / 2,
+                        }}
+                        source={item.img}
+                      />
+                    </View>
+                    <Text style={styles.txtNameTopRating}>{item.name}</Text>
+                    <View style={{flexDirection: 'row', marginTop: 5}}>
+                      <AntDesign
+                        size={FontSize.font14}
+                        color={'yellow'}
+                        name="staro"
+                      />
+                      <AntDesign
+                        size={FontSize.font14}
+                        color={'yellow'}
+                        name="staro"
+                      />
+                      <AntDesign
+                        size={FontSize.font14}
+                        color={'yellow'}
+                        name="staro"
+                      />
+                      <AntDesign
+                        size={FontSize.font14}
+                        color={'yellow'}
+                        name="staro"
+                      />
+                      <AntDesign
+                        size={FontSize.font14}
+                        color={'yellow'}
+                        name="staro"
+                      />
+                    </View>
+                    <Text style={{paddingTop: 5, color: 'grey'}}>
+                      0 Credit / 0 Review
+                    </Text>
+                    <View style={{flexDirection: 'row', marginTop: 5}}>
+                      <Entypo size={14} color={'blue'} name="location-pin" />
+                      <Text style={{fontSize: FontSize.font12, color: 'blue'}}>
                         None
                       </Text>
                     </View>
+                  </View>
+                </TouchableOpacity>
+              );
+            }}
+            keyExtractor={e => e.id}
+          />
+          <View style={{marginTop: 10}}></View>
+          <Text style={styles.txtNameTopRating}>New Salons</Text>
+          <FlatList
+            data={NewSalonData}
+            style={{width: width}}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            keyExtractor={item => item.id}
+            renderItem={({item, index}) => {
+              return (
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    navigation.push('ShopDetailView');
+                  }}>
+                  <View style={styles.PopularCard}>
+                    <View
+                      style={{
+                        height: 80,
+                        borderTopLeftRadius: 7,
+                        borderTopRightRadius: 7,
+                      }}>
+                      <Image
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          borderTopLeftRadius: 7,
+                          borderTopRightRadius: 7,
+                        }}
+                        source={item.img}></Image>
+                    </View>
                     <View
                       style={{
                         flexDirection: 'row',
-                        marginLeft: 10,
-                        marginTop: 10,
+                        justifyContent: 'space-between',
+                        marginRight: 10,
                       }}>
-                      <Text
+                      <View
                         style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: 'grey',
+                          flexDirection: 'row',
+                          marginLeft: 5,
+                          marginTop: 10,
                         }}>
-                        {item.numCustomer}
-                      </Text>
-                      <Text
-                        style={{
-                          fontSize: FontSize.font11,
-                          fontWeight: 'bold',
-                          color: 'grey',
-                          paddingLeft: 5,
-                        }}>
-                        Customers
-                      </Text>
-                    </View>
-                  </View>
-                  <Text
-                    style={{
-                      marginLeft: 10,
-                      marginTop: 5,
-                      fontSize: FontSize.font12,
-                      color: 'grey',
-                      fontWeight: 'bold',
-                    }}>
-                    {item.title}
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: FontSize.font10,
-                      marginLeft: 10,
-                      color: 'grey',
-                    }}>
-                    ⭐⭐⭐⭐⭐ (4)
-                  </Text>
-                  <Text
-                    style={{
-                      marginHorizontal: 10,
-                      fontSize: FontSize.font11,
-                      color: 'grey',
-                      fontWeight: 'bold',
-                    }}>
-                    {item.des}
-                  </Text>
-                  {/* <Text style={styles.Booking}>Booking Now</Text> */}
-                  <TouchableOpacity
-                    style={styles.Booking}
-                    onPress={() => {
-                      console.log('on pressed');
-                      navigation.push('FlowBookingView');
-                    }}>
-                    <Text style={styles.txtBooking}>Booking Now</Text>
-                  </TouchableOpacity>
-                </View>
-              </TouchableOpacity>
-            );
-          }}
-        />
-        <Text style={styles.txtSpecial}>Top Rating Professor</Text>
-        <FlatList
-          scrollEnabled={false}
-          numColumns={2}
-          columnWrapperStyle={{justifyContent: 'space-between'}}
-          data={TopRatingProfessorData}
-          renderItem={({item, index}) => {
-            return (
-              <View style={styles.CardTopRating}>
-                <View style={styles.imgCircleTopRating}>
-                  <Image
-                    style={{
-                      flex: 1,
-                      height: 60,
-                      width: 60,
-                      borderRadius: 60 / 2,
-                    }}
-                    source={item.img}
-                  />
-                </View>
-                <Text style={styles.txtNameTopRating}>{item.name}</Text>
-                <View style={{flexDirection: 'row', marginTop: 5}}>
-                  <AntDesign
-                    size={FontSize.font14}
-                    color={'yellow'}
-                    name="staro"
-                  />
-                  <AntDesign
-                    size={FontSize.font14}
-                    color={'yellow'}
-                    name="staro"
-                  />
-                  <AntDesign
-                    size={FontSize.font14}
-                    color={'yellow'}
-                    name="staro"
-                  />
-                  <AntDesign
-                    size={FontSize.font14}
-                    color={'yellow'}
-                    name="staro"
-                  />
-                  <AntDesign
-                    size={FontSize.font14}
-                    color={'yellow'}
-                    name="staro"
-                  />
-                </View>
-                <Text style={{paddingTop: 5, color: 'grey'}}>
-                  0 Credit / 0 Review
-                </Text>
-                <View style={{flexDirection: 'row', marginTop: 5}}>
-                  <Entypo size={14} color={'blue'} name="location-pin" />
-                  <Text style={{fontSize: FontSize.font12, color: 'blue'}}>
-                    None
-                  </Text>
-                </View>
-              </View>
-            );
-          }}
-          keyExtractor={e => e.id}
-        />
-        <View style={{marginTop: 10}}></View>
-        <Text style={styles.txtNameTopRating}>New Salons</Text>
-        <FlatList
-          data={NewSalonData}
-          style={{width: width}}
-          showsHorizontalScrollIndicator={false}
-          horizontal={true}
-          keyExtractor={item => item.id}
-          renderItem={({item, index}) => {
-            return (
-              <View style={styles.PopularCard}>
-                <View
-                  style={{
-                    height: 80,
-                    borderTopLeftRadius: 7,
-                    borderTopRightRadius: 7,
-                  }}>
-                  <Image
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderTopLeftRadius: 7,
-                      borderTopRightRadius: 7,
-                    }}
-                    source={item.img}></Image>
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    marginRight: 10,
-                  }}>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      marginLeft: 5,
-                      marginTop: 10,
-                    }}>
-                    <Entypo
-                      style={{}}
-                      name="location-pin"
-                      size={FontSize.font14}
-                      color={'#16247d'}
-                    />
-                    <Text
-                      style={{
-                        fontSize: FontSize.font11,
-                        fontWeight: 'bold',
-                        color: '#16247d',
-                      }}>
-                      None
-                    </Text>
-                  </View>
-                  {/* <View
+                        <Entypo
+                          style={{}}
+                          name="location-pin"
+                          size={FontSize.font14}
+                          color={'#16247d'}
+                        />
+                        <Text
+                          style={{
+                            fontSize: FontSize.font11,
+                            fontWeight: 'bold',
+                            color: '#16247d',
+                          }}>
+                          None
+                        </Text>
+                      </View>
+                      {/* <View
                     style={{
                       flexDirection: 'row',
                       marginLeft: 10,
@@ -575,26 +585,26 @@ export const HomeView = () => {
                       Customers
                     </Text>
                   </View> */}
-                </View>
-                <Text
-                  style={{
-                    marginLeft: 10,
-                    marginTop: 5,
-                    fontSize: FontSize.font12,
-                    color: 'black',
-                    fontWeight: 'bold',
-                  }}>
-                  {item.title}
-                </Text>
-                <Text
-                  style={{
-                    fontSize: FontSize.font10,
-                    marginLeft: 10,
-                    color: 'grey',
-                  }}>
-                  ⭐⭐⭐⭐⭐ ({item.numCustomer})
-                </Text>
-                {/* <Text
+                    </View>
+                    <Text
+                      style={{
+                        marginLeft: 10,
+                        marginTop: 5,
+                        fontSize: FontSize.font12,
+                        color: 'black',
+                        fontWeight: 'bold',
+                      }}>
+                      {item.title}
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: FontSize.font10,
+                        marginLeft: 10,
+                        color: 'grey',
+                      }}>
+                      ⭐⭐⭐⭐⭐ ({item.numCustomer})
+                    </Text>
+                    {/* <Text
                   style={{
                     marginHorizontal: 10,
                     fontSize: FontSize.font11,
@@ -603,18 +613,20 @@ export const HomeView = () => {
                   }}>
                   {item.des}
                 </Text> */}
-                <TouchableOpacity
-                  style={styles.Booking}
-                  onPress={() => {
-                    console.log('on pressed');
-                    navigation.push('FlowBookingView');
-                  }}>
-                  <Text style={styles.txtBooking}>Booking Now</Text>
+                    <TouchableOpacity
+                      style={styles.Booking}
+                      onPress={() => {
+                        console.log('on pressed');
+                        navigation.push('FlowBookingView');
+                      }}>
+                      <Text style={styles.txtBooking}>Booking Now</Text>
+                    </TouchableOpacity>
+                  </View>
                 </TouchableOpacity>
-              </View>
-            );
-          }}
-        />
+              );
+            }}
+          />
+        </View>
       </View>
     );
   };
@@ -714,8 +726,8 @@ export const HomeView = () => {
             style={{
               fontWeight: 'bold',
               color: 'grey',
-              fontSize: FontSize.font11,
-              paddingVertical: 8,
+              fontSize: FontSize.font13,
+              paddingVertical: 10,
               paddingHorizontal: 20,
               backgroundColor: '#eef1f6',
               marginLeft: 15,
@@ -736,9 +748,9 @@ export const HomeView = () => {
             style={{
               fontWeight: 'bold',
               color: 'grey',
-              fontSize: FontSize.font11,
-              paddingVertical: 8,
-              paddingHorizontal: 20,
+              fontSize: FontSize.font13,
+              paddingVertical: 10,
+              paddingHorizontal: 10,
               backgroundColor: 'white',
               marginLeft: 15,
               borderRadius: 20,
@@ -750,21 +762,21 @@ export const HomeView = () => {
           <View
             style={{
               flexDirection: 'row',
-              paddingHorizontal: 20,
+              paddingHorizontal: 10,
               paddingVertical: 8,
               backgroundColor: 'white',
               marginLeft: 15,
               borderRadius: 20,
             }}>
-            <Entypo name="shop" size={15} color={'grey'}></Entypo>
+            <Entypo name="shop" size={18} color={'grey'}></Entypo>
             <Text
               style={{
                 fontWeight: 'bold',
                 color: 'grey',
-                marginLeft: 15,
-                fontSize: FontSize.font11,
+                marginLeft: 10,
+                fontSize: FontSize.font13,
               }}>
-              Mobile Services
+              Shops
             </Text>
           </View>
         </TouchableOpacity>
@@ -790,7 +802,7 @@ export const HomeView = () => {
                 fontWeight: 'bold',
                 color: 'grey',
                 marginLeft: 15,
-                fontSize: FontSize.font11,
+                fontSize: FontSize.font13,
               }}>
               Professor
             </Text>
@@ -811,6 +823,7 @@ export const HomeView = () => {
         ref={bottomSheetRef}
         index={1}
         snapPoints={snapPoints}
+        handleIndicatorStyle={styles.inditorBottomSheet}
         onChange={handleSheetChanges}>
         <BottomSheetScrollView
           showsVerticalScrollIndicator={false}
@@ -1021,5 +1034,12 @@ const styles = StyleSheet.create({
     fontSize: FontSize.font14,
     fontWeight: 'bold',
     paddingTop: 5,
+  },
+  inditorBottomSheet: {
+    width: width * 0.1,
+    height: 8,
+    backgroundColor: 'grey',
+    alignSelf: 'center',
+    borderRadius: 8,
   },
 });

@@ -5,7 +5,8 @@ import {
   ScrollView,
   SafeAreaView,
   TouchableOpacity,
-  Modal
+  Modal,
+  Platform
 } from 'react-native';
 import React, { useState } from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -15,6 +16,8 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { FontSize } from '../constant/FontSize';
 import { TimePickerModal } from 'react-native-paper-dates';
 import Calendar from 'react-native-calendars/src/calendar';
+
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 
 
@@ -33,6 +36,48 @@ const FlowBookingView = () => {
     },
     [setVisible]
   );
+
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+  const [text, setText] = useState('Empty');
+
+  const onChange = (event:any, selectedDate:any)=>{
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === 'ios');
+    setDate(currentDate);
+
+    let tempDate = new Date(currentDate);
+    let fDate = tempDate.getDate() + '/' + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear();
+    let fTime = 'Hours: ' + tempDate.getHours() + '| Minutes: ' + tempDate.getMinutes();
+    setText(fDate + '\n' + fTime);
+
+    console.log(fDate + '(' + fTime + ')');
+  }
+
+
+  const showMode = (current:any)=>{
+    setShow(true);
+    setMode(current);
+  }
+  // const onChange = (event:any, selectedDate:any) => {
+  //   const currentDate = selectedDate;
+  //   setShow(false);
+  //   setDate(currentDate);
+  // };
+
+  // const showMode = (currentMode:any) => {
+  //   setShow(true);
+  //   setMode(currentMode);
+  // };
+
+  // const showDatepicker = () => {
+  //   showMode('date');
+  // };
+
+  // const showTimepicker = () => {
+  //   showMode('time');
+  // };
 
 
   return (
@@ -114,11 +159,10 @@ const FlowBookingView = () => {
           Booking Information
         </Text>
         <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-            setModel(true);
-            console.log(showModul);
-            
-          }}>
+          <TouchableOpacity activeOpacity={0.8} 
+           onPress={()=>showMode('date')}
+          >
+
           <View style={styles.SelectDay}>
             <AntDesign name="clockcircleo" color={'grey'} size={18}></AntDesign>
             <View
@@ -134,10 +178,13 @@ const FlowBookingView = () => {
             <Calendar style={{borderRadius: 10, elevation: 4, margin: 10}}/>
           </Modal>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-            console.log("hi")
-            setVisible(true)
-          }}>
+          <TouchableOpacity activeOpacity={0.8} 
+          // onPress={()=>{
+          //   console.log("hi")
+          //   setVisible(true)
+          // }}
+          onPress={()=>showMode('time')}
+          >
           <View style={styles.SelectHour}>
             <AntDesign name="clockcircleo" color={'grey'} size={18}></AntDesign>
             <View
@@ -183,6 +230,16 @@ const FlowBookingView = () => {
             </Text>
           </View>
         </TouchableOpacity>
+        {show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={mode}
+          is24Hour={true}
+          display='default'
+          onChange={onChange}
+        />
+      )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -261,3 +318,6 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
 });
+
+
+// https://medium.com/@dexiouz/step-by-step-guide-on-how-to-change-background-and-text-color-of-android-date-time-picker-in-react-fbf1a7dea17e
