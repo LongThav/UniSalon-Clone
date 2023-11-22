@@ -14,6 +14,7 @@ import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import {FontSize} from '../constant/FontSize';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const {width, height} = Dimensions.get('window');
 
@@ -135,6 +136,7 @@ const data = [
 export const ChooseServiceView = () => {
   const navigation: any = useNavigation();
   const [Index, SetIndex] = useState<any>(null);
+  const [id, setId] = useState(0);
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.Appbar}>
@@ -173,6 +175,18 @@ export const ChooseServiceView = () => {
                   SetIndex(index);
                 } else {
                   SetIndex(0);
+                }
+                if (id === item.id) {
+                  console.log('true');
+                  console.log('Id condition true: ', item.id);
+                  console.log('check condition: ', id);
+                  setId(0);
+                  console.log('Id after close: ', id);
+                } else {
+                  console.log('false');
+                  console.log('Id: ', item.id);
+                  setId(item.id);
+                  console.log(id);
                 }
               }}>
               <View style={styles.Card}>
@@ -224,8 +238,16 @@ export const ChooseServiceView = () => {
                     right: 0,
                     marginRight: 5,
                     marginTop: 5,
-                    backgroundColor: Index === index ? 'grey' : '',
-                  }}></View>
+                    backgroundColor: id === item.id ? 'grey' : '',
+                  }}>
+                    {/* {
+                      id === item.id ?                 <AntDesign
+                      color={'grey'}
+                      name="checkcircle"
+                      size={25}
+                      ></AntDesign> : null
+                    } */}
+                  </View>
               </View>
             </TouchableOpacity>
           );
@@ -233,13 +255,19 @@ export const ChooseServiceView = () => {
       <TouchableOpacity
         activeOpacity={1}
         onPress={() => {
-          navigation.push('BookingDetailView');
+          if (id === 0) {
+            console.log("Can't push new screen");
+          } else {
+            navigation.push('BookingDetailView');
+          }
         }}>
-        <View style={styles.BottomNavigation}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
-            Next
-          </Text>
-        </View>
+        {id === 0 ? null : (
+          <View style={styles.BottomNavigation}>
+            <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
+              Next
+            </Text>
+          </View>
+        )}
       </TouchableOpacity>
     </SafeAreaView>
   );

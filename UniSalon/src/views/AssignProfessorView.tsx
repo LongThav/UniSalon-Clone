@@ -12,7 +12,8 @@ import {
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const {width, height} = Dimensions.get('window');
 
@@ -22,7 +23,7 @@ const data = [
     title: 'Professor Sythan',
   },
   {
-    id: 2, 
+    id: 2,
     title: 'Professor Sythan',
   },
   {
@@ -58,6 +59,11 @@ const data = [
 export const AssignProfessorView = () => {
   const navigation: any = useNavigation();
   const [isStateTrue, setIsStateTrue] = useState(false);
+  const [icons, setIcons] = useState(0);
+
+  // const checkTrueOrFalse = (value:any)=>{
+  //   setIcons(!icons);
+  // }
 
   const toggleState = () => {
     setIsStateTrue(!isStateTrue);
@@ -95,7 +101,12 @@ export const AssignProfessorView = () => {
         <Text style={styles.TitleAppbar}>Assign Professors (Optional)</Text>
       </View>
       <View style={styles.BottomAppBar}>
-        <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: 'black'}}>
+        <Text
+          style={{
+            fontSize: FontSize.font14,
+            fontWeight: 'bold',
+            color: 'black',
+          }}>
           Select Professors
         </Text>
       </View>
@@ -181,80 +192,114 @@ export const AssignProfessorView = () => {
         numColumns={2}
         renderItem={({item, index}) => {
           return (
-            <TouchableOpacity activeOpacity={0.8} onPress={()=>{
-                if(Index === null){
-                    SetIndex(index);
-                }else{
-                    SetIndex(0);
-                }
-            }}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                // if(Index === null){
+                //     SetIndex(index);
+                // }else{
+                //     SetIndex(0);
+                // }
+                toggleState();
+                console.log('press');
+                setIcons(index);
+                console.log(icons);
+              }}>
               <View
                 style={{
                   width: width * 0.46,
-                  height: height * 0.25,
+                  // height: height * 0.25,
                   borderWidth: 0.3,
                   borderRadius: 10,
                   flexDirection: 'column',
                   marginLeft: 10,
                   marginTop: 10,
-                  backgroundColor: 'white'
+                  backgroundColor: 'white',
+                  paddingBottom: 15,
                 }}>
                 <View
                   style={{
                     flexDirection: 'row',
                     justifyContent: 'center',
-                    paddingTop: 15,
+                    // paddingTop: 15,
                     alignContent: 'space-between',
-                    paddingLeft: 35,
+                    // paddingLeft: 45,
                   }}>
                   <View
                     style={{
-                      width: 50,
-                      height: 50,
+                      width: 60,
+                      height: 60,
                       backgroundColor: 'yellow',
-                      borderRadius: 50 / 2,
+                      borderRadius: 60 / 2,
                       marginTop: 15,
                     }}>
                     <Image
                       style={{
-                        width: 50,
-                        height: 50,
+                        width: 60,
+                        height: 60,
                         flex: 1,
-                        borderRadius: 50 / 2,
+                        borderRadius: 60 / 2,
                       }}
                       source={require('../../assets/imgs/img1.jpg')}></Image>
                   </View>
-                  <View
-                    style={{
-                      width: 20,
-                      height: 20,
-                      borderRadius: 20 / 2,
-                      borderWidth: 2,
-                      borderColor: 'grey',
-                      marginLeft: 20,
-                      backgroundColor: Index === index ? 'grey' : 'white',
-                    }}></View>
+
+                  {isStateTrue ? (
+                    icons === index ? (
+                      <AntDesign
+                        color={'grey'}
+                        name="checkcircle"
+                        size={25}
+                        style={{
+                          backgroundColor: Index === index ? 'grey' : 'white',
+                          position: 'absolute',
+                          right: 0,
+                          bottom: 35,
+                          marginRight: 13,
+                        }}></AntDesign>
+                    ) : (
+                      <Text></Text>
+                    )
+                  ) : (
+                    <FontAwesome
+                      color={'grey'}
+                      name="circle-thin"
+                      size={25}
+                      style={{
+                        backgroundColor: Index === index ? 'grey' : 'white',
+                        position: 'absolute',
+                        right: 0,
+                        bottom: 35,
+                        marginRight: 13,
+                      }}></FontAwesome>
+                  )}
                 </View>
                 <Text
                   style={{
-                    marginLeft: 28,
+                    textAlign: 'center',
                     marginTop: 5,
                     fontSize: FontSize.font14,
                     fontWeight: 'bold',
-                    color: 'grey'
+                    color: '#16247d',
                   }}>
                   Professor Sythan
                 </Text>
                 <Text
                   style={{
-                    marginLeft: 40,
+                    textAlign: 'center',
                     marginTop: 5,
                     fontSize: FontSize.font12,
                     fontWeight: 'bold',
                   }}>
                   ⭐⭐⭐⭐⭐
                 </Text>
-                <Text style={{marginTop: 8, marginLeft: 23, color:'grey', fontSize: FontSize.font12}}>
+                <Text
+                  style={{
+                    marginTop: 8,
+                    marginLeft: 23,
+                    color: 'black',
+                    fontSize: FontSize.font12,
+                    textAlign: 'center',
+                  }}>
                   8 Credits / 2 Reviews
                 </Text>
               </View>
@@ -265,15 +310,22 @@ export const AssignProfessorView = () => {
         activeOpacity={1}
         onPress={() => {
           console.log('IsState: ', isStateTrue);
-          if (isStateTrue == true) {
+          if (icons === null) {
             console.log("Can't push new screen");
           } else {
+            console.log("Push screen");
             navigation.push('ChooseServiceView');
           }
+          console.log("Index: ", Index);
         }}>
         <View style={styles.BtnButton}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: 'white'}}>
-            {Index ? 'Next' : 'Skip'}
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+              color: 'white',
+            }}>
+            {icons !== null? 'Next' : 'Skip'}
           </Text>
         </View>
       </TouchableOpacity>
@@ -336,7 +388,7 @@ const styles = StyleSheet.create({
     alignContent: 'space-around',
     marginHorizontal: 15,
   },
-   Appbar: {
+  Appbar: {
     width: 'auto',
     paddingVertical: 15,
     backgroundColor: '#16247d',
