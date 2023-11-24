@@ -474,38 +474,23 @@ export const HomeView = () => {
                     </View>
                     <Text style={styles.txtNameTopRating}>{item.name}</Text>
                     <View style={{flexDirection: 'row', marginTop: 5}}>
-                      <AntDesign
-                        size={18}
-                        color={'#ffa042'}
-                        name="staro"
-                      />
-                      <AntDesign
-                        size={18}
-                        color={'#ffa042'}
-                        name="staro"
-                      />
-                      <AntDesign
-                        size={18}
-                        color={'#ffa042'}
-                        name="staro"
-                      />
-                      <AntDesign
-                        size={18}
-                        color={'#ffa042'}
-                        name="staro"
-                      />
-                      <AntDesign
-                        size={18}
-                        color={'#ffa042'}
-                        name="staro"
-                      />
+                      <AntDesign size={18} color={'#ffa042'} name="staro" />
+                      <AntDesign size={18} color={'#ffa042'} name="staro" />
+                      <AntDesign size={18} color={'#ffa042'} name="staro" />
+                      <AntDesign size={18} color={'#ffa042'} name="staro" />
+                      <AntDesign size={18} color={'#ffa042'} name="staro" />
                     </View>
                     <Text style={{paddingTop: 5, color: 'grey'}}>
                       0 Credit / 0 Review
                     </Text>
                     <View style={{flexDirection: 'row', marginTop: 5}}>
                       <Entypo size={14} color={'blue'} name="location-pin" />
-                      <Text style={{fontSize: FontSize.font12, color: 'blue', fontWeight: 'bold'}}>
+                      <Text
+                        style={{
+                          fontSize: FontSize.font12,
+                          color: 'blue',
+                          fontWeight: 'bold',
+                        }}>
                         None
                       </Text>
                     </View>
@@ -653,24 +638,19 @@ export const HomeView = () => {
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
         }}></MapView>
-      {/* <View style={{
-                backgroundColor: 'red',
-                width: 200,
-                height: 200,
-                position: 'absolute'
-            }}>
-
-            </View> */}
       <View style={styles.AppBar}>
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => {
             navigation.openDrawer();
           }}>
-          <Entypo name="menu" size={30} color={'grey'} style={{marginLeft: 8}}></Entypo>
+          <Entypo
+            name="menu"
+            size={30}
+            color={'grey'}
+            style={{marginLeft: 8}}></Entypo>
         </TouchableOpacity>
         <View style={{flexDirection: 'row'}}>
-          {/* <Text style={{ fontSize: 20, marginLeft: 15 }}>Search Salons...</Text> */}
           <View
             style={{
               width: width * 0.52,
@@ -694,7 +674,13 @@ export const HomeView = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={{flexDirection: 'row', marginTop: 0, marginRight: 20}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            backgroundColor: 'white',
+            justifyContent: 'space-between',
+            width: '30%',
+          }}>
           <AntDesign
             color={'black'}
             name="search1"
@@ -707,12 +693,12 @@ export const HomeView = () => {
                 height: 25,
                 borderRadius: 25 / 2,
                 backgroundColor: 'grey',
-                marginHorizontal: 22,
-                marginTop: 2
+                // marginHorizontal: 22,
+                marginTop: 2,
               }}>
               {isEnabled ? (
                 <Image
-                  style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2,}}
+                  style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
                   source={require('../../assets/imgs/cam_flag.png')}
                 />
               ) : (
@@ -724,13 +710,13 @@ export const HomeView = () => {
             </View>
           </TouchableOpacity>
           <MaterialIcons
-            onPress={()=>{
+            onPress={() => {
               navigation.push('NotificationView');
             }}
             name="notifications-none"
             size={25}
             color={'black'}
-            style={{marginTop: 2, marginRight: 15}}></MaterialIcons>
+            style={{marginTop: 2, marginRight: 0}}></MaterialIcons>
         </View>
       </View>
       <ScrollView
@@ -740,7 +726,6 @@ export const HomeView = () => {
         <TouchableOpacity activeOpacity={1}>
           <Text
             style={{
-              // fontWeight: 'bold',
               color: 'grey',
               fontSize: FontSize.font13,
               paddingVertical: 10,
@@ -757,12 +742,8 @@ export const HomeView = () => {
             navigation.push('MobileServiceView');
           }}
           activeOpacity={1}>
-          {/* <Text style={{fontWeight: 'bold', color: 'grey'}}>
-            Mobile Services
-          </Text> */}
           <Text
             style={{
-              // fontWeight: 'bold',
               color: '#152259',
               fontSize: FontSize.font13,
               paddingVertical: 10,
@@ -787,7 +768,6 @@ export const HomeView = () => {
             <Entypo name="shop" size={22} color={'#a02929'}></Entypo>
             <Text
               style={{
-                // fontWeight: 'bold',
                 color: '#a02929',
                 marginLeft: 10,
                 fontSize: FontSize.font13,
@@ -796,12 +776,6 @@ export const HomeView = () => {
             </Text>
           </View>
         </TouchableOpacity>
-        {/* <TouchableOpacity activeOpacity={1} style={styles.FilterII}>
-          <Fontisto name="scissors" size={20} color={'grey'}></Fontisto>
-          <Text style={{fontWeight: 'bold', color: 'grey', marginLeft: 15}}>
-            Professor
-          </Text>
-        </TouchableOpacity> */}
         <TouchableOpacity activeOpacity={1}>
           <View
             style={{
@@ -815,7 +789,6 @@ export const HomeView = () => {
             <Fontisto name="scissors" size={20} color={'#152259'}></Fontisto>
             <Text
               style={{
-                // fontWeight: 'bold',
                 color: '#152259',
                 marginLeft: 15,
                 fontSize: FontSize.font13,
@@ -1004,7 +977,7 @@ const styles = StyleSheet.create({
     paddingLeft: 1,
     fontWeight: 'bold',
     color: '#16247d',
-    fontSize: 16
+    fontSize: 16,
   },
   txtPopular: {
     color: '#16247d',

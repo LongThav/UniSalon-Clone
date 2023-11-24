@@ -15,20 +15,19 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
 const ServiceSelectionData = [
-  
-    {
-      id: '1',
-      img: require('../../assets/imgs/img1.jpg'),
-      title: 'ចៅតា.ចាក់សាក់.យន័ខ្មែរ និងរូបស្អាត់ៗជាច្រើនទៀត',
-      price: '$ 10.00',
-      total: '1',
-      point: '2pts'
-    }
+  {
+    id: '1',
+    img: require('../../assets/imgs/img1.jpg'),
+    title: 'ចៅតា.ចាក់សាក់.យន័ខ្មែរ និងរូបស្អាត់ៗជាច្រើនទៀត',
+    price: '$ 10.00',
+    total: '1',
+    point: '2pts',
+  },
 ];
 
 export const BookingDetailView = () => {
@@ -40,9 +39,12 @@ export const BookingDetailView = () => {
         onPress: () => console.log('Cancel Pressed'),
         style: 'cancel',
       },
-      {text: 'YES', onPress: ()=>{
-        navigation.pop(4);
-      }},
+      {
+        text: 'YES',
+        onPress: () => {
+          navigation.pop(4);
+        },
+      },
     ]);
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -253,7 +255,12 @@ export const BookingDetailView = () => {
               alignItems: 'center',
               borderRadius: 25,
             }}>
-            <Text style={{fontSize: FontSize.font16, fontWeight: 'bold', color: 'white'}}>
+            <Text
+              style={{
+                fontSize: FontSize.font16,
+                fontWeight: 'bold',
+                color: 'white',
+              }}>
               Booking
             </Text>
           </View>
@@ -296,10 +303,23 @@ export const BookingDetailView = () => {
               }}>
               ជាង​ សុផា
             </Text>
-            <Text style={{fontWeight: 'bold', paddingBottom: 8, color: 'grey', fontSize: FontSize.font16}}>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                paddingBottom: 8,
+                color: 'grey',
+                fontSize: FontSize.font16,
+              }}>
               Professor of Men Style
             </Text>
-            <Text style={{fontWeight: 'bold', color: 'grey', fontSize: FontSize.font16}}>098987487</Text>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                color: 'grey',
+                fontSize: FontSize.font16,
+              }}>
+              098987487
+            </Text>
           </View>
         </View>
         <View
@@ -339,26 +359,37 @@ export const BookingDetailView = () => {
             </View>
           </TouchableOpacity>
         </View>
-        {
-          ServiceSelectionData.map((e, index)=>{
-            return <View key={index} style={styles.ServiceSelectionCard}>
+        {ServiceSelectionData.map((e, index) => {
+          return (
+            <View key={index} style={styles.ServiceSelectionCard}>
               <View style={styles.cardSelected}>
-                <Image style={styles.imgSelected} source={e.img}/>
-                <View>
+                <Image style={styles.imgSelected} source={e.img} />
+                <View style={{paddingLeft: 10}}>
                   <Text style={styles.txtSelectTitle}>{e.title}</Text>
                   <View style={{marginLeft: 10, marginTop: 14}}>
-                   <Text style={{color: 'grey'}}>Code:012(Men)</Text>
-                   <Text style={{color: 'grey'}}>Points: 2pts</Text>
+                    <Text style={{color: 'grey'}}>Code:012(Men)</Text>
+                    <Text style={{color: 'grey'}}>Points: 2pts</Text>
                   </View>
                 </View>
               </View>
               <View style={styles.circleOption}>
-                <SimpleLineIcons style={{alignContent: 'center', alignSelf: 'center', marginTop: 6}} size={20} color={'black'} name='options-vertical'/>
+                <SimpleLineIcons
+                  style={{
+                    alignContent: 'center',
+                    alignSelf: 'center',
+                    marginTop: 6,
+                  }}
+                  size={20}
+                  color={'black'}
+                  name="options-vertical"
+                />
               </View>
-              <Text style={styles.txtSelectService}>{e.price} ({e.total})</Text>
+              <Text style={styles.txtSelectService}>
+                {e.price} ({e.total})
+              </Text>
             </View>
-          })
-        }
+          );
+        })}
         <View
           style={{
             width: 'auto',
@@ -533,7 +564,12 @@ export const BookingDetailView = () => {
       </ScrollView>
       <TouchableOpacity activeOpacity={1} onPress={createButtonAlert}>
         <View style={styles.BottomNavigationBar}>
-          <Text style={{fontSize: FontSize.font16, fontWeight: 'bold', color: 'white'}}>
+          <Text
+            style={{
+              fontSize: FontSize.font16,
+              fontWeight: 'bold',
+              color: 'white',
+            }}>
             Submit Booking
           </Text>
         </View>
@@ -575,40 +611,40 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
-  ServiceSelectionCard:{
+  ServiceSelectionCard: {
     paddingVertical: 4,
     // backgroundColor: 'red',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
-  cardSelected:{
-    flexDirection: 'row'
+  cardSelected: {
+    flexDirection: 'row',
   },
-  imgSelected:{
+  imgSelected: {
     width: 80,
     height: 80,
     borderRadius: 80 / 2,
-    backgroundColor: 'grey'
+    backgroundColor: 'grey',
   },
-  txtSelectTitle:{
+  txtSelectTitle: {
     width: width * 0.35,
     paddingLeft: 10,
     fontSize: 16,
-    color: '#16247d'
+    color: '#16247d',
   },
-  circleOption:{
+  circleOption: {
     width: 35,
     height: 35,
     backgroundColor: '#eef1f6',
     borderRadius: 35 / 2,
   },
-  txtSelectService:{
+  txtSelectService: {
     position: 'absolute',
     bottom: 40,
     right: 0,
     marginRight: 20,
     fontSize: 16,
     fontWeight: 'bold',
-    color: 'black'
-  }
+    color: 'black',
+  },
 });

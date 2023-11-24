@@ -8,7 +8,7 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import {Divider} from 'react-native-paper';
@@ -17,7 +17,7 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 const {width, height} = Dimensions.get('window');
 
 const ListProfessor = [
@@ -99,6 +99,11 @@ const MemberTypeData = [];
 
 const ShopDetailView = () => {
   const navigation: any = useNavigation();
+  const [isSelect, setSelect] = useState(false);
+  const checkSelected = () => {
+    setSelect(check => !check);
+  };
+  console.log(isSelect);
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <View style={styles.AppBar}>
@@ -111,7 +116,11 @@ const ShopDetailView = () => {
           color={'white'}
           size={20}></AntDesign>
         <Text style={styles.TxtTitleAppBar}>Shop Information</Text>
-        <AntDesign name="hearto" color={'white'} size={18}></AntDesign>
+        <AntDesign
+          onPress={checkSelected}
+          name={isSelect ? 'heart' : 'hearto'}
+          color={'white'}
+          size={18}></AntDesign>
       </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -182,13 +191,23 @@ const ShopDetailView = () => {
             name="business-outline"
             size={18}
             color={'black'}></Ionicons>
-          <Text style={{fontSize: FontSize.font14, color: 'black', paddingLeft: 10}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              color: 'black',
+              paddingLeft: 10,
+            }}>
             មែន ស្តាយ
           </Text>
         </View>
         <View style={styles.FrmName}>
           <Ionicons name="mail-outline" size={18} color={'black'}></Ionicons>
-          <Text style={{fontSize: FontSize.font14, color: 'black', paddingLeft: 10}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              color: 'black',
+              paddingLeft: 10,
+            }}>
             longthavsipav@gmail.com
           </Text>
         </View>
@@ -216,7 +235,12 @@ const ShopDetailView = () => {
             name="phone-portrait-outline"
             size={18}
             color={'black'}></Ionicons>
-          <Text style={{fontSize: FontSize.font14, color: 'black', paddingLeft: 10}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              color: 'black',
+              paddingLeft: 10,
+            }}>
             715636246
           </Text>
         </View>
@@ -225,18 +249,33 @@ const ShopDetailView = () => {
             name="date-range"
             size={18}
             color={'black'}></MaterialIcons>
-          <Text style={{fontSize: FontSize.font14, color: 'black', paddingLeft: 10}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              color: 'black',
+              paddingLeft: 10,
+            }}>
             Mon, Tue, Wed, Thu, Fri, Sat, Sun
           </Text>
         </View>
         <View style={styles.FrmName}>
           <Octicons name="clock" size={18} color={'black'}></Octicons>
-          <Text style={{fontSize: FontSize.font14, color: 'black', paddingLeft: 10}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              color: 'black',
+              paddingLeft: 10,
+            }}>
             08:00 - 19:00
           </Text>
         </View>
         <View style={styles.TxtLocation}>
-          <Text style={{color: 'black', fontSize: FontSize.font14, fontWeight: 'bold'}}>
+          <Text
+            style={{
+              color: 'black',
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+            }}>
             Address
           </Text>
           <TouchableOpacity
@@ -247,7 +286,7 @@ const ShopDetailView = () => {
             <View style={{flexDirection: 'row'}}>
               <Text
                 style={{
-                  color: '#0b1539',
+                  color: '#16247d',
                   fontSize: FontSize.font14,
                   fontWeight: 'bold',
                   textDecorationLine: 'underline',
@@ -255,13 +294,18 @@ const ShopDetailView = () => {
                 }}>
                 Direction
               </Text>
-              <Entypo name="location" color={'#0b1539'} size={18}></Entypo>
+              <Entypo name="location" color={'#16247d'} size={18}></Entypo>
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.FrmNameII}>
           <EvilIcons name="location" size={18} color={'black'}></EvilIcons>
-          <Text style={{fontSize: FontSize.font14, color: 'black', paddingLeft: 10}}>
+          <Text
+            style={{
+              fontSize: FontSize.font14,
+              color: 'black',
+              paddingLeft: 10,
+            }}>
             103 St 512, Phnom Penh, Cambodia
           </Text>
         </View>
@@ -405,19 +449,39 @@ const ShopDetailView = () => {
                       source={require('../../assets/imgs/img1.jpg')}></Image>
                   </View>
                   <Text
-                    style={{paddingTop: 5, color: '#0b1539', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                    style={{
+                      paddingTop: 5,
+                      color: '#0b1539',
+                      fontWeight: 'bold',
+                      fontSize: FontSize.font12,
+                    }}>
                     {e.role}
                   </Text>
                   <Text
-                    style={{paddingTop: 0, color: '#0b1539', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                    style={{
+                      paddingTop: 0,
+                      color: '#0b1539',
+                      fontWeight: 'bold',
+                      fontSize: FontSize.font12,
+                    }}>
                     {e.name}
                   </Text>
                   <Text
-                    style={{paddingTop: 5, color: 'grey', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                    style={{
+                      paddingTop: 5,
+                      color: 'grey',
+                      fontWeight: 'bold',
+                      fontSize: FontSize.font12,
+                    }}>
                     ⭐⭐⭐⭐⭐({e.rate})
                   </Text>
                   <Text
-                    style={{paddingTop: 5, color: 'black', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                    style={{
+                      paddingTop: 5,
+                      color: 'black',
+                      fontWeight: 'bold',
+                      fontSize: FontSize.font12,
+                    }}>
                     {e.other}
                   </Text>
                 </View>
@@ -453,7 +517,7 @@ const ShopDetailView = () => {
                     left: 0,
                     paddingLeft: 10,
                     paddingTop: 10,
-                    fontSize: FontSize.font12
+                    fontSize: FontSize.font12,
                   }}>
                   {e.point}pts
                 </Text>
@@ -480,7 +544,7 @@ const ShopDetailView = () => {
                     color: 'black',
                     fontWeight: 'bold',
                     marginTop: 5,
-                    textAlign: 'center'
+                    textAlign: 'center',
                   }}>
                   {e.name}
                 </Text>
@@ -509,7 +573,12 @@ const ShopDetailView = () => {
                       borderColor: 'blue',
                       borderRadius: 8,
                     }}>
-                    <Text style={{fontWeight: 'bold', color: 'blue', fontSize: FontSize.font12}}>
+                    <Text
+                      style={{
+                        fontWeight: 'bold',
+                        color: 'blue',
+                        fontSize: FontSize.font12,
+                      }}>
                       {e.order}
                     </Text>
                   </View>
@@ -559,9 +628,18 @@ const ShopDetailView = () => {
                     paddingRight: 15,
                   }}
                 />
-                <Text style={{color: 'black', fontSize: FontSize.font12}}>{e.type}</Text>
+                <Text style={{color: 'black', fontSize: FontSize.font12}}>
+                  {e.type}
+                </Text>
               </View>
-              <Text style={{color: 'blue', fontWeight: 'bold', fontSize: FontSize.font12}}>{e.score}</Text>
+              <Text
+                style={{
+                  color: 'blue',
+                  fontWeight: 'bold',
+                  fontSize: FontSize.font12,
+                }}>
+                {e.score}
+              </Text>
             </View>
           );
         })}
@@ -600,12 +678,17 @@ const ShopDetailView = () => {
           <View
             style={{
               paddingHorizontal: 20,
-              paddingVertical:8,
+              paddingVertical: 8,
               backgroundColor: '#16247d',
               width: width * 0.6,
               alignItems: 'center',
             }}>
-            <Text style={{fontSize: FontSize.font14, color: 'white', fontWeight: 'bold'}}>
+            <Text
+              style={{
+                fontSize: FontSize.font14,
+                color: 'white',
+                fontWeight: 'bold',
+              }}>
               MAKE A BOOKING
             </Text>
           </View>
@@ -708,7 +791,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 10,
     marginBottom: 10,
-    paddingBottom: 15
+    paddingBottom: 15,
   },
   CardII: {
     paddingHorizontal: 15,
@@ -722,7 +805,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 10,
     marginBottom: 10,
-    paddingBottom: 15
+    paddingBottom: 15,
   },
 });
 //content: ''

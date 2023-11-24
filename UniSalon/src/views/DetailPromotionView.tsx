@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import {useNavigation} from '@react-navigation/native';
@@ -16,6 +16,11 @@ const {width} = Dimensions.get('window');
 
 export const DetailPromotion = () => {
   const navigation: any = useNavigation();
+  const [select, setSelect] = useState(false);
+  const checkSelected = ()=>{
+    setSelect((check) => !check);
+  }
+  console.log("Select: ", select);
   return (
     <SafeAreaView>
       <View style={styles.AppBar}>
@@ -175,7 +180,10 @@ export const DetailPromotion = () => {
             </Text>
           </View>
           <AntDesign
-            name="hearto"
+            onPress={()=>{
+             checkSelected();
+            }}
+            name={select ? "hearto" : "heart"}
             style={{
               position: 'absolute',
               right: 0,

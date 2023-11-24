@@ -345,7 +345,7 @@ const styles = StyleSheet.create({
   },
   CardPromotion: {
     width: 'auto',
-    height: '20%',
+    // height: '20%',
     borderWidth: 1,
     borderColor: '#ebebec',
     margin: 15,
@@ -355,7 +355,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: 10,
-    paddingVertical: 10,
+    paddingVertical: 5,
   },
   TabBarView: {},
   indicator: {
