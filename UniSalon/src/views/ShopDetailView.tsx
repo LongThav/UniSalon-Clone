@@ -130,17 +130,17 @@ const ShopDetailView = () => {
           style={{
             textAlign: 'center',
             marginTop: 10,
-            fontSize: FontSize.font14,
+            fontSize: 18,
             fontWeight: 'bold',
-            color: 'grey',
+            color: 'black',
           }}>
           មែន​ ស្តាយ
         </Text>
         <Text
           style={{
             textAlign: 'center',
-            marginTop: 0,
-            fontSize: FontSize.font12,
+            marginTop: 7,
+            fontSize: FontSize.font14,
             fontWeight: 'bold',
             color: 'grey',
           }}>
@@ -155,7 +155,7 @@ const ShopDetailView = () => {
             style={{
               textAlign: 'center',
               marginTop: 5,
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font14,
               fontWeight: 'bold',
               textDecorationLine: 'underline',
               marginBottom: 10,
@@ -169,13 +169,13 @@ const ShopDetailView = () => {
         <Text
           style={{
             marginTop: 10,
-            fontSize: FontSize.font14,
+            fontSize: FontSize.font15,
             fontWeight: 'bold',
             paddingHorizontal: 20,
             paddingVertical: 10,
-            color: 'grey',
+            color: 'black',
           }}>
-          មែន​ ស្តាយ
+          Account
         </Text>
         <View style={styles.FrmName}>
           <Ionicons
@@ -194,7 +194,7 @@ const ShopDetailView = () => {
         </View>
         <View style={styles.BoxText}>
           <AntDesign name="infocirlceo" size={18} color={'grey'}></AntDesign>
-          <View style={{paddingHorizontal: 15}}>
+          <View style={{paddingHorizontal: 10}}>
             <Text style={{fontSize: FontSize.font14, color: 'black'}}>
               បម្រើសេវាកម្មជូនអស់លោក​ លោកស្រីឲកាន់តែ
             </Text>
@@ -247,7 +247,7 @@ const ShopDetailView = () => {
             <View style={{flexDirection: 'row'}}>
               <Text
                 style={{
-                  color: 'blue',
+                  color: '#0b1539',
                   fontSize: FontSize.font14,
                   fontWeight: 'bold',
                   textDecorationLine: 'underline',
@@ -255,7 +255,7 @@ const ShopDetailView = () => {
                 }}>
                 Direction
               </Text>
-              <Entypo name="location" color={'blue'} size={18}></Entypo>
+              <Entypo name="location" color={'#0b1539'} size={18}></Entypo>
             </View>
           </TouchableOpacity>
         </View>
@@ -270,7 +270,7 @@ const ShopDetailView = () => {
             marginVertical: 15,
             width: 'auto',
             height: 1,
-            backgroundColor: 'grey',
+            backgroundColor: '#f2f2f2',
           }}></View>
         <Text
           style={{
@@ -295,14 +295,14 @@ const ShopDetailView = () => {
                 fontSize: FontSize.font14,
                 marginLeft: 5,
                 marginTop: 3,
-                color: 'blue',
+                color: '#0b1539',
               }}>
               PROMOTION
             </Text>
           </View>
           <MaterialIcons
             size={18}
-            color={'blue'}
+            color={'#0b1539'}
             name="arrow-forward-ios"></MaterialIcons>
         </View>
         <View style={styles.FrmFeature}>
@@ -318,14 +318,14 @@ const ShopDetailView = () => {
                 fontSize: FontSize.font14,
                 marginLeft: 5,
                 marginTop: 3,
-                color: 'blue',
+                color: '#0b1539',
               }}>
               OUR SERVICES
             </Text>
           </View>
           <MaterialIcons
             size={18}
-            color={'blue'}
+            color={'#0b1539'}
             name="arrow-forward-ios"></MaterialIcons>
         </View>
         <View style={styles.FrmFeature}>
@@ -341,21 +341,21 @@ const ShopDetailView = () => {
                 fontSize: FontSize.font14,
                 marginLeft: 5,
                 marginTop: 3,
-                color: 'blue',
+                color: '#0b1539',
               }}>
               JOIN MEMEBERSHIP
             </Text>
           </View>
           <MaterialIcons
             size={18}
-            color={'blue'}
+            color={'#0b1539'}
             name="arrow-forward-ios"></MaterialIcons>
         </View>
         <View
           style={{
             width: 'auto',
             height: 1,
-            backgroundColor: 'grey',
+            backgroundColor: '#ebebec',
             marginTop: 10,
           }}></View>
         <Text
@@ -405,11 +405,11 @@ const ShopDetailView = () => {
                       source={require('../../assets/imgs/img1.jpg')}></Image>
                   </View>
                   <Text
-                    style={{paddingTop: 5, color: 'blue', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                    style={{paddingTop: 5, color: '#0b1539', fontWeight: 'bold', fontSize: FontSize.font12}}>
                     {e.role}
                   </Text>
                   <Text
-                    style={{paddingTop: 0, color: 'blue', fontWeight: 'bold', fontSize: FontSize.font12}}>
+                    style={{paddingTop: 0, color: '#0b1539', fontWeight: 'bold', fontSize: FontSize.font12}}>
                     {e.name}
                   </Text>
                   <Text
@@ -429,7 +429,7 @@ const ShopDetailView = () => {
           style={{
             width: 'auto',
             height: 1,
-            backgroundColor: 'grey',
+            backgroundColor: '#ebebec',
             marginVertical: 20,
           }}></View>
         <Text
@@ -480,6 +480,7 @@ const ShopDetailView = () => {
                     color: 'black',
                     fontWeight: 'bold',
                     marginTop: 5,
+                    textAlign: 'center'
                   }}>
                   {e.name}
                 </Text>
@@ -521,7 +522,7 @@ const ShopDetailView = () => {
           style={{
             width: 'auto',
             height: 1,
-            backgroundColor: 'grey',
+            backgroundColor: '#ebebec',
             marginVertical: 20,
           }}></View>
         <Text
@@ -689,7 +690,7 @@ const styles = StyleSheet.create({
   FrmFeature: {
     paddingVertical: 10,
     paddingHorizontal: 10,
-    backgroundColor: '#eef1f6',
+    backgroundColor: '#dedede',
     marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',

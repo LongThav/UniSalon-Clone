@@ -19,6 +19,18 @@ import { FontSize } from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
+const ServiceSelectionData = [
+  
+    {
+      id: '1',
+      img: require('../../assets/imgs/img1.jpg'),
+      title: 'ចៅតា.ចាក់សាក់.យន័ខ្មែរ និងរូបស្អាត់ៗជាច្រើនទៀត',
+      price: '$ 10.00',
+      total: '1',
+      point: '2pts'
+    }
+];
+
 export const BookingDetailView = () => {
   const navigation: any = useNavigation();
   const createButtonAlert = () =>
@@ -28,7 +40,9 @@ export const BookingDetailView = () => {
         onPress: () => console.log('Cancel Pressed'),
         style: 'cancel',
       },
-      {text: 'YES', onPress: () => console.log('OK Pressed')},
+      {text: 'YES', onPress: ()=>{
+        navigation.pop(4);
+      }},
     ]);
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -67,7 +81,7 @@ export const BookingDetailView = () => {
         style={{paddingHorizontal: 15, marginBottom: '15%'}}>
         <Text
           style={{
-            fontSize: FontSize.font14,
+            fontSize: 16,
             color: '#16247d',
             fontWeight: 'bold',
             marginTop: 10,
@@ -78,7 +92,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '10%', marginTop: '5%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -87,7 +101,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -98,7 +112,7 @@ export const BookingDetailView = () => {
         <View style={{flexDirection: 'row', paddingLeft: '9%', marginTop: 10}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -107,7 +121,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -119,7 +133,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '5.5%', marginTop: 10}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -128,7 +142,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -147,7 +161,7 @@ export const BookingDetailView = () => {
           <Text
             style={{
               paddingVertical: 20,
-              fontSize: FontSize.font14,
+              fontSize: FontSize.font16,
               color: '#16247d',
               fontWeight: 'bold',
             }}>
@@ -158,12 +172,12 @@ export const BookingDetailView = () => {
             activeOpacity={1}
             onPress={() => {
               console.log('Pressed');
-              navigation.push('EditBookingView');
+              navigation.push('EditBookingView', {navigate_name: ''});
             }}>
             <View style={{paddingVertical: 20, flexDirection: 'row'}}>
               <Text
                 style={{
-                  fontSize: FontSize.font14,
+                  fontSize: FontSize.font16,
                   color: '#16247d',
                   fontWeight: 'bold',
                   textDecorationLine: 'underline',
@@ -181,7 +195,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '13%', marginTop: '0%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -190,7 +204,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -202,7 +216,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '12%', marginTop: '0%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -211,7 +225,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -223,7 +237,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '9.5%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -239,7 +253,7 @@ export const BookingDetailView = () => {
               alignItems: 'center',
               borderRadius: 25,
             }}>
-            <Text style={{fontSize: FontSize.font12, fontWeight: 'bold', color: 'white'}}>
+            <Text style={{fontSize: FontSize.font16, fontWeight: 'bold', color: 'white'}}>
               Booking
             </Text>
           </View>
@@ -254,7 +268,7 @@ export const BookingDetailView = () => {
         <Text
           style={{
             paddingVertical: 20,
-            fontSize: FontSize.font14,
+            fontSize: FontSize.font16,
             fontWeight: 'bold',
             color: '#16247d',
           }}>
@@ -263,29 +277,29 @@ export const BookingDetailView = () => {
         <View style={{flexDirection: 'row'}}>
           <View
             style={{
-              width: 70,
-              height: 70,
-              borderRadius: 70 / 2,
+              width: 80,
+              height: 80,
+              borderRadius: 80 / 2,
               backgroundColor: 'grey',
             }}>
             <Image
-              style={{flex: 1, width: 70, height: 70, borderRadius: 70 / 2}}
+              style={{flex: 1, width: 80, height: 80, borderRadius: 80 / 2}}
               source={require('../../assets/imgs/img1.jpg')}></Image>
           </View>
           <View style={{paddingLeft: 15}}>
             <Text
               style={{
-                fontSize: FontSize.font14,
+                fontSize: FontSize.font16,
                 color: '#16247d',
                 fontWeight: 'bold',
                 paddingBottom: 10,
               }}>
               ជាង​ សុផា
             </Text>
-            <Text style={{fontWeight: 'bold', paddingBottom: 8, color: 'grey', fontSize: FontSize.font12}}>
+            <Text style={{fontWeight: 'bold', paddingBottom: 8, color: 'grey', fontSize: FontSize.font16}}>
               Professor of Men Style
             </Text>
-            <Text style={{fontWeight: 'bold', color: 'grey', fontSize: FontSize.font12}}>098987487</Text>
+            <Text style={{fontWeight: 'bold', color: 'grey', fontSize: FontSize.font16}}>098987487</Text>
           </View>
         </View>
         <View
@@ -299,7 +313,7 @@ export const BookingDetailView = () => {
           <Text
             style={{
               paddingVertical: 20,
-              fontSize: FontSize.font14,
+              fontSize: FontSize.font16,
               color: '#16247d',
               fontWeight: 'bold',
             }}>
@@ -314,7 +328,7 @@ export const BookingDetailView = () => {
             <View style={{paddingVertical: 20, flexDirection: 'row'}}>
               <Text
                 style={{
-                  fontSize: FontSize.font14,
+                  fontSize: FontSize.font16,
                   color: '#16247d',
                   fontWeight: 'bold',
                   textDecorationLine: 'underline',
@@ -325,7 +339,26 @@ export const BookingDetailView = () => {
             </View>
           </TouchableOpacity>
         </View>
-
+        {
+          ServiceSelectionData.map((e, index)=>{
+            return <View key={index} style={styles.ServiceSelectionCard}>
+              <View style={styles.cardSelected}>
+                <Image style={styles.imgSelected} source={e.img}/>
+                <View>
+                  <Text style={styles.txtSelectTitle}>{e.title}</Text>
+                  <View style={{marginLeft: 10, marginTop: 14}}>
+                   <Text style={{color: 'grey'}}>Code:012(Men)</Text>
+                   <Text style={{color: 'grey'}}>Points: 2pts</Text>
+                  </View>
+                </View>
+              </View>
+              <View style={styles.circleOption}>
+                <SimpleLineIcons style={{alignContent: 'center', alignSelf: 'center', marginTop: 6}} size={20} color={'black'} name='options-vertical'/>
+              </View>
+              <Text style={styles.txtSelectService}>{e.price} ({e.total})</Text>
+            </View>
+          })
+        }
         <View
           style={{
             width: 'auto',
@@ -335,7 +368,7 @@ export const BookingDetailView = () => {
           }}></View>
         <Text
           style={{
-            fontSize: FontSize.font14,
+            fontSize: FontSize.font16,
             color: '#16247d',
             fontWeight: 'bold',
             paddingVertical: 20,
@@ -346,7 +379,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '18%', marginTop: '0%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -355,7 +388,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -364,10 +397,10 @@ export const BookingDetailView = () => {
           </Text>
         </View>
         <View
-          style={{flexDirection: 'row', paddingLeft: '25%', marginTop: '2%'}}>
+          style={{flexDirection: 'row', paddingLeft: '26.4%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -376,7 +409,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -388,7 +421,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '21.6%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -397,7 +430,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'red',
               paddingRight: 15,
@@ -409,7 +442,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '20.7%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -418,7 +451,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -430,7 +463,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '21.5%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -439,7 +472,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'blue',
               paddingRight: 15,
@@ -449,10 +482,10 @@ export const BookingDetailView = () => {
           </Text>
         </View>
         <View
-          style={{flexDirection: 'row', paddingLeft: '29%', marginTop: '2%'}}>
+          style={{flexDirection: 'row', paddingLeft: '31.2%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -461,7 +494,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -473,7 +506,7 @@ export const BookingDetailView = () => {
           style={{flexDirection: 'row', paddingLeft: '16.5%', marginTop: '2%'}}>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -482,7 +515,7 @@ export const BookingDetailView = () => {
           </Text>
           <Text
             style={{
-              fontSize: FontSize.font12,
+              fontSize: FontSize.font16,
               fontWeight: 'bold',
               color: 'black',
               paddingRight: 15,
@@ -500,7 +533,7 @@ export const BookingDetailView = () => {
       </ScrollView>
       <TouchableOpacity activeOpacity={1} onPress={createButtonAlert}>
         <View style={styles.BottomNavigationBar}>
-          <Text style={{fontSize: FontSize.font14, fontWeight: 'bold', color: 'white'}}>
+          <Text style={{fontSize: FontSize.font16, fontWeight: 'bold', color: 'white'}}>
             Submit Booking
           </Text>
         </View>
@@ -524,7 +557,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#509cdb',
+    backgroundColor: '#700cb3',
     position: 'absolute',
   },
   Appbar: {
@@ -542,4 +575,40 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
+  ServiceSelectionCard:{
+    paddingVertical: 4,
+    // backgroundColor: 'red',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  cardSelected:{
+    flexDirection: 'row'
+  },
+  imgSelected:{
+    width: 80,
+    height: 80,
+    borderRadius: 80 / 2,
+    backgroundColor: 'grey'
+  },
+  txtSelectTitle:{
+    width: width * 0.35,
+    paddingLeft: 10,
+    fontSize: 16,
+    color: '#16247d'
+  },
+  circleOption:{
+    width: 35,
+    height: 35,
+    backgroundColor: '#eef1f6',
+    borderRadius: 35 / 2,
+  },
+  txtSelectService:{
+    position: 'absolute',
+    bottom: 40,
+    right: 0,
+    marginRight: 20,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'black'
+  }
 });

@@ -36,7 +36,7 @@ const ExploreItem = [
   },
   {
     id: 5,
-    icon: require('../../assets/imgs/eyebrow.png'),
+    icon: require('../../assets/imgs/eye-make-up.png'),
     title: 'Eyebrow Wax and Tint',
   },
   {
@@ -97,7 +97,7 @@ const Explore = () => {
         data={ExploreItem}
         renderItem={({item, index}) => {
           return (
-            <View style={{paddingTop: 0}}>
+            <View key={index} style={{paddingTop: 0}}>
               <TouchableOpacity
                 activeOpacity={0.8}
                 onPress={() => {

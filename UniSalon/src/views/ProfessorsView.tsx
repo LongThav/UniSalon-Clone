@@ -304,12 +304,12 @@ export const ProfessorView = () => {
             // alignItems: 'center
             marginLeft: width * 0.285,
           }}>
-          <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+          <Feather name="folder" size={60} color={'#aab8b6'}></Feather>
           <Text
             style={{
               fontSize: 18,
               fontWeight: 'bold',
-              color: '#ebebec',
+              color: '#aab8b6',
               paddingTop: '10%',
             }}>
             No Data

@@ -39,7 +39,7 @@ export const EditBookingView = () => {
       <ScrollView style={{marginTop: 15, paddingHorizontal: 15}}>
         <Text
           style={{
-            fontSize: FontSize.font14,
+            fontSize: FontSize.font16,
             color: 'black',
             fontWeight: 'bold',
           }}>
@@ -78,7 +78,7 @@ export const EditBookingView = () => {
               backgroundColor: 'grey',
               marginHorizontal: 15,
             }}></View>
-          <Text style={{fontSize: FontSize.font12}}>
+          <Text style={{fontSize: FontSize.font14, color: 'grey'}}>
             Booking Note...(Optional)
           </Text>
           {/* <TextInput></TextInput> */}
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     flexDirection: 'row',
     verticalAlign: 'middle',
-    backgroundColor: '#eef2fa',
+    backgroundColor: 'white',
     marginHorizontal: 15,
     borderRadius: 8,
   },
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     flexDirection: 'row',
     verticalAlign: 'middle',
-    backgroundColor: '#eef2fa',
+    backgroundColor: 'white',
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
@@ -128,10 +128,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     flexDirection: 'row',
     paddingVertical: 15,
-    backgroundColor: '#eef2fa',
+    backgroundColor: 'white',
     verticalAlign: 'middle',
     borderRadius: 4,
-    paddingLeft: 10,
+    paddingLeft: 15,
   },
   BtnSave: {
     width: '100%',

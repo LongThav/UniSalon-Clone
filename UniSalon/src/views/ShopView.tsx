@@ -33,7 +33,7 @@ const RecommendList = [
     id: 3,
     title: 'មែន​ស្តាយ',
     rate: 3,
-    customer: '27 Customers',
+    customer: null,
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const RecommendList = [
     id: 5,
     title: 'មែន​ស្តាយ',
     rate: 3,
-    customer: '27 Customers',
+    customer: null,
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const RecommendList = [
     id: 7,
     title: 'មែន​ស្តាយ',
     rate: 3,
-    customer: '27 Customers',
+    customer: '3 Customers',
   },
 ];
 
@@ -90,7 +90,7 @@ const MoreSaloneData = [
 ];
 
 const {width, height} = Dimensions.get('window');
-export const ShopView = () => {
+export const  ShopView = () => {
   const navigation: any = useNavigation();
   return (
     <SafeAreaView>
@@ -166,11 +166,13 @@ export const ShopView = () => {
                   style={{
                     width: width * 0.45,
                     marginLeft: 10,
-                    borderRadius: 8,
+
                     backgroundColor: 'white',
                     paddingBottom: 8,
                     borderWidth: 0.3,
                     marginBottom: 3,
+                    borderTopLeftRadius: 8,
+                    borderTopRightRadius: 8,
                   }}>
                   <View
                     style={{
@@ -191,26 +193,43 @@ export const ShopView = () => {
                       }}
                       source={require('../../assets/imgs/img1.jpg')}></Image>
                   </View>
-                  <View style={{flexDirection: 'row', marginHorizontal: 5}}>
-                    <FontAwesome6
-                      name="location-dot"
-                      style={{paddingRight: 5, marginTop: 0}}
-                      color={'#16247d'}
-                      size={12}></FontAwesome6>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                    }}>
+                    <View style={{flexDirection: 'row', marginHorizontal: 5}}>
+                      <FontAwesome6
+                        name="location-dot"
+                        style={{paddingRight: 5, marginTop: 0}}
+                        color={'#16247d'}
+                        size={12}></FontAwesome6>
+                      <Text
+                        style={{
+                          color: '#16247d',
+                          fontWeight: 'bold',
+                          fontSize: 10,
+                        }}>
+                        None
+                      </Text>
+                    </View>
                     <Text
                       style={{
-                        color: '#16247d',
+                        color: 'grey',
+                        marginHorizontal: 5,
+                        marginTop: 0,
+                        fontSize: FontSize.font12,
                         fontWeight: 'bold',
-                        fontSize: 10,
+                        paddingRight: 4,
                       }}>
-                      None
+                      {e.customer}
                     </Text>
                   </View>
                   <Text
                     style={{
                       color: 'black',
                       marginHorizontal: 5,
-                      marginTop: 0,
+                      marginTop: 3,
                       fontSize: FontSize.font12,
                       fontWeight: 'bold',
                     }}>
@@ -297,11 +316,12 @@ export const ShopView = () => {
                   paddingHorizontal: 15,
                   borderRadius: 8,
                   borderWidth: 0.3,
+                  paddingBottom: 6
                 }}>
                 <View
                   style={{
                     width: width * 0.3,
-                    height: height * 0.16,
+                    height: height * 0.13,
                     backgroundColor: '#ebebec',
                     borderRadius: 10,
                   }}>
@@ -414,7 +434,7 @@ export const ShopView = () => {
                       borderRadius: 5,
                       borderColor: '#16247d',
                       position: 'absolute',
-                      right: 20,
+                      right: 25,
                       top: 0,
                       marginTop: 0,
                       // marginRight: 17,
@@ -463,7 +483,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10,
     flexDirection: 'row',
-    backgroundColor: 'white',
+    backgroundColor: '#f2f2f2',
     paddingVertical: 10,
   },
 });

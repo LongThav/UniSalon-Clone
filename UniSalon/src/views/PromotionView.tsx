@@ -49,7 +49,7 @@ const Promotion = () => {
               source={require('../../assets/imgs/img1.jpg')}></Image>
           </View>
           <View
-            style={{paddingLeft: 10, paddingTop: 10, alignItems: 'flex-start'}}>
+            style={{paddingLeft: 10, paddingTop: 0, alignItems: 'flex-start'}}>
             <Text
               style={{
                 fontSize: FontSize.font14,
@@ -60,13 +60,14 @@ const Promotion = () => {
             </Text>
             <Text
               style={{
+                marginVertical: 5,
                 color: '#16247d',
                 fontSize: FontSize.font12,
                 fontWeight: 'bold',
               }}>
               មែន​ ស្តាយ
             </Text>
-            <Text style={{color: 'grey', fontSize: 12}}>⭐⭐⭐⭐⭐ (3)</Text>
+            <Text style={{color: 'grey', fontSize: 12, marginBottom: 5}}>⭐⭐⭐⭐⭐ (3)</Text>
             <Text style={{color: 'grey', fontSize: 12}}>
               កាត់សក់បុរស free កក់សក់ជូន
             </Text>
@@ -80,7 +81,7 @@ const Promotion = () => {
                 <FontAwesome6
                   name="location-dot"
                   size={13}
-                  style={{paddingRight: 5, marginTop: 4}}
+                  style={{paddingRight: 5, marginTop: 1.5}}
                   color={'#16247d'}></FontAwesome6>
                 <Text
                   style={{
@@ -95,7 +96,7 @@ const Promotion = () => {
                 <FontAwesome6
                   name="clock"
                   size={13}
-                  style={{paddingRight: 5, marginTop: 4}}
+                  style={{paddingRight: 5, marginTop: 1.5}}
                   color={'#16247d'}></FontAwesome6>
                 <Text
                   style={{

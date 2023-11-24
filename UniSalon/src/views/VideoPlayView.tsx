@@ -63,13 +63,13 @@ const VideoPlayerView = () => {
         //   navigation.push('VideoPlayer');
         // }}
         style={{
-        //   height: 100,
+          //   height: 100,
           backgroundColor: 'white',
           marginTop: 20,
           flexDirection: 'row',
           alignItems: 'center',
           marginHorizontal: 10,
-          borderRadius: 4
+          borderRadius: 4,
         }}>
         <Image
           source={require('../../assets/imgs/img1.jpg')}
@@ -103,8 +103,9 @@ const VideoPlayerView = () => {
           </Text>
           <Text
             style={{
+              marginTop: 5,
               color: 'grey',
-              fontSize: 15,
+              fontSize: 12,
             }}>
             17 Dec 2021 At 11:59 AM
           </Text>
@@ -115,13 +116,12 @@ const VideoPlayerView = () => {
         //   navigation.push('VideoPlayer');
         // }}
         style={{
-            backgroundColor: 'white',
-            marginTop: 20,
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginHorizontal: 10,
-            borderRadius: 4
-            
+          backgroundColor: 'white',
+          marginTop: 20,
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginHorizontal: 10,
+          borderRadius: 4,
         }}>
         <Image
           source={require('../../assets/imgs/img1.jpg')}
@@ -136,7 +136,7 @@ const VideoPlayerView = () => {
             marginLeft: 10,
           }}>
           <Text
-           numberOfLines={2}
+            numberOfLines={2}
             style={{
               fontSize: 15,
               color: 'black',
@@ -154,8 +154,9 @@ const VideoPlayerView = () => {
           </Text>
           <Text
             style={{
+              marginTop: 5,
               color: 'grey',
-              fontSize: 15,
+              fontSize: 12,
             }}>
             17 Dec 2021 At 11:59 AM
           </Text>

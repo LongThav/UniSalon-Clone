@@ -38,7 +38,6 @@ export const VideoView = () => {
   const navigation: any = useNavigation();
   return (
     <SafeAreaView>
-      <StatusBar backgroundColor={'#16247d'}></StatusBar>
       <View style={styles.Appbar}>
         <Feather
           onPress={() => {
@@ -52,7 +51,7 @@ export const VideoView = () => {
             left: 15,
           }}
         />
-        <Text style={styles.TitleAppbar}>Videoe</Text>
+        <Text style={styles.TitleAppbar}>Videos</Text>
       </View>
       <View style={styles.SearchBar}>
         <EvilIcons name="search" size={20} color="grey" />
@@ -144,14 +143,14 @@ const styles = StyleSheet.create({
     width: 'auto',
     borderWidth: 0.3,
     borderColor: 'grey',
-    borderRadius: 8,
+    borderRadius: 3,
     justifyContent: 'flex-start',
     alignItems: 'center',
     paddingHorizontal: 10,
     flexDirection: 'row',
     backgroundColor: 'white',
     paddingVertical: 8,
-    marginVertical: 15,
+    marginVertical: 18,
     marginHorizontal: 15,
   },
   CardList: {

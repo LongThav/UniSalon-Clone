@@ -9,7 +9,7 @@ import {
   FlatList,
   Dimensions,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {FontSize} from '../constant/FontSize';
@@ -59,7 +59,8 @@ const data = [
 export const AssignProfessorView = () => {
   const navigation: any = useNavigation();
   const [isStateTrue, setIsStateTrue] = useState(false);
-  const [icons, setIcons] = useState(0);
+  const [icons, setIcons] = useState<any>(null);
+  const [idPro, setIdPro] = useState<any>(null);
 
   // const checkTrueOrFalse = (value:any)=>{
   //   setIcons(!icons);
@@ -71,7 +72,14 @@ export const AssignProfessorView = () => {
 
   const [Index, SetIndex] = useState<any>(null);
 
+  const txtBtn: String = '';
+
   // console.log("isStateTrue : ", isStateTrue)
+  useEffect(() => {
+    if (icons !== null) {
+      SetIndex(null);
+    }
+  });
   return (
     <SafeAreaView
       style={{
@@ -103,7 +111,7 @@ export const AssignProfessorView = () => {
       <View style={styles.BottomAppBar}>
         <Text
           style={{
-            fontSize: FontSize.font14,
+            fontSize: 18,
             fontWeight: 'bold',
             color: 'black',
           }}>
@@ -202,8 +210,12 @@ export const AssignProfessorView = () => {
                 // }
                 toggleState();
                 console.log('press');
-                setIcons(index);
-                console.log(icons);
+                if (icons === null) {
+                  setIcons(index);
+                  console.log(icons);
+                } else {
+                  setIcons(null);
+                }
               }}>
               <View
                 style={{
@@ -312,11 +324,13 @@ export const AssignProfessorView = () => {
           console.log('IsState: ', isStateTrue);
           if (icons === null) {
             console.log("Can't push new screen");
+            navigation.push('ChooseServiceView');
           } else {
-            console.log("Push screen");
+            console.log('Push screen');
             navigation.push('ChooseServiceView');
           }
-          console.log("Index: ", Index);
+          console.log('Index: ', Index);
+          console.log('icon: ', icons);
         }}>
         <View style={styles.BtnButton}>
           <Text
@@ -325,7 +339,7 @@ export const AssignProfessorView = () => {
               fontWeight: 'bold',
               color: 'white',
             }}>
-            {icons !== null? 'Next' : 'Skip'}
+            {icons !== null ? 'Next' : 'Skip'}
           </Text>
         </View>
       </TouchableOpacity>
