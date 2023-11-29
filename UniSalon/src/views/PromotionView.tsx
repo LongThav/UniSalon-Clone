@@ -8,7 +8,6 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StyleSheet} from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 import Feather from 'react-native-vector-icons/Feather';
@@ -67,7 +66,9 @@ const Promotion = () => {
               }}>
               មែន​ ស្តាយ
             </Text>
-            <Text style={{color: 'grey', fontSize: 12, marginBottom: 5}}>⭐⭐⭐⭐⭐ (3)</Text>
+            <Text style={{color: 'grey', fontSize: 12, marginBottom: 5}}>
+              ⭐⭐⭐⭐⭐ (3)
+            </Text>
             <Text style={{color: 'grey', fontSize: 12}}>
               កាត់សក់បុរស free កក់សក់ជូន
             </Text>
@@ -229,8 +230,8 @@ export const PromotionView = () => {
       </TouchableOpacity>
       <View style={styles.RibonReward}>
         <Ionicons
-          onPress={()=>{
-            console.log("Hi");
+          onPress={() => {
+            console.log('Hi');
             // navigation.push('TestScreen');
           }}
           name="ribbon-outline"
@@ -266,7 +267,6 @@ export const PromotionView = () => {
           onIndexChange={setIndex}
           initialLayout={{width: layout.width}}
           pageMargin={1}
-        
           style={{
             backgroundColor: 'white',
           }}
