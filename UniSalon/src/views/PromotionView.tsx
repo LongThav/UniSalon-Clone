@@ -185,20 +185,6 @@ export const PromotionView = () => {
   );
   return (
     <SafeAreaView>
-      {/* <View style={styles.Appbar}>
-                <TouchableOpacity activeOpacity={1} onPress={()=>{
-                    console.log("Drawer start");
-                    navigation.openDrawer();
-                }}>
-                <Feather name="menu" size={24} style={{
-                    color: 'white',
-                    paddingRight: 0,
-                    position: 'absolute',
-                    left: 0
-                }} />
-                </TouchableOpacity>
-                <Text style={styles.TitleAppbar}>Promotions</Text>
-            </View> */}
       <TouchableOpacity
         activeOpacity={1}
         onPress={() => {

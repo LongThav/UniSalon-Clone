@@ -71,7 +71,7 @@ const DrawerNavigate = () => {
   // }, []);
 
   const navigation: any = useNavigation();
-  console.log("Start drawer");
+  console.log('Start drawer');
   return (
     <Drawer.Navigator
       initialRouteName="Home"

@@ -84,7 +84,6 @@ const Services = () => (
   </View>
 );
 
-
 const renderScene = SceneMap({
   first: Salons,
   second: Pro,
@@ -143,15 +142,15 @@ const FavouriteView = () => {
         <Text style={styles.SubText}>Favourite</Text>
       </View>
       <TabView
-          navigationState={{index, routes}}
-          renderScene={renderScene}
-          onIndexChange={setIndex}
-          initialLayout={{width: layout.width}}
-          style={{
-            backgroundColor: 'white',
-          }}
-          renderTabBar={renderTabBar}
-        />
+        navigationState={{index, routes}}
+        renderScene={renderScene}
+        onIndexChange={setIndex}
+        initialLayout={{width: layout.width}}
+        style={{
+          backgroundColor: 'white',
+        }}
+        renderTabBar={renderTabBar}
+      />
     </View>
   );
 };
