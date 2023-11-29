@@ -51,6 +51,7 @@ import PrivacyPolicyView from '../views/PrivacyPolicyView';
 import DetailExploreView from '../views/DetailExploreView';
 import LoadingView from '../views/LoadingView';
 import NotificationView from '../views/NotificationView';
+import TestScreen from '../views/TestScreen';
 
 
 const MainStack = () => {
@@ -108,6 +109,7 @@ const MainStack = () => {
       <Stack.Screen component={PrivacyPolicyView} name='PrivacyPolicyView'/>
       <Stack.Screen component={DetailExploreView} name='DetailExploreView'/>
       <Stack.Screen component={NotificationView} name='NotificationView'/>
+      <Stack.Screen component={TestScreen} name='TestScreen'/>
     </Stack.Navigator>
   );
 };

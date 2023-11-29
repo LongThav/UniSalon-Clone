@@ -229,6 +229,10 @@ export const PromotionView = () => {
       </TouchableOpacity>
       <View style={styles.RibonReward}>
         <Ionicons
+          onPress={()=>{
+            console.log("Hi");
+            // navigation.push('TestScreen');
+          }}
           name="ribbon-outline"
           size={45}
           style={{

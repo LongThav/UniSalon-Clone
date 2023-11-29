@@ -212,7 +212,7 @@ const ShopDetailView = () => {
           </Text>
         </View>
         <View style={styles.BoxText}>
-          <AntDesign name="infocirlceo" size={18} color={'grey'}></AntDesign>
+          <AntDesign name="infocirlceo" size={18} color={'black'}></AntDesign>
           <View style={{paddingHorizontal: 10}}>
             <Text style={{fontSize: FontSize.font14, color: 'black'}}>
               បម្រើសេវាកម្មជូនអស់លោក​ លោកស្រីឲកាន់តែ
@@ -339,14 +339,14 @@ const ShopDetailView = () => {
                 fontSize: FontSize.font14,
                 marginLeft: 5,
                 marginTop: 3,
-                color: '#0b1539',
+                color: '#16247d',
               }}>
               PROMOTION
             </Text>
           </View>
           <MaterialIcons
             size={18}
-            color={'#0b1539'}
+            color={'#16247d'}
             name="arrow-forward-ios"></MaterialIcons>
         </View>
         <View style={styles.FrmFeature}>
@@ -362,14 +362,14 @@ const ShopDetailView = () => {
                 fontSize: FontSize.font14,
                 marginLeft: 5,
                 marginTop: 3,
-                color: '#0b1539',
+                color: '#16247d',
               }}>
               OUR SERVICES
             </Text>
           </View>
           <MaterialIcons
             size={18}
-            color={'#0b1539'}
+            color={'#16247d'}
             name="arrow-forward-ios"></MaterialIcons>
         </View>
         <View style={styles.FrmFeature}>
@@ -385,14 +385,14 @@ const ShopDetailView = () => {
                 fontSize: FontSize.font14,
                 marginLeft: 5,
                 marginTop: 3,
-                color: '#0b1539',
+                color: '#16247d',
               }}>
               JOIN MEMEBERSHIP
             </Text>
           </View>
           <MaterialIcons
             size={18}
-            color={'#0b1539'}
+            color={'#16247d'}
             name="arrow-forward-ios"></MaterialIcons>
         </View>
         <View
@@ -451,7 +451,7 @@ const ShopDetailView = () => {
                   <Text
                     style={{
                       paddingTop: 5,
-                      color: '#0b1539',
+                      color: '#16247d',
                       fontWeight: 'bold',
                       fontSize: FontSize.font12,
                     }}>
@@ -460,7 +460,7 @@ const ShopDetailView = () => {
                   <Text
                     style={{
                       paddingTop: 0,
-                      color: '#0b1539',
+                      color: '#16247d',
                       fontWeight: 'bold',
                       fontSize: FontSize.font12,
                     }}>
@@ -570,13 +570,13 @@ const ShopDetailView = () => {
                       paddingHorizontal: 10,
                       borderWidth: 1,
                       marginTop: 8,
-                      borderColor: 'blue',
+                      borderColor: '#16247d',
                       borderRadius: 8,
                     }}>
                     <Text
                       style={{
                         fontWeight: 'bold',
-                        color: 'blue',
+                        color: '#16247d',
                         fontSize: FontSize.font12,
                       }}>
                       {e.order}
@@ -633,11 +633,10 @@ const ShopDetailView = () => {
                 </Text>
               </View>
               <Text
-                style={{
-                  color: 'blue',
+                style={[{
                   fontWeight: 'bold',
                   fontSize: FontSize.font12,
-                }}>
+                }, styles.txtColor]}>
                 {e.score}
               </Text>
             </View>
@@ -807,5 +806,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingBottom: 15,
   },
+  txtColor:{
+    color: '#16247d'
+  }
 });
 //content: ''

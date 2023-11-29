@@ -163,17 +163,16 @@ export const  ShopView = () => {
                   navigation.push('ShopDetailView');
                 }}>
                 <View
-                  style={{
+                  style={[{
                     width: width * 0.45,
                     marginLeft: 10,
-
                     backgroundColor: 'white',
                     paddingBottom: 8,
-                    borderWidth: 0.3,
+                    // borderWidth: 0.3,
                     marginBottom: 3,
                     borderTopLeftRadius: 8,
                     borderTopRightRadius: 8,
-                  }}>
+                  }, styles.elevation]}>
                   <View
                     style={{
                       width: 'auto',
@@ -306,7 +305,7 @@ export const  ShopView = () => {
                 navigation.push('ShopDetailView');
               }}>
               <View
-                style={{
+                style={[{
                   paddingTop: 10,
                   flexDirection: 'row',
                   marginHorizontal: 15,
@@ -315,9 +314,9 @@ export const  ShopView = () => {
                   marginTop: 10,
                   paddingHorizontal: 15,
                   borderRadius: 8,
-                  borderWidth: 0.3,
+                  // borderWidth: 0.3,
                   paddingBottom: 6
-                }}>
+                }, styles.elevation]}>
                 <View
                   style={{
                     width: width * 0.3,
@@ -485,5 +484,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#f2f2f2',
     paddingVertical: 10,
+  },
+  elevation: {
+    elevation: 2.4,
+    shadowColor: '#52006A',
   },
 });

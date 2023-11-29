@@ -20,11 +20,13 @@ import {TimePickerModal} from 'react-native-paper-dates';
 import Calendar from 'react-native-calendars/src/calendar';
 
 import DateTimePicker from '@react-native-community/datetimepicker';
+import {print} from '@gorhom/bottom-sheet/lib/typescript/utilities/logger';
 
 const FlowBookingView = () => {
   const navigation: any = useNavigation();
   const [showModul, setModel] = useState(false);
   const [visible, setVisible] = React.useState(false);
+  const [dates, setDateTime] = useState<any>('');
   const onDismiss = React.useCallback(() => {
     setVisible(false);
   }, [setVisible]);
@@ -38,7 +40,7 @@ const FlowBookingView = () => {
   );
 
   const [date, setDate] = useState(new Date());
-  const [mode, setMode] = useState('date');
+  const [mode, setMode] = useState<any>('date');
   const [show, setShow] = useState(false);
   const [text, setText] = useState('Empty');
 
@@ -57,9 +59,11 @@ const FlowBookingView = () => {
     let fTime =
       'Hours: ' + tempDate.getHours() + '| Minutes: ' + tempDate.getMinutes();
     setText(fDate + '\n' + fTime);
-
     console.log(fDate + '(' + fTime + ')');
+    console.log('Date: ', fDate);
+    setDateTime(fDate);
   };
+  console.log('Dates: ', dates);
 
   const showMode = (current: any) => {
     setShow(true);
@@ -84,6 +88,7 @@ const FlowBookingView = () => {
   //   showMode('time');
   // };
 
+  // print("Date time: ");
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <View style={styles.Appbar}>

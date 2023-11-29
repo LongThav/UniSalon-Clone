@@ -47,7 +47,7 @@ export const DetailPromotion = () => {
         onPress={() => {
           navigation.push('SubService');
         }}>
-        <View style={styles.CardView}>
+        <View style={[styles.CardView, styles.elevation]}>
           <View style={styles.Image}>
             <Image
               style={{
@@ -284,5 +284,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     paddingVertical: 5,
     fontSize: 15,
+  },
+  elevation: {
+    elevation: 5,
+    shadowColor: '#52006A',
   },
 }); 

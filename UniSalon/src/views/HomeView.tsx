@@ -638,7 +638,7 @@ export const HomeView = () => {
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
         }}></MapView>
-      <View style={styles.AppBar}>
+      <View style={[styles.AppBar, styles.elevation]}>
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => {
@@ -696,7 +696,7 @@ export const HomeView = () => {
                 // marginHorizontal: 22,
                 marginTop: 2,
               }}>
-              {isEnabled ? (
+              {/* {isEnabled ? (
                 <Image
                   style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
                   source={require('../../assets/imgs/cam_flag.png')}
@@ -706,7 +706,11 @@ export const HomeView = () => {
                   style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
                   source={require('../../assets/imgs/flag_english.jpg')}
                 />
-              )}
+              )} */}
+              <Image
+                  style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
+                  source={isEnabled ? require('../../assets/imgs/cam_flag.png') : require('../../assets/imgs/logo_english.png')}
+                />
             </View>
           </TouchableOpacity>
           <MaterialIcons
@@ -725,7 +729,7 @@ export const HomeView = () => {
         horizontal={true}>
         <TouchableOpacity activeOpacity={1}>
           <Text
-            style={{
+            style={[{
               color: 'grey',
               fontSize: FontSize.font13,
               paddingVertical: 10,
@@ -733,7 +737,7 @@ export const HomeView = () => {
               backgroundColor: '#eef1f6',
               marginLeft: 15,
               borderRadius: 20,
-            }}>
+            }, styles.elevation]}>
             All
           </Text>
         </TouchableOpacity>
@@ -743,7 +747,7 @@ export const HomeView = () => {
           }}
           activeOpacity={1}>
           <Text
-            style={{
+            style={[{
               color: '#152259',
               fontSize: FontSize.font13,
               paddingVertical: 10,
@@ -751,20 +755,20 @@ export const HomeView = () => {
               backgroundColor: 'white',
               marginLeft: 15,
               borderRadius: 20,
-            }}>
+            }, styles.elevation]}>
             Mobile Services
           </Text>
         </TouchableOpacity>
         <TouchableOpacity activeOpacity={1}>
           <View
-            style={{
+            style={[{
               flexDirection: 'row',
               paddingHorizontal: 10,
               paddingVertical: 8,
               backgroundColor: 'white',
               marginLeft: 15,
               borderRadius: 20,
-            }}>
+            }, styles.elevation]}>
             <Entypo name="shop" size={22} color={'#a02929'}></Entypo>
             <Text
               style={{
@@ -778,14 +782,14 @@ export const HomeView = () => {
         </TouchableOpacity>
         <TouchableOpacity activeOpacity={1}>
           <View
-            style={{
+            style={[{
               flexDirection: 'row',
               paddingHorizontal: 20,
               paddingVertical: 8,
               backgroundColor: 'white',
               marginLeft: 15,
               borderRadius: 20,
-            }}>
+            }, styles.elevation]}>
             <Fontisto name="scissors" size={20} color={'#152259'}></Fontisto>
             <Text
               style={{
@@ -1031,5 +1035,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'grey',
     alignSelf: 'center',
     borderRadius: 8,
+  },
+  elevation: {
+    elevation: 5,
+    shadowColor: '#52006A',
   },
 });

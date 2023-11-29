@@ -14,7 +14,7 @@ const LoadingView = () => {
         index: 0,
         routes: [{name: 'MainDrawer'}],
       });
-    }, 400);
+    }, 500);
   });
   return (
     <View style={styles.container}>

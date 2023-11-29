@@ -45,7 +45,7 @@ const data = [
 ];
 
 const DetailExploreView = (props: any) => {
-  const navigation = useNavigation();
+  const navigation:any = useNavigation();
   const {title} = props.route.params;
   console.log('Title: ', title);
   return (
@@ -65,7 +65,7 @@ const DetailExploreView = (props: any) => {
       <ScrollView>
         {data.map((data, index) => {
           return (
-            <TouchableOpacity onPress={()=>{
+            <TouchableOpacity key={index} onPress={()=>{
               navigation.push('SubService');
               // setIndex(index);
             }}>

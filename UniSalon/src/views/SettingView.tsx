@@ -14,15 +14,15 @@ import {FontSize} from '../constant/FontSize';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const Item = (leftIcon:any, title:any, rightIcon:any) =>{
+const Item = (leftIcon: any, title: any, rightIcon: any) => {
   return (
     <View style={styles.firstItem}>
-    <View style={styles.rowLeft}>
-      {/* <Ionicons color={'black'} size={25} name="notifications-outline" /> */}
-      {leftIcon}
-      <Text style={styles.txtNotification}>{title}</Text>
-    </View>
-    {/* <Switch
+      <View style={styles.rowLeft}>
+        {/* <Ionicons color={'black'} size={25} name="notifications-outline" /> */}
+        {leftIcon}
+        <Text style={styles.txtNotification}>{title}</Text>
+      </View>
+      {/* <Switch
       trackColor={{false: '#767577', true: '#81b0ff'}}
       thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
       ios_backgroundColor="#3e3e3e"
@@ -30,10 +30,10 @@ const Item = (leftIcon:any, title:any, rightIcon:any) =>{
       value={isEnabled}
       style={{marginTop: 16}}
     /> */}
-    {rightIcon}
-  </View>
+      {rightIcon}
+    </View>
   );
-}
+};
 
 const SettingView = () => {
   const navigation = useNavigation();
@@ -59,7 +59,7 @@ const SettingView = () => {
             <Text style={styles.txtNotification}>Allow Notifications</Text>
           </View>
           <Switch
-            trackColor={{false: '#767577', true: '#81b0ff'}}
+            trackColor={{false: '#767577', true: 'blue'}}
             thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleSwitch}
@@ -67,23 +67,34 @@ const SettingView = () => {
             style={{marginTop: 16}}
           />
         </View>
-        <View style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
+        <View
+          style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
         <View style={styles.firstItem}>
           <View style={styles.rowLeft}>
             <Entypo color={'yellow'} size={25} name="star-outlined" />
             <Text style={styles.txtNotification}>Rate</Text>
           </View>
-          <MaterialIcons size={25} name='arrow-forward-ios' style={{marginTop: 15, marginRight: 8}}/>
+          <MaterialIcons
+            size={25}
+            name="arrow-forward-ios"
+            style={{marginTop: 15, marginRight: 8}}
+          />
         </View>
-        <View style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
+        <View
+          style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
         <View style={styles.firstItem}>
           <View style={styles.rowLeft}>
             <AntDesign color={'black'} size={25} name="question" />
             <Text style={styles.txtNotification}>About App</Text>
           </View>
-          <MaterialIcons size={25} name='arrow-forward-ios' style={{marginTop: 15, marginRight: 8}}/>
+          <MaterialIcons
+            size={25}
+            name="arrow-forward-ios"
+            style={{marginTop: 15, marginRight: 8}}
+          />
         </View>
-        <View style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
+        <View
+          style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
       </ScrollView>
     </View>
   );
@@ -136,6 +147,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 15,
-    marginRight: 10
+    marginRight: 10,
   },
 });
