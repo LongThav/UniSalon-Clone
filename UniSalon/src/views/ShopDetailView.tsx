@@ -94,7 +94,7 @@ const ListProfessor = [
 const MobileServieData = [
   {
     id: '1',
-    name: 'Nails',
+    name: 'Nailsnkjbvfddfkv',
     price: '$ 10.00 Up',
     order: 'Order Now',
     point: '1',
@@ -609,6 +609,9 @@ const ShopDetailView = () => {
                     fontWeight: 'bold',
                     marginTop: 5,
                     textAlign: 'center',
+                    // height: 28,
+                    paddingVertical: 0,
+                    // backgroundColor: 'red'
                   }}>
                   {e.name}
                 </Text>
@@ -622,11 +625,13 @@ const ShopDetailView = () => {
                   {e.price}
                 </Text>
                 <TouchableOpacity
+                  style={{marginTop: e.name.length <= 16 ? 11 : 0}}
                   activeOpacity={1}
                   onPress={() => {
                     console.log('Start Order...');
                     // navigation.push('OrderView');
                     navigation.push('ChooseMobileServiceView');
+                    console.log(e.name.length);
                   }}>
                   <View
                     style={{
@@ -636,6 +641,10 @@ const ShopDetailView = () => {
                       marginTop: index == 1 ? 8 : 10,
                       borderColor: '#16247d',
                       borderRadius: 8,
+                      // position: 'absolute',
+                      // left: 13,
+                      // bottom: 0, 
+                      // backgroundColor: 'red'
                     }}>
                     <Text
                       style={{
@@ -860,7 +869,7 @@ const styles = StyleSheet.create({
   CardII: {
     paddingHorizontal: 15,
     width: width * 0.3,
-    // height: height * 0.25,
+    // height: height * 0.22,
     backgroundColor: '#edeff3',
     marginRight: 12,
     marginTop: 10,
