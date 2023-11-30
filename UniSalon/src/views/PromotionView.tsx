@@ -93,7 +93,7 @@ const Promotion = () => {
                   None
                 </Text>
               </View>
-              <View style={{flexDirection: 'row', }}>
+              <View style={{flexDirection: 'row'}}>
                 <FontAwesome6
                   name="clock"
                   size={11}
@@ -154,10 +154,13 @@ export const PromotionView = () => {
     {key: 'third', title: 'Rewards'},
   ]);
   const navigation: any = useNavigation();
-  const renderTabBar = (props: any) => (
-    <TabBar
+  const renderTabBar = (props: any) => {
+    const inputRange = props.navigationState.routes.map((_:any, i:any) => i)
+    return <>
+      <TabBar
       {...props}
       scrollEnabled
+      // renderTabBarItem={}
       indicatorStyle={styles.indicator}
       style={{
         backgroundColor: '#f2f2f2',
@@ -171,8 +174,12 @@ export const PromotionView = () => {
       //       {props.route.title}
       //     </Text>
       //   )}
-      renderLabel={({route, focused, color}) => (
-        <Text
+      // renderIndicator={({routes, focused})}
+      renderLabel={({route, focused, color}) => {
+        let index = 0;
+        return <>
+          <View style={{flexDirection: 'row',}}>
+         <Text
           style={{
             color: focused ? '#16247d' : 'black',
             margin: 8,
@@ -181,8 +188,26 @@ export const PromotionView = () => {
           }}>
           {route.title}
         </Text>
-      )}></TabBar>
-  );
+        <View style = {route.title == "Promotions"? styles.divider : null}></View>
+       </View></>
+      }}></TabBar>
+      {/* {props.navigationState.routes.map((route:any, index:any) => {
+        const opacity = props.position.interpolate({
+          inputRange,
+          outputRange: inputRange.map((i:any) => (i === index ? 1 : 0.5)),
+        });
+
+        return (
+          <View key={route.key} style={styles.tabItem}>
+            <Text style={{ opacity }}>{route.title}</Text>
+            {index < props.navigationState.routes.length - 1 && (
+              <View style={styles.divider} />
+            )}
+          </View>
+        );
+      })} */}
+      </>
+  }
   return (
     <SafeAreaView>
       <TouchableOpacity
@@ -218,7 +243,7 @@ export const PromotionView = () => {
         <Ionicons
           onPress={() => {
             console.log('Hi');
-            // navigation.push('TestScreen');
+            // navigation.push('TabViewExample');
           }}
           name="ribbon-outline"
           size={45}
@@ -239,6 +264,15 @@ export const PromotionView = () => {
           </Text>
         </View>
       </View>
+      {/* <View style={{
+        height: 30, 
+        width: 1, 
+        backgroundColor: 'red',
+        alignSelf: 'center',
+        position: 'absolute',
+        top: 150
+       }}></View> */}
+
       <View
         style={{
           width: 'auto',
@@ -253,6 +287,7 @@ export const PromotionView = () => {
           onIndexChange={setIndex}
           initialLayout={{width: layout.width}}
           pageMargin={1}
+          // showPageIndicator={true}
           style={{
             backgroundColor: 'white',
           }}
@@ -339,7 +374,7 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     borderColor: '#ebebec',
     margin: 15,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: 'white',
     borderRadius: 10,
     // justifyContent: 'center',
     alignItems: 'center',
@@ -355,5 +390,22 @@ const styles = StyleSheet.create({
   shadow: {
     elevation: 1.5,
     shadowColor: '#52006A',
-  }
+  },
+  divider: {
+    width: 1,
+    height: '100%',
+    backgroundColor: 'gray',
+    position: 'absolute',
+    right: '-63%',
+    // marginLeft: 100,
+  },
+  tabItem: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+  },
 });
+
+
+// https://www.google.com/search?q=Add+vertical+line+as+a+divider+in+tabbar+as+a+divider+React+native&sca_esv=586559691&tbm=isch&sxsrf=AM9HkKlrPuK7LAIls7m6oDbs5-JvMnmRDA:1701333781596&source=lnms&sa=X&ved=2ahUKEwjF18idquuCAxUZslYBHSx-CxIQ_AUoAXoECAEQAw&biw=1707&bih=794&dpr=1.13
