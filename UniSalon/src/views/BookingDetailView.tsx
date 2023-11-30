@@ -366,8 +366,8 @@ export const BookingDetailView = () => {
                 <Image style={styles.imgSelected} source={e.img} />
                 <View style={{paddingLeft: 10}}>
                   <Text style={styles.txtSelectTitle}>{e.title}</Text>
-                  <View style={{marginLeft: 10, marginTop: 14}}>
-                    <Text style={{color: 'grey'}}>Code:012(Men)</Text>
+                  <View style={{marginLeft: 10, marginTop: 5}}>
+                    <Text style={{color: 'grey'}}>Code:012</Text>
                     <Text style={{color: 'grey'}}>Points: 2pts</Text>
                   </View>
                 </View>
@@ -505,7 +505,7 @@ export const BookingDetailView = () => {
             style={{
               fontSize: FontSize.font15,
               fontWeight: 'bold',
-              color: 'blue',
+              color: '#16247d',
               paddingRight: 15,
               textDecorationLine: 'underline',
             }}>
@@ -593,7 +593,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#700cb3',
+    backgroundColor: '#7d7df7',
     position: 'absolute',
   },
   Appbar: {
@@ -640,7 +640,7 @@ const styles = StyleSheet.create({
   },
   txtSelectService: {
     position: 'absolute',
-    bottom: 40,
+    bottom: 23,
     right: 0,
     marginRight: 20,
     fontSize: 16,

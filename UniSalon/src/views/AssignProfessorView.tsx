@@ -24,23 +24,23 @@ const data = [
   },
   {
     id: 2,
-    title: 'Professor Sythan',
+    title: 'ជាង គង់(070933033)',
   },
   {
     id: 3,
-    title: 'Professor Sythan',
+    title: '(ជាង សុផា)',
   },
   {
     id: 4,
-    title: 'Professor Sythan',
+    title: 'Phan Phorn',
   },
   {
     id: 5,
-    title: 'Professor Sythan',
+    title: 'មាស សុមាវត្តី',
   },
   {
     id: 6,
-    title: 'Professor Sythan',
+    title: 'Malinda',
   },
   {
     id: 7,
@@ -48,11 +48,23 @@ const data = [
   },
   {
     id: 8,
-    title: 'Professor Sythan',
+    title: 'ជាង គង់(070933033)',
   },
   {
     id: 9,
-    title: 'Professor Sythan',
+    title: '(ជាង សុផា)',
+  },
+  {
+    id: 10,
+    title: 'Phan Phorn',
+  },
+  {
+    id: 1,
+    title: 'មាស សុមាវត្តី',
+  },
+  {
+    id: 12,
+    title: 'Malinda',
   },
 ];
 
@@ -111,7 +123,7 @@ export const AssignProfessorView = () => {
       <View style={styles.BottomAppBar}>
         <Text
           style={{
-            fontSize: 18,
+            fontSize: 16,
             fontWeight: 'bold',
             color: 'black',
           }}>
@@ -293,7 +305,7 @@ export const AssignProfessorView = () => {
                     fontWeight: 'bold',
                     color: '#16247d',
                   }}>
-                  Professor Sythan
+                  {item.title}
                 </Text>
                 <Text
                   style={{
@@ -307,7 +319,7 @@ export const AssignProfessorView = () => {
                 <Text
                   style={{
                     marginTop: 8,
-                    marginLeft: 23,
+                    // marginLeft: 23,
                     color: 'black',
                     fontSize: FontSize.font12,
                     textAlign: 'center',
@@ -321,16 +333,16 @@ export const AssignProfessorView = () => {
       <TouchableOpacity
         activeOpacity={1}
         onPress={() => {
-          console.log('IsState: ', isStateTrue);
-          if (icons === null) {
-            console.log("Can't push new screen");
-            navigation.push('ChooseServiceView');
-          } else {
-            console.log('Push screen');
-            navigation.push('ChooseServiceView');
-          }
-          console.log('Index: ', Index);
-          console.log('icon: ', icons);
+          // console.log('IsState: ', isStateTrue);
+          // if (icons === null) {
+          //   console.log("Can't push new screen");
+          // } else {
+          //   console.log('Push screen');
+          //   navigation.push('ChooseServiceView');
+          // }
+          // console.log('Index: ', Index);
+          // console.log('icon: ', icons);
+          navigation.push('ChooseServiceView');
         }}>
         <View style={styles.BtnButton}>
           <Text

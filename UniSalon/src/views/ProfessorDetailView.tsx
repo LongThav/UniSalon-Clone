@@ -15,7 +15,7 @@ import {Divider} from '@rneui/base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 
@@ -52,10 +52,12 @@ const ProfessorDetailView = (props: any) => {
         <View style={styles.CicleProfile}>
           <Text
             style={{
-              marginTop: height * 0.01,
+              flex: 1,
+              // marginTop: height * 0.01,
               fontSize: 35,
               color: 'white',
               fontWeight: 'bold',
+              textAlign: 'center',
             }}>
             {name.charAt(0)}
           </Text>
@@ -66,9 +68,9 @@ const ProfessorDetailView = (props: any) => {
         <View
           style={{
             width: 'auto',
-            height: 0.5,
-            backgroundColor: 'grey',
-            marginTop: 9,
+            height: 0.3,
+            backgroundColor: '#dedede',
+            marginTop: 13,
           }}></View>
         <Text
           style={{
@@ -85,13 +87,23 @@ const ProfessorDetailView = (props: any) => {
             name="business-outline"
             size={18}
             color={'black'}></Ionicons>
-          <Text style={{fontSize: FontSize.font12, color: 'black', paddingLeft: 10}}>
+          <Text
+            style={{
+              fontSize: FontSize.font12,
+              color: 'black',
+              paddingLeft: 10,
+            }}>
             មែន ស្តាយ
           </Text>
         </View>
         <View style={styles.FrmName}>
           <Ionicons name="mail-outline" size={18} color={'black'}></Ionicons>
-          <Text style={{fontSize: FontSize.font12, color: 'black', paddingLeft: 10}}>
+          <Text
+            style={{
+              fontSize: FontSize.font12,
+              color: 'black',
+              paddingLeft: 10,
+            }}>
             longthavsipav@gmail.com
           </Text>
         </View>
@@ -102,7 +114,12 @@ const ProfessorDetailView = (props: any) => {
           <Ionicons name="call-outline" size={18} color={'black'}></Ionicons>
         </View>
         <View style={styles.TxtLocation}>
-          <Text style={{color: 'black', fontSize: FontSize.font12, fontWeight: 'bold'}}>
+          <Text
+            style={{
+              color: 'black',
+              fontSize: FontSize.font12,
+              fontWeight: 'bold',
+            }}>
             Address
           </Text>
           <TouchableOpacity
@@ -113,7 +130,7 @@ const ProfessorDetailView = (props: any) => {
             <View style={{flexDirection: 'row'}}>
               <Text
                 style={{
-                  color: 'blue',
+                  color: '#16247d',
                   fontSize: FontSize.font12,
                   fontWeight: 'bold',
                   textDecorationLine: 'underline',
@@ -121,12 +138,12 @@ const ProfessorDetailView = (props: any) => {
                 }}>
                 Direction
               </Text>
-              <Entypo name="location" color={'blue'} size={18}></Entypo>
+              <Entypo name="location" color={'#16247d'} size={18}></Entypo>
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.FrmName}>
-          <EvilIcons name="location" size={18} color={'black'}></EvilIcons>
+          <EvilIcons name="location" size={20} color={'black'}></EvilIcons>
         </View>
       </ScrollView>
       <View style={styles.BottomBar}>
@@ -168,7 +185,12 @@ const ProfessorDetailView = (props: any) => {
               width: width * 0.6,
               alignItems: 'center',
             }}>
-            <Text style={{fontSize: FontSize.font14, color: 'white', fontWeight: 'bold'}}>
+            <Text
+              style={{
+                fontSize: FontSize.font14,
+                color: 'white',
+                fontWeight: 'bold',
+              }}>
               MAKE A BOOKING
             </Text>
           </View>
@@ -200,23 +222,25 @@ const styles = StyleSheet.create({
   },
   cover: {
     width: 'auto',
-    height: height * 0.12,
+    height: height * 0.2,
     backgroundColor: 'green',
   },
   CicleProfile: {
+    paddingTop: 10,
     width: 80,
     height: 80,
     borderRadius: 80 / 2,
-    backgroundColor: 'brown',
+    backgroundColor: '#362204',
     alignSelf: 'center',
     marginTop: -40,
-    textAlign: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
+    // textAlign: 'center',
+    // alignContent: 'center',
+    // alignItems: 'center',
+    // textAlign: 'center'
   },
   txtName: {
     textAlign: 'center',
-    marginTop: 20,
+    marginTop: 26,
     fontSize: 18,
     fontWeight: 'bold',
     color: 'black',
@@ -257,7 +281,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 20,
-    marginVertical: 20,
+    marginVertical: 15,
   },
   BottomBar: {
     paddingHorizontal: 15,

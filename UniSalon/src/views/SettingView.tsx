@@ -13,6 +13,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {FontSize} from '../constant/FontSize';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { blues, grey } from '../constant/color';
 
 const Item = (leftIcon: any, title: any, rightIcon: any) => {
   return (
@@ -55,7 +56,7 @@ const SettingView = () => {
       <ScrollView>
         <View style={styles.firstItem}>
           <View style={styles.rowLeft}>
-            <Ionicons color={'black'} size={25} name="notifications-outline" />
+            <Ionicons color={blues} size={25} name="notifications-outline" />
             <Text style={styles.txtNotification}>Allow Notifications</Text>
           </View>
           <Switch
@@ -67,34 +68,33 @@ const SettingView = () => {
             style={{marginTop: 16}}
           />
         </View>
-        <View
-          style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
+        <View style={{height: 1.2, backgroundColor: grey}}></View>
         <View style={styles.firstItem}>
           <View style={styles.rowLeft}>
-            <Entypo color={'yellow'} size={25} name="star-outlined" />
+            <Entypo color={'#f5bf0c'} size={25} name="star-outlined" />
             <Text style={styles.txtNotification}>Rate</Text>
           </View>
           <MaterialIcons
             size={25}
             name="arrow-forward-ios"
+            color={'black'}
             style={{marginTop: 15, marginRight: 8}}
           />
         </View>
-        <View
-          style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
+        <View style={{height: 1.2, backgroundColor: grey}}></View>
         <View style={styles.firstItem}>
           <View style={styles.rowLeft}>
-            <AntDesign color={'black'} size={25} name="question" />
+            <AntDesign color={blues} size={25} name="question" />
             <Text style={styles.txtNotification}>About App</Text>
           </View>
           <MaterialIcons
             size={25}
+            color={'black'}
             name="arrow-forward-ios"
             style={{marginTop: 15, marginRight: 8}}
           />
         </View>
-        <View
-          style={{height: 1, backgroundColor: 'grey', width: 'auto'}}></View>
+        <View style={{height: 1.2, backgroundColor: grey}}></View>
       </ScrollView>
     </View>
   );
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   SubText: {
-    fontSize: 14,
+    fontSize: 16,
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',

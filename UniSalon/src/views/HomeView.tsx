@@ -34,28 +34,28 @@ const PopularSalonsData = [
     title: 'មែន ស្តាយ',
     numCustomer: '27',
     des: 'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីឲកាន់តែមានប្រសិទ្ធភា...',
-    img: require('../../assets/imgs/cover.jpg'),
+    img: require('../../assets/imgs/max.jpg'),
   },
   {
     id: '2',
     title: '007 haircut',
     numCustomer: '1',
     des: '',
-    img: require('../../assets/imgs/cover.jpg'),
+    img: require('../../assets/imgs/max.jpg'),
   },
   {
     id: '3',
     title: 'មែន ស្តាយ',
     numCustomer: '27',
     des: 'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីឲកាន់តែមានប្រសិទ្ធភា...',
-    img: require('../../assets/imgs/cover.jpg'),
+    img: require('../../assets/imgs/max.jpg'),
   },
   {
     id: '4',
     title: 'មែន ស្តាយ',
     numCustomer: '27',
     des: 'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីឲកាន់តែមានប្រសិទ្ធភា...',
-    img: require('../../assets/imgs/cover.jpg'),
+    img: require('../../assets/imgs/max.jpg'),
   },
 ];
 
@@ -114,26 +114,26 @@ const NewSalonData = [
     id: '1',
     title: 'Teng Barer',
     numCustomer: '0',
-    img: require('../../assets/imgs/cover.jpg'),
+    img: require('../../assets/imgs/max.jpg'),
   },
   {
     id: '2',
     title: 'Vicci Beauty Bar',
     numCustomer: '0',
     des: '',
-    img: require('../../assets/imgs/cover.jpg'),
+    img: require('../../assets/imgs/max.jpg'),
   },
   {
     id: '3',
     title: 'មែន ស្តាយ',
     numCustomer: '27',
-    img: require('../../assets/imgs/cover.jpg'),
+    img: require('../../assets/imgs/max.jpg'),
   },
   {
     id: '4',
     title: 'មែន ស្តាយ',
     numCustomer: '27',
-    img: require('../../assets/imgs/cover.jpg'),
+    img: require('../../assets/imgs/max.jpg'),
   },
 ];
 
@@ -211,6 +211,7 @@ export const HomeView = () => {
                           height: '100%',
                           borderTopLeftRadius: 7,
                           borderTopRightRadius: 7,
+                          borderWidth: 0.3
                         }}
                         source={item.img}></Image>
                     </View>
@@ -474,20 +475,20 @@ export const HomeView = () => {
                     </View>
                     <Text style={styles.txtNameTopRating}>{item.name}</Text>
                     <View style={{flexDirection: 'row', marginTop: 5}}>
-                      <AntDesign size={18} color={'#ffa042'} name="staro" />
-                      <AntDesign size={18} color={'#ffa042'} name="staro" />
-                      <AntDesign size={18} color={'#ffa042'} name="staro" />
-                      <AntDesign size={18} color={'#ffa042'} name="staro" />
-                      <AntDesign size={18} color={'#ffa042'} name="staro" />
+                      <AntDesign size={18} color={'#f5bf0c'} name="staro" />
+                      <AntDesign size={18} color={'#f5bf0c'} name="staro" />
+                      <AntDesign size={18} color={'#f5bf0c'} name="staro" />
+                      <AntDesign size={18} color={'#f5bf0c'} name="staro" />
+                      <AntDesign size={18} color={'#f5bf0c'} name="staro" />
                     </View>
                     <Text style={{paddingTop: 5, color: 'grey'}}>
                       0 Credit / 0 Review
                     </Text>
                     <View style={{flexDirection: 'row', marginTop: 5}}>
-                      <Entypo size={14} color={'blue'} name="location-pin" />
+                      <Entypo size={12} color={'blue'} name="location-pin" style={{marginTop: 2}} />
                       <Text
                         style={{
-                          fontSize: FontSize.font12,
+                          fontSize: 12.1,
                           color: 'blue',
                           fontWeight: 'bold',
                         }}>
@@ -769,11 +770,11 @@ export const HomeView = () => {
               marginLeft: 15,
               borderRadius: 20,
             }, styles.elevation]}>
-            <Entypo name="shop" size={22} color={'#a02929'}></Entypo>
+            <Entypo name="shop" size={18} color={'#a02929'}></Entypo>
             <Text
               style={{
                 color: '#a02929',
-                marginLeft: 10,
+                marginLeft: 7,
                 fontSize: FontSize.font13,
               }}>
               Shops
@@ -790,11 +791,11 @@ export const HomeView = () => {
               marginLeft: 15,
               borderRadius: 20,
             }, styles.elevation]}>
-            <Fontisto name="scissors" size={20} color={'#152259'}></Fontisto>
+            <Fontisto name="scissors" size={18} color={'#152259'}></Fontisto>
             <Text
               style={{
                 color: '#152259',
-                marginLeft: 15,
+                marginLeft: 8,
                 fontSize: FontSize.font13,
               }}>
               Professor
@@ -960,13 +961,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
     backgroundColor: 'white',
     marginTop: 15,
-    borderRadius: 8,
-    borderBottomWidth: 0.3,
-    borderRightWidth: 0.1,
-    shadowColor: '#171717',
-    shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
+    borderTopEndRadius: 8,
+    borderTopLeftRadius: 8,
+    borderWidth: 0.3
     // paddingBottom:10
   },
   txtExplore: {
@@ -1040,4 +1037,8 @@ const styles = StyleSheet.create({
     elevation: 5,
     shadowColor: '#52006A',
   },
+  shadow: {
+    elevation: 5,
+    shadowColor: '#52006A',
+  }
 });

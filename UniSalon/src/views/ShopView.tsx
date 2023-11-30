@@ -315,7 +315,7 @@ export const  ShopView = () => {
                   paddingHorizontal: 15,
                   borderRadius: 8,
                   // borderWidth: 0.3,
-                  paddingBottom: 6
+                  paddingBottom: 10
                 }, styles.elevation]}>
                 <View
                   style={{
@@ -353,7 +353,7 @@ export const  ShopView = () => {
                     style={{
                       paddingLeft: 17,
                       paddingRight: 5,
-                      paddingVertical: 10,
+                      paddingTop: 10,
                       flexDirection: 'column',
                       // justifyContent: 'flex-start',
                     }}>
@@ -377,32 +377,31 @@ export const  ShopView = () => {
                     {/* <Text style={{fontSize: 14.5, color: 'grey', fontWeight: "bold"}}>
                       លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
                     </Text> */}
-                    <View style={{flexDirection: 'row'}}>
+                    <View style={{flexDirection: 'row',  paddingTop: 15}}>
                       <View
                         style={{
                           flexDirection: 'row',
-                          paddingVertical: 15,
                           paddingRight: 20,
                         }}>
                         <FontAwesome6
-                          size={12}
+                          size={11}
                           name="location-dot"
-                          style={{paddingRight: 5, marginTop: 4}}
+                          style={{paddingRight: 5, paddingTop: 2.5}}
                           color={'#16247d'}></FontAwesome6>
                         <Text
                           style={{
                             color: '#16247d',
                             fontWeight: 'bold',
-                            fontSize: FontSize.font12,
+                            fontSize: 12.3,
                           }}>
                           None
                         </Text>
                       </View>
-                      <View style={{flexDirection: 'row', paddingVertical: 15}}>
+                      <View style={{flexDirection: 'row',}}>
                         <FontAwesome6
                           size={12}
                           name="clock"
-                          style={{paddingRight: 5, marginTop: 4}}
+                          style={{paddingRight: 5, marginTop: 2.5}}
                           color={'#16247d'}></FontAwesome6>
                         <Text
                           style={{
@@ -471,6 +470,7 @@ const styles = StyleSheet.create({
   TitleAppbar: {
     fontSize: 18,
     color: 'white',
+    fontWeight: 'bold'
   },
   SearchBar: {
     width: 'auto',
@@ -482,7 +482,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10,
     flexDirection: 'row',
-    backgroundColor: '#f2f2f2',
+    backgroundColor: 'white',
     paddingVertical: 10,
   },
   elevation: {

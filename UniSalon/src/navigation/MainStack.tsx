@@ -52,6 +52,7 @@ import DetailExploreView from '../views/DetailExploreView';
 import LoadingView from '../views/LoadingView';
 import NotificationView from '../views/NotificationView';
 import TestScreen from '../views/TestScreen';
+import ChangePasswordView from '../views/ChangePasswordView';
 
 
 const MainStack = () => {
@@ -110,6 +111,7 @@ const MainStack = () => {
       <Stack.Screen component={DetailExploreView} name='DetailExploreView'/>
       <Stack.Screen component={NotificationView} name='NotificationView'/>
       <Stack.Screen component={TestScreen} name='TestScreen'/>
+      <Stack.Screen component={ChangePasswordView} name='ChangePasswordView'/>
     </Stack.Navigator>
   );
 };

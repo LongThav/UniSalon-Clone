@@ -30,7 +30,7 @@ const Promotion = () => {
           console.log('Start press!');
           navigation.push('DetailPromotion');
         }}>
-        <View style={styles.CardPromotion}>
+        <View style={[styles.CardPromotion, styles.shadow]}>
           <View
             style={{
               width: width * 0.3,
@@ -51,7 +51,7 @@ const Promotion = () => {
             style={{paddingLeft: 10, paddingTop: 0, alignItems: 'flex-start'}}>
             <Text
               style={{
-                fontSize: FontSize.font14,
+                fontSize: FontSize.font16,
                 color: 'black',
                 // marginTop: 10
               }}>
@@ -61,7 +61,7 @@ const Promotion = () => {
               style={{
                 marginVertical: 5,
                 color: '#16247d',
-                fontSize: FontSize.font12,
+                fontSize: FontSize.font16,
                 fontWeight: 'bold',
               }}>
               មែន​ ស្តាយ
@@ -69,20 +69,20 @@ const Promotion = () => {
             <Text style={{color: 'grey', fontSize: 12, marginBottom: 5}}>
               ⭐⭐⭐⭐⭐ (3)
             </Text>
-            <Text style={{color: 'grey', fontSize: 12}}>
+            <Text style={{color: 'grey', fontSize: 14}}>
               កាត់សក់បុរស free កក់សក់ជូន
             </Text>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{flexDirection: 'row', paddingVertical: 15}}>
               <View
                 style={{
                   flexDirection: 'row',
-                  paddingVertical: 15,
+                  // paddingVertical: 15,
                   paddingRight: 20,
                 }}>
                 <FontAwesome6
                   name="location-dot"
-                  size={13}
-                  style={{paddingRight: 5, marginTop: 1.5}}
+                  size={11}
+                  style={{paddingRight: 5, marginTop: 2.2}}
                   color={'#16247d'}></FontAwesome6>
                 <Text
                   style={{
@@ -93,11 +93,11 @@ const Promotion = () => {
                   None
                 </Text>
               </View>
-              <View style={{flexDirection: 'row', paddingVertical: 15}}>
+              <View style={{flexDirection: 'row', }}>
                 <FontAwesome6
                   name="clock"
-                  size={13}
-                  style={{paddingRight: 5, marginTop: 1.5}}
+                  size={11}
+                  style={{paddingRight: 5, marginTop: 2.2}}
                   color={'#16247d'}></FontAwesome6>
                 <Text
                   style={{
@@ -336,10 +336,10 @@ const styles = StyleSheet.create({
   CardPromotion: {
     width: 'auto',
     // height: '20%',
-    borderWidth: 1,
+    // borderWidth: 1,
     borderColor: '#ebebec',
     margin: 15,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: '#f2f2f2',
     borderRadius: 10,
     // justifyContent: 'center',
     alignItems: 'center',
@@ -352,4 +352,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#16247d',
     height: 2,
   },
+  shadow: {
+    elevation: 1.5,
+    shadowColor: '#52006A',
+  }
 });

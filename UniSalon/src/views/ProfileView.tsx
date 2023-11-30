@@ -5,6 +5,8 @@ import {
   ScrollView,
   Image,
   Dimensions,
+  TextInput,
+  TouchableOpacity
 } from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -13,6 +15,7 @@ import {FontSize} from '../constant/FontSize';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 const {width, height} = Dimensions.get('window');
 
@@ -59,9 +62,9 @@ const ProfileView = () => {
         <View
           style={{
             width: 'auto',
-            height: 1,
-            backgroundColor: 'grey',
-            marginTop: 10,
+            height: 1.3,
+            backgroundColor: '#f2f2f2',
+            marginTop: 13,
           }}></View>
         <View style={styles.FlexRowTitle}>
           <Text style={styles.txtAccount}>Account</Text>
@@ -69,14 +72,14 @@ const ProfileView = () => {
             <Text
               style={{
                 fontSize: FontSize.font16,
-                color: 'blue',
+                color: '#16247d',
                 fontWeight: 'bold',
                 textDecorationLine: 'underline',
               }}>
               Edit
             </Text>
             <MaterialCommunityIcons
-              color={'blue'}
+              color={'#16247d'}
               size={20}
               name="account-edit-outline"></MaterialCommunityIcons>
           </View>
@@ -121,6 +124,28 @@ const ProfileView = () => {
             Edit
           </Text>
         </View>
+        <Text style={styles.txtSecurity}>Security</Text>
+        {/* <View style={styles.frmSecurity}>
+
+        </View> */}
+        <View style={styles.frmDataSecurity}>
+          <View style={{flexDirection: 'row'}}>
+            <Octicons name="lock" size={18} color={'black'} />
+            <Text
+              style={{
+                fontSize: FontSize.font14,
+                color: 'black',
+                marginLeft: 15,
+              }}>
+              ***************
+            </Text>
+          </View>
+          <TouchableOpacity activeOpacity={1} onPress={()=>{
+            navigation.push('ChangePasswordView');
+          }}>
+          <Text style={styles.txtEdit}>Edit</Text>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </View>
   );
@@ -142,7 +167,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   TxtTitleAppBar: {
-    fontSize: FontSize.font14,
+    fontSize: FontSize.font16,
     color: 'white',
     fontWeight: 'bold',
   },
@@ -210,7 +235,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 15,
-    marginVertical: 15,
+    paddingTop: 15,
   },
   txtAccount: {
     fontSize: FontSize.font16,
@@ -227,6 +252,17 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderRadius: 8,
   },
+  frmDataSecurity: {
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    verticalAlign: 'middle',
+    flexDirection: 'row',
+    backgroundColor: '#eef1f6',
+    marginHorizontal: 15,
+    marginTop: 15,
+    borderRadius: 8,
+    justifyContent: 'space-between'
+  },
   frmData1: {
     paddingHorizontal: 10,
     paddingVertical: 10,
@@ -238,4 +274,19 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'space-between',
   },
+  txtSecurity: {
+    fontSize: FontSize.font16,
+    fontWeight: 'bold',
+    color: 'black',
+    paddingLeft: 15,
+    paddingTop: 15,
+  },
+  frmSecurity: {},
+  txtEdit:{
+    fontSize: FontSize.font14,
+    color: 'blue',
+    fontWeight: 'bold',
+    marginLeft: 15,
+    textDecorationLine: 'underline',
+  }
 });

@@ -44,7 +44,40 @@ const ListProfessor = [
     location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia',
   },
   {
-    id: '1',
+    id: '3',
+    name: 'ជាង សុធា',
+    role: 'Professor',
+    rate: '5',
+    other: 'Professor of ...',
+    phone: '0889246027',
+    mail: 'chheangthea@gmail.com',
+    professional: 'Professor of Men Style',
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia',
+  },
+  {
+    id: '4',
+    name: 'Sythan',
+    role: 'Professor',
+    rate: '5',
+    other: 'Professor of ...',
+    phone: '0889246027',
+    mail: 'systhan@gmail.com',
+    professional: 'Professor of Men Style',
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia',
+  },
+  {
+    id: '5',
+    name: 'គង់{070933033}',
+    role: 'ជាង',
+    rate: '5',
+    other: 'Professor of ...',
+    phone: '0889246027',
+    mail: 'kong49@gmail.com',
+    professional: 'Professor of Men Style',
+    location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia',
+  },
+  {
+    id: '6',
     name: 'ជាង សុធា',
     role: 'Professor',
     rate: '5',
@@ -55,6 +88,8 @@ const ListProfessor = [
     location: '#42,Street 454, Toul Tumpong I, Phnom Penh, Cambodia',
   },
 ];
+
+
 
 const MobileServieData = [
   {
@@ -72,7 +107,28 @@ const MobileServieData = [
     point: '3',
   },
   {
-    id: '1',
+    id: '3',
+    name: 'Haircut for me',
+    price: '$ 10.00 Up',
+    order: 'order Now',
+    point: '5',
+  },
+  {
+    id: '4',
+    name: 'Nails',
+    price: '$ 10.00 Up',
+    order: 'Order Now',
+    point: '1',
+  },
+  {
+    id: '5',
+    name: 'Make-up for Wedding',
+    price: '$ 15.00 Up',
+    order: 'Order Now',
+    point: '3',
+  },
+  {
+    id: '6',
     name: 'Haircut for me',
     price: '$ 10.00 Up',
     order: 'order Now',
@@ -95,11 +151,17 @@ const MemeberShipData = [
   },
 ];
 
+const index: number = 0;
+
 const MemberTypeData = [];
+
 
 const ShopDetailView = () => {
   const navigation: any = useNavigation();
   const [isSelect, setSelect] = useState(false);
+  const [marginIndex, setMarginIndex] = useState<any>(null);
+  var indexs = 0;
+  var indexMobileService = 0;
   const checkSelected = () => {
     setSelect(check => !check);
   };
@@ -180,13 +242,13 @@ const ShopDetailView = () => {
             marginTop: 10,
             fontSize: FontSize.font15,
             fontWeight: 'bold',
-            paddingHorizontal: 20,
+            paddingHorizontal: 15,
             paddingVertical: 10,
             color: 'black',
           }}>
           Account
         </Text>
-        <View style={styles.FrmName}>
+        <View style={[styles.FrmName]}>
           <Ionicons
             name="business-outline"
             size={18}
@@ -319,7 +381,7 @@ const ShopDetailView = () => {
         <Text
           style={{
             paddingLeft: 20,
-            paddingVertical: 15,
+            paddingBottom: 15,
             color: 'black',
             fontWeight: 'bold',
             fontSize: FontSize.font14,
@@ -414,6 +476,8 @@ const ShopDetailView = () => {
         </Text>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           {ListProfessor.map((e, index) => {
+            // setMarginIndex(index);
+            indexs === index;
             return (
               <TouchableOpacity
                 key={index}
@@ -431,7 +495,7 @@ const ShopDetailView = () => {
                     professional: e.professional,
                   });
                 }}>
-                <View style={styles.Card}>
+                <View style={[styles.Card, {marginLeft: index == 0? 15 : 0}]}>
                   <View
                     style={{
                       width: 50,
@@ -507,9 +571,9 @@ const ShopDetailView = () => {
           Mobile Service
         </Text>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {MobileServieData.map((e, index) => {
+          {MobileServieData.map((e, index) => {5
             return (
-              <View key={index} style={styles.CardII}>
+              <View key={index} style={[styles.CardII, {marginLeft: index == 0 ? 15 : 0}]}>
                 <Text
                   style={{
                     color: 'grey',
@@ -569,7 +633,7 @@ const ShopDetailView = () => {
                       paddingVertical: 5,
                       paddingHorizontal: 10,
                       borderWidth: 1,
-                      marginTop: 8,
+                      marginTop: index == 1 ? 8 : 10,
                       borderColor: '#16247d',
                       borderRadius: 8,
                     }}>
@@ -733,7 +797,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: '#edeff3',
     borderRadius: 8,
-    marginHorizontal: 20,
+    marginHorizontal: 15,
     marginTop: 15,
     flexDirection: 'row',
   },
@@ -742,7 +806,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#edeff3',
     flexDirection: 'row',
     // justifyContent: 'space-between',
-    marginHorizontal: 20,
+    marginHorizontal: 15,
     borderRadius: 8,
     marginTop: 15,
   },
@@ -765,7 +829,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: '#edeff3',
     borderRadius: 8,
-    marginHorizontal: 20,
+    marginHorizontal: 15,
     marginTop: 0,
     flexDirection: 'row',
   },
@@ -773,17 +837,18 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
     backgroundColor: '#dedede',
-    marginHorizontal: 20,
+    marginHorizontal: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderRadius: 8,
     marginBottom: 10,
   },
   Card: {
+
     width: width * 0.3,
     // height: height * 0.3,
     backgroundColor: '#edeff3',
-    marginLeft: 20,
+    marginRight: 12,
     marginTop: 10,
     borderRadius: 8,
     // justifyContent: 'center',
@@ -797,7 +862,7 @@ const styles = StyleSheet.create({
     width: width * 0.3,
     // height: height * 0.25,
     backgroundColor: '#edeff3',
-    marginLeft: 20,
+    marginRight: 12,
     marginTop: 10,
     borderRadius: 8,
     // justifyContent: 'center',

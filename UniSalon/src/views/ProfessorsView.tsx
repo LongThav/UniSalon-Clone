@@ -230,14 +230,14 @@ export const ProfessorView = () => {
           renderItem={({item, index}) => {
             return (
               <TouchableOpacity
-                activeOpacity={0.8}
+                activeOpacity={1}
                 onPress={() => {
                   navigation.push('ProfessorDetailView', {
                     name: item.name,
                     img: item.img,
                   });
                 }}>
-                <View style={styles.Card}>
+                <View style={[styles.Card, styles.shadow]}>
                   <View style={styles.Profile}>
                     <Image
                       style={{
@@ -337,7 +337,7 @@ export const ProfessorView = () => {
             navigation.push('SearchBarView');
           }}
           name="search1"
-          size={24}
+          size={18}
           style={{
             color: 'white',
             // paddingRight: 125
@@ -386,6 +386,7 @@ export const ProfessorView = () => {
                         fontWeight: 'bold',
                         color: selectColor === index ? '#16247d' : 'black',
                         fontSize: FontSize.font11,
+                        textAlign: 'center'
                       }}>
                       {item.title}
                     </Text>
@@ -438,6 +439,7 @@ const styles = StyleSheet.create({
   RightBar: {
     width: 'auto',
     height: 'auto',
+    paddingLeft: 7
     // backgroundColor: 'red'
   },
   Card: {
@@ -447,8 +449,8 @@ const styles = StyleSheet.create({
     marginTop: 7,
     // marginRight: 7,
     borderRadius: 8,
-    marginLeft: 4,
-    marginRight: 4,
+    // marginLeft: 4,
+    marginRight: 7,
   },
   Profile: {
     width: 60,
@@ -458,4 +460,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 10,
   },
+  shadow: {
+    elevation: 2,
+    shadowColor: '#52006A',
+  }
 });

@@ -65,11 +65,11 @@ const DetailExploreView = (props: any) => {
       <ScrollView>
         {data.map((data, index) => {
           return (
-            <TouchableOpacity key={index} onPress={()=>{
+            <TouchableOpacity activeOpacity={1} key={index} onPress={()=>{
               navigation.push('SubService');
               // setIndex(index);
             }}>
-            <View key={index} style={styles.cards}>
+            <View key={index} style={[styles.cards, styles.shadow]}>
               <View style={styles.imgtitle}>
                 <Image style={styles.img} source={data.img} />
                 <View style={styles.columns}>
@@ -78,17 +78,16 @@ const DetailExploreView = (props: any) => {
                   <Text style={styles.txtRating}>
                     ⭐⭐⭐⭐⭐({data.num_rating})
                   </Text>
-                  <View style={{flexDirection: 'row'}}>
+                  <View style={{flexDirection: 'row', paddingVertical: 15}}>
                     <View
                       style={{
                         flexDirection: 'row',
-                        paddingTop: 17,
                         paddingRight: 20,
                       }}>
                       <FontAwesome6
                         size={12}
                         name="location-dot"
-                        style={{paddingRight: 5, marginTop: 4}}
+                        style={{paddingRight: 5, marginTop: 2.8}}
                         color={'#16247d'}></FontAwesome6>
                       <Text
                         style={{
@@ -99,11 +98,11 @@ const DetailExploreView = (props: any) => {
                         None
                       </Text>
                     </View>
-                    <View style={{flexDirection: 'row', paddingVertical: 15}}>
+                    <View style={{flexDirection: 'row',}}>
                       <FontAwesome6
                         size={12}
                         name="clock"
-                        style={{paddingRight: 5, marginTop: 4}}
+                        style={{paddingRight: 5, marginTop: 2.8}}
                         color={'#16247d'}></FontAwesome6>
                       <Text
                         style={{
@@ -160,12 +159,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   cards: {
-    padding: 10,
+    paddingTop: 10,
+    paddingHorizontal: 10,
     backgroundColor: 'white',
-    marginTop: 15,
+    marginTop: 12,
     marginHorizontal: 15,
     borderRadius: 4,
-    borderWidth: 0.3,
+    // borderWidth: 0.3,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -211,7 +211,11 @@ const styles = StyleSheet.create({
   icon: {
     position: 'absolute',
     right: 0,
-    bottom: 25,
+    bottom: 12,
     marginRight: 10,
   },
+  shadow: {
+    elevation: 1.4,
+    shadowColor: '#52006A',
+  }
 });

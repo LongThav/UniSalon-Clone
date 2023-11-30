@@ -4,12 +4,13 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {grey} from '../constant/color';
 
 const {width, height} = Dimensions.get('window');
 
@@ -28,11 +29,19 @@ const HelpAndFeedBack = () => {
         </TouchableOpacity>
         <Text style={styles.SubText}>Help & Feedback</Text>
       </View>
-      <View style={styles.item}>
-          <Text style={styles.txtTitle}>How to register account in app user</Text>
-          <MaterialIcons size={25} name='arrow-forward-ios' style={{marginTop: 15}}/>
+      <View>
+        <View style={styles.item}>
+          <Text style={styles.txtTitle}>
+            How to register account in app user
+          </Text>
+          <MaterialIcons
+            size={25}
+            name="arrow-forward-ios"
+            style={{marginTop: 15}}
+          />
         </View>
-        <View style={{height: 0.4, backgroundColor: 'grey', width: 'auto'}}></View>
+        <View style={{height: 1.2, backgroundColor: grey}}></View>
+      </View>
     </View>
   );
 };
@@ -74,16 +83,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 15,
   },
-  item:{
+  item: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 10,
     marginHorizontal: 15,
-    marginBottom: 15
+    marginBottom: 10,
   },
-  txtTitle:{
+  txtTitle: {
     fontSize: 18,
     width: width * 0.7,
-    color: 'black'
-  }
+    color: 'black',
+  },
 });

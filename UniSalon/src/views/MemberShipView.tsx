@@ -12,6 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {FontSize} from '../constant/FontSize';
 import Feather from 'react-native-vector-icons/Feather';
+import { grey } from '../constant/color';
 
 const MemberShipView = () => {
   const navigation = useNavigation();
@@ -31,7 +32,7 @@ const MemberShipView = () => {
       <View style={styles.RibonReward}>
         <Ionicons
           name="ribbon-outline"
-          size={45}
+          size={30}
           style={{
             color: '#16247d',
             paddingRight: 15,
@@ -49,9 +50,9 @@ const MemberShipView = () => {
           </Text>
         </View>
       </View>
-      <View style={styles.borderSearch}>
-        <View style={styles.SearchBar}>
-          <EvilIcons name="search" size={20} color="grey" />
+      <View style={{height: 1.2, backgroundColor: grey}}></View>
+      <View style={styles.SearchBar}>
+          <EvilIcons name="search" size={20} color="grey" style={{paddingRight: 17}}/>
           {/* <Text style={{ paddingHorizontal: 10 }}>Search Salons...</Text> */}
           <TextInput
             placeholder="Search Salons..."
@@ -63,7 +64,7 @@ const MemberShipView = () => {
               padding: 0,
             }}></TextInput>
         </View>
-      </View>
+        <View style={{height: 1.2, backgroundColor: grey}}></View>
       <View
         style={{
           backgroundColor: '#f1f1f1',
@@ -73,12 +74,12 @@ const MemberShipView = () => {
           alignItems: 'center',
           paddingTop: '10%',
         }}>
-        <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+        <Feather name="folder" size={60} color={'grey'}></Feather>
         <Text
           style={{
             fontSize: 18,
             fontWeight: 'bold',
-            color: '#ebebec',
+            color: 'grey',
             paddingTop: '2%',
           }}>
           No Data
@@ -127,16 +128,15 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     justifyContent: 'space-between',
   },
-  borderSearch: {
-    borderWidth: 0.5,
-    // paddingVertical: 5,
-    // paddingHorizontal: 5,
-    marginTop: 20,
-  },
+  // borderSearch: {
+  //   borderWidth: 0.5,
+  //   // paddingVertical: 5,
+  //   // paddingHorizontal: 5,
+  //   marginTop: 20,
+  // },
   SearchBar: {
-    width: 'auto',
     marginVertical: 12,
-    marginHorizontal: 5,
+    marginHorizontal: 15,
     borderWidth: 0.5,
     borderColor: 'grey',
     borderRadius: 10,
