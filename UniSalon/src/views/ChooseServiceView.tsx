@@ -299,6 +299,7 @@ export const ChooseServiceView = () => {
         }}></FlatList>
       <TouchableOpacity
         activeOpacity={1}
+        style={styles.BottomNavigation}
         onPress={() => {
           if (bottomBar === true) {
             console.log("Can't push new screen");
@@ -306,11 +307,9 @@ export const ChooseServiceView = () => {
             navigation.push('BookingDetailView');
           }
         }}>
-        <View style={styles.BottomNavigation}>
-          <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
+       <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
             Next
           </Text>
-        </View>
       </TouchableOpacity>
     </SafeAreaView>
   );

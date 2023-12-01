@@ -18,7 +18,6 @@ import {TabBar, SceneMap, TabView} from 'react-native-tab-view';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 
-
 const {width, height} = Dimensions.get('window');
 
 const data = [
@@ -67,7 +66,9 @@ const ShopData = [
 
 const Shop = () => {
   return (
-    <ScrollView showsVerticalScrollIndicator = {false} style={{flex: 1, backgroundColor: '#ebebec', padding: 10}}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{flex: 1, backgroundColor: '#ebebec', padding: 10}}>
       {ShopData.map((e, index) => {
         return (
           <View key={index} style={styles.listItem}>
@@ -200,15 +201,23 @@ const MobileServiceView = () => {
       //     </Text>
       //   )}
       renderLabel={({route, focused, color}) => (
-        <Text
+        <View
           style={{
-            color: focused ? '#16247d' : 'black',
-            margin: 8,
-            fontSize: FontSize.font14,
-            fontWeight: 'bold',
+            flexDirection: 'row',
+            width: (width * 0.74) / 2,
+            justifyContent: 'center',
           }}>
-          {route.title}
-        </Text>
+          <Text
+            style={{
+              color: focused ? '#16247d' : 'black',
+              margin: 8,
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+            }}>
+            {route.title}
+          </Text>
+          <View style={route.title == 'Shop' ? styles.divider : null}></View>
+        </View>
       )}></TabBar>
   );
 
@@ -402,11 +411,21 @@ const styles = StyleSheet.create({
   },
   order: {
     textAlign: 'center',
-    marginTop: 8,
+    marginTop: 9,
     color: '#16247d',
     fontWeight: 'bold',
     borderWidth: 0.7,
-    paddingVertical: 8,
+    paddingVertical: 5,
     borderRadius: 5,
+  },
+  divider: {
+    width: 1.8,
+    height: '100%',
+    backgroundColor: 'gray',
+    position: 'absolute',
+    right: 0,
+    // right: -57
+    // right: '-63%',
+    // marginLeft: 100,
   },
 });

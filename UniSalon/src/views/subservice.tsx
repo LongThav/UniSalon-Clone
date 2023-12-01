@@ -652,15 +652,30 @@ export const SubService = () => {
       //     </Text>
       //   )}
       renderLabel={({route, focused, color}) => (
-        <Text
+        <View
           style={{
-            color: focused ? '#16247d' : 'black',
-            margin: 8,
-            fontSize: FontSize.font14,
-            fontWeight: 'bold',
+            flexDirection: 'row',
+            width: width / 3,
+            justifyContent: 'center',
           }}>
-          {route.title}
-        </Text>
+          <Text
+            style={{
+              color: focused ? '#16247d' : 'black',
+              margin: 8,
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+            }}>
+            {route.title}
+          </Text>
+          <View
+            style={
+              route.title == 'Men'
+                ? styles.divider
+                : route.title == 'Women'
+                ? styles.divider
+                : null
+            }></View>
+        </View>
       )}></TabBar>
   );
 
@@ -1002,5 +1017,15 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     // backgroundColor: 'grey',
+  },
+  divider: {
+    width: 1.8,
+    height: '100%',
+    backgroundColor: 'gray',
+    position: 'absolute',
+    right: 0,
+    // right: -57
+    // right: '-63%',
+    // marginLeft: 100,
   },
 });

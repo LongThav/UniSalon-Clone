@@ -123,7 +123,7 @@ export const AssignProfessorView = () => {
       <View style={styles.BottomAppBar}>
         <Text
           style={{
-            fontSize: 16,
+            fontSize: 15,
             fontWeight: 'bold',
             color: 'black',
           }}>
@@ -332,6 +332,7 @@ export const AssignProfessorView = () => {
         }}></FlatList>
       <TouchableOpacity
         activeOpacity={1}
+        style={styles.BtnButton}
         onPress={() => {
           // console.log('IsState: ', isStateTrue);
           // if (icons === null) {
@@ -342,10 +343,12 @@ export const AssignProfessorView = () => {
           // }
           // console.log('Index: ', Index);
           // console.log('icon: ', icons);
+
+          console.log("Pressed");
+
           navigation.push('ChooseServiceView');
         }}>
-        <View style={styles.BtnButton}>
-          <Text
+        <Text
             style={{
               fontSize: FontSize.font14,
               fontWeight: 'bold',
@@ -353,7 +356,6 @@ export const AssignProfessorView = () => {
             }}>
             {icons !== null ? 'Next' : 'Skip'}
           </Text>
-        </View>
       </TouchableOpacity>
     </SafeAreaView>
   );

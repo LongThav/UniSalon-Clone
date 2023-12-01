@@ -94,7 +94,7 @@ const ListProfessor = [
 const MobileServieData = [
   {
     id: '1',
-    name: 'Nailsnkjbvfddfkv',
+    name: 'Nails',
     price: '$ 10.00 Up',
     order: 'Order Now',
     point: '1',
@@ -650,7 +650,8 @@ const ShopDetailView = () => {
                       style={{
                         fontWeight: 'bold',
                         color: '#16247d',
-                        fontSize: FontSize.font12,
+                        fontSize: height * 0.013,
+                        // fontSize: 12
                       }}>
                       {e.order}
                     </Text>

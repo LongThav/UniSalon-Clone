@@ -145,9 +145,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   txtPlaceholder: {
+    width: '80%',
     padding: 0,
-    // color: grey
-    textDecorationLine: 'none'
+    color: 'black',
+    textDecorationLine: 'none',
+    // backgroundColor: 'red',
+    paddingBottom: 2
   },
   BtnNext: {
     marginTop: 18,

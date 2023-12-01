@@ -122,7 +122,7 @@ export const  ShopView = () => {
             placeholderTextColor={'grey'}
             style={{
               fontSize: FontSize.font14,
-              marginLeft: 0,
+              marginLeft: 10,
               margin: 0,
               padding: 0,
             }}></TextInput>

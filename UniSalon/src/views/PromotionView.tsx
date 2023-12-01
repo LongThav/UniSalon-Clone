@@ -177,8 +177,8 @@ export const PromotionView = () => {
       // renderIndicator={({routes, focused})}
       renderLabel={({route, focused, color}) => {
         let index = 0;
-        return <>
-          <View style={{flexDirection: 'row',}}>
+        return <View style={{}}>
+          <View style={{flexDirection: 'row', width: width / 2, justifyContent: 'center'}}>
          <Text
           style={{
             color: focused ? '#16247d' : 'black',
@@ -189,7 +189,7 @@ export const PromotionView = () => {
           {route.title}
         </Text>
         <View style = {route.title == "Promotions"? styles.divider : null}></View>
-       </View></>
+       </View></View>
       }}></TabBar>
       {/* {props.navigationState.routes.map((route:any, index:any) => {
         const opacity = props.position.interpolate({
@@ -392,11 +392,13 @@ const styles = StyleSheet.create({
     shadowColor: '#52006A',
   },
   divider: {
-    width: 1,
+    width: 1.8,
     height: '100%',
     backgroundColor: 'gray',
     position: 'absolute',
-    right: '-63%',
+    right: 0
+    // right: -57
+    // right: '-63%',
     // marginLeft: 100,
   },
   tabItem: {
