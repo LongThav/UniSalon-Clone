@@ -1,10 +1,18 @@
-import {StyleSheet, Text, TouchableOpacity, View, useWindowDimensions, Dimensions} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  useWindowDimensions,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
-import { FontSize } from '../constant/FontSize';
-import { SceneMap, TabBar, TabView } from 'react-native-tab-view';
+import {FontSize} from '../constant/FontSize';
+import {SceneMap, TabBar, TabView} from 'react-native-tab-view';
 import Feather from 'react-native-vector-icons/Feather';
+import { blues } from '../constant/color';
 
 const {width, height} = Dimensions.get('window');
 
@@ -104,7 +112,7 @@ const renderScene = SceneMap({
   first: Approved,
   second: Requeste,
   third: Rejeccted,
-  four: Cancelled
+  four: Cancelled,
 });
 
 const HistoryBookingAndOrderView = () => {
@@ -115,7 +123,7 @@ const HistoryBookingAndOrderView = () => {
     {key: 'first', title: 'Salons'},
     {key: 'second', title: 'Professors'},
     {key: 'third', title: 'Services'},
-    {key: 'four', title: 'Cancelled'}
+    {key: 'four', title: 'Cancelled'},
   ]);
   const renderTabBar = (props: any) => (
     <TabBar
@@ -127,29 +135,40 @@ const HistoryBookingAndOrderView = () => {
       }}
       tabStyle={{
         width: width / 4,
-        // backgroundColor: 'blue'
       }}
-      // renderLabel={({props, }) => (
-      //     <Text style={{ color: 'grey', margin: 8 }}>
-      //       {props.route.title}
-      //     </Text>
-      //   )}
       renderLabel={({route, focused, color}) => (
-        <Text
+        <View
           style={{
-            color: focused ? '#16247d' : 'black',
-            margin: 8,
-            fontSize: FontSize.font10,
-            fontWeight: 'bold',
+            flexDirection: 'row',
+            width: width / 4,
+            justifyContent: 'center',
           }}>
-          {route.title}
-        </Text>
+          <Text
+            style={{
+              color: focused ? blues : 'black',
+              margin: 8,
+              fontSize: FontSize.font10,
+              fontWeight: 'bold',
+            }}>
+            {route.title}
+          </Text>
+          <View
+            style={
+              route.title == 'Salons'
+                ? styles.divider
+                : route.title == 'Professors'
+                ? styles.divider
+                : route.title == 'Services'
+                ? styles.divider
+                : null
+            }></View>
+        </View>
       )}></TabBar>
   );
   return (
     <View style={styles.container}>
       <View style={styles.AppBar}>
-      <TouchableOpacity
+        <TouchableOpacity
           style={styles.icon}
           activeOpacity={1}
           onPress={() => {
@@ -160,15 +179,15 @@ const HistoryBookingAndOrderView = () => {
         <Text style={styles.SubText}>History Booking & Order</Text>
       </View>
       <TabView
-          navigationState={{index, routes}}
-          renderScene={renderScene}
-          onIndexChange={setIndex}
-          initialLayout={{width: layout.width}}
-          style={{
-            backgroundColor: 'white',
-          }}
-          renderTabBar={renderTabBar}
-        />
+        navigationState={{index, routes}}
+        renderScene={renderScene}
+        onIndexChange={setIndex}
+        initialLayout={{width: layout.width}}
+        style={{
+          backgroundColor: 'white',
+        }}
+        renderTabBar={renderTabBar}
+      />
     </View>
   );
 };
@@ -208,6 +227,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#16247d',
     height: 2,
   },
+  divider: {
+    width: 1.8,
+    height: '100%',
+    backgroundColor: 'gray',
+    position: 'absolute',
+    right: 0,
+    // right: -57
+    // right: '-63%',
+    // marginLeft: 100,
+  },
 });
-
-
