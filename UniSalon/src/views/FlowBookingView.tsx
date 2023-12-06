@@ -69,26 +69,6 @@ const FlowBookingView = () => {
     setShow(true);
     setMode(current);
   };
-  // const onChange = (event:any, selectedDate:any) => {
-  //   const currentDate = selectedDate;
-  //   setShow(false);
-  //   setDate(currentDate);
-  // };
-
-  // const showMode = (currentMode:any) => {
-  //   setShow(true);
-  //   setMode(currentMode);
-  // };
-
-  // const showDatepicker = () => {
-  //   showMode('date');
-  // };
-
-  // const showTimepicker = () => {
-  //   showMode('time');
-  // };
-
-  // print("Date time: ");
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <View style={styles.Appbar}>
@@ -197,10 +177,6 @@ const FlowBookingView = () => {
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
-            // onPress={()=>{
-            //   console.log("hi")
-            //   setVisible(true)
-            // }}
             onPress={() => showMode('time')}>
             <View style={styles.SelectHour}>
               <AntDesign
@@ -235,9 +211,6 @@ const FlowBookingView = () => {
               backgroundColor: 'black',
               marginHorizontal: 15,
             }}></View>
-          {/* <Text style={{fontSize: FontSize.font14, color: 'grey'}}>
-            Booking Note...(Optional)
-          </Text> */}
           <TextInput
             placeholder="Booking Note..."
             style={{
@@ -306,7 +279,6 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   SelectDay: {
-    // width: '50%',
     paddingVertical: 15,
     paddingHorizontal: 15,
     flexDirection: 'row',
@@ -316,7 +288,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   SelectHour: {
-    // width: '40%',
     paddingVertical: 15,
     flexDirection: 'row',
     verticalAlign: 'middle',

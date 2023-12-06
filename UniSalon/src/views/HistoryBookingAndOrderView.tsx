@@ -12,7 +12,7 @@ import {useNavigation} from '@react-navigation/native';
 import {FontSize} from '../constant/FontSize';
 import {SceneMap, TabBar, TabView} from 'react-native-tab-view';
 import Feather from 'react-native-vector-icons/Feather';
-import { blues } from '../constant/color';
+import {blues} from '../constant/color';
 
 const {width, height} = Dimensions.get('window');
 
@@ -26,12 +26,12 @@ const Approved = () => (
       alignItems: 'center',
       paddingTop: '10%',
     }}>
-    <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+    <Feather name="folder" size={60} color={'grey'}></Feather>
     <Text
       style={{
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ebebec',
+        color: 'grey',
         paddingTop: '2%',
       }}>
       No Data
@@ -49,12 +49,12 @@ const Requeste = () => (
       alignItems: 'center',
       paddingTop: '10%',
     }}>
-    <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+    <Feather name="folder" size={60} color={'grey'}></Feather>
     <Text
       style={{
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ebebec',
+        color: 'grey',
         paddingTop: '2%',
       }}>
       No Data
@@ -72,12 +72,12 @@ const Rejeccted = () => (
       alignItems: 'center',
       paddingTop: '10%',
     }}>
-    <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+    <Feather name="folder" size={60} color={'grey'}></Feather>
     <Text
       style={{
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ebebec',
+        color: 'grey',
         paddingTop: '2%',
       }}>
       No Data
@@ -95,12 +95,12 @@ const Cancelled = () => (
       alignItems: 'center',
       paddingTop: '10%',
     }}>
-    <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+    <Feather name="folder" size={60} color={'grey'}></Feather>
     <Text
       style={{
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ebebec',
+        color: 'grey',
         paddingTop: '2%',
       }}>
       No Data
@@ -137,32 +137,15 @@ const HistoryBookingAndOrderView = () => {
         width: width / 4,
       }}
       renderLabel={({route, focused, color}) => (
-        <View
-          style={{
-            flexDirection: 'row',
-            width: width / 4,
-            justifyContent: 'center',
-          }}>
-          <Text
+        <Text
             style={{
               color: focused ? blues : 'black',
               margin: 8,
-              fontSize: FontSize.font10,
+              fontSize: 11,
               fontWeight: 'bold',
             }}>
             {route.title}
           </Text>
-          <View
-            style={
-              route.title == 'Salons'
-                ? styles.divider
-                : route.title == 'Professors'
-                ? styles.divider
-                : route.title == 'Services'
-                ? styles.divider
-                : null
-            }></View>
-        </View>
       )}></TabBar>
   );
   return (
@@ -201,10 +184,8 @@ const styles = StyleSheet.create({
   AppBar: {
     paddingHorizontal: 10,
     width: '100%',
-    // height: 50,
     paddingBottom: 10,
     backgroundColor: '#16247d',
-    // position: 'absolute',
     paddingTop: '3%',
     flexDirection: 'row',
     verticalAlign: 'middle',
@@ -233,8 +214,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     position: 'absolute',
     right: 0,
-    // right: -57
-    // right: '-63%',
-    // marginLeft: 100,
   },
 });

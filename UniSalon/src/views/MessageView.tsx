@@ -34,12 +34,12 @@ const MessageView = () => {
           alignItems: 'center',
           paddingTop: '10%',
         }}>
-        <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+        <Feather name="folder" size={60} color={'grey'}></Feather>
         <Text
           style={{
             fontSize: 18,
             fontWeight: 'bold',
-            color: '#ebebec',
+            color: 'grey',
             paddingTop: '2%',
           }}>
           No Data
@@ -58,10 +58,8 @@ const styles = StyleSheet.create({
   AppBar: {
     paddingHorizontal: 10,
     width: '100%',
-    // height: 50,
     paddingBottom: 10,
     backgroundColor: '#16247d',
-    // position: 'absolute',
     paddingTop: '3%',
     flexDirection: 'row',
     verticalAlign: 'middle',

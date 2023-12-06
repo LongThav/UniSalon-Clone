@@ -6,7 +6,7 @@ import {
   Image,
   Dimensions,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -68,21 +68,28 @@ const ProfileView = () => {
           }}></View>
         <View style={styles.FlexRowTitle}>
           <Text style={styles.txtAccount}>Account</Text>
-          <View style={{flexDirection: 'row'}}>
-            <Text
-              style={{
-                fontSize: FontSize.font16,
-                color: '#16247d',
-                fontWeight: 'bold',
-                textDecorationLine: 'underline',
-              }}>
-              Edit
-            </Text>
-            <MaterialCommunityIcons
-              color={'#16247d'}
-              size={20}
-              name="account-edit-outline"></MaterialCommunityIcons>
-          </View>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => {
+              console.log('HI');
+              navigation.push('EditProfileView');
+            }}>
+            <View style={{flexDirection: 'row'}}>
+              <Text
+                style={{
+                  fontSize: FontSize.font16,
+                  color: '#16247d',
+                  fontWeight: 'bold',
+                  textDecorationLine: 'underline',
+                }}>
+                Edit
+              </Text>
+              <MaterialCommunityIcons
+                color={'#16247d'}
+                size={20}
+                name="account-edit-outline"></MaterialCommunityIcons>
+            </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.frmData}>
           <Ionicons name="person-outline" size={18} color={'black'} />
@@ -114,6 +121,10 @@ const ProfileView = () => {
             <Ionicons name="call-outline" size={18} color={'black'} />
           </View>
           <Text
+            onPress={()=>{
+              console.log("Hello Bro");
+              navigation.push('EditPhoneNumberView');
+            }}
             style={{
               fontSize: FontSize.font14,
               color: 'blue',
@@ -140,10 +151,12 @@ const ProfileView = () => {
               ***************
             </Text>
           </View>
-          <TouchableOpacity activeOpacity={1} onPress={()=>{
-            navigation.push('ChangePasswordView');
-          }}>
-          <Text style={styles.txtEdit}>Edit</Text>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => {
+              navigation.push('ChangePasswordView');
+            }}>
+            <Text style={styles.txtEdit}>Edit</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -204,7 +217,6 @@ const styles = StyleSheet.create({
     bottom: height * 0.12,
     right: width * 0.35,
     backgroundColor: 'white',
-    // marginBottom: 20,
     padding: 10,
     borderRadius: 40 / 2,
   },
@@ -216,11 +228,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   borderPoint: {
-    // paddingHorizontal: 10,
-    // paddingVertical: 10,
-    width: 100,
+    width: 80,
     height: 38,
-    backgroundColor: 'green',
+    backgroundColor: '#2dfe54',
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
@@ -228,7 +238,7 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     color: 'white',
     marginTop: 15,
-    borderRadius: 10,
+    borderRadius: 20,
     fontWeight: 'bold',
   },
   FlexRowTitle: {
@@ -261,7 +271,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginTop: 15,
     borderRadius: 8,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   frmData1: {
     paddingHorizontal: 10,
@@ -282,11 +292,11 @@ const styles = StyleSheet.create({
     paddingTop: 15,
   },
   frmSecurity: {},
-  txtEdit:{
+  txtEdit: {
     fontSize: FontSize.font14,
     color: 'blue',
     fontWeight: 'bold',
     marginLeft: 15,
     textDecorationLine: 'underline',
-  }
+  },
 });

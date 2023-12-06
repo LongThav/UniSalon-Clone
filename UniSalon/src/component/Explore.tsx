@@ -5,7 +5,7 @@ import {
   Dimensions,
   FlatList,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import {FontSize} from '../constant/FontSize';
@@ -58,7 +58,7 @@ const ExploreItem = [
 
 const Explore = () => {
   const [indexs, setIndex] = useState<any>(null);
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
   const [bg, setBg] = useState(0);
   const BackgroundItem = (item: any) => {
     if (item === 0) {
@@ -79,14 +79,6 @@ const Explore = () => {
       return 'white';
     }
   };
-  // const toggleSwitch = () => {
-  //   setColor(previousState => !previousState);
-  //   console.log(colors);
-  // };
-
-  // const ChangeBg = (value:any)=>{
-
-  // }
   console.log(indexs);
   return (
     <View style={styles.Container}>
@@ -102,7 +94,7 @@ const Explore = () => {
                 activeOpacity={0.8}
                 onPress={() => {
                   navigation.push('DetailExploreView', {
-                    title: item.title
+                    title: item.title,
                   });
                   setIndex(index);
                 }}>
@@ -137,8 +129,6 @@ const Explore = () => {
                 {item.title}
               </Text>
               <View style={{height: 10}}></View>
-
-              {/* <Text style={{}}>{item.title}</Text> */}
             </View>
           );
         }}></FlatList>
@@ -150,8 +140,6 @@ export default Explore;
 
 const styles = StyleSheet.create({
   Container: {
-    // width: 'auto',
-    // marginHorizontal: 15,
     paddingVertical: 15,
     paddingHorizontal: 15,
     backgroundColor: '#eef1f6',

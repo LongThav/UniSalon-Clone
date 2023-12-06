@@ -13,24 +13,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {FontSize} from '../constant/FontSize';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { blues, grey } from '../constant/color';
+import {blues, grey} from '../constant/color';
 
 const Item = (leftIcon: any, title: any, rightIcon: any) => {
   return (
     <View style={styles.firstItem}>
       <View style={styles.rowLeft}>
-        {/* <Ionicons color={'black'} size={25} name="notifications-outline" /> */}
         {leftIcon}
         <Text style={styles.txtNotification}>{title}</Text>
       </View>
-      {/* <Switch
-      trackColor={{false: '#767577', true: '#81b0ff'}}
-      thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-      ios_backgroundColor="#3e3e3e"
-      onValueChange={toggleSwitch}
-      value={isEnabled}
-      style={{marginTop: 16}}
-    /> */}
       {rightIcon}
     </View>
   );

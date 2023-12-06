@@ -59,17 +59,6 @@ const data = [
 ];
 
 const DrawerNavigate = () => {
-  // useEffect(() => {
-  //   const init = async () => {
-  //     // …do multiple sync or async tasks
-  //   };
-
-  //   init().finally(async () => {
-  //     await BootSplash.hide({fade: true});
-  //     console.log('BootSplash has been hidden successfully');
-  //   });
-  // }, []);
-
   const navigation: any = useNavigation();
   console.log('Start drawer');
   return (
@@ -99,10 +88,10 @@ const DrawerNavigate = () => {
                 <Text
                   style={{
                     position: 'absolute',
-                    bottom: height * 0.035,
+                    bottom: height * 0.03,
                     marginLeft: width * 0.05,
                     color: 'white',
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: 'bold',
                   }}>
                   LongThav SiPav E1
@@ -330,7 +319,6 @@ const DrawerNavigate = () => {
         headerShown: false,
         drawerStyle: {width: '70%'},
       }}>
-      {/* <Drawer.Screen name="LoginView" component={LoginView}/> */}
       <Drawer.Screen name="App" component={App} />
       <Drawer.Screen
         name="Profile"
@@ -486,8 +474,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     backgroundColor: 'blue',
     borderRadius: 80 / 2,
-    bottom: height * 0.09,
-    marginLeft: width * 0.15,
+    bottom: height * 0.08,
+    marginLeft: width * 0.125,
     borderWidth: 1,
     borderColor: 'white',
     justifyContent: 'center',

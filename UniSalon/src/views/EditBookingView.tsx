@@ -16,14 +16,6 @@ export const EditBookingView = () => {
   const navigation: any = useNavigation();
   return (
     <SafeAreaView>
-      {/* <View style={styles.AppBar}>
-                <TouchableOpacity activeOpacity={1} onPress={() => {
-                    navigation.goBack();
-                }}>
-                    <AntDesign name='arrowleft' color={'white'} size={28}></AntDesign>
-                </TouchableOpacity>
-                <Text style={{ fontSize: 18, color: 'white', fontWeight: 'bold', paddingHorizontal: '28.8%' }}>Edit Booking</Text>
-            </View> */}
       <View style={styles.Appbar}>
         <AntDesign
           onPress={() => {
@@ -81,7 +73,6 @@ export const EditBookingView = () => {
           <Text style={{fontSize: FontSize.font14, color: 'grey'}}>
             Booking Note...(Optional)
           </Text>
-          {/* <TextInput></TextInput> */}
         </View>
         <TouchableOpacity onPress={() => {}} style={styles.BtnSave}>
           <Text style={{fontSize: FontSize.font13, color: 'white'}}>Save</Text>

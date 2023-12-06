@@ -73,11 +73,6 @@ export const AssignProfessorView = () => {
   const [isStateTrue, setIsStateTrue] = useState(false);
   const [icons, setIcons] = useState<any>(null);
   const [idPro, setIdPro] = useState<any>(null);
-
-  // const checkTrueOrFalse = (value:any)=>{
-  //   setIcons(!icons);
-  // }
-
   const toggleState = () => {
     setIsStateTrue(!isStateTrue);
   };
@@ -86,7 +81,6 @@ export const AssignProfessorView = () => {
 
   const txtBtn: String = '';
 
-  // console.log("isStateTrue : ", isStateTrue)
   useEffect(() => {
     if (icons !== null) {
       SetIndex(null);
@@ -97,17 +91,6 @@ export const AssignProfessorView = () => {
       style={{
         flex: 1,
       }}>
-      {/* <View style={styles.AppBar}>
-        <TouchableOpacity
-          activeOpacity={0.5}
-          onPress={() => {
-            console.log('Back');
-            navigation.goBack();
-          }}>
-          <AntDesign name="arrowleft" color={'white'} size={18} style={{position: 'absolute'}}></AntDesign>
-        </TouchableOpacity>
-        <Text style={styles.SubText}>Assign Professors (Optional)</Text>
-      </View> */}
       <View style={styles.Appbar}>
         <AntDesign
           onPress={() => {
@@ -130,81 +113,6 @@ export const AssignProfessorView = () => {
           Select Professors
         </Text>
       </View>
-      {/* <ScrollView style={{marginBottom: '10%'}}>
-        <TouchableOpacity activeOpacity={1} onPress={toggleState}>
-          <View style={styles.Role1}>
-          
-            <View style={{marginHorizontal: 10}}></View>
-            <View
-              style={{
-                width: '47%',
-                height: 200,
-                borderWidth: 0.3,
-                borderRadius: 10,
-                flexDirection: 'column',
-              }}>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  paddingTop: 15,
-                  alignContent: 'space-between',
-                  paddingLeft: 35,
-                }}>
-                <View
-                  style={{
-                    width: 65,
-                    height: 65,
-                    backgroundColor: 'yellow',
-                    borderRadius: 65 / 2,
-                    marginTop: 15,
-                  }}>
-                  <Image
-                    style={{
-                      width: 65,
-                      height: 65,
-                      flex: 1,
-                      borderRadius: 65 / 2,
-                    }}
-                    source={require('../../assets/imgs/img1.jpg')}></Image>
-                </View>
-                <View
-                  style={{
-                    width: 30,
-                    height: 30,
-                    borderRadius: 30 / 2,
-                    borderWidth: 2,
-                    borderColor: 'grey',
-                    marginLeft: 20,
-                  }}></View>
-              </View>
-              <Text
-                style={{
-                  marginLeft: 28,
-                  marginTop: 5,
-                  fontSize: 15,
-                  fontWeight: 'bold',
-                }}>
-                Professor Sythan
-              </Text>
-              <Text
-                style={{
-                  marginLeft: 40,
-                  marginTop: 5,
-                  fontSize: 15,
-                  fontWeight: 'bold',
-                }}>
-                ⭐⭐⭐⭐⭐
-              </Text>
-              <Text style={{marginTop: 8, marginLeft: 23}}>
-                8 Credits / 2 Reviews
-              </Text>
-            </View>
-            <View style={{marginHorizontal: 10}}></View>
-          </View>
-        </TouchableOpacity>
-        
-      </ScrollView> */}
       <FlatList
         style={{marginBottom: height * 0.1}}
         data={data}
@@ -215,11 +123,6 @@ export const AssignProfessorView = () => {
             <TouchableOpacity
               activeOpacity={0.8}
               onPress={() => {
-                // if(Index === null){
-                //     SetIndex(index);
-                // }else{
-                //     SetIndex(0);
-                // }
                 toggleState();
                 console.log('press');
                 if (icons === null) {
@@ -245,9 +148,7 @@ export const AssignProfessorView = () => {
                   style={{
                     flexDirection: 'row',
                     justifyContent: 'center',
-                    // paddingTop: 15,
                     alignContent: 'space-between',
-                    // paddingLeft: 45,
                   }}>
                   <View
                     style={{
@@ -319,7 +220,6 @@ export const AssignProfessorView = () => {
                 <Text
                   style={{
                     marginTop: 8,
-                    // marginLeft: 23,
                     color: 'black',
                     fontSize: FontSize.font12,
                     textAlign: 'center',
@@ -334,28 +234,17 @@ export const AssignProfessorView = () => {
         activeOpacity={1}
         style={styles.BtnButton}
         onPress={() => {
-          // console.log('IsState: ', isStateTrue);
-          // if (icons === null) {
-          //   console.log("Can't push new screen");
-          // } else {
-          //   console.log('Push screen');
-          //   navigation.push('ChooseServiceView');
-          // }
-          // console.log('Index: ', Index);
-          // console.log('icon: ', icons);
-
-          console.log("Pressed");
-
+          console.log('Pressed');
           navigation.push('ChooseServiceView');
         }}>
         <Text
-            style={{
-              fontSize: FontSize.font14,
-              fontWeight: 'bold',
-              color: 'white',
-            }}>
-            {icons !== null ? 'Next' : 'Skip'}
-          </Text>
+          style={{
+            fontSize: FontSize.font14,
+            fontWeight: 'bold',
+            color: 'white',
+          }}>
+          {icons !== null ? 'Next' : 'Skip'}
+        </Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

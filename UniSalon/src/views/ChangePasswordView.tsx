@@ -97,7 +97,6 @@ const ChangePasswordView = () => {
       <TouchableOpacity
           onPress={() => {
             console.log('Push next screen');
-            // navigation.push('AssignProfessorView');
           }}>
           <View style={styles.BtnNext}>
             <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>

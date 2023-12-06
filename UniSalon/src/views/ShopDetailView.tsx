@@ -89,8 +89,6 @@ const ListProfessor = [
   },
 ];
 
-
-
 const MobileServieData = [
   {
     id: '1',
@@ -110,7 +108,7 @@ const MobileServieData = [
     id: '3',
     name: 'Haircut for me',
     price: '$ 10.00 Up',
-    order: 'order Now',
+    order: 'Order Now',
     point: '5',
   },
   {
@@ -131,7 +129,7 @@ const MobileServieData = [
     id: '6',
     name: 'Haircut for me',
     price: '$ 10.00 Up',
-    order: 'order Now',
+    order: 'Order Now',
     point: '5',
   },
 ];
@@ -154,7 +152,6 @@ const MemeberShipData = [
 const index: number = 0;
 
 const MemberTypeData = [];
-
 
 const ShopDetailView = () => {
   const navigation: any = useNavigation();
@@ -495,7 +492,7 @@ const ShopDetailView = () => {
                     professional: e.professional,
                   });
                 }}>
-                <View style={[styles.Card, {marginLeft: index == 0? 15 : 0}]}>
+                <View style={[styles.Card, {marginLeft: index == 0 ? 15 : 0}]}>
                   <View
                     style={{
                       width: 50,
@@ -571,9 +568,12 @@ const ShopDetailView = () => {
           Mobile Service
         </Text>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {MobileServieData.map((e, index) => {5
+          {MobileServieData.map((e, index) => {
+            5;
             return (
-              <View key={index} style={[styles.CardII, {marginLeft: index == 0 ? 15 : 0}]}>
+              <View
+                key={index}
+                style={[styles.CardII, {marginLeft: index == 0 ? 15 : 0}]}>
                 <Text
                   style={{
                     color: 'grey',
@@ -620,7 +620,6 @@ const ShopDetailView = () => {
                     fontSize: FontSize.font12,
                     color: 'red',
                     fontWeight: 'bold',
-                    // marginTop: 5,
                   }}>
                   {e.price}
                 </Text>
@@ -629,7 +628,6 @@ const ShopDetailView = () => {
                   activeOpacity={1}
                   onPress={() => {
                     console.log('Start Order...');
-                    // navigation.push('OrderView');
                     navigation.push('ChooseMobileServiceView');
                     console.log(e.name.length);
                   }}>
@@ -641,17 +639,12 @@ const ShopDetailView = () => {
                       marginTop: index == 1 ? 8 : 10,
                       borderColor: '#16247d',
                       borderRadius: 8,
-                      // position: 'absolute',
-                      // left: 13,
-                      // bottom: 0, 
-                      // backgroundColor: 'red'
                     }}>
                     <Text
                       style={{
                         fontWeight: 'bold',
                         color: '#16247d',
                         fontSize: height * 0.013,
-                        // fontSize: 12
                       }}>
                       {e.order}
                     </Text>
@@ -707,10 +700,13 @@ const ShopDetailView = () => {
                 </Text>
               </View>
               <Text
-                style={[{
-                  fontWeight: 'bold',
-                  fontSize: FontSize.font12,
-                }, styles.txtColor]}>
+                style={[
+                  {
+                    fontWeight: 'bold',
+                    fontSize: FontSize.font12,
+                  },
+                  styles.txtColor,
+                ]}>
                 {e.score}
               </Text>
             </View>
@@ -793,13 +789,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'grey',
   },
   Profile: {
-    // position: 'absolute',
     width: 100,
     height: 100,
     borderRadius: 100 / 2,
     backgroundColor: 'green',
     alignSelf: 'center',
-    // marginTop: '2%'m
     marginTop: -50,
   },
   FrmName: {
@@ -815,7 +809,6 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: '#edeff3',
     flexDirection: 'row',
-    // justifyContent: 'space-between',
     marginHorizontal: 15,
     borderRadius: 8,
     marginTop: 15,
@@ -854,14 +847,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   Card: {
-
     width: width * 0.3,
-    // height: height * 0.3,
     backgroundColor: '#edeff3',
     marginRight: 12,
     marginTop: 10,
     borderRadius: 8,
-    // justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 10,
     marginBottom: 10,
@@ -870,23 +860,19 @@ const styles = StyleSheet.create({
   CardII: {
     paddingHorizontal: 15,
     width: width * 0.3,
-    // height: height * 0.22,
     backgroundColor: '#edeff3',
     marginRight: 12,
     marginTop: 10,
     borderRadius: 8,
-    // justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 10,
     marginBottom: 10,
     paddingBottom: 15,
   },
-  txtColor:{
-    color: '#16247d'
-  }
+  txtColor: {
+    color: '#16247d',
+  },
 });
 //content: ''
 
 //https://www.youtube.com/watch?v=GM5O8erVxjM
-
-

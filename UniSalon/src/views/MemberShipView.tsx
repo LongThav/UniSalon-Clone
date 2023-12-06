@@ -12,7 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {FontSize} from '../constant/FontSize';
 import Feather from 'react-native-vector-icons/Feather';
-import { grey } from '../constant/color';
+import {grey} from '../constant/color';
 
 const MemberShipView = () => {
   const navigation = useNavigation();
@@ -50,21 +50,25 @@ const MemberShipView = () => {
           </Text>
         </View>
       </View>
-      <View style={{height: 1.2, backgroundColor: grey}}></View>
+      <View style={{height: 1.5, backgroundColor: grey}}></View>
       <View style={styles.SearchBar}>
-          <EvilIcons name="search" size={20} color="grey" style={{paddingRight: 17}}/>
-          {/* <Text style={{ paddingHorizontal: 10 }}>Search Salons...</Text> */}
-          <TextInput
-            placeholder="Search Salons..."
-            placeholderTextColor={'grey'}
-            style={{
-              fontSize: FontSize.font14,
-              marginLeft: 0,
-              margin: 0,
-              padding: 0,
-            }}></TextInput>
-        </View>
-        <View style={{height: 1.2, backgroundColor: grey}}></View>
+        <EvilIcons
+          name="search"
+          size={23}
+          color="grey"
+          style={{paddingRight: 13}}
+        />
+        <TextInput
+          placeholder="Search Salons..."
+          placeholderTextColor={'grey'}
+          style={{
+            fontSize: FontSize.font14,
+            marginLeft: 0,
+            margin: 0,
+            padding: 0,
+          }}></TextInput>
+      </View>
+      <View style={{height: 1.5, backgroundColor: grey}}></View>
       <View
         style={{
           backgroundColor: '#f1f1f1',
@@ -98,10 +102,8 @@ const styles = StyleSheet.create({
   AppBar: {
     paddingHorizontal: 10,
     width: '100%',
-    // height: 50,
     paddingBottom: 10,
     backgroundColor: '#16247d',
-    // position: 'absolute',
     paddingTop: '3%',
     flexDirection: 'row',
     verticalAlign: 'middle',
@@ -128,17 +130,11 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     justifyContent: 'space-between',
   },
-  // borderSearch: {
-  //   borderWidth: 0.5,
-  //   // paddingVertical: 5,
-  //   // paddingHorizontal: 5,
-  //   marginTop: 20,
-  // },
   SearchBar: {
     marginVertical: 12,
     marginHorizontal: 15,
     borderWidth: 0.5,
-    borderColor: 'grey',
+    borderColor: '#dedede',
     borderRadius: 10,
     justifyContent: 'flex-start',
     alignItems: 'center',

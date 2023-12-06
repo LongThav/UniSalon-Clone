@@ -53,7 +53,6 @@ const Promotion = () => {
               style={{
                 fontSize: FontSize.font16,
                 color: 'black',
-                // marginTop: 10
               }}>
               កាត់សក់បុរស
             </Text>
@@ -76,7 +75,6 @@ const Promotion = () => {
               <View
                 style={{
                   flexDirection: 'row',
-                  // paddingVertical: 15,
                   paddingRight: 20,
                 }}>
                 <FontAwesome6
@@ -141,7 +139,6 @@ const Reward = () => (
 
 const renderScene = SceneMap({
   first: Promotion,
-  // second: Height,
   third: Reward,
 });
 
@@ -150,66 +147,55 @@ export const PromotionView = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {key: 'first', title: 'Promotions'},
-    // { key: 'second', title: '|' },
     {key: 'third', title: 'Rewards'},
   ]);
   const navigation: any = useNavigation();
   const renderTabBar = (props: any) => {
-    const inputRange = props.navigationState.routes.map((_:any, i:any) => i)
-    return <>
-      <TabBar
-      {...props}
-      scrollEnabled
-      // renderTabBarItem={}
-      indicatorStyle={styles.indicator}
-      style={{
-        backgroundColor: '#f2f2f2',
-      }}
-      tabStyle={{
-        width: width / 2,
-        // backgroundColor: 'blue'
-      }}
-      // renderLabel={({props, }) => (
-      //     <Text style={{ color: 'grey', margin: 8 }}>
-      //       {props.route.title}
-      //     </Text>
-      //   )}
-      // renderIndicator={({routes, focused})}
-      renderLabel={({route, focused, color}) => {
-        let index = 0;
-        return <View style={{}}>
-          <View style={{flexDirection: 'row', width: width / 2, justifyContent: 'center'}}>
-         <Text
+    const inputRange = props.navigationState.routes.map((_: any, i: any) => i);
+    return (
+      <>
+        <TabBar
+          {...props}
+          scrollEnabled
+          indicatorStyle={styles.indicator}
           style={{
-            color: focused ? '#16247d' : 'black',
-            margin: 8,
-            fontSize: FontSize.font14,
-            fontWeight: 'bold',
-          }}>
-          {route.title}
-        </Text>
-        <View style = {route.title == "Promotions"? styles.divider : null}></View>
-       </View></View>
-      }}></TabBar>
-      {/* {props.navigationState.routes.map((route:any, index:any) => {
-        const opacity = props.position.interpolate({
-          inputRange,
-          outputRange: inputRange.map((i:any) => (i === index ? 1 : 0.5)),
-        });
-
-        return (
-          <View key={route.key} style={styles.tabItem}>
-            <Text style={{ opacity }}>{route.title}</Text>
-            {index < props.navigationState.routes.length - 1 && (
-              <View style={styles.divider} />
-            )}
-          </View>
-        );
-      })} */}
+            backgroundColor: '#f2f2f2',
+          }}
+          tabStyle={{
+            width: width / 2,
+          }}
+          renderLabel={({route, focused, color}) => {
+            let index = 0;
+            return (
+              <View style={{}}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: width / 2,
+                    justifyContent: 'center',
+                  }}>
+                  <Text
+                    style={{
+                      color: focused ? '#16247d' : 'black',
+                      margin: 8,
+                      fontSize: FontSize.font14,
+                      fontWeight: 'bold',
+                    }}>
+                    {route.title}
+                  </Text>
+                  <View
+                    style={
+                      route.title == 'Promotions' ? styles.divider : null
+                    }></View>
+                </View>
+              </View>
+            );
+          }}></TabBar>
       </>
-  }
+    );
+  };
   return (
-    <SafeAreaView>
+    <View>
       <TouchableOpacity
         activeOpacity={1}
         onPress={() => {
@@ -243,7 +229,6 @@ export const PromotionView = () => {
         <Ionicons
           onPress={() => {
             console.log('Hi');
-            // navigation.push('TabViewExample');
           }}
           name="ribbon-outline"
           size={45}
@@ -264,15 +249,6 @@ export const PromotionView = () => {
           </Text>
         </View>
       </View>
-      {/* <View style={{
-        height: 30, 
-        width: 1, 
-        backgroundColor: 'red',
-        alignSelf: 'center',
-        position: 'absolute',
-        top: 150
-       }}></View> */}
-
       <View
         style={{
           width: 'auto',
@@ -287,7 +263,6 @@ export const PromotionView = () => {
           onIndexChange={setIndex}
           initialLayout={{width: layout.width}}
           pageMargin={1}
-          // showPageIndicator={true}
           style={{
             backgroundColor: 'white',
           }}
@@ -325,23 +300,24 @@ export const PromotionView = () => {
           <Text>កាត់សក់បុរស free កក់សក់ជូន</Text>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    height: 60,
+    // height: 60,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',
     alignItems: 'center',
     paddingHorizontal: 16,
     justifyContent: 'center',
+    paddingVertical: 12
   },
   TitleAppbar: {
-    fontSize: FontSize.font16,
+    fontSize: FontSize.font15,
     color: 'white',
     fontWeight: 'bold',
   },
@@ -366,17 +342,13 @@ const styles = StyleSheet.create({
   TabBar: {
     width: 'auto',
     height: '80%',
-    // backgroundColor: 'red'
   },
   CardPromotion: {
     width: 'auto',
-    // height: '20%',
-    // borderWidth: 1,
     borderColor: '#ebebec',
     margin: 15,
     backgroundColor: 'white',
     borderRadius: 10,
-    // justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: 10,
@@ -396,10 +368,7 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: 'gray',
     position: 'absolute',
-    right: 0
-    // right: -57
-    // right: '-63%',
-    // marginLeft: 100,
+    right: 0,
   },
   tabItem: {
     flex: 1,
@@ -408,6 +377,5 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
 });
-
 
 // https://www.google.com/search?q=Add+vertical+line+as+a+divider+in+tabbar+as+a+divider+React+native&sca_esv=586559691&tbm=isch&sxsrf=AM9HkKlrPuK7LAIls7m6oDbs5-JvMnmRDA:1701333781596&source=lnms&sa=X&ved=2ahUKEwjF18idquuCAxUZslYBHSx-CxIQ_AUoAXoECAEQAw&biw=1707&bih=794&dpr=1.13

@@ -48,24 +48,6 @@ export const BookingDetailView = () => {
     ]);
   return (
     <SafeAreaView style={{flex: 1}}>
-      {/* <View style={styles.AppBar}>
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={() => {
-            navigation.goBack();
-          }}>
-          <AntDesign name="arrowleft" color={'white'} size={28}></AntDesign>
-        </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: 18,
-            color: 'white',
-            fontWeight: 'bold',
-            paddingHorizontal: '27.5%',
-          }}>
-          Booking Detail
-        </Text>
-      </View> */}
       <View style={styles.Appbar}>
         <AntDesign
           onPress={() => {
@@ -344,6 +326,7 @@ export const BookingDetailView = () => {
             activeOpacity={1}
             onPress={() => {
               console.log('Pressed');
+              // navigation.push('TestScreen');
             }}>
             <View style={{paddingVertical: 20, flexDirection: 'row'}}>
               <Text

@@ -139,7 +139,6 @@ export const MakeBookingView = () => {
           <Text style={{fontSize: 18, color: 'grey'}}>
             Booking Note...(Optional)
           </Text>
-          {/* <TextInput></TextInput> */}
         </View>
         <TouchableOpacity
           onPress={() => {
@@ -163,7 +162,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     backgroundColor: '#16247d',
-    // position: 'absolute',
     alignItems: 'flex-start',
     paddingTop: '3%',
     flexDirection: 'row',

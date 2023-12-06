@@ -37,7 +37,7 @@ const data = [
 export const VideoView = () => {
   const navigation: any = useNavigation();
   return (
-    <SafeAreaView>
+    <View>
       <View style={styles.Appbar}>
         <Feather
           onPress={() => {
@@ -119,20 +119,21 @@ export const VideoView = () => {
           );
         })}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    height: 60,
+    // height: 60,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',
     alignItems: 'center',
     paddingHorizontal: 16,
     justifyContent: 'center',
+    paddingVertical: 12
   },
   TitleAppbar: {
     fontSize: FontSize.font15,

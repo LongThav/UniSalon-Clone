@@ -13,7 +13,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
-import { FontSize } from '../constant/FontSize';
+import {FontSize} from '../constant/FontSize';
 
 const {width, height} = Dimensions.get('window');
 

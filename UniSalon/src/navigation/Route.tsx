@@ -7,9 +7,7 @@ const Route = () => {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor={'#16247d'}></StatusBar>
-
       <MainStack />
-      {/* <DrawerNavigate /> */}
     </NavigationContainer>
   );
 };

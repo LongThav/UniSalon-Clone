@@ -171,21 +171,10 @@ export const HomeView = () => {
   const renderInner = () => {
     return (
       <View>
-        {/* <View style={styles.inditorBottomSheet}></View> */}
         <View style={{padding: 15, marginBottom: height * 0.1}}>
           <Text style={styles.txtExplore}>Explore</Text>
           <Explore />
           <Text style={styles.txtPopular}>Popular Salons</Text>
-          {/* <FlatList
-          data={PopularSalonsData}
-          style={{width: width}}
-          D={false}
-          horizontal={true}
-          keyExtractor={item => item.id}
-          renderItem={({item, index}) => {
-           
-          }}
-        /> */}
           <FlatList
             scrollEnabled={true}
             horizontal
@@ -211,7 +200,7 @@ export const HomeView = () => {
                           height: '100%',
                           borderTopLeftRadius: 7,
                           borderTopRightRadius: 7,
-                          borderWidth: 0.3
+                          borderWidth: 0.3,
                         }}
                         source={item.img}></Image>
                     </View>
@@ -307,10 +296,6 @@ export const HomeView = () => {
               );
             }}
           />
-          {/* <ScrollView horizontal = {true} showsHorizontalScrollIndicator = {false}>
-         
-        </ScrollView> */}
-
           <Text style={styles.txtSpecial}>Special Promotions</Text>
           <View style={styles.SpecialBox}>
             <TouchableOpacity
@@ -485,7 +470,12 @@ export const HomeView = () => {
                       0 Credit / 0 Review
                     </Text>
                     <View style={{flexDirection: 'row', marginTop: 5}}>
-                      <Entypo size={12} color={'blue'} name="location-pin" style={{marginTop: 2}} />
+                      <Entypo
+                        size={12}
+                        color={'blue'}
+                        name="location-pin"
+                        style={{marginTop: 2}}
+                      />
                       <Text
                         style={{
                           fontSize: 12.1,
@@ -559,30 +549,6 @@ export const HomeView = () => {
                           None
                         </Text>
                       </View>
-                      {/* <View
-                    style={{
-                      flexDirection: 'row',
-                      marginLeft: 10,
-                      marginTop: 10,
-                    }}>
-                    <Text
-                      style={{
-                        fontSize: FontSize.font11,
-                        fontWeight: 'bold',
-                        color: 'grey',
-                      }}>
-                      {item.numCustomer}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: FontSize.font11,
-                        fontWeight: 'bold',
-                        color: 'grey',
-                        paddingLeft: 5,
-                      }}>
-                      Customers
-                    </Text>
-                  </View> */}
                     </View>
                     <Text
                       style={{
@@ -602,15 +568,6 @@ export const HomeView = () => {
                       }}>
                       ⭐⭐⭐⭐⭐ ({item.numCustomer})
                     </Text>
-                    {/* <Text
-                  style={{
-                    marginHorizontal: 10,
-                    fontSize: FontSize.font11,
-                    color: 'grey',
-                    fontWeight: 'bold',
-                  }}>
-                  {item.des}
-                </Text> */}
                     <TouchableOpacity
                       style={styles.Booking}
                       onPress={() => {
@@ -709,9 +666,13 @@ export const HomeView = () => {
                 />
               )} */}
               <Image
-                  style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
-                  source={isEnabled ? require('../../assets/imgs/cam_flag.png') : require('../../assets/imgs/logo_english.png')}
-                />
+                style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
+                source={
+                  isEnabled
+                    ? require('../../assets/imgs/cam_flag.png')
+                    : require('../../assets/imgs/logo_english.png')
+                }
+              />
             </View>
           </TouchableOpacity>
           <MaterialIcons
@@ -730,15 +691,18 @@ export const HomeView = () => {
         horizontal={true}>
         <TouchableOpacity activeOpacity={1}>
           <Text
-            style={[{
-              color: 'grey',
-              fontSize: FontSize.font13,
-              paddingVertical: 10,
-              paddingHorizontal: 20,
-              backgroundColor: '#eef1f6',
-              marginLeft: 15,
-              borderRadius: 20,
-            }, styles.elevation]}>
+            style={[
+              {
+                color: 'grey',
+                fontSize: FontSize.font13,
+                paddingVertical: 10,
+                paddingHorizontal: 20,
+                backgroundColor: '#eef1f6',
+                marginLeft: 15,
+                borderRadius: 20,
+              },
+              styles.elevation,
+            ]}>
             All
           </Text>
         </TouchableOpacity>
@@ -748,28 +712,34 @@ export const HomeView = () => {
           }}
           activeOpacity={1}>
           <Text
-            style={[{
-              color: '#152259',
-              fontSize: FontSize.font13,
-              paddingVertical: 10,
-              paddingHorizontal: 10,
-              backgroundColor: 'white',
-              marginLeft: 15,
-              borderRadius: 20,
-            }, styles.elevation]}>
+            style={[
+              {
+                color: '#152259',
+                fontSize: FontSize.font13,
+                paddingVertical: 10,
+                paddingHorizontal: 10,
+                backgroundColor: 'white',
+                marginLeft: 15,
+                borderRadius: 20,
+              },
+              styles.elevation,
+            ]}>
             Mobile Services
           </Text>
         </TouchableOpacity>
         <TouchableOpacity activeOpacity={1}>
           <View
-            style={[{
-              flexDirection: 'row',
-              paddingHorizontal: 10,
-              paddingVertical: 8,
-              backgroundColor: 'white',
-              marginLeft: 15,
-              borderRadius: 20,
-            }, styles.elevation]}>
+            style={[
+              {
+                flexDirection: 'row',
+                paddingHorizontal: 10,
+                paddingVertical: 8,
+                backgroundColor: 'white',
+                marginLeft: 15,
+                borderRadius: 20,
+              },
+              styles.elevation,
+            ]}>
             <Entypo name="shop" size={18} color={'#a02929'}></Entypo>
             <Text
               style={{
@@ -783,14 +753,17 @@ export const HomeView = () => {
         </TouchableOpacity>
         <TouchableOpacity activeOpacity={1}>
           <View
-            style={[{
-              flexDirection: 'row',
-              paddingHorizontal: 20,
-              paddingVertical: 8,
-              backgroundColor: 'white',
-              marginLeft: 15,
-              borderRadius: 20,
-            }, styles.elevation]}>
+            style={[
+              {
+                flexDirection: 'row',
+                paddingHorizontal: 20,
+                paddingVertical: 8,
+                backgroundColor: 'white',
+                marginLeft: 15,
+                borderRadius: 20,
+              },
+              styles.elevation,
+            ]}>
             <Fontisto name="scissors" size={18} color={'#152259'}></Fontisto>
             <Text
               style={{
@@ -843,14 +816,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   container: {
-    // ...StyleSheet.absoluteFillObject,
     height: '100%',
     width: '100%',
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
   map: {
-    // ...StyleSheet.absoluteFillObject,
     height: '100%',
     width: '100%',
     flex: 1,
@@ -908,12 +879,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: 100,
     height: 100,
-    // backgroundColor: 'red'
   },
-  contentContainer: {
-    // flex: 1,
-    // alignItems: 'center',
-  },
+  contentContainer: {},
   PopularSalonCard: {
     flex: 1,
     marginTop: 15,
@@ -924,7 +891,6 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     borderBottomWidth: 0.5,
     borderColor: 'grey',
-    // padding: 10,
   },
   ScrollPopularSalon: {
     marginTop: 10,
@@ -945,7 +911,6 @@ const styles = StyleSheet.create({
   },
   Booking: {
     borderWidth: 0.8,
-    // marginTop: 7,
     marginHorizontal: 10,
     paddingVertical: 5,
     position: 'absolute',
@@ -963,8 +928,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderTopEndRadius: 8,
     borderTopLeftRadius: 8,
-    borderWidth: 0.3
-    // paddingBottom:10
+    borderWidth: 0.3,
   },
   txtExplore: {
     color: '#16247d',
@@ -1011,7 +975,6 @@ const styles = StyleSheet.create({
     borderColor: '#f2f2f2',
     flexDirection: 'column',
     justifyContent: 'center',
-    // alignContent: 'center'
     alignItems: 'center',
   },
   imgCircleTopRating: {
@@ -1040,5 +1003,5 @@ const styles = StyleSheet.create({
   shadow: {
     elevation: 5,
     shadowColor: '#52006A',
-  }
+  },
 });

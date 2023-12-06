@@ -206,23 +206,6 @@ export const ChooseServiceView = () => {
             <TouchableOpacity
               activeOpacity={0.8}
               onPress={() => {
-                // if (Index === null) {
-                //   SetIndex(index);
-                // } else {
-                //   SetIndex(0);
-                // }
-                // if (id === item.id) {
-                //   console.log('true');
-                //   console.log('Id condition true: ', item.id);
-                //   console.log('check condition: ', id);
-                //   setId(0);
-                //   console.log('Id after close: ', id);
-                // } else {
-                //   console.log('false');
-                //   console.log('Id: ', item.id);
-                //   setId(item.id);
-                //   console.log(id);
-                // }
                 onSelect(item);
               }}>
               <View style={styles.Card}>
@@ -263,20 +246,6 @@ export const ChooseServiceView = () => {
                 {item.point === null ? null : (
                   <Text style={styles.txtPoint}>{item.point}</Text>
                 )}
-                {/* <View
-                  style={{
-                    width: 25,
-                    height: 25,
-                    borderRadius: 25 / 2,
-                    borderWidth: 2.5,
-                    borderColor: 'white',
-                    position: 'absolute',
-                    right: 0,
-                    marginRight: 5,
-                    marginTop: 5,
-                    backgroundColor: id === item.id ? 'grey' : 'white',
-                  }}>
-                </View> */}
                 <MaterialCommunityIcons
                   style={{
                     borderColor: 'white',
@@ -307,9 +276,9 @@ export const ChooseServiceView = () => {
             navigation.push('BookingDetailView');
           }
         }}>
-       <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
-            Next
-          </Text>
+        <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
+          Next
+        </Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

@@ -34,12 +34,12 @@ const TodayBookingAndOrderView = () => {
           alignItems: 'center',
           paddingTop: '10%',
         }}>
-        <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+        <Feather name="folder" size={60} color={'grey'}></Feather>
         <Text
           style={{
             fontSize: 18,
             fontWeight: 'bold',
-            color: '#ebebec',
+            color: 'grey',
             paddingTop: '2%',
           }}>
           No Data

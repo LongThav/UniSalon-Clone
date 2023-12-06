@@ -25,12 +25,12 @@ const Salons = () => (
       alignItems: 'center',
       paddingTop: '10%',
     }}>
-    <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+    <Feather name="folder" size={60} color={'grey'}></Feather>
     <Text
       style={{
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ebebec',
+        color: 'grey',
         paddingTop: '2%',
       }}>
       No Data
@@ -48,12 +48,12 @@ const Pro = () => (
       alignItems: 'center',
       paddingTop: '10%',
     }}>
-    <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+    <Feather name="folder" size={60} color={'grey'}></Feather>
     <Text
       style={{
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ebebec',
+        color: 'grey',
         paddingTop: '2%',
       }}>
       No Data
@@ -71,12 +71,12 @@ const Services = () => (
       alignItems: 'center',
       paddingTop: '10%',
     }}>
-    <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+    <Feather name="folder" size={60} color={'grey'}></Feather>
     <Text
       style={{
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ebebec',
+        color: 'grey',
         paddingTop: '2%',
       }}>
       No Data
@@ -109,23 +109,32 @@ const FavouriteView = () => {
       }}
       tabStyle={{
         width: width / 3,
-        // backgroundColor: 'blue'
       }}
-      // renderLabel={({props, }) => (
-      //     <Text style={{ color: 'grey', margin: 8 }}>
-      //       {props.route.title}
-      //     </Text>
-      //   )}
       renderLabel={({route, focused, color}) => (
-        <Text
+        <View
           style={{
-            color: focused ? '#16247d' : 'black',
-            margin: 8,
-            fontSize: FontSize.font14,
-            fontWeight: 'bold',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            width: width / 3,
           }}>
-          {route.title}
-        </Text>
+          <Text
+            style={{
+              color: focused ? '#16247d' : 'black',
+              margin: 8,
+              fontSize: FontSize.font14,
+              fontWeight: 'bold',
+            }}>
+            {route.title}
+          </Text>
+          <View
+            style={
+              route.title == 'Salons'
+                ? styles.divider
+                : route.title == 'Professors'
+                ? styles.divider
+                : null
+            }></View>
+        </View>
       )}></TabBar>
   );
   return (
@@ -189,5 +198,12 @@ const styles = StyleSheet.create({
   indicator: {
     backgroundColor: '#16247d',
     height: 2,
+  },
+  divider: {
+    width: 1.8,
+    height: '100%',
+    backgroundColor: 'gray',
+    position: 'absolute',
+    right: 0,
   },
 });

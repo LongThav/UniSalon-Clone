@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import {useNavigation} from '@react-navigation/native';
@@ -17,10 +17,10 @@ const {width} = Dimensions.get('window');
 export const DetailPromotion = () => {
   const navigation: any = useNavigation();
   const [select, setSelect] = useState(false);
-  const checkSelected = ()=>{
-    setSelect((check) => !check);
-  }
-  console.log("Select: ", select);
+  const checkSelected = () => {
+    setSelect(check => !check);
+  };
+  console.log('Select: ', select);
   return (
     <SafeAreaView>
       <View style={styles.AppBar}>
@@ -96,8 +96,6 @@ export const DetailPromotion = () => {
                 }}>
                 មែន ស្តាយ
               </Text>
-              {/* <Text style={{ color: 'red', fontWeight: 'bold', paddingTop: 10,  }}>$ 5.00</Text> */}
-              {/* <Text style={{ fontWeight: 'bold', color: 'red', textAlign: 'right', marginRight: 0 }}>Up</Text> */}
             </View>
             <Text style={{color: 'grey', fontSize: FontSize.font12}}>
               ⭐⭐⭐⭐⭐(3)
@@ -180,10 +178,10 @@ export const DetailPromotion = () => {
             </Text>
           </View>
           <AntDesign
-            onPress={()=>{
-             checkSelected();
+            onPress={() => {
+              checkSelected();
             }}
-            name={select ? "hearto" : "heart"}
+            name={select ? 'hearto' : 'heart'}
             style={{
               position: 'absolute',
               right: 0,
@@ -193,51 +191,6 @@ export const DetailPromotion = () => {
             }}
             size={20}
             color={'pink'}></AntDesign>
-
-          {/* <View>
-            <Text style={styles.txtTitle}>កាត់ សក់បុរស</Text>
-            <Text style={styles.txtMenStyle}>មែន​ ស្តាយ</Text>
-            <View style={{flexDirection: 'row'}}>
-              <Text style={{color: 'yellow'}}>⭐⭐⭐⭐⭐</Text>
-              <Text style={{color: 'grey'}}>(4)</Text>
-            </View>
-            <Text style={{color: 'grey', fontWeight: 'bold'}}>
-              ហាងយើងខ្ញុំផ្ដល់ជូនទាំងគុណភាពនិងអ...
-            </Text>
-            <View style={{flexDirection: 'row',}}>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  paddingVertical: 15,
-                  paddingRight: 0,
-                }}>
-                <FontAwesome6
-                  name="location-dot"
-                  style={{paddingRight: 5, marginTop: 4}}
-                  color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold'}}>None</Text>
-              </View>
-              <View style={{flexDirection: 'row', paddingVertical: 15}}>
-                <FontAwesome6
-                  name="clock"
-                  style={{paddingRight: 5, marginTop: 4}}
-                  color={'#16247d'}></FontAwesome6>
-                <Text style={{color: '#16247d', fontWeight: 'bold'}}>
-                  Opening
-                </Text>
-                <TouchableOpacity
-                  onPress={() => {
-                    console.log('onPressed!!!');
-                  }}>
-                  <AntDesign
-                    name="hearto"
-                    style={{paddingTop: 2}}
-                    size={20}
-                    color={'pink'}></AntDesign>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View> */}
         </View>
       </TouchableOpacity>
     </SafeAreaView>
@@ -289,4 +242,4 @@ const styles = StyleSheet.create({
     elevation: 5,
     shadowColor: '#52006A',
   },
-}); 
+});

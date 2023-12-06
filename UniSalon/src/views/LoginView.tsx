@@ -7,13 +7,13 @@ import {
   TouchableOpacity,
   Dimensions,
   ScrollView,
-  TextInput
+  TextInput,
 } from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Foundation from 'react-native-vector-icons/Foundation';
 import {useNavigation} from '@react-navigation/native';
-import { color } from '@rneui/base';
+import {color} from '@rneui/base';
 
 const {width, height} = Dimensions.get('window');
 
@@ -21,10 +21,17 @@ const LoginView = () => {
   const navigation: any = useNavigation();
   return (
     <SafeAreaView style={{}}>
-      <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 20}}>
-      <AntDesign onPress={() => {
-                navigation.goBack();
-            }} name='arrowleft' color={'grey'} size={28} style={{ paddingLeft: 15, paddingTop: 10 }}></AntDesign>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{marginBottom: 20}}>
+        <AntDesign
+          onPress={() => {
+            navigation.goBack();
+          }}
+          name="arrowleft"
+          color={'grey'}
+          size={28}
+          style={{paddingLeft: 15, paddingTop: 10}}></AntDesign>
         <View
           style={{
             width: 100,
@@ -37,28 +44,20 @@ const LoginView = () => {
             source={require('../../assets/imgs/logo.jpg')}></Image>
         </View>
         <View style={styles.FormI}>
-          {/* <Text style={{fontWeight: 'bold', fontSize: 18}}>+885</Text>
-          <View
-            style={{
-              height: 15,
-              width: 1,
-              backgroundColor: 'grey',
-              marginHorizontal: 10,
-              marginTop: 3,
-            }}></View>
-          <Text style={{color: 'grey'}}>Phone Number</Text> */}
-          <TextInput placeholder='+885 | Phone Number' placeholderTextColor={'black'} style={{padding: 0,  color: 'black'}} >
-          </TextInput>
+          <TextInput
+            placeholder="+885 | Phone Number"
+            placeholderTextColor={'black'}
+            style={{padding: 0, color: 'black'}}></TextInput>
         </View>
         <View style={styles.FormII}>
-          {/* <Text style={{fontSize: 16}}>Password</Text>
-          <Foundation name="eye" size={25}></Foundation> */}
-          <TextInput placeholder='Password' placeholderTextColor={'black'} style={{padding: 0, color: 'black'}}></TextInput>
+          <TextInput
+            placeholder="Password"
+            placeholderTextColor={'black'}
+            style={{padding: 0, color: 'black'}}></TextInput>
         </View>
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => {
-            // navigation.push('IndexView');
             console.log('Bitch');
           }}>
           <View style={styles.BtnLogin}>
@@ -109,7 +108,7 @@ const LoginView = () => {
             justifyContent: 'space-between',
             marginRight: 15,
             marginTop: 20,
-            marginHorizontal: 15
+            marginHorizontal: 15,
           }}>
           <View
             style={{
@@ -138,7 +137,7 @@ const LoginView = () => {
               marginLeft: 0,
               marginTop: 20,
               backgroundColor: 'white',
-            //   width: '44.5%',
+              //   width: '44.5%',
               paddingVertical: 10,
               paddingHorizontal: 6,
               borderRadius: 10,
@@ -159,7 +158,9 @@ const LoginView = () => {
             justifyContent: 'center',
             marginTop: 25,
           }}>
-          <Text style={{marginTop: 3, color: 'grey'}}>Don't have an account?</Text>
+          <Text style={{marginTop: 3, color: 'grey'}}>
+            Don't have an account?
+          </Text>
           <TouchableOpacity
             activeOpacity={1}
             onPress={() => {

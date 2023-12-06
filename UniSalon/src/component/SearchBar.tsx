@@ -1,4 +1,10 @@
-import {StyleSheet, Text, TouchableOpacity, View, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  TextInput,
+} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -11,19 +17,28 @@ const SearchBarView = () => {
     <View style={styles.container}>
       <View style={styles.search}>
         <View style={{flexDirection: 'row'}}>
-        <TouchableOpacity
-          style={styles.icon}
-          activeOpacity={1}
-          onPress={() => {
-            navigation.goBack();
-          }}>
-          <AntDesign name="arrowleft" color={'grey'} size={25}></AntDesign>
-        </TouchableOpacity>
-        <TextInput placeholderTextColor={'grey'} placeholder='Search Salons...'></TextInput>
+          <TouchableOpacity
+            style={styles.icon}
+            activeOpacity={1}
+            onPress={() => {
+              navigation.goBack();
+            }}>
+            <AntDesign name="arrowleft" color={'grey'} size={25}></AntDesign>
+          </TouchableOpacity>
+          <TextInput
+            placeholderTextColor={'grey'}
+            placeholder="Search Salons..."
+            style={{color: 'black', marginLeft: 8}}
+            ></TextInput>
         </View>
-        <FontAwesome style={{
-          top: 10
-        }} size={20} color={'grey'} name='search' />
+        <FontAwesome
+          style={{
+            top: 10,
+          }}
+          size={20}
+          color={'grey'}
+          name="search"
+        />
       </View>
       <View
         style={{
@@ -56,17 +71,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   icon: {
-    // position: 'absolute',
     alignContent: 'center',
     top: 10,
     right: 5,
-    marginLeft: 10
+    marginLeft: 10,
   },
-  search:{
+  search: {
     paddingHorizontal: 10,
     paddingVertical: 0,
     backgroundColor: 'white',
     flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
+    justifyContent: 'space-between',
+  },
 });

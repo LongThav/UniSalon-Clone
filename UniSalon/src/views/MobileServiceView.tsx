@@ -179,7 +179,6 @@ const MobileServiceView = () => {
   const layout = useWindowDimensions();
   const [routes] = React.useState([
     {key: 'first', title: 'Shop'},
-    // { key: 'second', title: '|' },
     {key: 'second', title: 'Professor'},
   ]);
 
@@ -193,13 +192,7 @@ const MobileServiceView = () => {
       }}
       tabStyle={{
         width: (width * 0.74) / 2,
-        // backgroundColor: 'blue'
       }}
-      // renderLabel={({props, }) => (
-      //     <Text style={{ color: 'grey', margin: 8 }}>
-      //       {props.route.title}
-      //     </Text>
-      //   )}
       renderLabel={({route, focused, color}) => (
         <View
           style={{
@@ -326,7 +319,6 @@ const MobileServiceView = () => {
                           paddingTop: 3,
                           alignItems: 'center',
                           borderRadius: 50 / 2,
-                          // backgroundColor: ItemSelecter(selectColor === index)
                           backgroundColor:
                             selectColor === index ? '#16247d' : 'grey',
                         }}>
@@ -394,7 +386,6 @@ const styles = StyleSheet.create({
   },
   RightBar: {
     width: '74%',
-    // height: '93.5%',
     backgroundColor: 'red',
   },
   indicator: {
@@ -424,8 +415,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     position: 'absolute',
     right: 0,
-    // right: -57
-    // right: '-63%',
-    // marginLeft: 100,
   },
 });

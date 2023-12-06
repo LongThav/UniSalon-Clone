@@ -53,7 +53,6 @@ const ProfessorDetailView = (props: any) => {
           <Text
             style={{
               flex: 1,
-              // marginTop: height * 0.01,
               fontSize: 35,
               color: 'white',
               fontWeight: 'bold',
@@ -208,7 +207,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     backgroundColor: '#16247d',
-    // alignItems: 'flex-start',
     paddingTop: '3%',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -218,7 +216,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    // paddingHorizontal: '30%',
   },
   cover: {
     width: 'auto',
@@ -233,10 +230,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#362204',
     alignSelf: 'center',
     marginTop: -40,
-    // textAlign: 'center',
-    // alignContent: 'center',
-    // alignItems: 'center',
-    // textAlign: 'center'
   },
   txtName: {
     textAlign: 'center',
@@ -272,7 +265,6 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: '#edeff3',
     flexDirection: 'row',
-    // justifyContent: 'space-between',
     marginHorizontal: 20,
     borderRadius: 8,
     marginTop: 15,

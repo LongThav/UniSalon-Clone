@@ -333,9 +333,7 @@ const Men = () => {
       showsVerticalScrollIndicator={false}
       data={[1, 2, 3]}
       renderItem={() => (
-        <View
-          // showsVerticalScrollIndicator={false}
-          style={{backgroundColor: '#f1f1f1'}}>
+        <View style={{backgroundColor: '#f1f1f1'}}>
           <View style={styles.CardListMen}>
             <View style={{width: 100, height: 100}}>
               <Image
@@ -637,20 +635,13 @@ export const SubService = () => {
   const renderTabBar = (props: any) => (
     <TabBar
       {...props}
-      // scrollEnabled={true}
       indicatorStyle={styles.indicator}
       style={{
         backgroundColor: 'white',
       }}
       tabStyle={{
         width: width / 3,
-        // backgroundColor: 'blue'
       }}
-      // renderLabel={({props, }) => (
-      //     <Text style={{ color: 'grey', margin: 8 }}>
-      //       {props.route.title}
-      //     </Text>
-      //   )}
       renderLabel={({route, focused, color}) => (
         <View
           style={{
@@ -698,69 +689,6 @@ export const SubService = () => {
           color={'white'}
           style={{marginRight: 0}}></AntDesign>
       </View>
-      {/* <View style={styles.Body}>
-                <View style={styles.RowBodyI}>
-                    <View style={styles.Image}>
-                        <Image style={{ flex: 1, width: undefined, height: undefined, borderRadius: 10 }} source={require('../../assets/imgs/img1.jpg')}></Image>
-                    </View>
-                    <View style={styles.FixText}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: 18, fontWeight: 'bold', paddingBottom: 8, paddingRight: 0}}>កាត់សក់បុរស</Text>
-                            <Text style={{ fontSize: 18, fontWeight: 'bold', paddingBottom: 8, color: 'red' }}>$ 5.00</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ color: '#16247d', fontSize: 16, paddingBottom: 10, fontWeight: 'bold' }}>មែន​ ស្តាយ</Text>
-                            <Text style={{ color: 'red', fontSize: 16, paddingBottom: 10, }}>Up</Text>
-                        </View>
-                        <Text style={{ fontSize: 16, paddingBottom: 10 }}>⭐⭐⭐⭐⭐ (3)</Text>
-                        <Text style={{ fontSize: 16, color: 'grey', paddingBottom: 7 }}>ហាងយើងខ្ញុំផ្ដល់ជូនទាំងគុណភាព​ និង</Text>
-                        <Text style={{ fontSize: 16, color: 'grey' }}>អនាម័យ ជូនបងប្អូន</Text>
-                    </View>
-                </View>
-                <View style={{alignContent: 'center', flexDirection: 'row',  justifyContent: 'center', position: 'absolute', bottom: height * 0.35, right: width * 0.35 }}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <FontAwesome6 name='location-dot' color={'#16247d'}></FontAwesome6>
-                        <Text style={{ color: '#16247d', fontWeight: 'bold', paddingLeft: 5 }}>None</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row', marginLeft: 0 }}>
-                        <EvilIcons name='clock' color={'#16247d'} size={22}></EvilIcons>
-                        <Text style={{ color: '#16247d', fontWeight: 'bold', paddingLeft: 5 }}>None</Text>
-                    </View>
-                </View>
-                <View style={{ flexDirection: 'row', justifyContent: 'center', position: 'absolute', alignItems: 'center', alignSelf: 'center', bottom: height * 0.25  }}>
-                    <TouchableOpacity onPress={()=>{
-                        console.log("Click");
-                        naviation.push('GalleryView');
-                    }}>
-                        <View style={{ flexDirection: 'row', paddingHorizontal: 15, paddingVertical: 10, backgroundColor: '#edeff3', borderRadius: 20 }}>
-                            <FontAwesome name='image' size={23} color={'grey'}></FontAwesome>
-                            <Text style={{ marginLeft: 10, color: 'grey' }}>Gallery</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={()=>{
-                        console.log("Make a Booking");
-                        naviation.push('MakeBookingView');
-                    }}>
-                    <View style={{ flexDirection: 'row', paddingHorizontal: 15, paddingVertical: 10, backgroundColor: '#edeff3', marginLeft: 18, borderRadius: 20 }}>
-                        <AntDesign name='isv' size={23} color={'#16247d'}></AntDesign>
-                        <Text style={{ marginLeft: 10, color: '#16247d', fontWeight: 'bold' }}>MAKE A BOOKING</Text>
-                    </View>
-                    </TouchableOpacity>
-                </View>
-            </View>
-
-            <View style={styles.TabBar}>
-                <TabView
-                    navigationState={{ index, routes }}
-                    renderScene={renderScene}
-                    onIndexChange={setIndex}
-                    initialLayout={{ width: layout.width }}
-                    style={{
-                        backgroundColor: 'white'
-                    }}
-                    renderTabBar={renderTabBar}
-                ></TabView>
-            </View> */}
       <View style={styles.bordDetail}>
         <View style={styles.Img}>
           <Image
@@ -943,7 +871,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     backgroundColor: '#16247d',
-    // alignItems: 'flex-start',
     paddingTop: '3%',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -953,7 +880,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    // paddingHorizontal: '30%',
   },
   Body: {
     marginTop: 15,
@@ -963,7 +889,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     borderRadius: 10,
     paddingRight: 10,
-    // backgroundColor: 'red'
   },
   RowBodyI: {
     width: 'auto',
@@ -985,8 +910,6 @@ const styles = StyleSheet.create({
   TabBar: {
     width: 'auto',
     height: '100%',
-    // // backgroundColor: 'red'
-    // marginTop: -width * 0.3,
   },
   CardListMen: {
     marginHorizontal: 15,
@@ -1016,7 +939,6 @@ const styles = StyleSheet.create({
   Img: {
     width: 100,
     height: 100,
-    // backgroundColor: 'grey',
   },
   divider: {
     width: 1.8,
@@ -1024,12 +946,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     position: 'absolute',
     right: 0,
-    // right: -57
-    // right: '-63%',
-    // marginLeft: 100,
   },
 });
 
-
-
-///jetstream 
+///jetstream

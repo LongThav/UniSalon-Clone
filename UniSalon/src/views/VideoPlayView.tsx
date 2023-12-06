@@ -59,11 +59,7 @@ const VideoPlayerView = () => {
         </Text>
       </View>
       <TouchableOpacity
-        // onPress={() => {
-        //   navigation.push('VideoPlayer');
-        // }}
         style={{
-          //   height: 100,
           backgroundColor: 'white',
           marginTop: 20,
           flexDirection: 'row',
@@ -89,7 +85,6 @@ const VideoPlayerView = () => {
               color: 'black',
               fontWeight: 'bold',
               width: '100%',
-              // backgroundColor: 'red'
             }}>
             តោះស្វែងយល់ពីរបៀបចុះឈ្មោះក្នុងការ
           </Text>
@@ -112,9 +107,6 @@ const VideoPlayerView = () => {
         </View>
       </TouchableOpacity>
       <TouchableOpacity
-        // onPress={() => {
-        //   navigation.push('VideoPlayer');
-        // }}
         style={{
           backgroundColor: 'white',
           marginTop: 20,
@@ -176,6 +168,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: 10,
     flexDirection: 'row',
-    // position: 'absolute'
   },
 });

@@ -90,10 +90,10 @@ const MoreSaloneData = [
 ];
 
 const {width, height} = Dimensions.get('window');
-export const  ShopView = () => {
+export const ShopView = () => {
   const navigation: any = useNavigation();
   return (
-    <SafeAreaView>
+    <View style={{flex: 1}}>
       <View style={styles.Appbar}>
         <Feather
           onPress={() => {
@@ -135,10 +135,14 @@ export const  ShopView = () => {
           backgroundColor: 'grey',
           marginHorizontal: 15,
           marginVertical: 0,
+
         }}></View>
+     
+      <View style={{width: 'auto', height: '78%',}}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{marginBottom: height * 0.25}}>
+        style={{flex:1,}}
+       >
         <Text
           style={{
             fontSize: FontSize.font15,
@@ -163,16 +167,20 @@ export const  ShopView = () => {
                   navigation.push('ShopDetailView');
                 }}>
                 <View
-                  style={[{
-                    width: width * 0.45,
-                    marginLeft: 10,
-                    backgroundColor: 'white',
-                    paddingBottom: 8,
-                    // borderWidth: 0.3,
-                    marginBottom: 3,
-                    borderTopLeftRadius: 8,
-                    borderTopRightRadius: 8,
-                  }, styles.elevation]}>
+                  style={[
+                    {
+                      marginLeft: index == 0 ? 10 : 0,
+                      width: width * 0.45,
+                      marginRight: 10,
+                      backgroundColor: 'white',
+                      paddingBottom: 8,
+                      // borderWidth: 0.3,
+                      marginBottom: 3,
+                      borderTopLeftRadius: 8,
+                      borderTopRightRadius: 8,
+                    },
+                    styles.elevation,
+                  ]}>
                   <View
                     style={{
                       width: 'auto',
@@ -200,14 +208,14 @@ export const  ShopView = () => {
                     <View style={{flexDirection: 'row', marginHorizontal: 5}}>
                       <FontAwesome6
                         name="location-dot"
-                        style={{paddingRight: 5, marginTop: 0}}
+                        style={{paddingRight: 5, marginTop: 2}}
                         color={'#16247d'}
-                        size={12}></FontAwesome6>
+                        size={11}></FontAwesome6>
                       <Text
                         style={{
                           color: '#16247d',
                           fontWeight: 'bold',
-                          fontSize: 10,
+                          fontSize: 11,
                         }}>
                         None
                       </Text>
@@ -243,20 +251,6 @@ export const  ShopView = () => {
                     }}>
                     ⭐⭐⭐⭐⭐ (3)
                   </Text>
-                  {/* <View
-                    style={{
-                      width: 150,
-                      marginTop: 10,
-                      height: 40,
-                      justifyContent: 'center',
-                      borderWidth: 1,
-                      borderColor: '#16247d',
-                      alignContent: 'center',
-                      alignItems: 'center',
-                      borderRadius: 5,
-                    }}>
-                    <Text style={{color: 'grey'}}>Booking Now</Text>
-                  </View> */}
                   <TouchableOpacity
                     activeOpacity={0.8}
                     onPress={() => {
@@ -292,6 +286,7 @@ export const  ShopView = () => {
             fontSize: FontSize.font15,
             color: '#16247d',
             fontWeight: 'bold',
+            marginBottom: 10
           }}>
           More Salons
         </Text>
@@ -302,21 +297,28 @@ export const  ShopView = () => {
               activeOpacity={1}
               onPress={() => {
                 console.log('Click ប៉ែន');
+                var lastIndex = MoreSaloneData.length;
+                console.log("LastItem: ", lastIndex);
                 navigation.push('ShopDetailView');
               }}>
               <View
-                style={[{
-                  paddingTop: 10,
-                  flexDirection: 'row',
-                  marginHorizontal: 15,
-                  backgroundColor: 'white',
-                  justifyContent: 'space-between',
-                  marginTop: 10,
-                  paddingHorizontal: 15,
-                  borderRadius: 8,
-                  // borderWidth: 0.3,
-                  paddingBottom: 10
-                }, styles.elevation]}>
+                style={[
+                  {
+                    paddingTop: 10,
+                    flexDirection: 'row',
+                    marginHorizontal: 15,
+                    backgroundColor: 'white',
+                    justifyContent: 'space-between',
+                    marginBottom: 10,
+                    // marginTop: 10,
+                    paddingHorizontal: 15,
+                    borderRadius: 8,
+                    // borderWidth: 0.3,
+                    paddingBottom: 10,
+                    // marginBottom: MoreSaloneData.length == MoreSaloneData.length ? 10: 0,
+                  },
+                  styles.elevation,
+                ]}>
                 <View
                   style={{
                     width: width * 0.3,
@@ -373,11 +375,7 @@ export const  ShopView = () => {
                         {e.subtitle}
                       </Text>
                     </View>
-                    {/* បម្រើសេវាកម្មជូនអស់លោក */}
-                    {/* <Text style={{fontSize: 14.5, color: 'grey', fontWeight: "bold"}}>
-                      លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព
-                    </Text> */}
-                    <View style={{flexDirection: 'row',  paddingTop: 15}}>
+                    <View style={{flexDirection: 'row', paddingTop: 15}}>
                       <View
                         style={{
                           flexDirection: 'row',
@@ -397,7 +395,7 @@ export const  ShopView = () => {
                           None
                         </Text>
                       </View>
-                      <View style={{flexDirection: 'row',}}>
+                      <View style={{flexDirection: 'row'}}>
                         <FontAwesome6
                           size={12}
                           name="clock"
@@ -422,8 +420,6 @@ export const  ShopView = () => {
                   }}>
                   <View
                     style={{
-                      // width: 70,
-                      // height: 30,
                       paddingVertical: 5,
                       paddingHorizontal: 10,
                       borderWidth: 1,
@@ -435,7 +431,6 @@ export const  ShopView = () => {
                       right: 25,
                       top: 0,
                       marginTop: 0,
-                      // marginRight: 17,
                     }}>
                     <Text
                       style={{
@@ -452,25 +447,27 @@ export const  ShopView = () => {
           );
         })}
       </ScrollView>
-    </SafeAreaView>
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    height: 60,
+    // height: 60,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',
     alignItems: 'center',
     paddingHorizontal: 16,
     justifyContent: 'center',
+    paddingVertical: 12
   },
   TitleAppbar: {
-    fontSize: 18,
+    fontSize: 15,
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   SearchBar: {
     width: 'auto',

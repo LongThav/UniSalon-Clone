@@ -53,6 +53,8 @@ import LoadingView from '../views/LoadingView';
 import NotificationView from '../views/NotificationView';
 import TestScreen from '../views/TestScreen';
 import ChangePasswordView from '../views/ChangePasswordView';
+import EditProfileView from '../views/EditProfileView';
+import EditPhoneNumberView from '../views/EditPhoneNumberView';
 
 
 const MainStack = () => {
@@ -112,6 +114,8 @@ const MainStack = () => {
       <Stack.Screen component={NotificationView} name='NotificationView'/>
       <Stack.Screen component={TestScreen} name='TestScreen'/>
       <Stack.Screen component={ChangePasswordView} name='ChangePasswordView'/>
+      <Stack.Screen component={EditProfileView} name='EditProfileView'/>
+      <Stack.Screen component={EditPhoneNumberView} name='EditPhoneNumberView'/>
     </Stack.Navigator>
   );
 };

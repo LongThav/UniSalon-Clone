@@ -298,10 +298,7 @@ export const ProfessorView = () => {
           style={{
             backgroundColor: '#f1f1f1',
             flex: 1,
-            // alignContent: 'center',
-            // alignItems: 'center',
             paddingTop: '10%',
-            // alignItems: 'center
             marginLeft: width * 0.285,
           }}>
           <Feather name="folder" size={60} color={'#aab8b6'}></Feather>
@@ -319,7 +316,7 @@ export const ProfessorView = () => {
     }
   };
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <View style={{flex: 1}}>
       <View style={styles.Appbar}>
         <Feather
           onPress={() => {
@@ -386,7 +383,7 @@ export const ProfessorView = () => {
                         fontWeight: 'bold',
                         color: selectColor === index ? '#16247d' : 'black',
                         fontSize: FontSize.font11,
-                        textAlign: 'center'
+                        textAlign: 'center',
                       }}>
                       {item.title}
                     </Text>
@@ -399,20 +396,21 @@ export const ProfessorView = () => {
           <BodyRightBar />
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    height: 60,
+    // height: 60,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',
     alignItems: 'center',
     paddingHorizontal: 16,
     justifyContent: 'space-between',
+    paddingVertical: 12
   },
   TitleAppbar: {
     fontSize: FontSize.font15,
@@ -439,17 +437,14 @@ const styles = StyleSheet.create({
   RightBar: {
     width: 'auto',
     height: 'auto',
-    paddingLeft: 7
-    // backgroundColor: 'red'
+    paddingLeft: 7,
   },
   Card: {
-    width: width * 0.35,
+    width: width * 0.345,
     height: height * 0.2,
     backgroundColor: 'white',
     marginTop: 7,
-    // marginRight: 7,
     borderRadius: 8,
-    // marginLeft: 4,
     marginRight: 7,
   },
   Profile: {
@@ -463,5 +458,5 @@ const styles = StyleSheet.create({
   shadow: {
     elevation: 2,
     shadowColor: '#52006A',
-  }
+  },
 });
