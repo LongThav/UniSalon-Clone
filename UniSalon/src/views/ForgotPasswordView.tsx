@@ -78,20 +78,20 @@ export default ForgotPasswordView;
 const styles = StyleSheet.create({
   FormI: {
     width: width * 0.71,
-    paddingVertical: 15,
+    paddingVertical: 10,
     flexDirection: 'row',
     backgroundColor: 'white',
     paddingHorizontal: 10,
   },
   Submit: {
     paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingVertical: 10,
     backgroundColor: '#16247d',
     alignContent: 'center',
     alignItems: 'center',
   },
   FormII: {
-    paddingVertical: 15,
+    paddingVertical: 10,
     marginHorizontal: 15,
     flexDirection: 'row',
     marginTop: 25,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   },
   BtnLogin: {
     backgroundColor: '#16247d',
-    paddingVertical: 15,
+    paddingVertical: 10,
     marginHorizontal: 15,
     marginTop: height * 0.08,
     alignContent: 'center',

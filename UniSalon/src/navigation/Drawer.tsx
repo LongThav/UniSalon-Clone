@@ -76,9 +76,6 @@ const DrawerNavigate = () => {
                   height: height * 0.25,
                   backgroundColor: '#16247d',
                 }}>
-                {/* <Image
-                  style={{flex: 1, width: undefined, height: undefined}}
-                  source={require('../../assets/imgs/cover.jpg')}></Image> */}
                 <View style={styles.Circle}>
                   <Text
                     style={{fontSize: 40, color: 'white', fontWeight: 'bold'}}>
@@ -475,7 +472,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     borderRadius: 80 / 2,
     bottom: height * 0.08,
-    marginLeft: width * 0.125,
+    marginLeft: 18,
     borderWidth: 1,
     borderColor: 'white',
     justifyContent: 'center',

@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingVertical: 13
   },
   frmName: {
     padding: 10,

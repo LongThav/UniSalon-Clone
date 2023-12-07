@@ -87,6 +87,16 @@ const MoreSaloneData = [
     title: 'ABC007',
     subtitle: 'យើងផ្ដោតលើគុណភាពជាចម្បង',
   },
+  {
+    id: 6,
+    title: 'ABC007',
+    subtitle: 'យើងផ្ដោតលើគុណភាពជាចម្បង',
+  },
+  {
+    id: 7,
+    title: 'ABC007',
+    subtitle: 'យើងផ្ដោតលើគុណភាពជាចម្បង',
+  },
 ];
 
 const {width, height} = Dimensions.get('window');
@@ -138,7 +148,7 @@ export const ShopView = () => {
 
         }}></View>
      
-      <View style={{width: 'auto', height: '78%',}}>
+      <View style={{width: 'auto', height: '78%',  marginBottom: 40,}}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{flex:1,}}
@@ -471,7 +481,8 @@ const styles = StyleSheet.create({
   },
   SearchBar: {
     width: 'auto',
-    margin: 15,
+    marginHorizontal: 15,
+    marginVertical: 15,
     borderWidth: 0.5,
     borderColor: 'grey',
     borderRadius: 10,

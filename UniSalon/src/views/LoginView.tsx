@@ -181,7 +181,7 @@ export default LoginView;
 const styles = StyleSheet.create({
   FormI: {
     width: 'auto',
-    paddingVertical: 15,
+    paddingVertical: 10,
     marginHorizontal: 15,
     flexDirection: 'row',
     marginTop: height * 0.06,
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
   },
   FormII: {
     width: 'auto',
-    paddingVertical: 15,
+    paddingVertical: 10,
     marginHorizontal: 15,
     flexDirection: 'row',
     marginTop: 20,
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   BtnLogin: {
     width: 'auto',
     backgroundColor: '#16247d',
-    paddingVertical: 15,
+    paddingVertical: 10,
     marginHorizontal: 15,
     marginTop: height * 0.04,
     alignContent: 'center',
