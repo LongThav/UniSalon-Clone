@@ -22,7 +22,6 @@ const ChangePasswordView = () => {
   const [newPassword, setNewPassword] = useState(true);
   const [confirmPassword, setConfirmPassword] = useState(true);
 
-  // Function to toggle the password visibility state
   const toggleOldPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -95,15 +94,15 @@ const ChangePasswordView = () => {
         />
       </View>
       <TouchableOpacity
-          onPress={() => {
-            console.log('Push next screen');
-          }}>
-          <View style={styles.BtnNext}>
-            <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
-              Change Password
-            </Text>
-          </View>
-        </TouchableOpacity>
+        onPress={() => {
+          console.log('Push next screen');
+        }}>
+        <View style={styles.BtnNext}>
+          <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
+            Change Password
+          </Text>
+        </View>
+      </TouchableOpacity>
     </KeyboardAvoidingView>
   );
 };
@@ -148,8 +147,7 @@ const styles = StyleSheet.create({
     padding: 0,
     color: 'black',
     textDecorationLine: 'none',
-    // backgroundColor: 'red',
-    paddingBottom: 2
+    paddingBottom: 2,
   },
   BtnNext: {
     marginTop: 18,

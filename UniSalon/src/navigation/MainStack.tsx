@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { IndexView } from '../views/IndexView';
 import { HomeView } from '../views/HomeView';
 import { PromotionView } from '../views/PromotionView';
 import { ProfessorView } from '../views/ProfessorsView';

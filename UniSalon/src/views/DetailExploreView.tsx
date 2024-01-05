@@ -67,7 +67,6 @@ const DetailExploreView = (props: any) => {
           return (
             <TouchableOpacity activeOpacity={1} key={index} onPress={()=>{
               navigation.push('SubService');
-              // setIndex(index);
             }}>
             <View key={index} style={[styles.cards, styles.shadow]}>
               <View style={styles.imgtitle}>
@@ -165,7 +164,6 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginHorizontal: 15,
     borderRadius: 4,
-    // borderWidth: 0.3,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

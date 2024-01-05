@@ -150,8 +150,6 @@ const Professor = () => {
         alignContent: 'center',
         alignItems: 'center',
         paddingTop: '10%',
-        // alignItems: 'center
-        // marginLeft: width * 0.285,
       }}>
       <Feather name="folder" size={60} color={'#ebebec'}></Feather>
       <Text

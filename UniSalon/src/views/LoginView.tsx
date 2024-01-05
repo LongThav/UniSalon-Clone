@@ -137,7 +137,6 @@ const LoginView = () => {
               marginLeft: 0,
               marginTop: 20,
               backgroundColor: 'white',
-              //   width: '44.5%',
               paddingVertical: 10,
               paddingHorizontal: 6,
               borderRadius: 10,

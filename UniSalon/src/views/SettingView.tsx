@@ -101,10 +101,8 @@ const styles = StyleSheet.create({
   AppBar: {
     paddingHorizontal: 10,
     width: '100%',
-    // height: 50,
     paddingBottom: 10,
     backgroundColor: '#16247d',
-    // position: 'absolute',
     paddingTop: '3%',
     flexDirection: 'row',
     verticalAlign: 'middle',

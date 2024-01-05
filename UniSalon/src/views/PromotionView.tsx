@@ -124,12 +124,12 @@ const Reward = () => (
       alignItems: 'center',
       paddingTop: '10%',
     }}>
-    <Feather name="folder" size={60} color={'#ebebec'}></Feather>
+    <Feather name="folder" size={60} color={'grey'}></Feather>
     <Text
       style={{
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#ebebec',
+        color: 'grey',
         paddingTop: '2%',
       }}>
       No Data
@@ -291,7 +291,6 @@ export const PromotionView = () => {
             style={{
               fontSize: 18,
               color: 'black',
-              // marginTop: 10
             }}>
             កាត់សក់បុរស
           </Text>
@@ -307,7 +306,6 @@ export const PromotionView = () => {
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    // height: 60,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',

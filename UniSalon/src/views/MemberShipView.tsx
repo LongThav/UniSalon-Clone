@@ -66,6 +66,7 @@ const MemberShipView = () => {
             marginLeft: 0,
             margin: 0,
             padding: 0,
+            width: '90%',
           }}></TextInput>
       </View>
       <View style={{height: 1.5, backgroundColor: grey}}></View>

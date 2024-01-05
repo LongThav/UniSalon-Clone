@@ -38,9 +38,7 @@ const VideoPlayerView = () => {
       </View>
       <View style={{height: 280, width: '100%'}}>
         <Video
-          // loop
           controls
-          // autoPlay
           volume={20}
           source={require('../../assets/video/video.mp4')}
           style={{

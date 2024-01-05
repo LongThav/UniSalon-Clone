@@ -46,22 +46,46 @@ const OrderDetailView = () => {
           Shop Information
         </Text>
         <View style={styles.frmShpInfor}>
+          <View style={{flexDirection: 'row'}}>
           <Text
             style={{
               color: 'black',
               fontWeight: 'bold',
               fontSize: FontSize.font15,
+              marginLeft: '4.1%'
             }}>
-            Name: មែន ស្តាយ
+             Name: 
           </Text>
           <Text
             style={{
               color: 'black',
               fontWeight: 'bold',
               fontSize: FontSize.font15,
+              marginLeft: 8
             }}>
-            Phone: 0889246027
+             មែន ស្តាយ
           </Text>
+          </View>
+         <View style={{flexDirection: 'row'}}>
+         <Text
+            style={{
+              color: 'black',
+              fontWeight: 'bold',
+              fontSize: FontSize.font15,
+              marginLeft: '3.4%'
+            }}>
+            Phone: 
+          </Text>
+          <Text
+            style={{
+              color: 'black',
+              fontWeight: 'bold',
+              fontSize: FontSize.font15,
+              marginLeft: 6
+            }}>
+             0889246027
+          </Text>
+         </View>
           <Text
             style={{
               color: 'black',
@@ -89,20 +113,33 @@ const OrderDetailView = () => {
           Order Detail
         </Text>
         <View style={styles.frmShpInfor}>
+          <View style={{flexDirection: 'row'}}>
           <Text
             style={{
               color: 'black',
               fontWeight: 'bold',
               fontSize: FontSize.font15,
+              marginLeft: '7.5%'
             }}>
-            Date: Monday, 6 November 2023
+            Date:
           </Text>
+          <Text
+            style={{
+              color: 'black',
+              fontWeight: 'bold',
+              fontSize: FontSize.font15,
+              marginLeft: 8
+            }}>
+             Monday, 6 November 2023
+          </Text>
+          </View>
           <View style={{flexDirection: 'row', marginVertical: 5}}>
             <Text
               style={{
                 color: 'black',
                 fontWeight: 'bold',
                 fontSize: FontSize.font15,
+                marginLeft: '4.2%'
               }}>
               Status:{' '}
             </Text>
@@ -115,6 +152,7 @@ const OrderDetailView = () => {
                 paddingHorizontal: 15,
                 paddingVertical: 2,
                 borderRadius: 5,
+                marginLeft: 4
               }}>
               Order
             </Text>
@@ -141,7 +179,7 @@ const OrderDetailView = () => {
           <View style={{flexDirection: 'row'}}>
             <Text
               style={{
-                paddingHorizontal: 15,
+                marginLeft: 15,
                 paddingVertical: 10,
                 fontSize: 16,
                 fontWeight: 'bold',
@@ -154,7 +192,7 @@ const OrderDetailView = () => {
               name="add"
               size={30}
               color={'#16247d'}
-              style={{marginTop: 8, marginRight: 15}}></Ionicons>
+              style={{marginTop: 8, marginRight: 10}}></Ionicons>
           </View>
         </View>
         <View
@@ -175,7 +213,7 @@ const OrderDetailView = () => {
                 style={{width: 40, height: 40, borderRadius: 8}}
                 source={require('../../assets/imgs/make_up.png')}></Image>
             </View>
-            <View style={{marginLeft: 10}}>
+            <View style={{marginLeft: 10,  width: '78%'}}>
               <Text
                 style={{
                   fontSize: FontSize.font14,
@@ -204,13 +242,16 @@ const OrderDetailView = () => {
                     color: 'black',
                     fontWeight: 'bold',
                     fontSize: FontSize.font12,
+                    position: 'absolute',
+                    right: 0,
+                    marginRight: 15
                   }}>
                   $ 10.00(1)
                 </Text>
               </View>
             </View>
           </View>
-          <SimpleLineIcons name="options-vertical" size={18}></SimpleLineIcons>
+          <SimpleLineIcons style ={{position: 'absolute', right: 0, bottom: '80%', marginRight: 1}} name="options-vertical" size={18}></SimpleLineIcons>
         </View>
         <View
           style={{
@@ -232,14 +273,36 @@ const OrderDetailView = () => {
           }}>
           Payment Summary
         </Text>
-        <View style={styles.frmShpInfor}>
+        <View style={styles.PaymentSummery}>
+          <View style={{flexDirection: 'row'}}>
+          <Text
+            style={{
+              color: 'grey',
+              fontWeight: 'bold',
+              fontSize: FontSize.font15,
+              marginRight: 10
+            }}>
+            Total Payment:
+          </Text>
           <Text
             style={{
               color: 'grey',
               fontWeight: 'bold',
               fontSize: FontSize.font15,
             }}>
-            Total Payment: $ 10.00
+            $ 10.00
+          </Text>
+          </View>
+          <View style={{flexDirection: 'row'}}>
+          <Text
+            style={{
+              color: 'grey',
+              fontWeight: 'bold',
+              fontSize: 15,
+              marginVertical: 5,
+              marginLeft: '11.2%'
+            }}>
+            Discount: 
           </Text>
           <Text
             style={{
@@ -247,38 +310,54 @@ const OrderDetailView = () => {
               fontWeight: 'bold',
               fontSize: 15,
               marginVertical: 5,
+              marginLeft:  10
             }}>
-            Discount: $ 0.00
+            $ 0.00
           </Text>
+          </View>
           <View style={{flexDirection: 'row'}}>
-            <Text style={{color: 'grey', fontWeight: 'bold', fontSize: 15}}>
+            <Text style={{color: 'grey', fontWeight: 'bold', fontSize: 15, marginLeft: '5.8%'}}>
               Grand Total:
             </Text>
             <Text
               style={{
                 color: 'red',
                 fontWeight: 'bold',
-                marginLeft: 5,
+                marginLeft: 10,
                 fontSize: 15,
               }}>
               $ 10.00
             </Text>
           </View>
+          <View style={{flexDirection: 'row'}}>
           <Text
             style={{
               color: 'grey',
               fontWeight: 'bold',
               fontSize: FontSize.font15,
               marginVertical: 5,
+              marginLeft: '7%'
             }}>
-            Total Point: 2 pts
+            Total Point: 
           </Text>
+          <Text
+            style={{
+              color: 'grey',
+              fontWeight: 'bold',
+              fontSize: FontSize.font15,
+              marginVertical: 5,
+              marginLeft: 10
+            }}>
+             2 pts
+          </Text>
+          </View>
           <View style={{flexDirection: 'row'}}>
             <Text
               style={{
                 color: 'grey',
                 fontWeight: 'bold',
                 fontSize: FontSize.font15,
+                marginLeft: '4.4%'
               }}>
               Spend Point:
             </Text>
@@ -286,7 +365,7 @@ const OrderDetailView = () => {
               style={{
                 color: 'blue',
                 fontWeight: 'bold',
-                marginLeft: 5,
+                marginLeft: 10,
                 textDecorationLine: 'underline',
               }}>
               {' '}
@@ -333,7 +412,12 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   frmShpInfor: {
-    marginHorizontal: 30,
+    marginLeft: '10%',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+  },
+  PaymentSummery: {
+    marginLeft: '18%',
     flexDirection: 'column',
     justifyContent: 'flex-end',
   },

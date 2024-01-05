@@ -190,13 +190,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'grey',
   },
   Profile: {
-    // position: 'absolute',
     width: 100,
     height: 100,
     borderRadius: 100 / 2,
     backgroundColor: 'green',
     alignSelf: 'center',
-    // marginTop: '2%'m
     marginTop: -50,
   },
   iconCemeraCover: {

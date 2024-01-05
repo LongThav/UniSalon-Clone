@@ -223,7 +223,7 @@ export const ProfessorView = () => {
       console.log('title: ', title);
       return (
         <FlatList
-          style={{marginRight: 0, marginBottom: height * 0.17, flex: 1}}
+          style={{flex: 1}}
           numColumns={2}
           showsVerticalScrollIndicator={false}
           data={PersonData}
@@ -237,7 +237,7 @@ export const ProfessorView = () => {
                     img: item.img,
                   });
                 }}>
-                <View style={[styles.Card, styles.shadow]}>
+                <View style={[styles.Card, styles.shadow, {marginTop: index == 0? 7 : index == 1? 7 : 0}]}>
                   <View style={styles.Profile}>
                     <Image
                       style={{
@@ -337,14 +337,13 @@ export const ProfessorView = () => {
           size={18}
           style={{
             color: 'white',
-            // paddingRight: 125
           }}
         />
       </View>
       <View style={styles.Row}>
         <View style={styles.LeftBar}>
           <FlatList
-            style={{marginBottom: height * 0.18}}
+            style={{flex: 1}}
             showsVerticalScrollIndicator={false}
             data={SideBarFilter}
             renderItem={({item, index}) => {
@@ -358,7 +357,7 @@ export const ProfessorView = () => {
                   }}>
                   <View
                     key={index}
-                    style={{alignItems: 'center', marginTop: height * 0.03}}>
+                    style={{alignItems: 'center', marginTop: index == 0 ? 15 : 0}}>
                     <View
                       style={{
                         width: 50,
@@ -367,10 +366,8 @@ export const ProfessorView = () => {
                         paddingTop: 3,
                         alignItems: 'center',
                         borderRadius: 50 / 2,
-                        // backgroundColor: ItemSelecter(selectColor === index)
                         backgroundColor:
                           selectColor === index ? '#16247d' : 'grey',
-                        // backgroundColor: BackgroundItem()
                       }}>
                       <Image
                         style={{width: 40, height: 40}}
@@ -384,6 +381,7 @@ export const ProfessorView = () => {
                         color: selectColor === index ? '#16247d' : 'black',
                         fontSize: FontSize.font11,
                         textAlign: 'center',
+                        marginBottom: height * 0.03
                       }}>
                       {item.title}
                     </Text>
@@ -419,10 +417,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   Row: {
+    flex: 1,
     flexDirection: 'row',
   },
   LeftBar: {
-    height: height,
+    height: '92.3%',
     width: width * 0.26,
     backgroundColor: 'white',
     paddingHorizontal: 10,
@@ -436,14 +435,15 @@ const styles = StyleSheet.create({
   Column: {},
   RightBar: {
     width: 'auto',
-    height: 'auto',
+    height: '92.3%',
     paddingLeft: 7,
+    // backgroundColor: 'red'
   },
   Card: {
     width: width * 0.345,
     height: height * 0.2,
     backgroundColor: 'white',
-    marginTop: 7,
+    marginBottom: 7,
     borderRadius: 8,
     marginRight: 7,
   },

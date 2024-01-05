@@ -133,6 +133,7 @@ export const ShopView = () => {
             style={{
               fontSize: FontSize.font14,
               marginLeft: 10,
+              width: width * 0.8,
               margin: 0,
               padding: 0,
             }}></TextInput>
@@ -148,7 +149,7 @@ export const ShopView = () => {
 
         }}></View>
      
-      <View style={{width: 'auto', height: '78%',  marginBottom: 40,}}>
+      <View style={{width: 'auto', height: '78%',  marginBottom: 0,}}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{flex:1,}}
@@ -184,7 +185,6 @@ export const ShopView = () => {
                       marginRight: 10,
                       backgroundColor: 'white',
                       paddingBottom: 8,
-                      // borderWidth: 0.3,
                       marginBottom: 3,
                       borderTopLeftRadius: 8,
                       borderTopRightRadius: 8,
@@ -319,13 +319,10 @@ export const ShopView = () => {
                     marginHorizontal: 15,
                     backgroundColor: 'white',
                     justifyContent: 'space-between',
-                    marginBottom: 10,
-                    // marginTop: 10,
+                    marginBottom: index == 6? 40 : 10,
                     paddingHorizontal: 15,
                     borderRadius: 8,
-                    // borderWidth: 0.3,
                     paddingBottom: 10,
-                    // marginBottom: MoreSaloneData.length == MoreSaloneData.length ? 10: 0,
                   },
                   styles.elevation,
                 ]}>
@@ -367,7 +364,6 @@ export const ShopView = () => {
                       paddingRight: 5,
                       paddingTop: 10,
                       flexDirection: 'column',
-                      // justifyContent: 'flex-start',
                     }}>
                     <View
                       style={{
@@ -465,7 +461,6 @@ export const ShopView = () => {
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    // height: 60,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',

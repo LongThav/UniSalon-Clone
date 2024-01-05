@@ -28,12 +28,15 @@ const SearchBarView = () => {
           <TextInput
             placeholderTextColor={'grey'}
             placeholder="Search Salons..."
-            style={{color: 'black', marginLeft: 8}}
+            style={{color: 'black', marginLeft: 8,  width: '83%',}}
             ></TextInput>
         </View>
         <FontAwesome
           style={{
             top: 10,
+            marginRight: 15,
+            margin: 0,
+            padding: 0
           }}
           size={20}
           color={'grey'}

@@ -177,7 +177,6 @@ const DetailBookingAndOrder = (props: any) => {
             activeOpacity={1}
             onPress={() => {
               console.log('Pressed');
-              // navigation.push('TestScreen');
             }}>
             <View style={{paddingVertical: 20, flexDirection: 'row'}}>
               <Text
@@ -198,9 +197,9 @@ const DetailBookingAndOrder = (props: any) => {
             <View key={index} style={styles.ServiceSelectionCard}>
               <View style={styles.cardSelected}>
                 <View style={styles.boxImg}>
-                  <View style={{width: 40, height: 40}}>
+                  <View style={{width: 40, height: 15, justifyContent: 'center', alignItems: 'center'}}>
                     <Image
-                      style={{flex: 1, width: undefined, height: undefined}}
+                      style={{width: 20, height: 20}}
                       source={e.img}
                     />
                   </View>
@@ -463,8 +462,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignContent: 'center',
-    //  paddingLeft: '13.7%',
-    // backgroundColor: 'red',
   },
   request: {
     paddingHorizontal: 10,
@@ -475,7 +472,6 @@ const styles = StyleSheet.create({
   },
   ServiceSelectionCard: {
     paddingVertical: 4,
-    // backgroundColor: 'red',
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 10,
@@ -492,7 +488,7 @@ const styles = StyleSheet.create({
   txtSelectTitle: {
     width: width * 0.35,
     paddingLeft: 10,
-    fontSize: 15,
+    fontSize: 16,
     color: blues,
     fontWeight: 'bold',
   },
@@ -505,10 +501,10 @@ const styles = StyleSheet.create({
   },
   txtSelectService: {
     position: 'absolute',
-    bottom: 40,
+    bottom: 15,
     right: 0,
     marginRight: 20,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: 'black',
   },

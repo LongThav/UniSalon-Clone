@@ -108,9 +108,7 @@ const styles = StyleSheet.create({
   FormI: {
     width: width * 0.71,
     paddingVertical: 10,
-    // marginLeft: 15,
     flexDirection: 'row',
-    // marginTop: '14%',
     backgroundColor: 'white',
     paddingHorizontal: 10,
   },

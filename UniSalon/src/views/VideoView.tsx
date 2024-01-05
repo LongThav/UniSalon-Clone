@@ -126,7 +126,6 @@ export const VideoView = () => {
 const styles = StyleSheet.create({
   Appbar: {
     width: 'auto',
-    // height: 60,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',

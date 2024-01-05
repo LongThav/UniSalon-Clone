@@ -50,7 +50,12 @@ export const GalleryView = () => {
               source={require('../../assets/imgs/img1.jpg')}></Image>
           </View>
         </TouchableOpacity>
-        <View
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            console.log('Hello');
+            naviation.push('ViewImage');
+          }}
           style={{
             width: 130,
             height: 130,
@@ -60,15 +65,26 @@ export const GalleryView = () => {
           <Image
             style={{flex: 1, width: undefined, height: undefined}}
             source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
-        <View style={{width: 130, height: 130, backgroundColor: 'grey'}}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            console.log('Hello');
+            naviation.push('ViewImage');
+          }}
+          style={{width: 130, height: 130, backgroundColor: 'grey'}}>
           <Image
             style={{flex: 1, width: undefined, height: undefined}}
             source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={{flexDirection: 'row', marginTop: 6}}>
-        <View
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            console.log('Hello');
+            naviation.push('ViewImage');
+          }}
           style={{
             width: 130,
             height: 130,
@@ -78,8 +94,12 @@ export const GalleryView = () => {
           <Image
             style={{flex: 1, width: undefined, height: undefined}}
             source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
-        <View
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            naviation.push('ViewImage');
+          }}
           style={{
             width: 130,
             height: 130,
@@ -89,7 +109,7 @@ export const GalleryView = () => {
           <Image
             style={{flex: 1, width: undefined, height: undefined}}
             source={require('../../assets/imgs/img1.jpg')}></Image>
-        </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

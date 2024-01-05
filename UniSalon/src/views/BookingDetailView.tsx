@@ -545,17 +545,18 @@ export const BookingDetailView = () => {
             marginTop: '5%',
           }}></View>
       </ScrollView>
-      <TouchableOpacity activeOpacity={1} onPress={createButtonAlert}>
-        <View style={styles.BottomNavigationBar}>
-          <Text
-            style={{
-              fontSize: FontSize.font16,
-              fontWeight: 'bold',
-              color: 'white',
-            }}>
-            Submit Booking
-          </Text>
-        </View>
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={createButtonAlert}
+        style={styles.BottomNavigationBar}>
+        <Text
+          style={{
+            fontSize: FontSize.font16,
+            fontWeight: 'bold',
+            color: 'white',
+          }}>
+          Submit Booking
+        </Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -596,7 +597,6 @@ const styles = StyleSheet.create({
   },
   ServiceSelectionCard: {
     paddingVertical: 4,
-    // backgroundColor: 'red',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

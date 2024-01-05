@@ -26,7 +26,6 @@ const data = [
     title: '007 haircut',
     phone: '012456210',
     date: 'Fri, 27 Oct 2023 16:20 PM',
-
     service: [
       {
         id: '1',
@@ -337,7 +336,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
     fontSize: FontSize.font14,
     fontWeight: 'bold',
-    color: '#434549',
+    color: '#bebfc4',
   },
   subFirstRow: {
     flexDirection: 'row',
@@ -366,13 +365,14 @@ const styles = StyleSheet.create({
     fontSize: FontSize.font14,
   },
   txtGrid: {
-    paddingHorizontal: 15,
+    paddingHorizontal: width * 0.018,
     paddingVertical: 8,
     backgroundColor: '#f2f2f2',
     marginRight: 5,
     marginBottom: 8,
     borderRadius: 15,
     color: blues,
+    fontSize: height * 0.015
   },
   lastRow: {
     flexDirection: 'row',

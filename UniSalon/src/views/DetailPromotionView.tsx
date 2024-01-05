@@ -205,7 +205,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: 10,
     flexDirection: 'row',
-    // position: 'absolute'
   },
   CardView: {
     marginTop: 10,

@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   FrmNumber: {
-    // flex: 1,
     width: '75%',
     flexDirection: 'row',
     backgroundColor: 'white',

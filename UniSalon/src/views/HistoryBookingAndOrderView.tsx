@@ -141,7 +141,7 @@ const HistoryBookingAndOrderView = () => {
             style={{
               color: focused ? blues : 'black',
               margin: 8,
-              fontSize: 11,
+              fontSize: 10,
               fontWeight: 'bold',
             }}>
             {route.title}
@@ -150,15 +150,11 @@ const HistoryBookingAndOrderView = () => {
   );
   return (
     <View style={styles.container}>
-      <View style={styles.AppBar}>
-        <TouchableOpacity
-          style={styles.icon}
-          activeOpacity={1}
-          onPress={() => {
+      <View style={styles.AppBar}>      
+          <AntDesign onPress={()=>{
             navigation.goBack();
-          }}>
-          <AntDesign name="arrowleft" color={'white'} size={20}></AntDesign>
-        </TouchableOpacity>
+
+          }} name="arrowleft" color={'white'} size={25}></AntDesign>
         <Text style={styles.SubText}>History Booking & Order</Text>
       </View>
       <TabView

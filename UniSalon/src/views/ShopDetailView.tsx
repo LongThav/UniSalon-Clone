@@ -473,13 +473,11 @@ const ShopDetailView = () => {
         </Text>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           {ListProfessor.map((e, index) => {
-            // setMarginIndex(index);
             indexs === index;
             return (
               <TouchableOpacity
                 key={index}
                 onPress={() => {
-                  // console.log("Click", e.name);
                   navigation.push('ProfessionalDetailView', {
                     name: e.name,
                     role: e.role,
@@ -609,9 +607,7 @@ const ShopDetailView = () => {
                     fontWeight: 'bold',
                     marginTop: 5,
                     textAlign: 'center',
-                    // height: 28,
                     paddingVertical: 0,
-                    // backgroundColor: 'red'
                   }}>
                   {e.name}
                 </Text>
@@ -873,6 +869,6 @@ const styles = StyleSheet.create({
     color: '#16247d',
   },
 });
-//content: ''
+
 
 //https://www.youtube.com/watch?v=GM5O8erVxjM

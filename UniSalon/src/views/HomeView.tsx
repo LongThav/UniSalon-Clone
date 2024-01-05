@@ -160,10 +160,8 @@ export const HomeView = () => {
   const snapPoint = useMemo(() => ['25%', '50%', '70%'], []);
   const bottomSheetRef = useRef<BottomSheet>(null);
 
-  // variables
   const snapPoints = useMemo(() => ['12%', '12%', '30%', '90%'], []);
 
-  // callbacks
   const handleSheetChanges = useCallback((index: number) => {
     console.log('handleSheetChanges', index);
   }, []);
@@ -651,20 +649,8 @@ export const HomeView = () => {
                 height: 25,
                 borderRadius: 25 / 2,
                 backgroundColor: 'grey',
-                // marginHorizontal: 22,
                 marginTop: 2,
               }}>
-              {/* {isEnabled ? (
-                <Image
-                  style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
-                  source={require('../../assets/imgs/cam_flag.png')}
-                />
-              ) : (
-                <Image
-                  style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
-                  source={require('../../assets/imgs/flag_english.jpg')}
-                />
-              )} */}
               <Image
                 style={{flex: 1, width: 25, height: 25, borderRadius: 25 / 2}}
                 source={
